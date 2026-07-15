@@ -1,0 +1,878 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>Savitree Bava Saib v The Competition Commission · 2021 SCJ 17 · review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+    --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+  --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+a { color: var(--link); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 1.25rem 1.5rem 3rem; }
+header.site-header { background: var(--header-bg); border-bottom: 1px solid var(--border); }
+header.site-header .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+h1 { font-size: 1.4rem; margin: 0 0 .5rem; }
+.lede { color: var(--muted); max-width: 70ch; line-height: 1.5; margin: 0; }
+.disclaimer { margin-top: .75rem; padding: .6rem .9rem; background: var(--warn-bg); color: var(--warn-fg);
+  border-radius: 6px; font-size: .85rem; max-width: 70ch; line-height: 1.4; }
+table.cases { border-collapse: collapse; width: 100%; margin-top: 1.5rem; font-size: .9rem; }
+table.cases th, table.cases td { border-top: 1px solid var(--border); padding: .55rem .6rem; text-align: left; vertical-align: top; }
+table.cases thead th { border-top: none; border-bottom: 2px solid var(--border); color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .02em; }
+table.cases tbody tr:hover { background: var(--code-bg); }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .9em; }
+.muted { color: var(--muted); }
+.back-link { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
+.case-meta { display: flex; flex-wrap: wrap; gap: .4rem .9rem; font-size: .85rem; color: var(--muted); margin: .4rem 0 1rem; }
+.case-meta span strong { color: var(--fg); font-weight: 600; }
+.tabs { display: flex; gap: .25rem; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+.tab-btn { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; color: var(--muted);
+  padding: .55rem .9rem; font-size: .9rem; cursor: pointer; font-family: inherit; }
+.tab-btn:hover { color: var(--fg); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.tab-panel iframe { width: 100%; height: 82vh; border: 1px solid var(--border); border-radius: 6px; }
+pre.raw-json { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
+  overflow: auto; max-height: 82vh; font-family: Consolas, "Courier New", monospace; font-size: .8rem; line-height: 1.45; white-space: pre-wrap; word-break: break-word; }
+.pane-original { border: 1px solid var(--border); border-radius: 6px; max-height: 82vh; overflow: auto; }
+.pane-original .pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); }
+.pane-original pre.lines { margin: 0; padding: .25rem 0 1.5rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.pane-original .line { display: block; white-space: pre; padding: 0 .75rem; }
+.pane-original .line:hover { background: rgba(127,127,127,.08); }
+.pane-original .line.hl { background: #fff3a3; }
+.pane-original .ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+footer.site-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+</style></head><body>
+<header class="site-header"><div class="wrap">
+  <a class="back-link" href="../../index.html">&larr; All cases</a>
+  <h1>Savitree Bava Saib v The Competition Commission</h1>
+  <p class="lede"><code>2021 SCJ 17</code></p>
+  <div class="case-meta"><span><strong>Digested:</strong> 2026-07-15</span><span><strong>Model:</strong> claude-haiku-4-5-20251001</span><span><strong>Prompt:</strong> extractor.v1.1</span><span><strong>Schema:</strong> v1</span></div>
+</div></header>
+<div class="wrap">
+  <div class="tabs">
+    <button class="tab-btn" id="tab-btn-original">Original judgment</button>
+    <button class="tab-btn" id="tab-btn-rendered">Digested judgment (rendered)</button>
+    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button>
+  </div>
+  <div class="tab-panel" id="tab-panel-original"><div class="pane-original" id="judgment-pane"><div class="pane-header">Judgment text &middot; 283 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">BAVASAIB S. v THE COMPETITION COMMISSION &amp; ORS</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2021 SCJ 17</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">Serial No. 1880/19</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">IN THE SUPREME COURT OF MAURITIUS</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">(BEFORE THE HONOURABLE JUDGE IN CHAMBERS)</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">In the matter of: -</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">Savitree Bava Saib</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">Applicant</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">v</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">The Competition Commission</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">Respondent</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">IPO:</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">1. The Executive Director, Competition Commission</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">2. Ravindra Chetty, SC</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">3. Candhayalallsing Seebaluck, SA</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">4. Sailesh Ramyead</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">Co-Respondents</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">JUDGMENT</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">I have declined in this matter to issue an interim injunction applied for on the 16 October</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">2019 against applicant’s employer (the respondent), its Executive Director (the first co-</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">respondent) and (the three co-respondents) who are also members of the disciplinary</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">committee (Me Ravin Chetty, Mr Candhayalallsing Seebaluck and Mr Sailesh Ramyead) and</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">instead issued a summons calling upon the respondent and co-respondents to show cause why</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">an order in the nature of an interim injunction should not be granted.</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">The injunctive order prayed for is to restrain further disciplinary proceedings against the</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">applicant, as the Confidential Personal Assistant of the Competition Commission (respondent).</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt"></span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">2</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">It transpires from the affidavits and documents filed by the applicant that she was</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">employed by the respondent as Confidential Personal Assistant since the 4 January 2010. She</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">was suspended from work on the 23 August 2019 under section 38(2) (a) (iii) of the</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">Employment Rights Act under the following charge:</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">“On Thursday 15 August 2019, you failed to record receipt of an envelope in the</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">incoming register of the Competition Commission on the date of its receipt being</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">Thursday 15 August 2019 and to inform your superiors of the arrival of the said</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">envelope, the more so that the said envelope contained a proposal for a tender</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">exercise, for which the closing date was of the same day at 14hrs. You only</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">remitted the envelope in the afternoon of Friday 16 August 2019 to Mr V Keenoo,</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">Assistant to the Executive Director.”</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">The respondent convened the applicant to attend a disciplinary committee on the 17</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">October 2019 at 2.30 pm at the seat of the Competition Commission. However, on the same</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">day Me Ghose – Radhakeesoon appearing for the respondent and co-respondent No. 1</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">instructing Me A. Domingue, SC gave an undertaking that there will be no disciplinary</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">committee pending the determination of the present application. The undertaking was renewed</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">by Me A. Domingue, SC on the 16 July 2020. The co-respondent Nos. 2, 3 and 4 will abide by</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">the decision of the Court. Amongst the various complaints raised by the applicant was interalia</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">the composition of the disciplinary committee.</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">According to the Human Resources Manual of the Competition Commission of</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">Mauritius;</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">Section 8 Disciplinary procedures:</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">‘Where it appears, an employee has committed a misconduct;</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">(iii) Notify the employee in writing of the alleged offence and of a hearing</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">(through a disciplinary committee where necessary, that would include one</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">senior CCM staff member, one Commissioner and one outsider).’</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">The applicant has averred in her affidavit that the disciplinary committee is composed of</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">co-respondent No. 2 as President and co-respondent Nos. 3 and 4 as members. Co-</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">respondent No. 3 is a Commissioner of the respondent and will be called upon to decide, upon</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">receipt of the findings or recommendations of the said disciplinary committee whether to</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">terminate her employment.</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">She avers that co-respondent No. 4 who is the Head of Investigations of the respondent</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">and works upon instructions of and under the supervision of the co-respondent No. 1, is the one</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">who had issued the letters for her suspension and convocation before the disciplinary</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">committee.</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt"></span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">3</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">It is the contention of the applicant at paragraph 20 of her affidavit dated 16 October</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">2019 ‘that the inclusion of co-respondent Nos. 3 and 4 as members of the said disciplinary</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">committee is legally flawed as there is a ‘real perception of bias’ and as such (she) fears that the</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">principle of natural justice will not prevail and she will not be guaranteed a fair hearing’.</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">Co-respondent No.3, having decided the disciplinary charge and after having taken</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">cognizance of the applicant’s defence, cannot sit on the disciplinary committee to hear the same</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">charge against the applicant.</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">Learned Counsel for the applicant relied on the case of Karuthasami M v Equilibre Ltd</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">[2013 SCJ 338] where it was held that ‘the composition of the disciplinary Committee was not</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">challenged by the appellant, who was legally assisted at the hearing. In the circumstances, the</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">appellant’s contention that he was denied a fair hearing is untenable’ and on the case of Robert</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">Tranquille v P.R Limited [1996 SCJ 366] where it was held that ‘the notion of fair hearing also</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">comprises the idea that a person who may appear to be biased should not sit on the disciplinary</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">committee’.</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">The applicant confirmed in Court that no main case for leave to apply for Judicial Review</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">has been entered as the injunctive relief if granted by the Court will give the applicant a complete</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">remedy making it unnecessary to enter a main case. (vide- Beerjeeraz v United Basalt</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">Products [1990 MR 159] and Automatic Systems Ltd v Komarsingh C.K [2007 SCJ 319].</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">The respondent on its part, raised a number of preliminary objections in law, which</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">can be summed up as follows:</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">(a) Damages would be an adequate remedy. The applicant has noticeably</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">failed to provide any undertaking as to damages which is fatal to the present</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">application.</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">(b) There is no main action (which could only conceivably have been by a</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">prompt application in public law for leave to apply for a Judicial Review).</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">(c) The applicant holds no legal right capable of being enforced by an injunction.</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">(d) There is no triable issue.</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">It is the contention of the respondent in paragraph (a) of the above that:</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">“ …. damages and not an injunction is the proper remedy in virtually every case</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">of breach of contract, especially one relating to master and servant. The basis of</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">this rule is the need for mutual trust and confidence” (vide- Niole v MRA [2015</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">SCJ 428]).</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">The respondent has also raised in paragraph (b) of its preliminary objections that the</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">present application does not disclose any public law element capable of supporting a main</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt"></span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">4</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">action for leave to apply for Judicial Review as the basic requirement of promptitude has not</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">been complied. Learned Counsel for the respondent quoted the case of Mauritius Shipping</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">Corporation Ltd (Appellant) v Employment Relations Tribunal and others (Respondents)</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">(Mauritius) 2019 UKPC 42 where the requirement of promptness was explained as follows by</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">the Court:</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">“The requirement of promptness</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">7. An application for judicial review must be made promptly, and in any event</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">within three months from the date when the grounds for the application first</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">arose. The Supreme Court cited, in this regard, the cases of Karamuth v</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">Universal Hotels Ltd [1992] SCJ 420, Bagha v The Public Service Commission</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">[1996] SCJ 146 and Securiclean (Mauritius) Ltd v The Ministry of Local</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">Government &amp; Outer Islands [2015] SCJ 327.</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">8. It is important to bear in mind that an applicant cannot rely upon having three</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">months in which to launch a judicial review application. The primary requirement</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">is that the application be made promptly. The requirement that it be made in any</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">event within three months is a “longstop”. It is well established, and the appellant</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">accepts, that, depending on the circumstances of the case, an application made</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">within three months may not qualify as having been made promptly, in which</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">case, leave to apply for judicial review may be refused.’’</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">With regard to the objection raised by the respondent in paragraphs (c) and (d) as to</span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt">whether the applicant holds no legal right capable of being enforced by an injunction, learned</span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">Counsel relied on the dictum in the case of Bhoolah v ICTA [2016 SCJ 414] where the Court</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">held as follows:</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">“The general rule is that an injunction will not be granted to restrain an employer</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt">from terminating a contract of employment. Instead, the employee can sue the</span></span>
+<span class="line" id="L127"><span class="ln">127</span><span class="txt">employee for damages for breach of contract of employment. The basic reason</span></span>
+<span class="line" id="L128"><span class="ln">128</span><span class="txt">for refusing an injunction is that the relationship between employer and employee</span></span>
+<span class="line" id="L129"><span class="ln">129</span><span class="txt">is one of confidence, and the court ought not to seek to prolong the relationship</span></span>
+<span class="line" id="L130"><span class="ln">130</span><span class="txt">by an injunction or a decree of specific performance when that confidence no</span></span>
+<span class="line" id="L131"><span class="ln">131</span><span class="txt">longer exists. If the employee does not want to employ the employee, the</span></span>
+<span class="line" id="L132"><span class="ln">132</span><span class="txt">employee does not want to work for the employer, you cannot by order of the</span></span>
+<span class="line" id="L133"><span class="ln">133</span><span class="txt">Court satisfactorily make them do what one of them does not want to do.</span></span>
+<span class="line" id="L134"><span class="ln">134</span><span class="txt">(emphasis added).”</span></span>
+<span class="line" id="L135"><span class="ln">135</span><span class="txt">In reply to the issue relative to the composition of the disciplinary committee, the</span></span>
+<span class="line" id="L136"><span class="ln">136</span><span class="txt">respondent submitted that the precepts of the Human Resources Management Manual of the</span></span>
+<span class="line" id="L137"><span class="ln">137</span><span class="txt">Competition Commission have been scrupulously adhered by the respondent as per paragraph</span></span>
+<span class="line" id="L138"><span class="ln">138</span><span class="txt">8(iii) of the Manual (Disciplinary Procedures).</span></span>
+<span class="line" id="L139"><span class="ln">139</span><span class="txt">In its counter affidavit dated the 14 November 2019, the respondent averred at</span></span>
+<span class="line" id="L140"><span class="ln">140</span><span class="txt">paragraphs 16 and 17, “that upon receipt of the findings of the disciplinary committee, the co-</span></span>
+<span class="line" id="L141"><span class="ln">141</span><span class="txt">respondent No. 3 will be functus officio and will not be entitled to participate in any further</span></span>
+<span class="line" id="L142"><span class="ln">142</span><span class="txt">deliberations of the Commission in relation with the disciplinary proceedings. Whereas co-</span></span>
+<span class="line" id="L143"><span class="ln">143</span><span class="txt"></span></span>
+<span class="line" id="L144"><span class="ln">144</span><span class="txt">5</span></span>
+<span class="line" id="L145"><span class="ln">145</span><span class="txt">respondent No. 4 has been validly appointed in accordance to the Manual and the</span></span>
+<span class="line" id="L146"><span class="ln">146</span><span class="txt">independence of the members are not impaired.”</span></span>
+<span class="line" id="L147"><span class="ln">147</span><span class="txt">To support this averment, the respondent referred to the case of Govinden v Riche -</span></span>
+<span class="line" id="L148"><span class="ln">148</span><span class="txt">en- Eau Co-operative Society [1997 SCJ 265] holding that; “there was no impropriety in the</span></span>
+<span class="line" id="L149"><span class="ln">149</span><span class="txt">fact that the Chairman of the respondent who acted as the representative of the Committee</span></span>
+<span class="line" id="L150"><span class="ln">150</span><span class="txt">which drafted the charges, also sitting on the committee to hear the charges although he had</span></span>
+<span class="line" id="L151"><span class="ln">151</span><span class="txt">sent all the letters to the appellant, in view of the informal character of the disciplinary</span></span>
+<span class="line" id="L152"><span class="ln">152</span><span class="txt">committee.’’</span></span>
+<span class="line" id="L153"><span class="ln">153</span><span class="txt">In the case of Cooraban v MIE [1995 SCJ 271] quoted by the respondent, the</span></span>
+<span class="line" id="L154"><span class="ln">154</span><span class="txt">appellant’s first complaint is that he did not get a fair hearing since Mr. Deeljore was a member</span></span>
+<span class="line" id="L155"><span class="ln">155</span><span class="txt">of the disciplinary committee and he was also one of the three persons who had requested</span></span>
+<span class="line" id="L156"><span class="ln">156</span><span class="txt">Surnam to sign his letter in December 1993. The Appellate Court had this to say:</span></span>
+<span class="line" id="L157"><span class="ln">157</span><span class="txt">“We do not find that the mere fact of Mr Deeljore requesting Surnam to put his</span></span>
+<span class="line" id="L158"><span class="ln">158</span><span class="txt">complaint against the applicant in writing disqualified him, as the Registrar of the</span></span>
+<span class="line" id="L159"><span class="ln">159</span><span class="txt">respondent, to sit on the disciplinary committee, along with other officers, to hear</span></span>
+<span class="line" id="L160"><span class="ln">160</span><span class="txt">the applicant’s case. As it has been said before a disciplinary committee is not a</span></span>
+<span class="line" id="L161"><span class="ln">161</span><span class="txt">Court of law and it is often difficult to find committee members who are totally</span></span>
+<span class="line" id="L162"><span class="ln">162</span><span class="txt">unaware of complaints which have to be heard.”</span></span>
+<span class="line" id="L163"><span class="ln">163</span><span class="txt">I propose to deal firstly with the issue relating to the composition of the disciplinary</span></span>
+<span class="line" id="L164"><span class="ln">164</span><span class="txt">committee in the light of the argument of learned counsel for the applicant and the respondent</span></span>
+<span class="line" id="L165"><span class="ln">165</span><span class="txt">and the authorities they have alluded to.</span></span>
+<span class="line" id="L166"><span class="ln">166</span><span class="txt">The applicant has confirmed that she is not seeking an injunction against the holding of</span></span>
+<span class="line" id="L167"><span class="ln">167</span><span class="txt">the disciplinary proceedings but is challenging the composition of its members.</span></span>
+<span class="line" id="L168"><span class="ln">168</span><span class="txt">It is my considered view that the applicant has seized the wrong forum, as objection as</span></span>
+<span class="line" id="L169"><span class="ln">169</span><span class="txt">to the composition of the disciplinary committee should have been taken before the committee</span></span>
+<span class="line" id="L170"><span class="ln">170</span><span class="txt">itself and cannot be invoked at this stage.</span></span>
+<span class="line" id="L171"><span class="ln">171</span><span class="txt">In the case of Ramsewak R v MBC [1994 SCJ 297], there was an application for an</span></span>
+<span class="line" id="L172"><span class="ln">172</span><span class="txt">interim order in the nature of an interlocutory injunction restraining and prohibiting the</span></span>
+<span class="line" id="L173"><span class="ln">173</span><span class="txt">respondent from instituting disciplinary proceedings against the applicant. According to the</span></span>
+<span class="line" id="L174"><span class="ln">174</span><span class="txt">applicant, he will not be given a fair hearing since the members of the disciplinary committee</span></span>
+<span class="line" id="L175"><span class="ln">175</span><span class="txt">were the very ones who had compelled him to take 6 month’s leave. It was submitted on behalf</span></span>
+<span class="line" id="L176"><span class="ln">176</span><span class="txt">of the respondent that, the application was refused by the Court for the following reasons: -</span></span>
+<span class="line" id="L177"><span class="ln">177</span><span class="txt">“(1) The respondent is empowered to sanction the misconduct of its employee,</span></span>
+<span class="line" id="L178"><span class="ln">178</span><span class="txt">subject of course to the supervision and control of the Court. See (1) The United</span></span>
+<span class="line" id="L179"><span class="ln">179</span><span class="txt">Bus Service Ltd v. Gokhool [1978 MR 1] and (2) Ismael v. The United Bus</span></span>
+<span class="line" id="L180"><span class="ln">180</span><span class="txt"></span></span>
+<span class="line" id="L181"><span class="ln">181</span><span class="txt">6</span></span>
+<span class="line" id="L182"><span class="ln">182</span><span class="txt">Service Ltd [1986 SCJ 303]. But, before any sanction is taken the respondent is</span></span>
+<span class="line" id="L183"><span class="ln">183</span><span class="txt">required to hold a disciplinary committee to look into the allegations of</span></span>
+<span class="line" id="L184"><span class="ln">184</span><span class="txt">misconduct and this to be in line with the concept of &quot;natural justice&quot;. Given the</span></span>
+<span class="line" id="L185"><span class="ln">185</span><span class="txt">circumstances of the present application there is no ground to prohibit or restrain</span></span>
+<span class="line" id="L186"><span class="ln">186</span><span class="txt">the respondent from the course embarked upon.</span></span>
+<span class="line" id="L187"><span class="ln">187</span><span class="txt">(2) The contention that the proposed composition of the committee might be</span></span>
+<span class="line" id="L188"><span class="ln">188</span><span class="txt">biased is misconceived. As rightly pointed out by learned Counsel for the</span></span>
+<span class="line" id="L189"><span class="ln">189</span><span class="txt">respondent such an objection cannot be invoked at this stage.”</span></span>
+<span class="line" id="L190"><span class="ln">190</span><span class="txt">In the present case, learned Counsel for the respondent further argued that the applicant</span></span>
+<span class="line" id="L191"><span class="ln">191</span><span class="txt">has a right of appeal against a decision of the Board under section 67 of the Competition Act</span></span>
+<span class="line" id="L192"><span class="ln">192</span><span class="txt">2008. There are also other remedies available to her before the Industrial Court which is</span></span>
+<span class="line" id="L193"><span class="ln">193</span><span class="txt">statutorily vested with exclusive jurisdiction to hear such cases.</span></span>
+<span class="line" id="L194"><span class="ln">194</span><span class="txt">I can only concur with the pertinent remarks made by Mrs Justice G. Jugessur – Manna</span></span>
+<span class="line" id="L195"><span class="ln">195</span><span class="txt">in the case of Bhoolah v ICTA [2016 SCJ 414]:</span></span>
+<span class="line" id="L196"><span class="ln">196</span><span class="txt">“I fail to understand the fear and apprehension of the applicant to appear before</span></span>
+<span class="line" id="L197"><span class="ln">197</span><span class="txt">a disciplinary committee where he will have the opportunity to be represented by</span></span>
+<span class="line" id="L198"><span class="ln">198</span><span class="txt">counsel, to cross-examine witnesses called by the respondent, to call witness</span></span>
+<span class="line" id="L199"><span class="ln">199</span><span class="txt">and produce documents in his favour and to depose, present his defence and</span></span>
+<span class="line" id="L200"><span class="ln">200</span><span class="txt">clear his name. The applicant cannot pre-empt the findings of the disciplinary</span></span>
+<span class="line" id="L201"><span class="ln">201</span><span class="txt">committee and the decision of the respondent. The Employment Rights Act</span></span>
+<span class="line" id="L202"><span class="ln">202</span><span class="txt">provides for adequate safeguard to an employee who is facing disciplinary</span></span>
+<span class="line" id="L203"><span class="ln">203</span><span class="txt">proceedings. Other than mere apprehension, the applicant has not averred any</span></span>
+<span class="line" id="L204"><span class="ln">204</span><span class="txt">infringement of the provisions of the Employment Rights Act by the respondent.</span></span>
+<span class="line" id="L205"><span class="ln">205</span><span class="txt">However, the applicant can always have recourse to the proper forum in case he</span></span>
+<span class="line" id="L206"><span class="ln">206</span><span class="txt">is dissatisfied with the decision of the respondent or when his rights have been</span></span>
+<span class="line" id="L207"><span class="ln">207</span><span class="txt">infringed during or after the disciplinary proceeding.’’</span></span>
+<span class="line" id="L208"><span class="ln">208</span><span class="txt">Turning to the issue of damages the principle was reiterated in the case of Sujeeun B &amp;</span></span>
+<span class="line" id="L209"><span class="ln">209</span><span class="txt">Anor v Issur C &amp; Anor [2017 SCJ 248] and Kurreemun v C.E.B [2018 SCJ 27]:</span></span>
+<span class="line" id="L210"><span class="ln">210</span><span class="txt">“By the undertaking the applicant is required to compensate the respondent for</span></span>
+<span class="line" id="L211"><span class="ln">211</span><span class="txt">any loss incurred by the defendant during the currency of the injunction if it later</span></span>
+<span class="line" id="L212"><span class="ln">212</span><span class="txt">appears following the outcome of a substantive case that the injunction was</span></span>
+<span class="line" id="L213"><span class="ln">213</span><span class="txt">wrongly granted. Its purpose is to provide a safeguard for the defendant who</span></span>
+<span class="line" id="L214"><span class="ln">214</span><span class="txt">may be unjustifiably prevented from doing something it was entitled to do.</span></span>
+<span class="line" id="L215"><span class="ln">215</span><span class="txt">[Blackstone‘s Civil Practice 2011 Edition Para 37.24’]’’</span></span>
+<span class="line" id="L216"><span class="ln">216</span><span class="txt">It is the case for the applicant that she is most unlikely to recover damages from the</span></span>
+<span class="line" id="L217"><span class="ln">217</span><span class="txt">respondent as the issue to be thrashed out only relates to the composition of the disciplinary</span></span>
+<span class="line" id="L218"><span class="ln">218</span><span class="txt">committee and not to the hearing of the committee and the balance of convenience should tilt in</span></span>
+<span class="line" id="L219"><span class="ln">219</span><span class="txt">favour of the applicant who reckons 10 years of service with the respondent.</span></span>
+<span class="line" id="L220"><span class="ln">220</span><span class="txt">The Court averred in the case of Balmick Manoj Rajkamal Hanoomanjee v Sun</span></span>
+<span class="line" id="L221"><span class="ln">221</span><span class="txt">Resorts Ltd [2011 SCJ 1] that “the sanction for any eventual breach or unjustified dismissal of</span></span>
+<span class="line" id="L222"><span class="ln">222</span><span class="txt">the employee would be the different severance allowances provided for the Act or in damages.”</span></span>
+<span class="line" id="L223"><span class="ln">223</span><span class="txt"></span></span>
+<span class="line" id="L224"><span class="ln">224</span><span class="txt">7</span></span>
+<span class="line" id="L225"><span class="ln">225</span><span class="txt">It is also held that “those in management of an enterprise know how best to run it and must be</span></span>
+<span class="line" id="L226"><span class="ln">226</span><span class="txt">at liberty to take any disciplinary action they deem fit to take when they are in presence of facts</span></span>
+<span class="line" id="L227"><span class="ln">227</span><span class="txt">prima facie showing that an employee has committed a misconduct.”</span></span>
+<span class="line" id="L228"><span class="ln">228</span><span class="txt">From the affidavit evidence on record, I fail to see that applicant could not be adequately</span></span>
+<span class="line" id="L229"><span class="ln">229</span><span class="txt">compensated in damages. On the contrary the balance of convenience tilts in favour of the</span></span>
+<span class="line" id="L230"><span class="ln">230</span><span class="txt">respondent where if prevented for a longer period to keep on hold the disciplinary committee far</span></span>
+<span class="line" id="L231"><span class="ln">231</span><span class="txt">outweighs that which would be caused to the applicant should it eventually be held in the main</span></span>
+<span class="line" id="L232"><span class="ln">232</span><span class="txt">case that the disciplinary committee was wrongly instituted in view of the composition of the</span></span>
+<span class="line" id="L233"><span class="ln">233</span><span class="txt">Board.</span></span>
+<span class="line" id="L234"><span class="ln">234</span><span class="txt">The last preliminary objection relates to the fact that there is no triable issue as applicant</span></span>
+<span class="line" id="L235"><span class="ln">235</span><span class="txt">holds no legal right capable of being enforced by an injunction.</span></span>
+<span class="line" id="L236"><span class="ln">236</span><span class="txt">The distinctiveness of the jurisdiction of the “juge des référés” from that of the jurisdiction</span></span>
+<span class="line" id="L237"><span class="ln">237</span><span class="txt">of the Judge in Chambers to grant interlocutory relief has been highlighted by the Judicial</span></span>
+<span class="line" id="L238"><span class="ln">238</span><span class="txt">Committee of the Privy Council in Gujadhur v Gujadhur [2006 PRV 51]:</span></span>
+<span class="line" id="L239"><span class="ln">239</span><span class="txt">For the applicant to succeed under Article 806 of the Code de Procédure Civile, I</span></span>
+<span class="line" id="L240"><span class="ln">240</span><span class="txt">have to be satisfied that –</span></span>
+<span class="line" id="L241"><span class="ln">241</span><span class="txt">(a) the applicant has a clear legal right;</span></span>
+<span class="line" id="L242"><span class="ln">242</span><span class="txt">(b) there is an urgency which calls for the granting of the order prayed for at this</span></span>
+<span class="line" id="L243"><span class="ln">243</span><span class="txt">stage; and</span></span>
+<span class="line" id="L244"><span class="ln">244</span><span class="txt">(c) the respondent has not raised a serious and bona fide defence.</span></span>
+<span class="line" id="L245"><span class="ln">245</span><span class="txt">The reason why applicant is seeking an interim injunction as averred in her affidavit</span></span>
+<span class="line" id="L246"><span class="ln">246</span><span class="txt">dated the 10 October 2019 at paragraph 23 is mainly because “respondent and co-respondents</span></span>
+<span class="line" id="L247"><span class="ln">247</span><span class="txt">are acting in defiance of the law and her employment rights and her right to a fair hearing</span></span>
+<span class="line" id="L248"><span class="ln">248</span><span class="txt">requires urgent protection against the aforesaid acts and doings of the respondent and co-</span></span>
+<span class="line" id="L249"><span class="ln">249</span><span class="txt">respondents.”</span></span>
+<span class="line" id="L250"><span class="ln">250</span><span class="txt">The remedy which applicant is seeking is to prevent an administrative body to perform</span></span>
+<span class="line" id="L251"><span class="ln">251</span><span class="txt">its duties under the law. This is clearly outside my jurisdiction as a Judge sitting in Chambers.</span></span>
+<span class="line" id="L252"><span class="ln">252</span><span class="txt">As a matter of fact, no element of public law has been disclosed.</span></span>
+<span class="line" id="L253"><span class="ln">253</span><span class="txt">In Le Repaire Resort Ltee v Rodrigues Regional Assembly [2012 SCJ 113] (cited</span></span>
+<span class="line" id="L254"><span class="ln">254</span><span class="txt">with approval in Mungroo v Ministry of Agro Industry [2014 SCJ 304]) Y K J Yeung Sik Yuen</span></span>
+<span class="line" id="L255"><span class="ln">255</span><span class="txt">Chief Justice and K P Matadeen Senior Puisne Judge held the following:</span></span>
+<span class="line" id="L256"><span class="ln">256</span><span class="txt"></span></span>
+<span class="line" id="L257"><span class="ln">257</span><span class="txt">8</span></span>
+<span class="line" id="L258"><span class="ln">258</span><span class="txt">“In the present case, the issue is essentially one of contract between two parties</span></span>
+<span class="line" id="L259"><span class="ln">259</span><span class="txt">and the interpretation of contractual terms which had been put in writing and</span></span>
+<span class="line" id="L260"><span class="ln">260</span><span class="txt">signed by the parties. That one of the parties to the contract, the respondent, is</span></span>
+<span class="line" id="L261"><span class="ln">261</span><span class="txt">a public body, does not create a public law element in the resolution mechanism</span></span>
+<span class="line" id="L262"><span class="ln">262</span><span class="txt">of any dispute it may have with the applicant.’’</span></span>
+<span class="line" id="L263"><span class="ln">263</span><span class="txt">The action of the applicant is procedurally wrong and is indeed a disguised application</span></span>
+<span class="line" id="L264"><span class="ln">264</span><span class="txt">for a judicial review which cannot be allowed to succeed (vide-TKM Consultants Ltd v The</span></span>
+<span class="line" id="L265"><span class="ln">265</span><span class="txt">Mauritius Qualifications Authority &amp; Ors [2007 SCJ 207] “the affidavits show that the</span></span>
+<span class="line" id="L266"><span class="ln">266</span><span class="txt">applicant is seeking in effect to challenge an administrative decision of the first respondent</span></span>
+<span class="line" id="L267"><span class="ln">267</span><span class="txt">whose powers and duties are set out in the Act. The application is accordingly a disguised form</span></span>
+<span class="line" id="L268"><span class="ln">268</span><span class="txt">of judicial review which is not within the jurisdiction of the Judge in Chambers, vide-(Le Petit</span></span>
+<span class="line" id="L269"><span class="ln">269</span><span class="txt">Morne Ltee v Town and Country Planning Board [1998 SCJ 142] and K. S. Dhunnoo v The</span></span>
+<span class="line" id="L270"><span class="ln">270</span><span class="txt">Private Secondary School Authority [2002 SCJ 186]”.</span></span>
+<span class="line" id="L271"><span class="ln">271</span><span class="txt">For the reasons given above, the application is consequently set aside, with costs.</span></span>
+<span class="line" id="L272"><span class="ln">272</span><span class="txt">I certify as to counsel.</span></span>
+<span class="line" id="L273"><span class="ln">273</span><span class="txt">J. Moutou- Leckning</span></span>
+<span class="line" id="L274"><span class="ln">274</span><span class="txt">Judge</span></span>
+<span class="line" id="L275"><span class="ln">275</span><span class="txt">18 January 2021</span></span>
+<span class="line" id="L276"><span class="ln">276</span><span class="txt">-------------------------------</span></span>
+<span class="line" id="L277"><span class="ln">277</span><span class="txt">For the Applicant : Mr R. Rajroop, Attorney-at-Law</span></span>
+<span class="line" id="L278"><span class="ln">278</span><span class="txt">: Mr R. Greedharry, of Counsel</span></span>
+<span class="line" id="L279"><span class="ln">279</span><span class="txt">For the Respondent &amp; : Ms D. Ghose-Radhakeesoon, Attorney-at-Law</span></span>
+<span class="line" id="L280"><span class="ln">280</span><span class="txt">Co-respondent No. 1</span></span>
+<span class="line" id="L281"><span class="ln">281</span><span class="txt">: Mr A. Domingue, SC</span></span>
+<span class="line" id="L282"><span class="ln">282</span><span class="txt"></span></span>
+<span class="line" id="L283"><span class="ln">283</span><span class="txt">9</span></span>
+</pre></div></div>
+  <div class="tab-panel" id="tab-panel-rendered"><iframe src="digest.html" title="Rendered digest"></iframe></div>
+  <div class="tab-panel" id="tab-panel-raw"><pre class="raw-json">```json
+{
+  &quot;case_name&quot;: &quot;Savitree Bava Saib v The Competition Commission&quot;,
+  &quot;citation&quot;: &quot;2021 SCJ 17&quot;,
+  &quot;citation_verbatim&quot;: &quot;2021 SCJ 17&quot;,
+  &quot;citation_code&quot;: &quot;SCJ&quot;,
+  &quot;record_number&quot;: &quot;Serial No. 1880/19&quot;,
+  &quot;court&quot;: &quot;Supreme Court&quot;,
+  &quot;court_division&quot;: &quot;Judge in Chambers&quot;,
+  &quot;bench&quot;: &quot;single judge&quot;,
+  &quot;jurisdiction&quot;: &quot;Mauritius&quot;,
+  &quot;date&quot;: &quot;2021-01-18&quot;,
+  &quot;judgment_by&quot;: &quot;J. Moutou-Leckning&quot;,
+  &quot;procedural_posture&quot;: &quot;interlocutory&quot;,
+  &quot;judges&quot;: [
+    {
+      &quot;name&quot;: &quot;J. Moutou-Leckning&quot;,
+      &quot;role&quot;: &quot;Judge&quot;,
+      &quot;position&quot;: &quot;lead&quot;,
+      &quot;disposition_agreement&quot;: &quot;full&quot;
+    }
+  ],
+  &quot;parties&quot;: {
+    &quot;applicant&quot;: &quot;Savitree Bava Saib&quot;,
+    &quot;respondent&quot;: &quot;The Competition Commission&quot;,
+    &quot;co_respondent&quot;: &quot;Executive Director, Competition Commission; Ravindra Chetty, SC; Candhayalallsing Seebaluck, SA; Sailesh Ramyead&quot;
+  },
+  &quot;counsel&quot;: [
+    {
+      &quot;for&quot;: &quot;applicant&quot;,
+      &quot;names&quot;: [
+        &quot;Mr R. Rajroop, Attorney-at-Law&quot;,
+        &quot;Mr R. Greedharry, of Counsel&quot;
+      ]
+    },
+    {
+      &quot;for&quot;: &quot;respondent&quot;,
+      &quot;names&quot;: [
+        &quot;Ms D. Ghose-Radhakeesoon, Attorney-at-Law&quot;,
+        &quot;Mr A. Domingue, SC&quot;
+      ]
+    }
+  ],
+  &quot;catchwords&quot;: [
+    &quot;Common law — Employment — Disciplinary procedures — Whether objections to committee composition must be raised before the committee itself and cannot be invoked at interlocutory stage&quot;,
+    &quot;Code (Code de Procédure Civile) — Interlocutory relief — Art. 806 — Whether clear legal right established for interim relief in employment disciplinary matter&quot;,
+    &quot;Common law — Contract — Whether contractual dispute becomes matter of public law because one party is a public body&quot;,
+    &quot;Constitution — Judicial jurisdiction — Judge in Chambers — Whether Judge in Chambers has jurisdiction to grant relief in disguised judicial review&quot;
+  ],
+  &quot;structure&quot;: {
+    &quot;header_lines&quot;: [1, 18],
+    &quot;judgment_start_line&quot;: 18,
+    &quot;judgment_end_line&quot;: 283,
+    &quot;signatures_line&quot;: 273,
+    &quot;date_line&quot;: 275,
+    &quot;counsel_lines&quot;: [277, 281],
+    &quot;block_quotes&quot;: [
+      {
+        &quot;start_line&quot;: 33,
+        &quot;end_line&quot;: 39,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 50,
+        &quot;end_line&quot;: 54,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 107,
+        &quot;end_line&quot;: 120,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 125,
+        &quot;end_line&quot;: 134,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 148,
+        &quot;end_line&quot;: 152,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 157,
+        &quot;end_line&quot;: 162,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 177,
+        &quot;end_line&quot;: 189,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 196,
+        &quot;end_line&quot;: 207,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 210,
+        &quot;end_line&quot;: 215,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 258,
+        &quot;end_line&quot;: 262,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 265,
+        &quot;end_line&quot;: 267,
+        &quot;language&quot;: &quot;en&quot;
+      }
+    ]
+  },
+  &quot;headnote&quot;: {
+    &quot;facts&quot;: &quot;Savitree Bava Saib was employed by the Competition Commission as Confidential Personal Assistant from January 2010. She was suspended on 23 August 2019 following an allegation that she failed to record receipt of a time-sensitive tender proposal envelope. The respondent convened a disciplinary committee composed of members whom the applicant alleged had conflicts of interest or bias. The applicant sought an interim injunction to restrain the disciplinary proceedings without entering a main case for judicial review, claiming the committee composition violated natural justice principles.&quot;,
+    &quot;held&quot;: [
+      {
+        &quot;proposition&quot;: &quot;Objections to the composition of a disciplinary committee must be raised before the committee itself and cannot be invoked for the first time at an interlocutory stage.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 168,
+            &quot;end_line&quot;: 170
+          },
+          {
+            &quot;start_line&quot;: 187,
+            &quot;end_line&quot;: 189
+          }
+        ]
+      },
+      {
+        &quot;proposition&quot;: &quot;In employment disputes, damages is the adequate remedy, and the court should not grant an interim injunction to restrain disciplinary proceedings as the relationship of confidence and trust between employer and employee is fundamental to employment law.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 125,
+            &quot;end_line&quot;: 134
+          },
+          {
+            &quot;start_line&quot;: 228,
+            &quot;end_line&quot;: 233
+          }
+        ]
+      },
+      {
+        &quot;proposition&quot;: &quot;A contractual dispute does not become a matter of public law jurisdiction merely because one party to the contract is a public body.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 258,
+            &quot;end_line&quot;: 262
+          }
+        ]
+      },
+      {
+        &quot;proposition&quot;: &quot;A Judge in Chambers lacks jurisdiction to grant interlocutory relief when the application is in substance a disguised form of judicial review seeking to challenge an administrative decision.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 263,
+            &quot;end_line&quot;: 270
+          }
+        ]
+      }
+    ],
+    &quot;disposition&quot;: &quot;Application set aside with costs.&quot;,
+    &quot;orders&quot;: [
+      &quot;Costs awarded&quot;
+    ],
+    &quot;quotable_holding&quot;: &quot;The action of the applicant is procedurally wrong and is indeed a disguised application for a judicial review which cannot be allowed to succeed.&quot;
+  },
+  &quot;cases_cited&quot;: [
+    {
+      &quot;citation&quot;: &quot;2013 SCJ 338&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2013 SCJ 338]&quot;,
+      &quot;name&quot;: &quot;Karuthasami M v Equilibre Ltd&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 73,
+      &quot;evidence_span&quot;: &quot;the composition of the disciplinary Committee was not challenged by the appellant, who was legally assisted at the hearing&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1996 SCJ 366&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1996 SCJ 366]&quot;,
+      &quot;name&quot;: &quot;Robert Tranquille v P.R Limited&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 76,
+      &quot;evidence_span&quot;: &quot;the notion of fair hearing also comprises the idea that a person who may appear to be biased should not sit on the disciplinary committee&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1990 MR 159&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1990 MR 159]&quot;,
+      &quot;name&quot;: &quot;Beerjeeraz v United Basalt Products&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 82,
+      &quot;evidence_span&quot;: &quot;the injunctive relief if granted by the Court will give the applicant a complete remedy making it unnecessary to enter a main case&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2007 SCJ 319&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2007 SCJ 319]&quot;,
+      &quot;name&quot;: &quot;Automatic Systems Ltd v Komarsingh C.K&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 83,
+      &quot;evidence_span&quot;: &quot;injunctive relief if granted by the Court will give the applicant a complete remedy&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2015 SCJ 428&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2015 SCJ 428]&quot;,
+      &quot;name&quot;: &quot;Niole v MRA&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 96,
+      &quot;evidence_span&quot;: &quot;damages and not an injunction is the proper remedy in virtually every case of breach of contract, especially one relating to master and servant&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;[2019] UKPC 42&quot;,
+      &quot;citation_verbatim&quot;: &quot;2019 UKPC 42&quot;,
+      &quot;name&quot;: &quot;Mauritius Shipping Corporation Ltd v Employment Relations Tribunal and others&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 104,
+      &quot;evidence_span&quot;: &quot;An application for judicial review must be made promptly, and in any event within three months from the date when the grounds for the application first arose&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1992 SCJ 420&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1992] SCJ 420&quot;,
+      &quot;name&quot;: &quot;Karamuth v Universal Hotels Ltd&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 110,
+      &quot;evidence_span&quot;: null
+    },
+    {
+      &quot;citation&quot;: &quot;1996 SCJ 146&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1996] SCJ 146&quot;,
+      &quot;name&quot;: &quot;Bagha v The Public Service Commission&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 111,
+      &quot;evidence_span&quot;: null
+    },
+    {
+      &quot;citation&quot;: &quot;2015 SCJ 327&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2015] SCJ 327&quot;,
+      &quot;name&quot;: &quot;Securiclean (Mauritius) Ltd v The Ministry of Local Government &amp; Outer Islands&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 112,
+      &quot;evidence_span&quot;: null
+    },
+    {
+      &quot;citation&quot;: &quot;2016 SCJ 414&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2016 SCJ 414]&quot;,
+      &quot;name&quot;: &quot;Bhoolah v ICTA&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 123,
+      &quot;evidence_span&quot;: &quot;The general rule is that an injunction will not be granted to restrain an employer from terminating a contract of employment. Instead, the employee can sue the employee for damages for breach of contract of employment.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1997 SCJ 265&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1997 SCJ 265]&quot;,
+      &quot;name&quot;: &quot;Govinden v Riche-en-Eau Co-operative Society&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 147,
+      &quot;evidence_span&quot;: &quot;there was no impropriety in the fact that the Chairman of the respondent who acted as the representative of the Committee which drafted the charges, also sitting on the committee to hear the charges&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1995 SCJ 271&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1995 SCJ 271]&quot;,
+      &quot;name&quot;: &quot;Cooraban v MIE&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 153,
+      &quot;evidence_span&quot;: &quot;the mere fact of Mr Deeljore requesting Surnam to put his complaint against the applicant in writing disqualified him, as the Registrar of the respondent, to sit on the disciplinary committee&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1994 SCJ 297&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1994 SCJ 297]&quot;,
+      &quot;name&quot;: &quot;Ramsewak R v MBC&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 171,
+      &quot;evidence_span&quot;: &quot;such an objection cannot be invoked at this stage. It is my considered view that the applicant has seized the wrong forum, as objection as to the composition of the disciplinary committee should have been taken before the committee itself&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1978 MR 1&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1978 MR 1]&quot;,
+      &quot;name&quot;: &quot;The United Bus Service Ltd v Gokhool&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 179,
+      &quot;evidence_span&quot;: null
+    },
+    {
+      &quot;citation&quot;: &quot;1986 SCJ 303&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1986 SCJ 303]&quot;,
+      &quot;name&quot;: &quot;Ismael v The United Bus Service Ltd&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 181,
+      &quot;evidence_span&quot;: null
+    },
+    {
+      &quot;citation&quot;: &quot;2017 SCJ 248&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2017 SCJ 248]&quot;,
+      &quot;name&quot;: &quot;Sujeeun B &amp; Anor v Issur C &amp; Anor&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 209,
+      &quot;evidence_span&quot;: &quot;By the undertaking the applicant is required to compensate the respondent for any loss incurred by the defendant during the currency of the injunction if it later appears following the outcome of a substantive case that the injunction was wrongly granted&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2018 SCJ 27&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2018 SCJ 27]&quot;,
+      &quot;name&quot;: &quot;Kurreemun v C.E.B&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 209,
+      &quot;evidence_span&quot;: &quot;By the undertaking the applicant is required to compensate the respondent for any loss incurred by the defendant during the currency of the injunction&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2011 SCJ 1&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2011 SCJ 1]&quot;,
+      &quot;name&quot;: &quot;Balmick Manoj Rajkamal Hanoomanjee v Sun Resorts Ltd&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 220,
+      &quot;evidence_span&quot;: &quot;the sanction for any eventual breach or unjustified dismissal of the employee would be the different severance allowances provided for the Act or in damages&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2006 PRV 51&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2006 PRV 51]&quot;,
+      &quot;name&quot;: &quot;Gujadhur v Gujadhur&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 238,
+      &quot;evidence_span&quot;: &quot;The distinctiveness of the jurisdiction of the juge des référés from that of the jurisdiction of the Judge in Chambers to grant interlocutory relief has been highlighted by the Judicial Committee of the Privy Council&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2012 SCJ 113&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2012 SCJ 113]&quot;,
+      &quot;name&quot;: &quot;Le Repaire Resort Ltee v Rodrigues Regional Assembly&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 253,
+      &quot;evidence_span&quot;: &quot;the issue is essentially one of contract between two parties and the interpretation of contractual terms. That one of the parties to the contract, the respondent, is a public body, does not create a public law element&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2014 SCJ 304&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2014 SCJ 304]&quot;,
+      &quot;name&quot;: &quot;Mungroo v Ministry of Agro Industry&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 254,
+      &quot;evidence_span&quot;: &quot;cited with approval in Mungroo v Ministry of Agro Industry&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2007 SCJ 207&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2007 SCJ 207]&quot;,
+      &quot;name&quot;: &quot;TKM Consultants Ltd v The Mauritius Qualifications Authority &amp; Ors&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 264,
+      &quot;evidence_span&quot;: &quot;the affidavits show that the applicant is seeking in effect to challenge an administrative decision of the first respondent. The application is accordingly a disguised form of judicial review&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1998 SCJ 142&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1998 SCJ 142]&quot;,
+      &quot;name&quot;: &quot;Le Petit Morne Ltee v Town and Country Planning Board&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 268,
+      &quot;evidence_span&quot;: null
+    },
+    {
+      &quot;citation&quot;: &quot;2002 SCJ 186&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2002 SCJ 186]&quot;,
+      &quot;name&quot;: &quot;K. S. Dhunnoo v The Private Secondary School Authority&quot;,
+      &quot;treatment&quot;: &quot;referred_to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 269,
+      &quot;evidence_span&quot;: null
+    }
+  ],
+  &quot;legislation&quot;: [
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Employment Rights Act&quot;,
+      &quot;sections&quot;: [
+        &quot;s. 38(2)(a)(iii)&quot;
+      ],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 31
+    },
+    {
+      &quot;kind&quot;: &quot;code&quot;,
+      &quot;name&quot;: &quot;Code de Procédure Civile&quot;,
+      &quot;sections&quot;: [
+        &quot;art. 806&quot;
+      ],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 239
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Competition Act 2008&quot;,
+      &quot;sections&quot;: [
+        &quot;s. 67&quot;
+      ],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 191
+    }
+  ],
+  &quot;foreign_doctrine&quot;: [
+    {
+      &quot;name&quot;: &quot;Blackstone&#x27;s Civil Practice&quot;,
+      &quot;reference&quot;: &quot;2011 Edition Para 37.24&quot;,
+      &quot;line&quot;: 215
+    }
+  ],
+  &quot;confidence&quot;: {
+    &quot;catchwords&quot;: &quot;medium&quot;,
+    &quot;case_treatments&quot;: &quot;high&quot;,
+    &quot;procedural_posture&quot;: &quot;high&quot;,
+    &quot;headnote&quot;: &quot;high&quot;,
+    &quot;court&quot;: &quot;high&quot;,
+    &quot;cases_cited&quot;: &quot;high&quot;,
+    &quot;legislation&quot;: &quot;high&quot;
+  },
+  &quot;notes&quot;: [
+    &quot;Catchwords are inferred from the reasoning and holdings; the judgment does not state catchwords explicitly. The coverage of all four held propositions across the four catchword chains is complete.&quot;
+  ],
+  &quot;needs_human_review&quot;: false,
+  &quot;extractor_version&quot;: &quot;extractor.v1.1&quot;,
+  &quot;schema_version&quot;: &quot;v1&quot;
+}
+```
+</pre></div>
+  <footer class="site-footer">slug: <code>2021_SCJ_17</code></footer>
+</div>
+<script>
+(function () {
+  var validTabs = ['original', 'rendered', 'raw'];
+  function tabFromHash() {
+    var h = (location.hash || '').replace('#', '');
+    return validTabs.indexOf(h) !== -1 ? h : validTabs[0];
+  }
+  function showTab(name) {
+    validTabs.forEach(function (t) {
+      var btn = document.getElementById('tab-btn-' + t);
+      var panel = document.getElementById('tab-panel-' + t);
+      var active = t === name;
+      if (btn) btn.classList.toggle('active', active);
+      if (panel) panel.classList.toggle('active', active);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    var name = btn.id.replace('tab-btn-', '');
+    if (validTabs.indexOf(name) === -1) return;
+    history.replaceState(null, '', '#' + name);
+    showTab(name);
+  });
+  window.addEventListener('hashchange', function () { showTab(tabFromHash()); });
+  showTab(tabFromHash());
+})();
+</script></body></html>

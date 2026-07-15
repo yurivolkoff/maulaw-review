@@ -1,0 +1,268 @@
+<!doctype html><html><head><meta charset='utf-8'><title>A.R. Khodabocus v N. Damree &middot; 2024 INT 180 &middot; review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+    --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+    --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+  --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+  --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+.container { display: flex; height: 100vh; width: 100%; overflow: hidden; }
+.pane { overflow: auto; height: 100%; }
+.pane-left { flex: 1 1 50%; border-right: 1px solid var(--border); background: var(--code-bg); }
+.pane-right { flex: 1 1 50%; padding: 1rem 1.25rem 3rem; }
+.pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); z-index: 2; }
+pre.lines { margin: 0; padding: .25rem 0 2rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.line { display: block; white-space: pre; padding: 0 .75rem; }
+.line:hover { background: rgba(127,127,127,.08); }
+.line.hl { background: var(--hl); }
+.ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+.sec { margin-bottom: 1.5rem; }
+.sec h1 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.sec h2 { font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; margin: 0 0 .5rem; }
+.sec h3 { font-size: .92rem; margin: .75rem 0 .25rem; color: var(--muted); }
+.sec-debug { opacity: .85; font-size: .9rem; }
+.sec-footer { opacity: .7; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; margin-bottom: .5rem; }
+.meta-table th { text-align: left; color: var(--muted); font-weight: 500; padding: .15rem .5rem .15rem 0; vertical-align: top; white-space: nowrap; }
+.meta-table td { padding: .15rem 0; }
+.cases-table, .leg-table { table-layout: fixed; }
+.cases-table th, .cases-table td, .leg-table th, .leg-table td { border-top: 1px solid var(--border); padding: .35rem .4rem; text-align: left; vertical-align: top; word-wrap: break-word; }
+.evidence-row td { border-top: none; padding-top: 0; }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .85em; }
+a.lineref { color: var(--link); text-decoration: none; font-weight: 600; white-space: nowrap; }
+a.lineref:hover { text-decoration: underline; }
+.pinpoints { display: flex; flex-direction: column; gap: .15rem; margin: .2rem 0 .6rem 1.2rem; }
+.preview { color: var(--muted); font-size: .85em; }
+.held > li { margin-bottom: .6rem; }
+.muted { color: var(--muted); }
+.small { font-size: .82em; }
+.badge { display: inline-block; padding: .05rem .45rem; border-radius: 999px; font-size: .78em; font-weight: 600; }
+.sig-positive { background: color-mix(in srgb, var(--pos) 18%, transparent); color: var(--pos); }
+.sig-neutral { background: color-mix(in srgb, var(--neu) 18%, transparent); color: var(--neu); }
+.sig-caution { background: color-mix(in srgb, var(--cau) 20%, transparent); color: var(--cau); }
+.sig-negative { background: color-mix(in srgb, var(--neg) 18%, transparent); color: var(--neg); }
+.badge-review { display: inline-block; background: var(--badge-review-bg); color: var(--badge-review-fg); padding: .15rem .6rem; border-radius: 4px; font-size: .78rem; font-weight: 700; letter-spacing: .03em; margin-bottom: .5rem; }
+.badge-missing { color: var(--neg); font-style: italic; }
+.tag { display: inline-block; border: 1px solid var(--border); border-radius: 3px; padding: 0 .35rem; font-size: .78em; }
+.tag-muted { color: var(--muted); }
+.tag-warn { color: var(--cau); border-color: var(--cau); }
+.catchwords > li, ol.held > li { margin-bottom: .4rem; }
+blockquote { margin: .25rem 0; padding: .4rem .75rem; border-left: 3px solid var(--link); background: var(--code-bg); font-style: italic; }
+</style></head><body><div class="container"><div class="pane pane-left" id="judgment-pane"><div class="pane-header">Judgment text &middot; 170 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">A.R. Khodabocus v N. Damree</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2024 INT 180</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">THE INTERMEDIATE COURT OF MAURITIUS</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">(Civil Division)</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">In the matter of:</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">CN 821/2022</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">Ally Reza Khodabocus</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">PLAINTIFF</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">v.</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">Nasser Damree</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">DEFENDANT</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">JUDGMENT</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">1. The Plaintiff is suing the Defendant for damages on the ground of “faute lourde”.</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">In his amended proecipe, the Plaintiff avers that he was arrested in April 2014</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">during his visit to Mauritius as a result of a police complaint made by the</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">Defendant against him. He was provisionally charged with a case of swindling</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">and an objection to departure was imposed upon him. The Plaintiff further avers</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">that the acts and doings of the Defendant have caused more than trouble to</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">him and he is hence praying for a judgment condemning and ordering the</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">Defendant No.1 [sic] to pay to him the sum of Rs 2 million as damages.</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">1</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt"></span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">2. The case was originally scheduled to be heard on the merits on the 20th of May</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">2024. However, the Defendant was absent and Learned Counsel for the</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">Defendant was laid up. As the Plaintiff has travelled from the UK for the hearing</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">of this case, the matter was postponed to the 22nd of May 2024. Counsel and</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">Attorney for the Defendant were informed, through the representative of their</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">chambers in court, that the case would be taken on the 22nd of May. On that</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">day, despite several efforts made to secure the presence of Counsel for the</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">Defendant, the latter never turned up in court. The case was maintained till 13</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">40 hrs, at which time the instructing Attorney for the Defendant informed court</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">that Counsel would not be attending court as he was before the District Court</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">of Mahebourg. In these circumstances, the case was proceeded with in the</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">absence of both the Defendant and Learned Counsel for the Defendant.</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">3. A plea dated the 19th of February 2019 was filed before the Supreme Court</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">wherein the Defendant (then Defendant No.1) denied the claim and averred</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">that he never committed any faute. The case was thereafter transferred from</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">the Supreme Court to be heard before the Intermediate Court in 2022. The</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">original proecipe was amended to remove Defendant Nos. 2 and 3 as parties,</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">leaving only the Defendant No.1, now the Defendant, as the opponent. The plea</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">of the Defendant was however never amended in the light of the amended</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">proecipe.</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">4. On the 22nd of May 2024, the Plaintiff was called to depone under oath. He</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">stated having caused a Notice of Trial to be served outside jurisdiction on the</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">Defendant who also resides in England. The Defendant was touched personally</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">as attested in an affidavit emanating from a UK process server and filed in court</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">(Document A).</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">5. In a gist, the Plaintiff explained that he knew the Defendant since 2009 and that</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">the latter made him believe that he could cure Plaintiff’s son. However, in 2012,</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">the Defendant made a declaration to the police against the Plaintiff. The latter</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">was subsequently arrested when he came to Mauritius on holidays in April 2014</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">and a provisional plaint for swindling was lodged against him. The Plaintiff was</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">bailed out but an objection to departure was imposed upon him. He had to retain</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">2</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt"></span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">the services of counsel to defend him and it was only in June 2014 that the</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">provisional plaint was struck out and the Plaintiff was allowed to travel back to</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">England.</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">6. The Plaintiff further stated that he suffered much prejudice due to this incident</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">since his two weeks’ holidays with his family were ruined. His parents were very</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">shocked and the family members thought him a thief. He had to fight very hard</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">to clear his name as he did not commit that offence. Moreover, he could not</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">report back to his job as scheduled after the two weeks since he was not</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">allowed to travel and he nearly lost his job there. His autistic son and wife, who</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">had travelled to Mauritius with him, had to go back to England on their own</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">because his son needed medical support which was not available here and it</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">was very hard for them. He also added that he was never prosecuted for the</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">criminal case till today.</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">7. Certain documents were produced by the Plaintiff, namely a copy of the</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">provisional plaint lodged against him together with a copy of the ruling striking</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">out the provisional plaint (Document B) and a copy of the declaration made by</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">the Defendant in 2012 (Document C). However, a perusal of the ruling at</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">Document B shows that it in fact pertains to the refusal of the court to grant</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">Plaintiff a variation of the Prohibition Order filed against him. Nevertheless,</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">there is on record a letter from the police dated the 12th of June 2014 and</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">addressed to the Plaintiff (Document E) wherein the latter was being informed</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">that the provisional lodged against him before the District Court of Riviere du</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">Rempart has been struck out. The Plaintiff also produced a notice “mise en</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">demeure” dated the 2nd of December 2015 (Document D) which he caused to</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">serve on several parties, including the Defendant.</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">8. Plaintiff added that this false allegation caused him a lot of trauma and he was</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">too scared to come to Mauritius after that. He did not come to see his sick father</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">nor did he come for his funeral and that remained his biggest regret. According</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">to the Plaintiff, the Defendant went to make a declaration against him because</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">the Plaintiff had previously reported the Defendant to the cybercrime unit for</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">sending him messages. He stated that he never took money from the</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">3</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt"></span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">Defendant and that it was him, at that time, who gave money to the Defendant</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">to heal his child.</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">9. I have duly considered the proecipe and the evidence adduced before me.</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">10. Although the Defendant left default, this court has to ensure that any judgment</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">given by it is grounded both in law and on the facts. Vide Hurnam v Bholah &amp;</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">anor 2009 SCJ 265.</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">11. In essence, the case of the Plaintiff was that Defendant reported a false case</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">of swindling against him which led to his arrest and inability to travel, hence</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">causing him much prejudice. For such a claim to succeed, it is well established</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">that the Plaintiff must be able to prove that the declaration was false and that it</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">was made out of bad faith. In the case of Mohun v Jugnah &amp; Anor (2002) SCJ</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">36, the Supreme Court had this to say:-</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">“Where a citizen suffers loss as a result of what is glaringly a criminal</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">act it is clearly open to him to report the matter to the police for enquiry.</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">It is also logical that he should impart to the police any information on</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">the identity of the wrongdoer or suspected wrongdoer, depending</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">upon the situation; unless the declarant is of bad faith, and the</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">declaration is false and malicious, he stands no reason to fear any</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">legal action from any person he has named and who may have been</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">subjected to questioning by the Police. It is therefore essential, for his</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">action to succeed, that the person who may have been subjected to</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">unpleasant and perhaps strong questioning during a consequential</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">police enquiry avers and proves “faute” on the part of the declarant.”</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">12. A perusal of the proecipe shows that the Plaintiff never averred therein that the</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">declaration made by the Defendant was false and made in bad faith. The</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">proecipe therefore contains a “fatal deficiency” since the basis of tortious</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">liability, and hence a valid cause of action, is clearly absent. As was held in the</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">case of Mohun v Jugnah &amp; Anor (supra), “since bad faith whilst making the</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">declarations was not pleaded there was simply no cause of action against the</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">appellant. The Learned Magistrate should not have taken pains to extricate</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">from the evidence what was essential but missing in the plaint”.</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">4</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt"></span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt">13. I also wish to point out that pleading “faute lourde” cannot cure the above defect</span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">in the proecipe as “faute lourde” does not encompass the notion of bad faith. In</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">the case of Securiclean (Mauritius) Ltd (under administration) v The</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">District Council of Black River &amp; Anor (2022) SCJ 139, the Supreme Court</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt">held that “faute lourde”, bad faith and “abus de droit” are separate and distinct</span></span>
+<span class="line" id="L127"><span class="ln">127</span><span class="txt">notions. The relevant extract is as follows:-</span></span>
+<span class="line" id="L128"><span class="ln">128</span><span class="txt">“It can also be gathered from the following passage, which was cited</span></span>
+<span class="line" id="L129"><span class="ln">129</span><span class="txt">with approval by the Supreme Court in Souvenir Casting Ltd. &amp;Ors</span></span>
+<span class="line" id="L130"><span class="ln">130</span><span class="txt">v British Airways World Cargo [2008 SCJ 155] and which explains</span></span>
+<span class="line" id="L131"><span class="ln">131</span><span class="txt">the distinction between “faute lourde” and “dol”, that “faute lourde” and</span></span>
+<span class="line" id="L132"><span class="ln">132</span><span class="txt">“mauvaise foi” are mutually exclusive and that “faute lourde” is “non</span></span>
+<span class="line" id="L133"><span class="ln">133</span><span class="txt">intentionnelle” and does not involve any “mauvaise foi” –</span></span>
+<span class="line" id="L134"><span class="ln">134</span><span class="txt">“550. La considération de la faute lourde.</span></span>
+<span class="line" id="L135"><span class="ln">135</span><span class="txt">(1) La faute lourde s’oppose au dol parce qu’elle est non intentionnelle.</span></span>
+<span class="line" id="L136"><span class="ln">136</span><span class="txt">La distinction est rationnelle: le dol implique la mauvaise foi; la faute</span></span>
+<span class="line" id="L137"><span class="ln">137</span><span class="txt">lourde, si énorme soit-elle, n’implique aucune mauvaise foi.…….. Or</span></span>
+<span class="line" id="L138"><span class="ln">138</span><span class="txt">la faute lourde est une erreur, une négligence énorme, impardonnable,</span></span>
+<span class="line" id="L139"><span class="ln">139</span><span class="txt">mais son auteur n’avait ni l’intention de nuire, ni même la</span></span>
+<span class="line" id="L140"><span class="ln">140</span><span class="txt">connaissance du tort qui en résultera pour le créancier; il est encore</span></span>
+<span class="line" id="L141"><span class="ln">141</span><span class="txt">de bonne foi. Bonne foi et mauvaise foi, telle est la difference</span></span>
+<span class="line" id="L142"><span class="ln">142</span><span class="txt">fondamentale entre les deux notions …”(Underlining ours) (Droit Civil</span></span>
+<span class="line" id="L143"><span class="ln">143</span><span class="txt">Les Obligations 5e Edition by François Terré, Philippe Simler et</span></span>
+<span class="line" id="L144"><span class="ln">144</span><span class="txt">Yves Lequette at paragraph 550)</span></span>
+<span class="line" id="L145"><span class="ln">145</span><span class="txt">….</span></span>
+<span class="line" id="L146"><span class="ln">146</span><span class="txt">The submissions that bad faith is implicit in “faute lourde” and that the</span></span>
+<span class="line" id="L147"><span class="ln">147</span><span class="txt">averment of “faute lourde” in the plaint encompasses bad faith, are</span></span>
+<span class="line" id="L148"><span class="ln">148</span><span class="txt">untenable. In fact, although the “faute lourde” may be “une erreur, une</span></span>
+<span class="line" id="L149"><span class="ln">149</span><span class="txt">negligence énorme, impardonnable” it is distinct from what is meant</span></span>
+<span class="line" id="L150"><span class="ln">150</span><span class="txt">by bad faith which imports an intentional element.</span></span>
+<span class="line" id="L151"><span class="ln">151</span><span class="txt">5</span></span>
+<span class="line" id="L152"><span class="ln">152</span><span class="txt"></span></span>
+<span class="line" id="L153"><span class="ln">153</span><span class="txt">In the circumstances we do not agree with counsel that in the present</span></span>
+<span class="line" id="L154"><span class="ln">154</span><span class="txt">case bad faith can be inferred from the averment of “faute lourde”.”</span></span>
+<span class="line" id="L155"><span class="ln">155</span><span class="txt">14. In any event, the testimony of the Plaintiff as well as the documents produced</span></span>
+<span class="line" id="L156"><span class="ln">156</span><span class="txt">by him fell short of establishing that the declaration made by the Defendant was</span></span>
+<span class="line" id="L157"><span class="ln">157</span><span class="txt">false and malicious. The Plaintiff merely stated that the declaration was false</span></span>
+<span class="line" id="L158"><span class="ln">158</span><span class="txt">and that he never took money from the Defendant, without more. The fact that</span></span>
+<span class="line" id="L159"><span class="ln">159</span><span class="txt">the provisional plaint lodged against the Plaintiff was struck out and that no</span></span>
+<span class="line" id="L160"><span class="ln">160</span><span class="txt">prosecution has ensued so far do not amount to saying that the declaration of</span></span>
+<span class="line" id="L161"><span class="ln">161</span><span class="txt">the Defendant was false. The Plaintiff still had to satisfy the court of the falsity</span></span>
+<span class="line" id="L162"><span class="ln">162</span><span class="txt">of the declaration and the bad faith of the Defendant, which he failed to do.</span></span>
+<span class="line" id="L163"><span class="ln">163</span><span class="txt">15. In the light of all the above, I therefore find that the Plaintiff has failed to</span></span>
+<span class="line" id="L164"><span class="ln">164</span><span class="txt">establish, both in law and on facts, that the Defendant has committed a “faute”</span></span>
+<span class="line" id="L165"><span class="ln">165</span><span class="txt">towards the Plaintiff. I accordingly dismiss the proecipe.</span></span>
+<span class="line" id="L166"><span class="ln">166</span><span class="txt">31st July 2024</span></span>
+<span class="line" id="L167"><span class="ln">167</span><span class="txt">Y. NATHIRE BEEBEEJAUN</span></span>
+<span class="line" id="L168"><span class="ln">168</span><span class="txt">Magistrate</span></span>
+<span class="line" id="L169"><span class="ln">169</span><span class="txt">Intermediate Court</span></span>
+<span class="line" id="L170"><span class="ln">170</span><span class="txt">6</span></span>
+</pre></div><div class="pane pane-right" id="digest-pane"><section class="sec sec-header"><h1>A.R. Khodabocus v N. Damree</h1><table class="meta-table"><tr><th>Citation</th><td><code>2024 INT 180</code></td></tr><tr><th>Verbatim</th><td><code>2024 INT 180</code></td></tr><tr><th>Record</th><td>CN 821/2022</td></tr><tr><th>Court</th><td>Intermediate Court &mdash; Civil Division</td></tr><tr><th>Bench</th><td>single judge</td></tr><tr><th>Jurisdiction</th><td>Mauritius</td></tr><tr><th>Date</th><td>2024-07-31</td></tr><tr><th>Judgment by</th><td>Y. NATHIRE BEEBEEJAUN</td></tr><tr><th>Procedural posture</th><td>civil claim heard on the merits</td></tr><tr><th>Citation code</th><td><code>INT</code></td></tr></table></section><section class="sec"><h2>Bench</h2><ul><li><strong>Y. NATHIRE BEEBEEJAUN</strong>, Magistrate <span class='tag'>lead</span> <span class='tag tag-muted'>full agreement</span></li></ul><p class='muted'>Judgment delivered by: Y. NATHIRE BEEBEEJAUN</p></section><section class="sec"><h2>Parties</h2><ul><li><strong>plaintiff:</strong> Ally Reza Khodabocus</li><li><strong>defendant:</strong> Nasser Damree</li></ul></section><section class="sec"><h2>Catchwords</h2><ol class="catchwords"><li>Code Civil — Delictual liability — False accusation to police — Whether falsity and bad faith are essential elements to be pleaded</li><li>Code Civil — Faute lourde — Whether faute lourde encompasses bad faith</li><li>Code (Code de Procédure Civile) — Pleading — Essential elements of cause of action — Whether failure to allege essential elements constitutes fatal deficiency</li></ol></section><section class="sec"><h2>Headnote</h2><h3>Facts</h3><p>The plaintiff, a United Kingdom resident, visited Mauritius in April 2014 and was arrested following a police complaint filed by the defendant in 2012 alleging swindling. The plaintiff was provisionally charged, subjected to an objection to departure order, and required to retain counsel. The charge was later struck out. The plaintiff claims the defendant&#x27;s false accusation caused significant prejudice, disrupting his employment, family time, and reputation. The defendant, residing in England, was served outside jurisdiction and did not appear at trial.</p><h3>Held</h3><ol class='held'><li><p>For a claim based on a false accusation to police to succeed, the plaintiff must prove both that the accusation was false and that it was made in bad faith.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L97' data-start='97' data-end='111'>L97-L111</a> <span class='preview'>&mdash; causing him much prejudice. For such a claim to succeed, it is well established that the Plaintiff must be able to prove that the declaration was false and that it was made out of bad faith. In the case of Mohun v Jugnah &amp; Anor (2002) SCJ …</span></span><span class='pinpoint'><a class='lineref' href='#L154' data-start='154' data-end='163'>L154-L163</a> <span class='preview'>&mdash; case bad faith can be inferred from the averment of “faute lourde”.” 14. In any event, the testimony of the Plaintiff as well as the documents produced by him fell short of establishing that the declaration made by the Defendant was false …</span></span></div></li><li><p>Faute lourde and bad faith are separate and distinct concepts; faute lourde does not encompass the notion of bad faith.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L125' data-start='125' data-end='157'>L125-L157</a> <span class='preview'>&mdash; District Council of Black River &amp; Anor (2022) SCJ 139, the Supreme Court held that “faute lourde”, bad faith and “abus de droit” are separate and distinct notions. The relevant extract is as follows:- “It can also be gathered from the foll…</span></span></div></li><li><p>A fatal deficiency in the pleading exists when essential elements of a cause of action are not averred, and the court should not extract such missing elements from the evidence.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L112' data-start='112' data-end='119'>L112-L119</a> <span class='preview'>&mdash; 12. A perusal of the proecipe shows that the Plaintiff never averred therein that the declaration made by the Defendant was false and made in bad faith. The proecipe therefore contains a “fatal deficiency” since the basis of tortious liabi…</span></span></div></li></ol><h3>Disposition</h3><p>The plaintiff&#x27;s claim is dismissed.</p><h3>Quotable holding</h3><blockquote>Where falsity and bad faith are essential elements to establish tortious liability for a false accusation to police, these elements must be pleaded; faute lourde alone does not encompass the required element of bad faith and is insufficient.</blockquote></section><section class="sec"><h2>Cases cited</h2><table class="cases-table"><thead><tr><th>Citation</th><th>Name</th><th>Treatment</th><th>Signal</th><th>Review-worthy</th><th>Provenance</th><th>Line</th><th>Authority</th></tr></thead><tbody><tr><td><code>Hurnam v Bholah &amp; anor 2009 SCJ 265</code><br><span class='muted small'>norm: 2009 SCJ 265</span></td><td>Hurnam v Bholah &amp; anor</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L93' data-start='93' data-end='93'>L93</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;Although the Defendant left default, this court has to ensure that any judgment given by it is grounded both in law and on the facts. Vide Hurnam v Bholah &amp; anor 2009 SCJ 265.&rdquo;</td></tr><tr><td><code>Mohun v Jugnah &amp; Anor (2002) SCJ 36</code><br><span class='muted small'>norm: 2002 SCJ 36</span></td><td>Mohun v Jugnah &amp; Anor</td><td>applied</td><td><span class='badge sig-positive'>positive</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L99' data-start='99' data-end='99'>L99</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;It is therefore essential, for his action to succeed, that the person who may have been subjected to unpleasant and perhaps strong questioning during a consequential police enquiry avers and proves &quot;faute&quot; on the part of the declarant.&rdquo;</td></tr><tr><td><code>Securiclean (Mauritius) Ltd (under administration) v The District Council of Black River &amp; Anor (2022) SCJ 139</code><br><span class='muted small'>norm: 2022 SCJ 139</span></td><td>Securiclean (Mauritius) Ltd (under administration) v The District Council of Black River &amp; Anor</td><td>applied</td><td><span class='badge sig-positive'>positive</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L125' data-start='125' data-end='125'>L125</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;the Supreme Court held that &quot;faute lourde&quot;, bad faith and &quot;abus de droit&quot; are separate and distinct notions.&rdquo;</td></tr><tr><td><code>Souvenir Casting Ltd. &amp;Ors v British Airways World Cargo [2008 SCJ 155]</code><br><span class='muted small'>norm: 2008 SCJ 155</span></td><td>Souvenir Casting Ltd. &amp;Ors v British Airways World Cargo</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>nested</td><td><a class='lineref' href='#L130' data-start='130' data-end='130'>L130</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;which was cited with approval by the Supreme Court in Souvenir Casting Ltd. &amp;Ors v British Airways World Cargo [2008 SCJ 155]&rdquo;</td></tr></tbody></table></section><section class="sec"><h2>Legislation</h2><p class='muted'>None cited.</p></section><section class="sec"><h2>Foreign doctrinal sources</h2><ul><li><strong>Droit Civil Les Obligations</strong> &mdash; 5e Edition by François Terré, Philippe Simler et Yves Lequette, paragraph 550 (<a class='lineref' href='#L147' data-start='147' data-end='147'>L147</a>)</li></ul></section><section class="sec sec-debug"><h2>Document structure pointers</h2><ul><li>Header: <a class='lineref' href='#L1' data-start='1' data-end='11'>L1-L11</a></li><li>Judgment body: <a class='lineref' href='#L12' data-start='12' data-end='166'>L12-L166</a></li><li>Signatures: <a class='lineref' href='#L167' data-start='167' data-end='167'>L167</a></li><li>Date: <a class='lineref' href='#L166' data-start='166' data-end='166'>L166</a></li><li>Block quotes:<ul><li><a class='lineref' href='#L101' data-start='101' data-end='111'>L101-L111</a> (en) &mdash; <span class='muted small'>“Where a citizen suffers loss as a result of what is glaringly a criminal</span></li><li><a class='lineref' href='#L133' data-start='133' data-end='157'>L133-L157</a> &mdash; <span class='muted small'>intentionnelle” and does not involve any “mauvaise foi” –</span></li></ul></li></ul></section><section class="sec sec-debug"><h2>Extraction confidence (debug)</h2><ul><li>catchwords: <span class='tag'>high</span></li><li>cases_cited: <span class='tag'>high</span></li><li>procedural_posture: <span class='tag'>medium</span></li><li>headnote: <span class='tag'>high</span></li><li>court: <span class='tag'>high</span></li><li>legislation: <span class='tag'>high</span></li></ul><p><strong>Notes:</strong></p><ul><li>The signature block lists &#x27;Magistrate&#x27; as the judge&#x27;s title for an Intermediate Court judgment. In typical Mauritian judicial hierarchy, magistrates preside over lower-level courts, not the Intermediate Court, which usually has judges with titles such as &#x27;Judge&#x27; or &#x27;Justice&#x27;. This may reflect a specific Mauritian judicial nomenclature or could indicate a transcription anomaly in the source document.</li></ul></section><section class='sec sec-footer'><hr><p class='muted small'>extractor: extractor.v1.1 &middot; schema: v1</p></section></div></div><script>
+(function () {
+  function clearHl() {
+    document.querySelectorAll('.line.hl').forEach(function (el) { el.classList.remove('hl'); });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a.lineref');
+    if (!a) return;
+    e.preventDefault();
+    var start = parseInt(a.dataset.start, 10);
+    var end = parseInt(a.dataset.end || a.dataset.start, 10);
+    if (isNaN(start)) return;
+    clearHl();
+    var target = null;
+    for (var i = start; i <= end; i++) {
+      var el = document.getElementById('L' + i);
+      if (el) { el.classList.add('hl'); if (!target) target = el; }
+    }
+    if (target) {
+      target.scrollIntoView({ block: 'center' });
+      history.replaceState(null, '', '#L' + start);
+    }
+  });
+})();
+</script></body></html>

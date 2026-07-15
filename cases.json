@@ -46,5 +46,65 @@
     "prompt_version": "extractor.v1",
     "schema_version": "v1",
     "digested_date": "2026-07-05"
+  },
+  {
+    "slug": "2021_SCJ_17",
+    "title": "Savitree Bava Saib v The Competition Commission",
+    "citation": "2021 SCJ 17",
+    "judgment_txt": "_temporary/extraction/txts/2021 SCJ 17.pdf.txt",
+    "digest_raw": "m3/runs/2026-07-15-v11/out-2021_SCJ_17.json",
+    "digest_clean": "m3/runs/2026-07-15-v11/out-2021_SCJ_17.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v1.1",
+    "schema_version": "v1",
+    "digested_date": "2026-07-15"
+  },
+  {
+    "slug": "2022_SCJ_9",
+    "title": "AL-ABDULLA PETROLEUM CO LTD v THE STATE OF MAURITIUS & ANOR",
+    "citation": "2022 SCJ 9",
+    "judgment_txt": "_temporary/extraction/txts/2022 SCJ 9.pdf.txt",
+    "digest_raw": "m3/runs/2026-07-15-v11/out-2022_SCJ_9.json",
+    "digest_clean": "m3/runs/2026-07-15-v11/out-2022_SCJ_9.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v1.1",
+    "schema_version": "v1",
+    "digested_date": "2026-07-15"
+  },
+  {
+    "slug": "1953_MR_15",
+    "title": "THE QUEEN V. L. G. L'ETENDRY ALIAS LETENDRIE",
+    "citation": "1953 MR 15",
+    "judgment_txt": "_temporary/extraction/txts/1953 MR 15.pdf.txt",
+    "digest_raw": "m3/runs/2026-07-15-v11/out-1953_MR_15.json",
+    "digest_clean": "m3/runs/2026-07-15-v11/out-1953_MR_15.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v1.1",
+    "schema_version": "v1",
+    "digested_date": "2026-07-15"
+  },
+  {
+    "slug": "2024_INT_180",
+    "title": "A.R. Khodabocus v N. Damree",
+    "citation": "2024 INT 180",
+    "judgment_txt": "_temporary/extraction/txts/2024 INT 180.pdf.txt",
+    "digest_raw": "m3/runs/2026-07-15-v11/out-2024_INT_180.json",
+    "digest_clean": "m3/runs/2026-07-15-v11/out-2024_INT_180.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v1.1",
+    "schema_version": "v1",
+    "digested_date": "2026-07-15"
+  },
+  {
+    "slug": "2020_BRC_539",
+    "title": "S Marudai v Police",
+    "citation": "2020 BRC 539",
+    "judgment_txt": "_temporary/extraction/txts/2020 BRC 539.pdf.txt",
+    "digest_raw": "m3/runs/2026-07-15-v11/out-2020_BRC_539.json",
+    "digest_clean": "m3/runs/2026-07-15-v11/out-2020_BRC_539.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v1.1",
+    "schema_version": "v1",
+    "digested_date": "2026-07-15"
   }
 ]
