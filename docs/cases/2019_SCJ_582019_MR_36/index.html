@@ -1,0 +1,951 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>FOONDUN M.S. v. BANQUE DES MASCAREIGNES AND ANOR · 2019 SCJ 58; 2019 MR 36 · review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+    --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+  --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+a { color: var(--link); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 1.25rem 1.5rem 3rem; }
+header.site-header { background: var(--header-bg); border-bottom: 1px solid var(--border); }
+header.site-header .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+h1 { font-size: 1.4rem; margin: 0 0 .5rem; }
+.lede { color: var(--muted); max-width: 70ch; line-height: 1.5; margin: 0; }
+.disclaimer { margin-top: .75rem; padding: .6rem .9rem; background: var(--warn-bg); color: var(--warn-fg);
+  border-radius: 6px; font-size: .85rem; max-width: 70ch; line-height: 1.4; }
+table.cases { border-collapse: collapse; width: 100%; margin-top: 1.5rem; font-size: .9rem; }
+table.cases th, table.cases td { border-top: 1px solid var(--border); padding: .55rem .6rem; text-align: left; vertical-align: top; }
+table.cases thead th { border-top: none; border-bottom: 2px solid var(--border); color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .02em; }
+table.cases tbody tr:hover { background: var(--code-bg); }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .9em; }
+.muted { color: var(--muted); }
+.back-link { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
+.case-meta { display: flex; flex-wrap: wrap; gap: .4rem .9rem; font-size: .85rem; color: var(--muted); margin: .4rem 0 1rem; }
+.case-meta span strong { color: var(--fg); font-weight: 600; }
+.tabs { display: flex; gap: .25rem; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+.tab-btn { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; color: var(--muted);
+  padding: .55rem .9rem; font-size: .9rem; cursor: pointer; font-family: inherit; }
+.tab-btn:hover { color: var(--fg); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.tab-panel iframe { width: 100%; height: 82vh; border: 1px solid var(--border); border-radius: 6px; }
+pre.raw-json { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
+  overflow: auto; max-height: 82vh; font-family: Consolas, "Courier New", monospace; font-size: .8rem; line-height: 1.45; white-space: pre-wrap; word-break: break-word; }
+.pane-original { border: 1px solid var(--border); border-radius: 6px; max-height: 82vh; overflow: auto; }
+.pane-original .pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); }
+.pane-original pre.lines { margin: 0; padding: .25rem 0 1.5rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.pane-original .line { display: block; white-space: pre; padding: 0 .75rem; }
+.pane-original .line:hover { background: rgba(127,127,127,.08); }
+.pane-original .line.hl { background: #fff3a3; }
+.pane-original .ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+footer.site-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+</style></head><body>
+<header class="site-header"><div class="wrap">
+  <a class="back-link" href="../../index.html">&larr; All cases</a>
+  <h1>FOONDUN M.S. v. BANQUE DES MASCAREIGNES AND ANOR</h1>
+  <p class="lede"><code>2019 SCJ 58; 2019 MR 36</code></p>
+  <div class="case-meta"><span><strong>Digested:</strong> 2026-07-05</span><span><strong>Model:</strong> claude-haiku-4-5-20251001</span><span><strong>Prompt:</strong> extractor.v1</span><span><strong>Schema:</strong> v1</span></div>
+</div></header>
+<div class="wrap">
+  <div class="tabs">
+    <button class="tab-btn" id="tab-btn-original">Original judgment</button>
+    <button class="tab-btn" id="tab-btn-rendered">Digested judgment (rendered)</button>
+    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button>
+  </div>
+  <div class="tab-panel" id="tab-panel-original"><div class="pane-original" id="judgment-pane"><div class="pane-header">Judgment text &middot; 502 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">FOONDUN M.S. v. BANQUE DES MASCAREIGNES AND ANOR</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2019 SCJ 58</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">2019 MR 36</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">IN CHAMBERS</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">Record No. SC/COM/JICA/00647/2017</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">IN THE SUPREME COURT OF MAURITIUS</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">(COMMERCIAL DIVISION)</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">In the matter of:</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">M. S. Foondun</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">Applicant</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">v.</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">1. Banque des Mascareignes</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">2. Afrasia Bank Limited</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">Respondents</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">In the presence of:</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">Maik Construction Ltd</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">Co-Respondent</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">Judgment</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">This is an application under Section 64 of The Banking Act for the following orders –</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">“[A] ordering the respondents to communicate to the applicant certified</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">copies of the cheques issued by Maik Construction Ltd as mentioned in</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">paragraph 54 of the annexed affidavit with respect of dubious payments</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">made by the co-respondent;</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">[B] ordering and authorising the respondents to depose as to and produce</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">all such cheques disclosed in (A) above when called as witnesses in the</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">main case bearing reference SC/COM/PWS/01428/2015 which is</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">pending before the Commercial Division of the Supreme Court.”</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">In the affidavit in support of the application it is averred that on 30 March 2012, “S&amp;A</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">Construction Project Services Ltd”, a company owned by the applicant, signed an agreement</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">with “Maik Construction Ltd” (co-respondent). The agreement was in respect of the construction</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">of apartments for “East Coast Villas” at Poste La Fayette and it was agreed that the co-</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">respondent was to carry out construction works while the applicant’s company “S&amp;A</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">Construction Project Services Ltd” would provide Project Management and Quantity Surveying</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt"></span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">2</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">Services. Pursuant to the agreement all profits generated from the project were to be shared</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">equally between the parties.</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">Khaled Chedee one of the two directors of the co-respondent, kept all records for</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">payments received from East Coast Villas Ltd as well as payments effected to suppliers and</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">subcontractors and he was also responsible for the procurement of materials for the site.</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">Whilst the construction was ongoing, K. Chedee asked the applicant to contribute</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">towards the payment of subcontractors and suppliers as East Coast Villas was not effecting</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">payments on a regular basis. The applicant has averred that he has invested a sum of</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">Rs 3,476,928.68 in the project, only part of this sum has been refunded to him and the co-</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">respondent is still indebted to the applicant in a total of MUR 881,928.68.</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">The applicant made several requests to K. Chedee for communication of all information</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">regarding expenses made and payments received so as to enable him to finalise the amount of</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">profits generated by the project. The applicant also requested that he be communicated the</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">number of the cheques issued with respect to payments for which no invoice was available as</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">well as the amounts thereof and the names in which they were issued. K. Chedee did not</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">respond to these requests.</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">The applicant has averred that on the basis of information which he has obtained, i.e.</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">bank statements, costs recorded in the site payment books remitted by K. Chedee and</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">estimated costs of items purchased, he has calculated the total profit generated by the co-</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">respondent at MUR 22,613,008.58, out of which the applicant is entitled to half a share under</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">the terms of the agreement between the parties. There also remains an outstanding balance</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">due by East Coast Villas and insurance compensation in respect of materials stolen from the</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">site.</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">The applicant has averred that Khaled Chedee and Bahim Chedee, the directors of the</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">co-respondent have fraudulently misappropriated his share of profits in the construction project</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">and have defrauded him of a sum of MUR 11,306,549.29 which represents 50% of the profits</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">generated from the project (Annex 5 refers).</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">It is also averred that three attachments to an email sent by K. Chedee’s accountant</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">regarding payments made by the co-respondent for the period March 2012 to February 2014</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt"></span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">3</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">(Annexes 20, 21 and 22), reveal a number of dubious payments made by the directors notably</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">to K. Chedee and to persons having no connection with the project such as M. G. Pharma</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">(Pharmacy Ideal which has been acquired by the Chedee family). Other payments have been</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">effected by the co-respondent notably to Dharamdeo Balkissur a dealer in second hand cars</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">and to Kalim Chedee (Bahim Chedee’s son), A &amp; N Khoyrattee Co. Ltd, Axys Leasing, Creative</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">Siga Ltd, Fixon Ltd, Galeries Fokeerbux, LKLK Electrical and lighting, MCB Legal fees, Reeaz</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">Burkutoola, Rushmore Business School and SPR Consulting Services Ltd.</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">The applicant has averred that he needs the certified copies of the cheques by means of</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">which these payments were effected so as to give a declaration against the directors and to</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">proceed with the plaint with summons which he has lodged before the Supreme Court in</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">connection with this matter (CN SC/Com/PWS/01428/2015 refers).</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">The Law</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">The duty of confidentiality of a banker is sacrosanct and of vital importance for the</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">stability of the financial system and for public confidence in the banking sector.</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">The following extract gives an insight into this issue –</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">“Just as the English common law has laid down that there is an implied</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">term of confidentiality in the contractual relationship between a banker and his</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">customer, we find a similar approach in French law, by which we must be</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">governed in this matter.</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">Dans l&#x27;exercice de sa profession, le banquier recueille de multiples</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">renseignements sur les affaires de ses clients ou de tiers et parfois même</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">il a connaissance de faits personnels ou familiaux. Il est unanimement</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">admis que le banquier est tenu d&#x27;un devoir de discrétion sanctionné par</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">une responsabilité civile. (Droit de la Banque, Cavaldaet Stouffiet, at p</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">393).</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">But that is not all and reference must be made to section 300 of the</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">Criminal Code which reads as follows -</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt"></span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">4</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">Les médecins, chirurgiens, ainsi que les pharmaciens, les sages-femmes</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">et toutes autres personnes dépositaires, par état ou professions des</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">secrets qu&#x27;on leur confie, qui, hors le cas où la loi les oblige à se porter</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">dénonciateurs, auront révélé ces secrets seront punis . . .</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">It is generally agreed that a banker is one of those &quot;autres personnes</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">dépositaires ... des secrets&quot; (See op cit at page 397). Of course while doctors,</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">priests and lawyers stand in a separate category, the authors are agreed that</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">bankers, for example, are more liable to be compelled to reveal the secrets they</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">hold when the public interest, and particularly the detection of crime, so require.”</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">(Director of Public Prosecutions v. Indian Ocean International Bank [1987</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">MR 21])</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">Legislation has since intervened by dealing expressly with the situation where in the</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">public interest and the detection of crime, the disclosure of information held by a bank, is</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">required. Any such information may only be obtained by court order and in compliance with the</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">stringent conditions laid down in “The Banking Act” (“The Act”).</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">Section 64 of The Act starts first by imposing a strict duty of confidentiality and non-</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">disclosure of any information relating to the affairs of any of the banks’ customers.</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">Section 64(2) provides the following in that connection:</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">“64. Confidentiality</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">(2) Except for the purpose of the performance of his duties or the exercise</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">of his functions under the banking laws or as directed in writing by the</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">central bank, no person referred to in subsection (1) shall, during or after</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">his relationship with the financial institution, disclose directly or indirectly</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">to any person any information relating to the affairs of any of its</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">customers including any deposits, borrowings or transactions or other</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">personal, financial or business affairs, without the prior written consent of</span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt">the customer or his personal representative.”</span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">Furthermore to reinforce the implementation of that duty of confidentiality, Section 64(1)</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">creates an obligation for officers of a financial institution including a bank to take an oath of</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">confidentiality –</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt"></span></span>
+<span class="line" id="L127"><span class="ln">127</span><span class="txt">5</span></span>
+<span class="line" id="L128"><span class="ln">128</span><span class="txt">“64. Confidentiality</span></span>
+<span class="line" id="L129"><span class="ln">129</span><span class="txt">(1) (a) Subject to this Act, every person, including a service provider who</span></span>
+<span class="line" id="L130"><span class="ln">130</span><span class="txt">by virtue of his professional relationship with a financial institution, has</span></span>
+<span class="line" id="L131"><span class="ln">131</span><span class="txt">access to the books, accounts, records, financial statements or other</span></span>
+<span class="line" id="L132"><span class="ln">132</span><span class="txt">documents, whether electronically or otherwise, of a financial institution</span></span>
+<span class="line" id="L133"><span class="ln">133</span><span class="txt">shall –</span></span>
+<span class="line" id="L134"><span class="ln">134</span><span class="txt">(i) in the case of a director or senior officer, take an oath of</span></span>
+<span class="line" id="L135"><span class="ln">135</span><span class="txt">confidentiality in the form set out in the First Schedule;</span></span>
+<span class="line" id="L136"><span class="ln">136</span><span class="txt">(ii) in the case of a director or service provider who is a non-</span></span>
+<span class="line" id="L137"><span class="ln">137</span><span class="txt">resident, take an oath of confidentiality before the</span></span>
+<span class="line" id="L138"><span class="ln">138</span><span class="txt">competent court or authority in the country of residence of</span></span>
+<span class="line" id="L139"><span class="ln">139</span><span class="txt">the director or service provider, in such form as the central</span></span>
+<span class="line" id="L140"><span class="ln">140</span><span class="txt">bank may approve; or</span></span>
+<span class="line" id="L141"><span class="ln">141</span><span class="txt">(iii) in any other case, make a declaration of confidentiality</span></span>
+<span class="line" id="L142"><span class="ln">142</span><span class="txt">before the chief executive officer or deputy chief executive</span></span>
+<span class="line" id="L143"><span class="ln">143</span><span class="txt">officer of the financial institution in the form set out in the</span></span>
+<span class="line" id="L144"><span class="ln">144</span><span class="txt">Second Schedule,</span></span>
+<span class="line" id="L145"><span class="ln">145</span><span class="txt">before he begins to perform any duties under the banking laws.”</span></span>
+<span class="line" id="L146"><span class="ln">146</span><span class="txt">Section 64(16) goes on to provide that Section 64 of The Act shall in the event of any</span></span>
+<span class="line" id="L147"><span class="ln">147</span><span class="txt">conflict or inconsistency with any other Act prevail over any such enactment, subject to some</span></span>
+<span class="line" id="L148"><span class="ln">148</span><span class="txt">statutory exceptions –</span></span>
+<span class="line" id="L149"><span class="ln">149</span><span class="txt">“64. Confidentiality</span></span>
+<span class="line" id="L150"><span class="ln">150</span><span class="txt">(16) In the event of any conflict or inconsistency between any provision</span></span>
+<span class="line" id="L151"><span class="ln">151</span><span class="txt">of this section and the provisions of any other enactment, other than the</span></span>
+<span class="line" id="L152"><span class="ln">152</span><span class="txt">Bank of Mauritius Act 2004, section 11(5)(a) of the Commissions of</span></span>
+<span class="line" id="L153"><span class="ln">153</span><span class="txt">Inquiry Act, the Financial Intelligence and Anti-money Laundering Act</span></span>
+<span class="line" id="L154"><span class="ln">154</span><span class="txt">2002 and sections 123, 123D and 124 of the Income Tax Act and the</span></span>
+<span class="line" id="L155"><span class="ln">155</span><span class="txt">Mutual Assistance in Criminal and Related Matters Act 2003, the</span></span>
+<span class="line" id="L156"><span class="ln">156</span><span class="txt">provisions of this section shall prevail.”</span></span>
+<span class="line" id="L157"><span class="ln">157</span><span class="txt">A contravention of Section 64 constitutes an offence which is punishable by severe</span></span>
+<span class="line" id="L158"><span class="ln">158</span><span class="txt">penalties including a fine not exceeding Rs 1M and a term of imprisonment not exceeding five</span></span>
+<span class="line" id="L159"><span class="ln">159</span><span class="txt">years [vide Section 97(20)].</span></span>
+<span class="line" id="L160"><span class="ln">160</span><span class="txt"></span></span>
+<span class="line" id="L161"><span class="ln">161</span><span class="txt">6</span></span>
+<span class="line" id="L162"><span class="ln">162</span><span class="txt">The above provisions of the law have highlighted the strict nature of a bank’s obligation</span></span>
+<span class="line" id="L163"><span class="ln">163</span><span class="txt">not to disclose information pertaining to its customers’ affairs. This can only be done in</span></span>
+<span class="line" id="L164"><span class="ln">164</span><span class="txt">situations which fall within the purview of statutory exceptions and subject to the fulfillment of all</span></span>
+<span class="line" id="L165"><span class="ln">165</span><span class="txt">the statutory conditions.</span></span>
+<span class="line" id="L166"><span class="ln">166</span><span class="txt">It is apposite to consider the circumstances in which a bank is entitled to disclose</span></span>
+<span class="line" id="L167"><span class="ln">167</span><span class="txt">information relating to its customers’ affairs.</span></span>
+<span class="line" id="L168"><span class="ln">168</span><span class="txt">We need first to consider two provisions in “The Banking Act” i.e. Section 60(3) and</span></span>
+<span class="line" id="L169"><span class="ln">169</span><span class="txt">Section 64(10) of The Act.</span></span>
+<span class="line" id="L170"><span class="ln">170</span><span class="txt">Section 60(3) deals with entries in a banker’s book. It provides that –</span></span>
+<span class="line" id="L171"><span class="ln">171</span><span class="txt">“A Judge in Chambers or any court may, on the application of any party</span></span>
+<span class="line" id="L172"><span class="ln">172</span><span class="txt">to legal proceedings, order that such party be permitted to obtain copies</span></span>
+<span class="line" id="L173"><span class="ln">173</span><span class="txt">of any entry in a banker&#x27;s book where such entry is material to the</span></span>
+<span class="line" id="L174"><span class="ln">174</span><span class="txt">proceedings.” (Emphasis added)</span></span>
+<span class="line" id="L175"><span class="ln">175</span><span class="txt">Section 60(5) gives the following definition of “banker’s books”:</span></span>
+<span class="line" id="L176"><span class="ln">176</span><span class="txt">“For the purposes of this section, &quot;banker&#x27;s books&quot; includes ledgers, day</span></span>
+<span class="line" id="L177"><span class="ln">177</span><span class="txt">books, cash books, account books, records, financial statements or other</span></span>
+<span class="line" id="L178"><span class="ln">178</span><span class="txt">documents used in the ordinary course of business of a bank, whether all</span></span>
+<span class="line" id="L179"><span class="ln">179</span><span class="txt">these are in written form or are kept on microfilm, magnetic tape, or any</span></span>
+<span class="line" id="L180"><span class="ln">180</span><span class="txt">other form of mechanical or electronic data retrieval mechanism.”</span></span>
+<span class="line" id="L181"><span class="ln">181</span><span class="txt">The next provision in The Banking Act is Section 64(10) under which the Judge in</span></span>
+<span class="line" id="L182"><span class="ln">182</span><span class="txt">Chambers may make an order of disclosure. The section provides that:</span></span>
+<span class="line" id="L183"><span class="ln">183</span><span class="txt">64(10) “The Judge in Chambers shall not make an order of disclosure unless he is</span></span>
+<span class="line" id="L184"><span class="ln">184</span><span class="txt">satisfied that –</span></span>
+<span class="line" id="L185"><span class="ln">185</span><span class="txt">(a) the applicant is acting in the discharge of his or its duties;</span></span>
+<span class="line" id="L186"><span class="ln">186</span><span class="txt">(b) the information is material to any civil or criminal proceedings,</span></span>
+<span class="line" id="L187"><span class="ln">187</span><span class="txt">whether pending or contemplated or is required for the purpose of any</span></span>
+<span class="line" id="L188"><span class="ln">188</span><span class="txt">enquiry into or relating to the trafficking of narcotics and dangerous drugs,</span></span>
+<span class="line" id="L189"><span class="ln">189</span><span class="txt"></span></span>
+<span class="line" id="L190"><span class="ln">190</span><span class="txt">7</span></span>
+<span class="line" id="L191"><span class="ln">191</span><span class="txt">arms trafficking, offences related to terrorism under the Prevention of</span></span>
+<span class="line" id="L192"><span class="ln">192</span><span class="txt">Terrorism Act 2002 or money laundering under the Financial Intelligence</span></span>
+<span class="line" id="L193"><span class="ln">193</span><span class="txt">and Anti-Money Laundering Act 2002; or (Emphasis added)</span></span>
+<span class="line" id="L194"><span class="ln">194</span><span class="txt">(c) the disclosure is otherwise necessary, in all the circumstances.”</span></span>
+<span class="line" id="L195"><span class="ln">195</span><span class="txt">Section 64(9) which immediately precedes Section 64(10) provides a list of persons who</span></span>
+<span class="line" id="L196"><span class="ln">196</span><span class="txt">are entitled to apply to a Judge in Chambers for an order of disclosure in such a case –</span></span>
+<span class="line" id="L197"><span class="ln">197</span><span class="txt">64(9) “The Director-General under the Prevention of Corruption Act 2002,</span></span>
+<span class="line" id="L198"><span class="ln">198</span><span class="txt">the Chief Executive of the Financial Services Commission established</span></span>
+<span class="line" id="L199"><span class="ln">199</span><span class="txt">under the Financial Services Act 2007, the Commissioner of Police, the</span></span>
+<span class="line" id="L200"><span class="ln">200</span><span class="txt">Director-General of the Mauritius Revenue Authority established under</span></span>
+<span class="line" id="L201"><span class="ln">201</span><span class="txt">the Mauritius Revenue Authority Act 2004 the Enforcement Authority</span></span>
+<span class="line" id="L202"><span class="ln">202</span><span class="txt">under the Asset Recovery Act 2011, or any other competent authority in</span></span>
+<span class="line" id="L203"><span class="ln">203</span><span class="txt">Mauritius or outside Mauritius who requires any information from a</span></span>
+<span class="line" id="L204"><span class="ln">204</span><span class="txt">financial institution relating to the transactions and accounts of any</span></span>
+<span class="line" id="L205"><span class="ln">205</span><span class="txt">person, may apply to a Judge in Chambers for an order of disclosure of</span></span>
+<span class="line" id="L206"><span class="ln">206</span><span class="txt">such transactions and accounts or such part thereof as may be</span></span>
+<span class="line" id="L207"><span class="ln">207</span><span class="txt">necessary.”</span></span>
+<span class="line" id="L208"><span class="ln">208</span><span class="txt">Turning to the present case, in the heading of the application it is stated that the</span></span>
+<span class="line" id="L209"><span class="ln">209</span><span class="txt">application is made on the basis of Section 64 of The Banking Act.</span></span>
+<span class="line" id="L210"><span class="ln">210</span><span class="txt">However in his address, counsel for the applicant has also invoked the principles laid</span></span>
+<span class="line" id="L211"><span class="ln">211</span><span class="txt">down in the case of Norwich Pharmacal Co. and Others v. Customs and Excise</span></span>
+<span class="line" id="L212"><span class="ln">212</span><span class="txt">Commissioners [1973] 3 W.L.R. 164. According to counsel all the conditions necessary to</span></span>
+<span class="line" id="L213"><span class="ln">213</span><span class="txt">obtain the Norwich Pharmacal Relief, are present here. The applicant requires the cheques</span></span>
+<span class="line" id="L214"><span class="ln">214</span><span class="txt">which are in the possession of the respondents so as to bring legal proceedings against those</span></span>
+<span class="line" id="L215"><span class="ln">215</span><span class="txt">persons who are suspected of having carried out fraudulent transactions to the detriment of the</span></span>
+<span class="line" id="L216"><span class="ln">216</span><span class="txt">applicant. Counsel added that a flexible approach is required with respect to the disclosure of</span></span>
+<span class="line" id="L217"><span class="ln">217</span><span class="txt">information which is in the possession of third parties so as to ensure that justice is done.</span></span>
+<span class="line" id="L218"><span class="ln">218</span><span class="txt">The respondents will abide by my decision whereas the co-respondent is objecting to the</span></span>
+<span class="line" id="L219"><span class="ln">219</span><span class="txt">application.</span></span>
+<span class="line" id="L220"><span class="ln">220</span><span class="txt">Counsel for the co-respondent has submitted that the prayer for disclosure of the</span></span>
+<span class="line" id="L221"><span class="ln">221</span><span class="txt">cheques will not serve any useful purpose inasmuch as the applicant has all the relevant</span></span>
+<span class="line" id="L222"><span class="ln">222</span><span class="txt">information in his possession and has the evidence required to conduct his case. He pointed out</span></span>
+<span class="line" id="L223"><span class="ln">223</span><span class="txt"></span></span>
+<span class="line" id="L224"><span class="ln">224</span><span class="txt">8</span></span>
+<span class="line" id="L225"><span class="ln">225</span><span class="txt">that the applicant has in his application referred to the cheques in question and has averred the</span></span>
+<span class="line" id="L226"><span class="ln">226</span><span class="txt">precise details regarding the cheque number, the date, the amount as well as the recipients. As</span></span>
+<span class="line" id="L227"><span class="ln">227</span><span class="txt">such counsel concluded that the order prayed for, is unwarranted.</span></span>
+<span class="line" id="L228"><span class="ln">228</span><span class="txt">Counsel has further added that the legal test for disclosure under Section 64 is not met</span></span>
+<span class="line" id="L229"><span class="ln">229</span><span class="txt">in the present case. He submitted that –</span></span>
+<span class="line" id="L230"><span class="ln">230</span><span class="txt">“Applying a disjunctive reading of the 3 limbs of s. 64(10), there are only</span></span>
+<span class="line" id="L231"><span class="ln">231</span><span class="txt">two possibilities which presently apply for the Judge in Chambers to grant</span></span>
+<span class="line" id="L232"><span class="ln">232</span><span class="txt">the disclosure:</span></span>
+<span class="line" id="L233"><span class="ln">233</span><span class="txt">[i] If, as per s. 64(10)(b), “the information is material to any civil or criminal</span></span>
+<span class="line" id="L234"><span class="ln">234</span><span class="txt">proceedings, whether pending or contemplated”; or</span></span>
+<span class="line" id="L235"><span class="ln">235</span><span class="txt">[ii] If, as per s. 64(10)(c), the disclosure is “otherwise necessary, in all the</span></span>
+<span class="line" id="L236"><span class="ln">236</span><span class="txt">circumstances”</span></span>
+<span class="line" id="L237"><span class="ln">237</span><span class="txt">I do not agree with the above arguments regarding the application of Section 64(10). In</span></span>
+<span class="line" id="L238"><span class="ln">238</span><span class="txt">my view Section 64(10) of The Act which has been invoked in support of this application, cannot</span></span>
+<span class="line" id="L239"><span class="ln">239</span><span class="txt">be read in isolation, it has to be read contextually within Section 64.</span></span>
+<span class="line" id="L240"><span class="ln">240</span><span class="txt">Section 64 is a comprehensive piece of legislation designed by virtue of its structure and</span></span>
+<span class="line" id="L241"><span class="ln">241</span><span class="txt">a scheme, to deal holistically with the issue of confidentiality. The section sets out in detail the</span></span>
+<span class="line" id="L242"><span class="ln">242</span><span class="txt">limited circumstances and the conditions subject to which, there may be a disclosure of any</span></span>
+<span class="line" id="L243"><span class="ln">243</span><span class="txt">information relating to the affairs of a bank customer.</span></span>
+<span class="line" id="L244"><span class="ln">244</span><span class="txt">The persons who are empowered to make an application to the Judge in Chambers for</span></span>
+<span class="line" id="L245"><span class="ln">245</span><span class="txt">an order of disclosure under Section 64, are listed in Section 64(9) which immediately precedes</span></span>
+<span class="line" id="L246"><span class="ln">246</span><span class="txt">Section 64(10). Section 64(10) goes on to provide the conditions which must be satisfied before</span></span>
+<span class="line" id="L247"><span class="ln">247</span><span class="txt">the Judge in Chambers can make an order of disclosure pursuant to Section 64.</span></span>
+<span class="line" id="L248"><span class="ln">248</span><span class="txt">The Judge in Chambers may therefore issue an order for disclosure pursuant to Section</span></span>
+<span class="line" id="L249"><span class="ln">249</span><span class="txt">64(10) where the Judge is satisfied that the applicant is acting in his or its duties and the</span></span>
+<span class="line" id="L250"><span class="ln">250</span><span class="txt">conditions set out under either Section 64(10)(b) or Section 64(10)(c), are satisfied and then</span></span>
+<span class="line" id="L251"><span class="ln">251</span><span class="txt">only, upon an application by an “applicant” who must be one of the designated authorities listed</span></span>
+<span class="line" id="L252"><span class="ln">252</span><span class="txt">in Section 64(9). This is made explicit by the use of the word or which has been inserted only in</span></span>
+<span class="line" id="L253"><span class="ln">253</span><span class="txt">between (b) and (c).</span></span>
+<span class="line" id="L254"><span class="ln">254</span><span class="txt"></span></span>
+<span class="line" id="L255"><span class="ln">255</span><span class="txt">9</span></span>
+<span class="line" id="L256"><span class="ln">256</span><span class="txt">The applicant clearly does not fulfill the criteria laid down under Section 64(9) and</span></span>
+<span class="line" id="L257"><span class="ln">257</span><span class="txt">Section 64(10) of The Act.</span></span>
+<span class="line" id="L258"><span class="ln">258</span><span class="txt">Indeed the relevance and application of Section 64(10) in the present circumstances,</span></span>
+<span class="line" id="L259"><span class="ln">259</span><span class="txt">has already been pronounced upon by the Court of Civil Appeal, in connection with a previous</span></span>
+<span class="line" id="L260"><span class="ln">260</span><span class="txt">application lodged by the applicant himself by way of motion before the Bankruptcy Division, in</span></span>
+<span class="line" id="L261"><span class="ln">261</span><span class="txt">respect of the very same matter and involving the very same issue i.e. the communication of</span></span>
+<span class="line" id="L262"><span class="ln">262</span><span class="txt">cheques regarding alleged dubious payments made by the co-respondent. The relevant</span></span>
+<span class="line" id="L263"><span class="ln">263</span><span class="txt">provisions of law then invoked in support of the motion before the court were “Section 60(3) or</span></span>
+<span class="line" id="L264"><span class="ln">264</span><span class="txt">alternatively, Section 64(10)(b) or (10)(c) of The Banking Act”.</span></span>
+<span class="line" id="L265"><span class="ln">265</span><span class="txt">I had set aside the application on the ground that it was misconceived and could not be</span></span>
+<span class="line" id="L266"><span class="ln">266</span><span class="txt">favourably entertained. The grounds on which I had set aside the application, are reproduced</span></span>
+<span class="line" id="L267"><span class="ln">267</span><span class="txt">below:</span></span>
+<span class="line" id="L268"><span class="ln">268</span><span class="txt">(i) Applicants are not parties to “legal proceedings” as contemplated</span></span>
+<span class="line" id="L269"><span class="ln">269</span><span class="txt">by Section 60(3) of The Act;</span></span>
+<span class="line" id="L270"><span class="ln">270</span><span class="txt">(ii) The application concerns cheques and does not relate to any</span></span>
+<span class="line" id="L271"><span class="ln">271</span><span class="txt">“entry” in a “banker’s book” within the meaning of Section 60(3);</span></span>
+<span class="line" id="L272"><span class="ln">272</span><span class="txt">(iii) The application does not fall within the ambit of Section 64(10)</span></span>
+<span class="line" id="L273"><span class="ln">273</span><span class="txt">since the applicants are not among the persons or authorities who</span></span>
+<span class="line" id="L274"><span class="ln">274</span><span class="txt">are entitled to make an application for an order of disclosure albeit</span></span>
+<span class="line" id="L275"><span class="ln">275</span><span class="txt">to the Judge in Chambers under Section 64(10)</span></span>
+<span class="line" id="L276"><span class="ln">276</span><span class="txt">The Appellate Court did not disturb the decision and maintained the judgment so that the</span></span>
+<span class="line" id="L277"><span class="ln">277</span><span class="txt">issue regarding the application of Section 64(10) in the present circumstances, is not only</span></span>
+<span class="line" id="L278"><span class="ln">278</span><span class="txt">misconceived and erroneous in principle, but it is also a matter which is “res judicata”. Section</span></span>
+<span class="line" id="L279"><span class="ln">279</span><span class="txt">64(10) is accordingly of no avail to the applicant.</span></span>
+<span class="line" id="L280"><span class="ln">280</span><span class="txt">Finally I will deal with the submission of counsel for the applicant regarding the principles</span></span>
+<span class="line" id="L281"><span class="ln">281</span><span class="txt">relating to discovery laid down in the English case of Norwich Pharmacal (supra) and which</span></span>
+<span class="line" id="L282"><span class="ln">282</span><span class="txt">have been applied in England in certain applications for disclosure of information from banking</span></span>
+<span class="line" id="L283"><span class="ln">283</span><span class="txt">institutions.</span></span>
+<span class="line" id="L284"><span class="ln">284</span><span class="txt"></span></span>
+<span class="line" id="L285"><span class="ln">285</span><span class="txt">10</span></span>
+<span class="line" id="L286"><span class="ln">286</span><span class="txt">It is first useful to refer to the principles established under the common law with respect</span></span>
+<span class="line" id="L287"><span class="ln">287</span><span class="txt">to matters relating to the bank/customer relationship. It has been held by the Court of Appeal in</span></span>
+<span class="line" id="L288"><span class="ln">288</span><span class="txt">the case of Tournier v. National Provincial and Union Bank of England [1924] 1 K.B. 461,</span></span>
+<span class="line" id="L289"><span class="ln">289</span><span class="txt">that a duty of confidentiality was to be implied into the contract between banker and customer</span></span>
+<span class="line" id="L290"><span class="ln">290</span><span class="txt">and that such duty extends beyond the termination of the relationship between them.</span></span>
+<span class="line" id="L291"><span class="ln">291</span><span class="txt">However the duty is not absolute and is subject to the following qualifications:</span></span>
+<span class="line" id="L292"><span class="ln">292</span><span class="txt">(a) where disclosure is under compulsion by law;</span></span>
+<span class="line" id="L293"><span class="ln">293</span><span class="txt">(b) where there is a duty to the public to disclose;</span></span>
+<span class="line" id="L294"><span class="ln">294</span><span class="txt">(c) where the interests of the bank require disclosure; and</span></span>
+<span class="line" id="L295"><span class="ln">295</span><span class="txt">(d) where the customer impliedly or expressly consents to disclosure.</span></span>
+<span class="line" id="L296"><span class="ln">296</span><span class="txt">(Tournier (supra) per Bankes LJ at page 473)</span></span>
+<span class="line" id="L297"><span class="ln">297</span><span class="txt">The law has since evolved and a disclosure order may be obtained at common law</span></span>
+<span class="line" id="L298"><span class="ln">298</span><span class="txt">under the principles set out in the case of Norwich Pharmacal (supra). The tenor and purport</span></span>
+<span class="line" id="L299"><span class="ln">299</span><span class="txt">of the Norwich Pharmacal order, is explained in the following extract –</span></span>
+<span class="line" id="L300"><span class="ln">300</span><span class="txt">A Norwich Pharmacal order may require a person, such as a bank, to</span></span>
+<span class="line" id="L301"><span class="ln">301</span><span class="txt">disclose information to a third party in particular circumstances, equating</span></span>
+<span class="line" id="L302"><span class="ln">302</span><span class="txt">broadly to the “interest of justice”.</span></span>
+<span class="line" id="L303"><span class="ln">303</span><span class="txt">Such an order for disclosure by a bank may be made when the bank has</span></span>
+<span class="line" id="L304"><span class="ln">304</span><span class="txt">innocently become involved in the wrongful acts of another and</span></span>
+<span class="line" id="L305"><span class="ln">305</span><span class="txt">information is urgently required by the victim of the wrongful act (and use</span></span>
+<span class="line" id="L306"><span class="ln">306</span><span class="txt">of a witness summons will not provide sufficient or adequate relief and</span></span>
+<span class="line" id="L307"><span class="ln">307</span><span class="txt">assistance).”</span></span>
+<span class="line" id="L308"><span class="ln">308</span><span class="txt">(Banking Litigation, Fourth Edition (2017), by Charles Hewetson and</span></span>
+<span class="line" id="L309"><span class="ln">309</span><span class="txt">Gregory Mitshell QC - Sweet &amp; Maxwell at page 335)</span></span>
+<span class="line" id="L310"><span class="ln">310</span><span class="txt">The court in Norwich Pharmacal (supra) set out guidelines for the exercise of a</span></span>
+<span class="line" id="L311"><span class="ln">311</span><span class="txt">Judge’s discretion to allow discovery of information in the course of civil proceedings and</span></span>
+<span class="line" id="L312"><span class="ln">312</span><span class="txt">prescribed the conditions necessary for the issue of such an order.</span></span>
+<span class="line" id="L313"><span class="ln">313</span><span class="txt">The three conditions to be satisfied for the court to exercise the power to order Norwich</span></span>
+<span class="line" id="L314"><span class="ln">314</span><span class="txt">Pharmacal relief are as follows:</span></span>
+<span class="line" id="L315"><span class="ln">315</span><span class="txt">(i) a wrong must have been carried out, or arguably carried out, by</span></span>
+<span class="line" id="L316"><span class="ln">316</span><span class="txt">an ultimate wrongdoer;</span></span>
+<span class="line" id="L317"><span class="ln">317</span><span class="txt"></span></span>
+<span class="line" id="L318"><span class="ln">318</span><span class="txt">11</span></span>
+<span class="line" id="L319"><span class="ln">319</span><span class="txt">The standard of proof is that of a good arguable case as in freezing injunction cases:</span></span>
+<span class="line" id="L320"><span class="ln">320</span><span class="txt">see Ramilos Trading Limited v. Buyanovsky [2016] EWHC 3175 at [27]. In Norwich</span></span>
+<span class="line" id="L321"><span class="ln">321</span><span class="txt">Pharmacal itself the wrong was a tort. However, any type of wrong may be sufficient,</span></span>
+<span class="line" id="L322"><span class="ln">322</span><span class="txt">including breach of trust or other equitable wrong and fraudulent payments: see</span></span>
+<span class="line" id="L323"><span class="ln">323</span><span class="txt">Matthews and Malek, Disclosure (5th edn) at para 3.05</span></span>
+<span class="line" id="L324"><span class="ln">324</span><span class="txt">(ii) there must be the need for an order to enable action to be brought</span></span>
+<span class="line" id="L325"><span class="ln">325</span><span class="txt">against the ultimate wrongdoer;</span></span>
+<span class="line" id="L326"><span class="ln">326</span><span class="txt">Ramilos at [24]:</span></span>
+<span class="line" id="L327"><span class="ln">327</span><span class="txt">The second condition for relief is that the disclosure sought must be necessary in order</span></span>
+<span class="line" id="L328"><span class="ln">328</span><span class="txt">to enable the applicant to bring legal proceedings or seek other legitimate redress for the</span></span>
+<span class="line" id="L329"><span class="ln">329</span><span class="txt">wrongdoing and in considering the question of necessity, the cases emphasise the need</span></span>
+<span class="line" id="L330"><span class="ln">330</span><span class="txt">for flexibility and discretion. …</span></span>
+<span class="line" id="L331"><span class="ln">331</span><span class="txt">(iii) the person against whom the order is sought must: (a) be mixed</span></span>
+<span class="line" id="L332"><span class="ln">332</span><span class="txt">up in so to have facilitated the wrongdoing; and (b) be able or</span></span>
+<span class="line" id="L333"><span class="ln">333</span><span class="txt">likely to be able to provide the information necessary to enable the</span></span>
+<span class="line" id="L334"><span class="ln">334</span><span class="txt">ultimate wrongdoer to be sued.</span></span>
+<span class="line" id="L335"><span class="ln">335</span><span class="txt">Finally, even if the three threshold requirements are satisfied, the court has a</span></span>
+<span class="line" id="L336"><span class="ln">336</span><span class="txt">discretion as to whether to make the order …”</span></span>
+<span class="line" id="L337"><span class="ln">337</span><span class="txt">[Miles Smith Broking Limited v Barclays Bank Plc [2017] EWHC 3338 (Ch)]</span></span>
+<span class="line" id="L338"><span class="ln">338</span><span class="txt">It is also useful to refer to the comments made by Lord Bingham In the case of</span></span>
+<span class="line" id="L339"><span class="ln">339</span><span class="txt">President of the State of Equatorial Guinea v Royal Bank of Scotland International,</span></span>
+<span class="line" id="L340"><span class="ln">340</span><span class="txt">Equatorial Guinea v Royal Bank of Scotland International [2006] UKPC 7 to the effect that</span></span>
+<span class="line" id="L341"><span class="ln">341</span><span class="txt">where the applicant has “no straightforward or available, or any, means of finding out, Norwich</span></span>
+<span class="line" id="L342"><span class="ln">342</span><span class="txt">Pharmacal relief is in principle available if the other conditions of obtaining relief are met”. Lord</span></span>
+<span class="line" id="L343"><span class="ln">343</span><span class="txt">Bingham further went on to state that:</span></span>
+<span class="line" id="L344"><span class="ln">344</span><span class="txt">“whether it is said that it must be just and convenient in the interests of</span></span>
+<span class="line" id="L345"><span class="ln">345</span><span class="txt">justice to grant relief, or that relief should only be granted if it is necessary</span></span>
+<span class="line" id="L346"><span class="ln">346</span><span class="txt">in the interests of justice to grant it, makes little or no difference of</span></span>
+<span class="line" id="L347"><span class="ln">347</span><span class="txt">substance” …”</span></span>
+<span class="line" id="L348"><span class="ln">348</span><span class="txt">(Banking Litigation (supra) at page 336)</span></span>
+<span class="line" id="L349"><span class="ln">349</span><span class="txt">It is necessary to determine whether the common law principles established in Norwich</span></span>
+<span class="line" id="L350"><span class="ln">350</span><span class="txt">Pharmacal can be resorted to by our courts and if so, in what circumstances.</span></span>
+<span class="line" id="L351"><span class="ln">351</span><span class="txt"></span></span>
+<span class="line" id="L352"><span class="ln">352</span><span class="txt">12</span></span>
+<span class="line" id="L353"><span class="ln">353</span><span class="txt">As already stated above The Banking Act has provided for specific instances wherein</span></span>
+<span class="line" id="L354"><span class="ln">354</span><span class="txt">disclosure is permissible namely under Section 60(3) and Section 64(10). The questions that</span></span>
+<span class="line" id="L355"><span class="ln">355</span><span class="txt">arise at this juncture are as follows:</span></span>
+<span class="line" id="L356"><span class="ln">356</span><span class="txt">- Is The Banking Act a comprehensive statutory regime which covers</span></span>
+<span class="line" id="L357"><span class="ln">357</span><span class="txt">exhaustively the whole question of confidentiality so that it precludes</span></span>
+<span class="line" id="L358"><span class="ln">358</span><span class="txt">the application of any alternative common law remedy such as the</span></span>
+<span class="line" id="L359"><span class="ln">359</span><span class="txt">Norwich Pharmacal Relief?</span></span>
+<span class="line" id="L360"><span class="ln">360</span><span class="txt">- Has Parliament legislated to delimit the only situations wherein</span></span>
+<span class="line" id="L361"><span class="ln">361</span><span class="txt">disclosure of confidential information in a banker’s possession, is</span></span>
+<span class="line" id="L362"><span class="ln">362</span><span class="txt">permissible?</span></span>
+<span class="line" id="L363"><span class="ln">363</span><span class="txt">- Would the application of the Norwich Pharmacal principles be</span></span>
+<span class="line" id="L364"><span class="ln">364</span><span class="txt">tantamount to circumventing the intention of Parliament and would it</span></span>
+<span class="line" id="L365"><span class="ln">365</span><span class="txt">be incompatible with or in violation of, the statutory scheme under The</span></span>
+<span class="line" id="L366"><span class="ln">366</span><span class="txt">Banking Act?</span></span>
+<span class="line" id="L367"><span class="ln">367</span><span class="txt">This will no doubt require a close examination of the relevant sections of The Banking</span></span>
+<span class="line" id="L368"><span class="ln">368</span><span class="txt">Act in order to determine whether a disclosure of such confidential information may only be</span></span>
+<span class="line" id="L369"><span class="ln">369</span><span class="txt">obtained via the statutory channel prescribed under The Act.</span></span>
+<span class="line" id="L370"><span class="ln">370</span><span class="txt">Although reference to the Norwich Pharmacal principles has been made in a few cases</span></span>
+<span class="line" id="L371"><span class="ln">371</span><span class="txt">in Mauritius, the question whether the common law principles enunciated in that case would</span></span>
+<span class="line" id="L372"><span class="ln">372</span><span class="txt">apply in view of the provisions of The Banking Act, has never been frontally addressed. In</span></span>
+<span class="line" id="L373"><span class="ln">373</span><span class="txt">Drouin J.M &amp; Ors v Bank of Baroda [2008 SCJ 304] the applicants had invested substantial</span></span>
+<span class="line" id="L374"><span class="ln">374</span><span class="txt">amounts of money in an immoveable project with one Mr. Gerard Rochecouste who had already</span></span>
+<span class="line" id="L375"><span class="ln">375</span><span class="txt">passed away at the time of the application.</span></span>
+<span class="line" id="L376"><span class="ln">376</span><span class="txt">The applicants made an application against several banks to the Judge in Chambers</span></span>
+<span class="line" id="L377"><span class="ln">377</span><span class="txt">under Section 64 of The Banking Act for disclosure of accounts held at the banks as well as</span></span>
+<span class="line" id="L378"><span class="ln">378</span><span class="txt">transactions carried out by late G. Rochecouste and his partner, a Chinese national who had</span></span>
+<span class="line" id="L379"><span class="ln">379</span><span class="txt">already fled the country.</span></span>
+<span class="line" id="L380"><span class="ln">380</span><span class="txt">The purpose of the order was to enable the applicants to trace the money which they</span></span>
+<span class="line" id="L381"><span class="ln">381</span><span class="txt">had handed over to G. Rochecouste, and to ascertain whether it had been deposited in any</span></span>
+<span class="line" id="L382"><span class="ln">382</span><span class="txt">bank account.</span></span>
+<span class="line" id="L383"><span class="ln">383</span><span class="txt"></span></span>
+<span class="line" id="L384"><span class="ln">384</span><span class="txt">13</span></span>
+<span class="line" id="L385"><span class="ln">385</span><span class="txt">The stand of the banks was that it would abide by the decision of the Judge, the Judge</span></span>
+<span class="line" id="L386"><span class="ln">386</span><span class="txt">granted the application. The Judge referred to the provisions of The Banking Act, he also</span></span>
+<span class="line" id="L387"><span class="ln">387</span><span class="txt">referred to the case of Norwich Pharmacal &amp; Co. and Others and Customs and Excise</span></span>
+<span class="line" id="L388"><span class="ln">388</span><span class="txt">Commissioners [1974] A.C. 133 and Bankers Trust Co v. Shapira and Ors CA [1980] 3 All</span></span>
+<span class="line" id="L389"><span class="ln">389</span><span class="txt">ER 352 of his “own accord” as “cases which might be enlightening to this entirely new area of</span></span>
+<span class="line" id="L390"><span class="ln">390</span><span class="txt">the law”.</span></span>
+<span class="line" id="L391"><span class="ln">391</span><span class="txt">After citing an extract from the judgment of Norwich Pharmacal, the Judge went on to</span></span>
+<span class="line" id="L392"><span class="ln">392</span><span class="txt">refer to Lord Dennings’ remark in Bankers Trust Co (supra) to the effect that “this new</span></span>
+<span class="line" id="L393"><span class="ln">393</span><span class="txt">jurisdiction must, of course, be exercised carefully”.</span></span>
+<span class="line" id="L394"><span class="ln">394</span><span class="txt">In the subsequent case of Li Soop Hon Li Tung Sang &amp; Co. Ltd v. Barclays Bank</span></span>
+<span class="line" id="L395"><span class="ln">395</span><span class="txt">PLC &amp; Ors [2014 SCJ 242] the applicant had applied to the Judge in Chambers for an order of</span></span>
+<span class="line" id="L396"><span class="ln">396</span><span class="txt">disclosure of information in respect of bank accounts held by a former employee of the applicant</span></span>
+<span class="line" id="L397"><span class="ln">397</span><span class="txt">on the basis that the said employee had misappropriated funds belonging to the applicant and</span></span>
+<span class="line" id="L398"><span class="ln">398</span><span class="txt">credited them in his bank accounts. The application was made pursuant to Sections 64(3)(g)(h)</span></span>
+<span class="line" id="L399"><span class="ln">399</span><span class="txt">and (10) of The Act, the Judge granted the application.</span></span>
+<span class="line" id="L400"><span class="ln">400</span><span class="txt">In his judgment the Judge referred to the principles governing disclosure of information</span></span>
+<span class="line" id="L401"><span class="ln">401</span><span class="txt">from third parties enunciated in the case of Norwich Pharmacal (supra) and also to Section 64</span></span>
+<span class="line" id="L402"><span class="ln">402</span><span class="txt">of The Banking Act. However the precise legal basis on which the application was granted has</span></span>
+<span class="line" id="L403"><span class="ln">403</span><span class="txt">not been set out in the judgment nor has it been expressly stated that the order was granted</span></span>
+<span class="line" id="L404"><span class="ln">404</span><span class="txt">following an application of the Norwich Pharmacal principles.</span></span>
+<span class="line" id="L405"><span class="ln">405</span><span class="txt">Although the decision in Norwich Pharmacal provides some useful insight as to the</span></span>
+<span class="line" id="L406"><span class="ln">406</span><span class="txt">approach which the court would adopt for allowing discovery of information in the course of civil</span></span>
+<span class="line" id="L407"><span class="ln">407</span><span class="txt">proceedings, the present matter stands governed essentially by the express and detailed</span></span>
+<span class="line" id="L408"><span class="ln">408</span><span class="txt">provisions of Section 64 of The Act which section, has been invoked in support of the</span></span>
+<span class="line" id="L409"><span class="ln">409</span><span class="txt">application. In any case, the Norwich Pharmacal order is not warranted in this case.</span></span>
+<span class="line" id="L410"><span class="ln">410</span><span class="txt">The conditions required for the issue of a Norwich Pharmacal order, are not here</span></span>
+<span class="line" id="L411"><span class="ln">411</span><span class="txt">satisfied inasmuch as the applicant already has the information which he is purportedly seeking</span></span>
+<span class="line" id="L412"><span class="ln">412</span><span class="txt">to obtain by a court order. He has precise information regarding the number, amount, date and</span></span>
+<span class="line" id="L413"><span class="ln">413</span><span class="txt">recipients of all the cheques in lite and has given precise details about these cheques both in</span></span>
+<span class="line" id="L414"><span class="ln">414</span><span class="txt"></span></span>
+<span class="line" id="L415"><span class="ln">415</span><span class="txt">14</span></span>
+<span class="line" id="L416"><span class="ln">416</span><span class="txt">the present application and in his plaint with summons. He has at this stage all the information</span></span>
+<span class="line" id="L417"><span class="ln">417</span><span class="txt">that is required for him to proceed with his case. As such it cannot be said that the applicant</span></span>
+<span class="line" id="L418"><span class="ln">418</span><span class="txt">“has no straightforward or available or any means of finding out” the information required.</span></span>
+<span class="line" id="L419"><span class="ln">419</span><span class="txt">What the applicant is in effect seeking is to obtain the cheques themselves for the</span></span>
+<span class="line" id="L420"><span class="ln">420</span><span class="txt">purpose which he has stated i.e. so as to give a declaration to the Police and for production at</span></span>
+<span class="line" id="L421"><span class="ln">421</span><span class="txt">the hearing of the case which he has lodged against the co-respondent and Khaled and Bahim</span></span>
+<span class="line" id="L422"><span class="ln">422</span><span class="txt">Cheddee.</span></span>
+<span class="line" id="L423"><span class="ln">423</span><span class="txt">The evidence does not indicate that there is any impediment for the applicant to give any</span></span>
+<span class="line" id="L424"><span class="ln">424</span><span class="txt">declaration against Khaled and Bahim Chedee with the information available to him which would</span></span>
+<span class="line" id="L425"><span class="ln">425</span><span class="txt">enable the Police if necessary, to seek an order for disclosure under Section 64(9) and Section</span></span>
+<span class="line" id="L426"><span class="ln">426</span><span class="txt">64(10) of The Banking Act.</span></span>
+<span class="line" id="L427"><span class="ln">427</span><span class="txt">In so far as the production of the cheques at the trial is concerned, it is open for the</span></span>
+<span class="line" id="L428"><span class="ln">428</span><span class="txt">applicant to summon the respondents who are compellable witnesses to produce the cheques</span></span>
+<span class="line" id="L429"><span class="ln">429</span><span class="txt">in lite subject to the trial court ruling that these cheques are relevant and admissible.</span></span>
+<span class="line" id="L430"><span class="ln">430</span><span class="txt">The applicant has in fact also prayed for an order that the respondents be authorised</span></span>
+<span class="line" id="L431"><span class="ln">431</span><span class="txt">and ordered:</span></span>
+<span class="line" id="L432"><span class="ln">432</span><span class="txt">“to depose as to and produce all such cheques disclosed in at paragraph</span></span>
+<span class="line" id="L433"><span class="ln">433</span><span class="txt">54 when called as witnesses in the main case bearing reference</span></span>
+<span class="line" id="L434"><span class="ln">434</span><span class="txt">SC/COM/PWS/01428/2015 which is pending before the Commercial</span></span>
+<span class="line" id="L435"><span class="ln">435</span><span class="txt">Division of the Supreme Court.”</span></span>
+<span class="line" id="L436"><span class="ln">436</span><span class="txt">In his submissions counsel for the applicant has stated that the “applicant is simply</span></span>
+<span class="line" id="L437"><span class="ln">437</span><span class="txt">praying that respondents should be ordered to produce all the cheques referred to when called</span></span>
+<span class="line" id="L438"><span class="ln">438</span><span class="txt">as witnesses in the main case. Therefore, it is only when they are summoned as witnesses that</span></span>
+<span class="line" id="L439"><span class="ln">439</span><span class="txt">they will have to come and give evidence. Moreover, the summons to the respondents will</span></span>
+<span class="line" id="L440"><span class="ln">440</span><span class="txt">order them to come as witnesses to depose as witnesses and to produce the cheques under</span></span>
+<span class="line" id="L441"><span class="ln">441</span><span class="txt">reference”.</span></span>
+<span class="line" id="L442"><span class="ln">442</span><span class="txt"></span></span>
+<span class="line" id="L443"><span class="ln">443</span><span class="txt">15</span></span>
+<span class="line" id="L444"><span class="ln">444</span><span class="txt">Counsel for the co-respondent has submitted that this prayer is outside the jurisdiction of</span></span>
+<span class="line" id="L445"><span class="ln">445</span><span class="txt">the Judge in Chambers. Counsel pointed out there is as at now, a case pending before the</span></span>
+<span class="line" id="L446"><span class="ln">446</span><span class="txt">Supreme Court in this matter. The evidence to be adduced before that court is a matter for that</span></span>
+<span class="line" id="L447"><span class="ln">447</span><span class="txt">court itself to decide and not the Judge in Chambers. Counsel further added that at the hearing</span></span>
+<span class="line" id="L448"><span class="ln">448</span><span class="txt">before the Supreme Court, the co-respondent will probably take a legal issue with respect to the</span></span>
+<span class="line" id="L449"><span class="ln">449</span><span class="txt">cause of action which is grounded in tort whereas the relationship existing between the parties,</span></span>
+<span class="line" id="L450"><span class="ln">450</span><span class="txt">is a contractual one. According to counsel a litigant cannot obtain “disclosure of somebody</span></span>
+<span class="line" id="L451"><span class="ln">451</span><span class="txt">else’s personal banking information from the Judge in Chambers on the sole ground that</span></span>
+<span class="line" id="L452"><span class="ln">452</span><span class="txt">proceedings have been lodged against that person, when the said action is totally devoid of</span></span>
+<span class="line" id="L453"><span class="ln">453</span><span class="txt">merits”.</span></span>
+<span class="line" id="L454"><span class="ln">454</span><span class="txt">I agree with the submissions of counsel for the co-respondent that the order prayed for,</span></span>
+<span class="line" id="L455"><span class="ln">455</span><span class="txt">does not fall within the jurisdictional powers of the Judge in Chambers. This issue has been</span></span>
+<span class="line" id="L456"><span class="ln">456</span><span class="txt">addressed by the Court of Civil Appeal sitting on appeal upon a decision of the Judge in</span></span>
+<span class="line" id="L457"><span class="ln">457</span><span class="txt">Chambers setting aside an application for disclosure made pursuant to Section 64(3)(h) of The</span></span>
+<span class="line" id="L458"><span class="ln">458</span><span class="txt">Act. The court made it clear that –</span></span>
+<span class="line" id="L459"><span class="ln">459</span><span class="txt">“…While the question of admissibility of documents as evidence is one for</span></span>
+<span class="line" id="L460"><span class="ln">460</span><span class="txt">the trial Court, the Judge in Chambers clearly has jurisdiction to</span></span>
+<span class="line" id="L461"><span class="ln">461</span><span class="txt">determine the question as to whether the documents can be disclosed to</span></span>
+<span class="line" id="L462"><span class="ln">462</span><span class="txt">the applicant for the latter to use at the trial, if so minded and if allowed to</span></span>
+<span class="line" id="L463"><span class="ln">463</span><span class="txt">do so by the trial Court.” (Nundoosingh J. v Standard Bank (Mauritius)</span></span>
+<span class="line" id="L464"><span class="ln">464</span><span class="txt">Limited [2018 SCJ 122]) (Emphasis added)</span></span>
+<span class="line" id="L465"><span class="ln">465</span><span class="txt">Section 64 of The Act gives jurisdiction to the Judge in Chambers to make disclosure</span></span>
+<span class="line" id="L466"><span class="ln">466</span><span class="txt">orders subject to the requisite conditions being satisfied; it does not provide for the issue of</span></span>
+<span class="line" id="L467"><span class="ln">467</span><span class="txt">orders compelling banks to depone and produce confidential information in their possession, in</span></span>
+<span class="line" id="L468"><span class="ln">468</span><span class="txt">a pending trial. The banks are compellable witnesses who may be summoned at the trial to</span></span>
+<span class="line" id="L469"><span class="ln">469</span><span class="txt">produce the information sought and such information may be disclosed if the court so allows. It</span></span>
+<span class="line" id="L470"><span class="ln">470</span><span class="txt">is a matter which is eminently within the discretion of the trial court to determine whether the</span></span>
+<span class="line" id="L471"><span class="ln">471</span><span class="txt">information may be disclosed.</span></span>
+<span class="line" id="L472"><span class="ln">472</span><span class="txt"></span></span>
+<span class="line" id="L473"><span class="ln">473</span><span class="txt">16</span></span>
+<span class="line" id="L474"><span class="ln">474</span><span class="txt">The duty of confidentiality is not applicable in such circumstances. In that connection</span></span>
+<span class="line" id="L475"><span class="ln">475</span><span class="txt">Section 64(3)(h) of The Act provides that –</span></span>
+<span class="line" id="L476"><span class="ln">476</span><span class="txt">“The duty of confidentiality imposed under this section shall not apply</span></span>
+<span class="line" id="L477"><span class="ln">477</span><span class="txt">where […]</span></span>
+<span class="line" id="L478"><span class="ln">478</span><span class="txt">[h] any person referred to in subsection [1] is summoned to</span></span>
+<span class="line" id="L479"><span class="ln">479</span><span class="txt">appear before a Court or Judge in Mauritius and the Court or the</span></span>
+<span class="line" id="L480"><span class="ln">480</span><span class="txt">Judge orders the disclosure of the information.” (Emphasis added)</span></span>
+<span class="line" id="L481"><span class="ln">481</span><span class="txt">Counsel for the applicant has already intimated that he will call the respondents as</span></span>
+<span class="line" id="L482"><span class="ln">482</span><span class="txt">witnesses at the trial and the question of production and admissibility of the cheques as</span></span>
+<span class="line" id="L483"><span class="ln">483</span><span class="txt">evidence before the trial court, is a matter for that court alone to decide. It will be for the court to</span></span>
+<span class="line" id="L484"><span class="ln">484</span><span class="txt">assess the relevance of the cheques and whether in the circumstances it is necessary that the</span></span>
+<span class="line" id="L485"><span class="ln">485</span><span class="txt">confidentiality of the information be lifted. The Judge in Chambers cannot be invoked as a</span></span>
+<span class="line" id="L486"><span class="ln">486</span><span class="txt">parallel jurisdiction with that of the court before which the main case is pending and which has</span></span>
+<span class="line" id="L487"><span class="ln">487</span><span class="txt">the jurisdiction to pronounce upon the admissibility and production of the cheques.</span></span>
+<span class="line" id="L488"><span class="ln">488</span><span class="txt">For all the above reasons I set aside the application. With costs, and I certify as to</span></span>
+<span class="line" id="L489"><span class="ln">489</span><span class="txt">counsel.</span></span>
+<span class="line" id="L490"><span class="ln">490</span><span class="txt">R. Mungly-Gulbul</span></span>
+<span class="line" id="L491"><span class="ln">491</span><span class="txt">Judge</span></span>
+<span class="line" id="L492"><span class="ln">492</span><span class="txt">19 February 2019</span></span>
+<span class="line" id="L493"><span class="ln">493</span><span class="txt">---</span></span>
+<span class="line" id="L494"><span class="ln">494</span><span class="txt">For Applicant : Mr. Y. Mohamed, SC</span></span>
+<span class="line" id="L495"><span class="ln">495</span><span class="txt">Mr. Attorney P. Chuttoo</span></span>
+<span class="line" id="L496"><span class="ln">496</span><span class="txt">For Respondent No. 1 : Mr. K. Colunday, of Counsel</span></span>
+<span class="line" id="L497"><span class="ln">497</span><span class="txt">Mr. J. Gujadhur, SA</span></span>
+<span class="line" id="L498"><span class="ln">498</span><span class="txt">For Respondent No. 2 : Mr. R. Chetty, SC together with</span></span>
+<span class="line" id="L499"><span class="ln">499</span><span class="txt">Ms N. Jeetah, of Counsel</span></span>
+<span class="line" id="L500"><span class="ln">500</span><span class="txt">Mr. T. Koenig, SA</span></span>
+<span class="line" id="L501"><span class="ln">501</span><span class="txt">For Co-Respondent : Mr. G. Glover, SC</span></span>
+<span class="line" id="L502"><span class="ln">502</span><span class="txt">Mr. Attorney B. Rampoortab</span></span>
+</pre></div></div>
+  <div class="tab-panel" id="tab-panel-rendered"><iframe src="digest.html" title="Rendered digest"></iframe></div>
+  <div class="tab-panel" id="tab-panel-raw"><pre class="raw-json">```json
+{
+  &quot;case_name&quot;: &quot;FOONDUN M.S. v. BANQUE DES MASCAREIGNES AND ANOR&quot;,
+  &quot;citation&quot;: &quot;2019 SCJ 58&quot;,
+  &quot;citation_verbatim&quot;: &quot;2019 SCJ 58&quot;,
+  &quot;alt_citations&quot;: [
+    {
+      &quot;citation&quot;: &quot;2019 MR 36&quot;,
+      &quot;citation_verbatim&quot;: &quot;2019 MR 36&quot;
+    }
+  ],
+  &quot;record_number&quot;: &quot;SC/COM/JICA/00647/2017&quot;,
+  &quot;court&quot;: &quot;Supreme Court&quot;,
+  &quot;court_division&quot;: &quot;Commercial Division&quot;,
+  &quot;bench&quot;: &quot;single judge&quot;,
+  &quot;jurisdiction&quot;: &quot;Mauritius&quot;,
+  &quot;date&quot;: &quot;2019-02-19&quot;,
+  &quot;judgment_by&quot;: &quot;R. Mungly-Gulbul&quot;,
+  &quot;procedural_posture&quot;: &quot;chambers application&quot;,
+  &quot;citation_code&quot;: &quot;SCJ&quot;,
+  &quot;judges&quot;: [
+    {
+      &quot;name&quot;: &quot;R. Mungly-Gulbul&quot;,
+      &quot;role&quot;: &quot;Judge&quot;,
+      &quot;position&quot;: &quot;lead&quot;,
+      &quot;disposition_agreement&quot;: &quot;full&quot;
+    }
+  ],
+  &quot;parties&quot;: {
+    &quot;applicant&quot;: &quot;M. S. Foondun&quot;,
+    &quot;respondent&quot;: &quot;1. Banque des Mascareignes; 2. Afrasia Bank Limited&quot;,
+    &quot;co_respondent&quot;: &quot;Maik Construction Ltd&quot;
+  },
+  &quot;counsel&quot;: [
+    {
+      &quot;for&quot;: &quot;applicant&quot;,
+      &quot;names&quot;: [
+        &quot;Mr. Y. Mohamed, SC&quot;,
+        &quot;Mr. Attorney P. Chuttoo&quot;
+      ]
+    },
+    {
+      &quot;for&quot;: &quot;respondent&quot;,
+      &quot;names&quot;: [
+        &quot;Mr. K. Colunday, of Counsel&quot;,
+        &quot;Mr. J. Gujadhur, SA&quot;
+      ]
+    },
+    {
+      &quot;for&quot;: &quot;respondent&quot;,
+      &quot;names&quot;: [
+        &quot;Mr. R. Chetty, SC&quot;,
+        &quot;Ms N. Jeetah, of Counsel&quot;,
+        &quot;Mr. T. Koenig, SA&quot;
+      ]
+    },
+    {
+      &quot;for&quot;: &quot;co_respondent&quot;,
+      &quot;names&quot;: [
+        &quot;Mr. G. Glover, SC&quot;,
+        &quot;Mr. Attorney B. Rampoortab&quot;
+      ]
+    }
+  ],
+  &quot;catchwords&quot;: [
+    &quot;Statute (Banking Act) — Confidentiality of banking information — Section 64(10) — Designation of applicants — Whether a private litigant may obtain an order for disclosure of customer information&quot;,
+    &quot;Statute (Banking Act) — Section 64(10) — Application of statutory regime — Whether common law Norwich Pharmacal principles may circumvent the statutory scheme&quot;,
+    &quot;Common law — Discovery — Norwich Pharmacal relief — Necessity — Whether available where the applicant already possesses all material information sought&quot;
+  ],
+  &quot;structure&quot;: {
+    &quot;header_lines&quot;: [1, 17],
+    &quot;judgment_start_line&quot;: 18,
+    &quot;judgment_end_line&quot;: 489,
+    &quot;signatures_line&quot;: 490,
+    &quot;date_line&quot;: 492,
+    &quot;counsel_lines&quot;: [494, 502],
+    &quot;block_quotes&quot;: [
+      {
+        &quot;start_line&quot;: 82,
+        &quot;end_line&quot;: 104,
+        &quot;language&quot;: &quot;fr&quot;
+      },
+      {
+        &quot;start_line&quot;: 310,
+        &quot;end_line&quot;: 337,
+        &quot;language&quot;: &quot;en&quot;
+      }
+    ]
+  },
+  &quot;headnote&quot;: {
+    &quot;facts&quot;: &quot;The applicant invested in a construction project with Maik Construction Ltd under a profit-sharing agreement. During the project, the applicant contributed additional funds to cover payments to suppliers and subcontractors because the principal was remiss in payment. The applicant claims the co-respondent&#x27;s directors fraudulently misappropriated his share of profits and made numerous dubious payments unrelated to the project. Seeking to lodge a police complaint and gather evidence for a pending commercial case, the applicant applied to the Judge in Chambers for certified copies of cheques evidencing the dubious payments, relying on both Section 64(10) of The Banking Act and common law Norwich Pharmacal relief.&quot;,
+    &quot;held&quot;: [
+      {
+        &quot;proposition&quot;: &quot;A private litigant is not entitled to apply for disclosure of bank customer information under Section 64(10) of The Banking Act, as that provision restricts applications to the designated authorities listed in Section 64(9), namely the Director-General under the Prevention of Corruption Act 2002, the Chief Executive of the Financial Services Commission, the Commissioner of Police, the Director-General of the Mauritius Revenue Authority, and the Enforcement Authority under the Asset Recovery Act 2011.&quot;,
+        &quot;pinpoints&quot;: [
+          {&quot;start_line&quot;: 237, &quot;end_line&quot;: 252},
+          {&quot;start_line&quot;: 256, &quot;end_line&quot;: 257}
+        ]
+      },
+      {
+        &quot;proposition&quot;: &quot;A previous dismissal of a similar application by the applicant is res judicata and precludes relitigation of whether Section 64(10) applies to the applicant, the issue having been considered and upheld by the Court of Civil Appeal.&quot;,
+        &quot;pinpoints&quot;: [
+          {&quot;start_line&quot;: 258, &quot;end_line&quot;: 279}
+        ]
+      },
+      {
+        &quot;proposition&quot;: &quot;Norwich Pharmacal relief is not available where the applicant already possesses all the material information necessary to pursue legal proceedings, including cheque numbers, amounts, dates, and recipients, even if the physical cheques remain in the banks&#x27; possession.&quot;,
+        &quot;pinpoints&quot;: [
+          {&quot;start_line&quot;: 410, &quot;end_line&quot;: 426}
+        ]
+      },
+      {
+        &quot;proposition&quot;: &quot;The Judge in Chambers lacks jurisdiction to order banks to depone and produce confidential information at trial; that matter lies solely within the discretion of the trial court, which may allow production when compellable witnesses are summoned and the court determines the information is relevant and admissible.&quot;,
+        &quot;pinpoints&quot;: [
+          {&quot;start_line&quot;: 454, &quot;end_line&quot;: 471}
+        ]
+      }
+    ],
+    &quot;disposition&quot;: &quot;Application is set aside with costs and the court certifies as to counsel.&quot;,
+    &quot;quotable_holding&quot;: &quot;A private litigant cannot obtain an order for disclosure of bank customer information under Section 64(10) of The Banking Act, as that section restricts applications to the designated public authorities listed in Section 64(9).&quot;
+  },
+  &quot;cases_cited&quot;: [
+    {
+      &quot;citation&quot;: &quot;1987 MR 21&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1987 MR 21]&quot;,
+      &quot;name&quot;: &quot;Director of Public Prosecutions v. Indian Ocean International Bank&quot;,
+      &quot;treatment&quot;: &quot;considered&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 105,
+      &quot;evidence_span&quot;: &quot;It is generally agreed that a banker is one of those \&quot;autres personnes dépositaires ... des secrets\&quot; (See op cit at page 397). Of course while doctors, priests and lawyers stand in a separate category, the authors are agreed that bankers, for example, are more liable to be compelled to reveal the secrets they hold when the public interest, and particularly the detection of crime, so require.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;[1924] 1 KB 461&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1924] 1 K.B. 461&quot;,
+      &quot;name&quot;: &quot;Tournier v. National Provincial and Union Bank of England&quot;,
+      &quot;treatment&quot;: &quot;considered&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 288,
+      &quot;evidence_span&quot;: &quot;It has been held by the Court of Appeal in the case of Tournier v. National Provincial and Union Bank of England [1924] 1 K.B. 461, that a duty of confidentiality was to be implied into the contract between banker and customer and that such duty extends beyond the termination of the relationship between them. However the duty is not absolute and is subject to the following qualifications: (a) where disclosure is under compulsion by law; (b) where there is a duty to the public to disclose; (c) where the interests of the bank require disclosure; and (d) where the customer impliedly or expressly consents to disclosure.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;[1973] 3 WLR 164&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1973] 3 W.L.R. 164&quot;,
+      &quot;name&quot;: &quot;Norwich Pharmacal Co. and Others v. Customs and Excise Commissioners&quot;,
+      &quot;treatment&quot;: &quot;distinguished&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: true,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 211,
+      &quot;evidence_span&quot;: &quot;Although the decision in Norwich Pharmacal provides some useful insight as to the approach which the court would adopt for allowing discovery of information in the course of civil proceedings, the present matter stands governed essentially by the express and detailed provisions of Section 64 of The Act which section, has been invoked in support of the application. In any case, the Norwich Pharmacal order is not warranted in this case. The conditions required for the issue of a Norwich Pharmacal order, are not here satisfied inasmuch as the applicant already has the information which he is purportedly seeking to obtain by a court order.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;[2016] EWHC 3175&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2016] EWHC 3175 at [27]&quot;,
+      &quot;name&quot;: &quot;Ramilos Trading Limited v. Buyanovsky&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 320,
+      &quot;evidence_span&quot;: &quot;The standard of proof is that of a good arguable case as in freezing injunction cases: see Ramilos Trading Limited v. Buyanovsky [2016] EWHC 3175 at [27].&quot;,
+      &quot;authority_note&quot;: &quot;Cited for the standard of proof in Norwich Pharmacal proceedings; appears nested within a block quote from Banking Litigation (4th edn) textbook.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;[1980] 3 All ER 352&quot;,
+      &quot;citation_verbatim&quot;: &quot;[1980] 3 All ER 352&quot;,
+      &quot;name&quot;: &quot;Bankers Trust Co v. Shapira and Ors CA&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 388,
+      &quot;evidence_span&quot;: &quot;the Judge went on to refer to Lord Denning&#x27;s remark in Bankers Trust Co (supra) to the effect that &#x27;this new jurisdiction must, of course, be exercised carefully&#x27;.&quot;,
+      &quot;authority_note&quot;: &quot;Cited for the proposition that Norwich Pharmacal jurisdiction must be exercised carefully; appears nested within the discussion of the prior Drouin case.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2008 SCJ 304&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2008 SCJ 304]&quot;,
+      &quot;name&quot;: &quot;Drouin J.M &amp; Ors v Bank of Baroda&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;background&quot;,
+      &quot;line&quot;: 373,
+      &quot;evidence_span&quot;: &quot;In Drouin J.M &amp; Ors v Bank of Baroda [2008 SCJ 304] the applicants had invested substantial amounts of money in an immoveable project with one Mr. Gerard Rochecouste who had already passed away at the time of the application. The applicants made an application against several banks to the Judge in Chambers under Section 64 of The Banking Act for disclosure of accounts held at the banks as well as transactions carried out by late G. Rochecouste and his partner, a Chinese national who had already fled the country.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2014 SCJ 242&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2014 SCJ 242]&quot;,
+      &quot;name&quot;: &quot;Li Soop Hon Li Tung Sang &amp; Co. Ltd v. Barclays Bank PLC &amp; Ors&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;background&quot;,
+      &quot;line&quot;: 395,
+      &quot;evidence_span&quot;: &quot;the applicant had applied to the Judge in Chambers for an order of disclosure of information in respect of bank accounts held by a former employee of the applicant on the basis that the said employee had misappropriated funds belonging to the applicant and credited them in his bank accounts.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;[2006] UKPC 7&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2006] UKPC 7&quot;,
+      &quot;name&quot;: &quot;President of the State of Equatorial Guinea v Royal Bank of Scotland International&quot;,
+      &quot;treatment&quot;: &quot;considered&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 339,
+      &quot;evidence_span&quot;: &quot;where the applicant has &#x27;no straightforward or available, or any, means of finding out, Norwich Pharmacal relief is in principle available if the other conditions of obtaining relief are met&#x27;. Lord Bingham further went on to state that: &#x27;whether it is said that it must be just and convenient in the interests of justice to grant relief, or that relief should only be granted if it is necessary in the interests of justice to grant it, makes little or no difference of substance&#x27;&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2018 SCJ 122&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2018 SCJ 122]&quot;,
+      &quot;name&quot;: &quot;Nundoosingh J. v Standard Bank (Mauritius) Limited&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 463,
+      &quot;evidence_span&quot;: &quot;the Judge in Chambers clearly has jurisdiction to determine the question as to whether the documents can be disclosed to the applicant for the latter to use at the trial, if so minded and if allowed to do so by the trial Court.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;[2017] EWHC 3338&quot;,
+      &quot;citation_verbatim&quot;: &quot;[2017] EWHC 3338 (Ch)]&quot;,
+      &quot;name&quot;: &quot;Miles Smith Broking Limited v Barclays Bank Plc&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 337,
+      &quot;evidence_span&quot;: &quot;[Miles Smith Broking Limited v Barclays Bank Plc [2017] EWHC 3338 (Ch)]&quot;,
+      &quot;authority_note&quot;: &quot;Cited as authority for Norwich Pharmacal relief conditions; appears nested within a block quote from Banking Litigation (4th edn) textbook.&quot;
+    }
+  ],
+  &quot;legislation&quot;: [
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;The Banking Act&quot;,
+      &quot;sections&quot;: [&quot;s. 60(3)&quot;, &quot;s. 60(5)&quot;, &quot;s. 64(1)&quot;, &quot;s. 64(2)&quot;, &quot;s. 64(3)(h)&quot;, &quot;s. 64(9)&quot;, &quot;s. 64(10)&quot;, &quot;s. 64(16)&quot;, &quot;s. 97(20)&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 19
+    },
+    {
+      &quot;kind&quot;: &quot;code&quot;,
+      &quot;name&quot;: &quot;Code Pénal&quot;,
+      &quot;sections&quot;: [&quot;s. 300&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 92
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Prevention of Corruption Act 2002&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 197
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Financial Services Act 2007&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 198
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Mauritius Revenue Authority Act 2004&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 200
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Bank of Mauritius Act 2004&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 152
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Commissions of Inquiry Act&quot;,
+      &quot;sections&quot;: [&quot;s. 11(5)(a)&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 152
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Financial Intelligence and Anti-Money Laundering Act 2002&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 153
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Income Tax Act&quot;,
+      &quot;sections&quot;: [&quot;ss. 123&quot;, &quot;123D&quot;, &quot;124&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 154
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Mutual Assistance in Criminal and Related Matters Act 2003&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 155
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Prevention of Terrorism Act 2002&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 191
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Asset Recovery Act 2011&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 202
+    }
+  ],
+  &quot;foreign_doctrine&quot;: [
+    {
+      &quot;name&quot;: &quot;Droit de la Banque&quot;,
+      &quot;reference&quot;: &quot;Cavaldaet Stouffiet, p. 393&quot;,
+      &quot;line&quot;: 90
+    }
+  ],
+  &quot;confidence&quot;: {
+    &quot;catchwords&quot;: &quot;high&quot;,
+    &quot;case_treatments&quot;: &quot;medium&quot;,
+    &quot;procedural_posture&quot;: &quot;high&quot;,
+    &quot;headnote&quot;: &quot;high&quot;,
+    &quot;court&quot;: &quot;high&quot;,
+    &quot;cases_cited&quot;: &quot;medium&quot;,
+    &quot;legislation&quot;: &quot;high&quot;
+  },
+  &quot;notes&quot;: [
+    &quot;Ramilos and Miles Smith are cited within a block quote from Banking Litigation (4th edn), a secondary source, not directly by this court; classified as provenance: nested per schema definition extended to secondary sources.&quot;,
+    &quot;Bankers Trust is cited within the discussion of the prior Drouin case; classified as nested within that discussion.&quot;,
+    &quot;The printed citation for Drouin on line 373 includes square brackets &#x27;[2008 SCJ 304]&#x27;, which is atypical for Mauritian citations (normally bare-year format); preserved as printed.&quot;,
+    &quot;The judgment does not provide a citation for a prior application that was dismissed and upheld on appeal, therefore case_history_chain[] is omitted per schema requirement for explicit citation.&quot;
+  ],
+  &quot;needs_human_review&quot;: false,
+  &quot;extractor_version&quot;: &quot;v1&quot;,
+  &quot;schema_version&quot;: &quot;v1&quot;
+}
+```
+</pre></div>
+  <footer class="site-footer">slug: <code>2019_SCJ_582019_MR_36</code></footer>
+</div>
+<script>
+(function () {
+  var validTabs = ['original', 'rendered', 'raw'];
+  function tabFromHash() {
+    var h = (location.hash || '').replace('#', '');
+    return validTabs.indexOf(h) !== -1 ? h : validTabs[0];
+  }
+  function showTab(name) {
+    validTabs.forEach(function (t) {
+      var btn = document.getElementById('tab-btn-' + t);
+      var panel = document.getElementById('tab-panel-' + t);
+      var active = t === name;
+      if (btn) btn.classList.toggle('active', active);
+      if (panel) panel.classList.toggle('active', active);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    var name = btn.id.replace('tab-btn-', '');
+    if (validTabs.indexOf(name) === -1) return;
+    history.replaceState(null, '', '#' + name);
+    showTab(name);
+  });
+  window.addEventListener('hashchange', function () { showTab(tabFromHash()); });
+  showTab(tabFromHash());
+})();
+</script></body></html>

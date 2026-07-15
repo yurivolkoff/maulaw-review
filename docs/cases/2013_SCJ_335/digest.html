@@ -1,0 +1,274 @@
+<!doctype html><html><head><meta charset='utf-8'><title>BEST LUCK (MAURITIUS) LTD v MURDHEN N. &amp; ANOR &middot; 2013 SCJ 335 &middot; review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+    --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+    --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+  --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+  --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+.container { display: flex; height: 100vh; width: 100%; overflow: hidden; }
+.pane { overflow: auto; height: 100%; }
+.pane-left { flex: 1 1 50%; border-right: 1px solid var(--border); background: var(--code-bg); }
+.pane-right { flex: 1 1 50%; padding: 1rem 1.25rem 3rem; }
+.pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); z-index: 2; }
+pre.lines { margin: 0; padding: .25rem 0 2rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.line { display: block; white-space: pre; padding: 0 .75rem; }
+.line:hover { background: rgba(127,127,127,.08); }
+.line.hl { background: var(--hl); }
+.ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+.sec { margin-bottom: 1.5rem; }
+.sec h1 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.sec h2 { font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; margin: 0 0 .5rem; }
+.sec h3 { font-size: .92rem; margin: .75rem 0 .25rem; color: var(--muted); }
+.sec-debug { opacity: .85; font-size: .9rem; }
+.sec-footer { opacity: .7; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; margin-bottom: .5rem; }
+.meta-table th { text-align: left; color: var(--muted); font-weight: 500; padding: .15rem .5rem .15rem 0; vertical-align: top; white-space: nowrap; }
+.meta-table td { padding: .15rem 0; }
+.cases-table, .leg-table { table-layout: fixed; }
+.cases-table th, .cases-table td, .leg-table th, .leg-table td { border-top: 1px solid var(--border); padding: .35rem .4rem; text-align: left; vertical-align: top; word-wrap: break-word; }
+.evidence-row td { border-top: none; padding-top: 0; }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .85em; }
+a.lineref { color: var(--link); text-decoration: none; font-weight: 600; white-space: nowrap; }
+a.lineref:hover { text-decoration: underline; }
+.pinpoints { display: flex; flex-direction: column; gap: .15rem; margin: .2rem 0 .6rem 1.2rem; }
+.preview { color: var(--muted); font-size: .85em; }
+.held > li { margin-bottom: .6rem; }
+.muted { color: var(--muted); }
+.small { font-size: .82em; }
+.badge { display: inline-block; padding: .05rem .45rem; border-radius: 999px; font-size: .78em; font-weight: 600; }
+.sig-positive { background: color-mix(in srgb, var(--pos) 18%, transparent); color: var(--pos); }
+.sig-neutral { background: color-mix(in srgb, var(--neu) 18%, transparent); color: var(--neu); }
+.sig-caution { background: color-mix(in srgb, var(--cau) 20%, transparent); color: var(--cau); }
+.sig-negative { background: color-mix(in srgb, var(--neg) 18%, transparent); color: var(--neg); }
+.badge-review { display: inline-block; background: var(--badge-review-bg); color: var(--badge-review-fg); padding: .15rem .6rem; border-radius: 4px; font-size: .78rem; font-weight: 700; letter-spacing: .03em; margin-bottom: .5rem; }
+.badge-missing { color: var(--neg); font-style: italic; }
+.tag { display: inline-block; border: 1px solid var(--border); border-radius: 3px; padding: 0 .35rem; font-size: .78em; }
+.tag-muted { color: var(--muted); }
+.tag-warn { color: var(--cau); border-color: var(--cau); }
+.catchwords > li, ol.held > li { margin-bottom: .4rem; }
+blockquote { margin: .25rem 0; padding: .4rem .75rem; border-left: 3px solid var(--link); background: var(--code-bg); font-style: italic; }
+</style></head><body><div class="container"><div class="pane pane-left" id="judgment-pane"><div class="pane-header">Judgment text &middot; 176 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">1</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">BEST LUCK (MAURITIUS) LTD v MURDHEN N. &amp; ANOR</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">2013 SCJ 335</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">RECORD NO: Co. 522/10 (PWS)</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">IN THE SUPREME COURT OF MAURITIUS</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">(COMMERCIAL DIVISION)</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">In the matter of:</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">Best Luck (Mauritius) Ltd</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">Plaintiff</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">v/s</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">Murdhen N. &amp; Anor</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">Defendants</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">RULING</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">At this stage of proceedings I am called upon to rule on a motion to amend the</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">defendants’ amended plea, which motion is objected to by the plaintiff.</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">In a gist, as can be culled from the plaintiff’s averments in its plaint with summons, it is</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">the plaintiff’s case that the first defendant was performing the duties of Administrative Clerk on a</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">part time basis for the plaintiff from 2005 to 2008; that whilst he was in employment with Gexim</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">Ltd from 1991 to 2005, the first defendant also worked on the accounts of the plaintiff for which</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">he was paid an allowance; that following certain irregularities found in the accounts and</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">cheques payment of plaintiff in 2008, he stopped working for the plaintiff; that he has “illegally,</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">unlawfully, and fraudulently” caused the plaintiff to issue a number of cheques payable to</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">himself as well as to the second defendant, a company owned by him. The totals of such</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">alleged fraudulent payment to the two defendants respectively are Rs 1,335,000 and Rs</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">15,317,500. He is alleged to have abused the plaintiff’s trust by causing it to sign the cheques</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">referred to in the plaint and has thereby enriched himself and the second defendant without</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">good cause. The claim is therefore for a reimbursement of such alleged fraudulent payment and</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">for damages in respect of damage and prejudice allegedly caused to the plaintiff by such</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">averred fraudulent acts and doings of the first defendant.</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">The defendants have in their plea denied the plaintiff’s averments and explained inter</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">alia that from 1999 the plaintiff company had undertaken several Building and Civil Engineering</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt"></span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">2</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">works for the account of Gexim Ltd, which latter was the employer of the first defendant; that</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">between 1999 and the end of 2003, he provided several consultancy services to the plaintiff;</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">that he did not deal with the accounts of the plaintiff, one Padoomun Boodoo being exclusively</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">responsible for such accounts; that besides the first defendant, one Selven Perianen, a Civil</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">Engineer, also provided consultancy services, and on several occasion the latter acted with him</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">to provide joint consultancy services to the plaintiff; that neither the first defendant nor Selven</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">Perianen took any decision on behalf of the plaintiff which always acted by and through one</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">Soubass Luckhoo, a Director and the main shareholder of the plaintiff; that the said Soobass</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">Luckhoo, although illiterate, was an efficient businessman who took an active part in the</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">business of the company; that with the first defendant and Selven Perianen, contributing to the</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">plaintiff’s growth, it secured important projects, became profitable and by 2008 on account of its</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">performance, the plaintiff acceded to the status of “Grade A Contractor”; that throughout the</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">period that defendant No 1 personally or through defendant No 2 provided his services to</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">plaintiff, he became closely associated with it, providing it with his personal support, even risking</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">his own assets by standing as its guarantor for loans and banking facilities granted to it.</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">The defendants have made other averments which need not concern us for the present</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">purposes. They have also counterclaimed against the plaintiff Rs 8 million allegedly unpaid and</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">due for consultancy services provided by defendant No 2 to the plaintiff at its request.</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">The hearing on the merits has started. The first witness, who was called out of turn has</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">already deponed. An issue has been canvassed in the course of his examination in chief as to</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">the first defendant not being authorised to take employment elsewhere for reward whilst in the</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">employ of Gexim Ltd, his employer at material times. The witness has been cross-examined</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">and re-examined thereon. At the close of his re-examination, Learned Senior Counsel for the</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">defendants has moved to amend paragraph 2 (b) of the plea by adding an averment to the</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">effect that the first defendant has been authorised to do certain works for the plaintiff already</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">averred in such plea.</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">The relevant part of paragraph 2 of the plea reads as follows:</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">“2 The defendants deny all the averments contained in paragraphs 2 and 4 of the</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">plaint with summons and aver that:-</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt"></span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">3</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">(a) as from the year 1999, plaintiff company undertook several building</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">and civil engineering works for the account of Gexmi Ltd;</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">(b) between the year 1999 and the end of the year 2003, defendant No 1</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">provided several consultancy services to plaintiff;</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">The motion for amendment is to add after the last word “plaintiff” at paragraph 2 (b) of</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">the plea the following, “and this with the authorisation granted by Gexim”.</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">If the amendment is granted, paragraph 2 (b) will therefore read as follows:-</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">(c) between year 1999 and the end of the year 2003, defendant No 1 provided</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">several consultancy services to plaintiff, and this with the authorisation</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">granted by Gexim.</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">What will have been added will be the punctuation mark ‘comma’, and the words underlined.</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">Learned Senior Counsel for the plaintiff has objected to the amendment mainly on</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">account of the stage the proceedings have reached, namely that the case is actually being</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">heard. He has also argued that if the motion is allowed the plaintiff may have to ask for</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">particulars of the amended plea entailing delay in the proceedings.</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">Learned Senior Counsel for the defendants has referred to the well known principles</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">obtaining and applied in relation to amendments of pleadings. He has argued that his motion to</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">amend results from the fact that the plaintiff has canvassed an issue on which the latter has not</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">pleaded, and the defendants have therefore also not pleaded thereon, but now, given the new</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">matter in issue the defendants need to plead thereto in order to be able to adduce evidence in</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">rebuttal thereof.</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">The principles on which amendments of pleadings are allowed or refused are</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">well settled. I have sought to list out and summarise them in the case of Hems</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">Apparels v. State Bank of Mauritius and Anor [2009 SCJ 419]. The ones which are</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">more prominent and relevant to the issues raised here are as follows.</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">The basic premise as appears from Rule 17 of our Supreme Court Rules 2000</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">is that the Court may “grant an amendment of any pleading, in such manner and on</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">such terms as may be just and reasonable, for the purpose of determining the real</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt"></span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">4</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">question in controversy between the parties”. However, the Court will exercise such</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">discretion judiciously taking into account inter alia, the nature of the proposed</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">amendment, the stage of the proceedings at which, and the purpose for which it is</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">made, whether there is bad faith or the intention to overreach on the part of the party</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">making it, whether any prejudice is likely to be caused to the other party or parties</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">which may not be compensated by an order for costs - (vide Soobhany &amp; Ors v.</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">Soobhany &amp; Ors [1989 MR 191], Unmar v. Lagesse [1994 MR 183] and Maxo</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">Products v Swan Insurance Co. Ltd [1996 MR 41], where dicta from the English</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">cases of G. L. Baker v. Medway Building &amp; Supplies Ltd [1958 1 WLR 1216 at p.</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">1231]; [1958 3 ALL E. R. 540, p. 546] and Copper v. Smith [1883 26 Ch. D. 700, at</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">pp. 710 – 711] which latter was emphatically approved in Shoe Machinery Co. v.</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">Cultham [1896 1 Ch. 108 p. 112]). Those principles have been applied in the more</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">recent cases of Reekoye v. Mauritius Union Insurance Co. Ltd &amp; Anor [2004 SCJ</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">66], ABC Motors and Ors v. Ngan Hoy Khen Ngan Chee Wang &amp; Ors [2008 SCJ</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">25a], and C. Marday &amp; Ors v. B. Marday &amp; Ors. [2008 SCJ 30].</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">It is clear from the above authorities that since some decades the modern trend</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">has been without doubt, to grant leave to amend even in a case where the motion is</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">made at a late hour. However, the Court would be more strict in granting applications</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">for amendment at the trial than before the trial in the absence of any explanation as to</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">why it could not have been moved for earlier and will generally not grant an</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">amendment which will prejudice the right of the opposite party as existing at the time of</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">the amendment (Joomun v. Kissoondharry [1977 MR 256] and B Harel &amp; Anor v.</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">Société Harel &amp; Cie and Ors [1993 MR 251]. The Court would also not allow an</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">amendment which is substantial and raises new issues which are inconsistent with</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">those found in the statement of claim (Tive Hive and Ors v. Kam Tim [1953 MR 80]).</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">In that context a distinction is to be made between an amendment which purports to</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">clarify the issue for determination and one which raises a new or substantial issue for</span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt">the first time (vide Ketteman v. Hansel Properties Ltd [1987 AC 189]), referred to in</span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">the case of Soobhany v. Soobhany (supra). (Emphasis added).</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">On the facts and circumstances of the present matter, Learned Senior Counsel for the</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">defendants has argued that paragraph 2 of the defendants’ plea as it now stands is in answer to</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt"></span></span>
+<span class="line" id="L127"><span class="ln">127</span><span class="txt">5</span></span>
+<span class="line" id="L128"><span class="ln">128</span><span class="txt">the averments of the plaintiff at paragraphs 2 and 4 of the plaint with summons which latter</span></span>
+<span class="line" id="L129"><span class="ln">129</span><span class="txt">paragraphs read as follows:-</span></span>
+<span class="line" id="L130"><span class="ln">130</span><span class="txt">“2. Defendant No 1 was performing the duties of an Administrative Clerk on a part-time</span></span>
+<span class="line" id="L131"><span class="ln">131</span><span class="txt">basis for Plaintiff from the year 2005 to the year 2008.”</span></span>
+<span class="line" id="L132"><span class="ln">132</span><span class="txt">“4. Plaintiff avers that whilst Defendant No 1 was in employment with GEXIM Ltd from</span></span>
+<span class="line" id="L133"><span class="ln">133</span><span class="txt">the year 1991 up to the year 2005, Defendant No 1 also worked on the accounts of Plaintiff and</span></span>
+<span class="line" id="L134"><span class="ln">134</span><span class="txt">for which Defendant No 1 was paid an allowance.”</span></span>
+<span class="line" id="L135"><span class="ln">135</span><span class="txt">It is obvious from such averments of the plaintiff that it is not part of its case that</span></span>
+<span class="line" id="L136"><span class="ln">136</span><span class="txt">defendant No 1 was not authorised by his employer, Gexim, to take up such part time work with</span></span>
+<span class="line" id="L137"><span class="ln">137</span><span class="txt">the plaintiff. And the defendants’ answer as per their plea is in answer to the plaintiff’s</span></span>
+<span class="line" id="L138"><span class="ln">138</span><span class="txt">averments as per its pleadings as they then stood, and now still stand.</span></span>
+<span class="line" id="L139"><span class="ln">139</span><span class="txt">Now, in the course of the examination of the first witness called by the plaintiff, Mr</span></span>
+<span class="line" id="L140"><span class="ln">140</span><span class="txt">Agusti, an employee of Gexim at all material times, the plainfiff sought to establish that the first</span></span>
+<span class="line" id="L141"><span class="ln">141</span><span class="txt">defendant was not authorised to accept work for reward outside his employment with Gexim.</span></span>
+<span class="line" id="L142"><span class="ln">142</span><span class="txt">As rightly submitted by counsel for the defendants, that new element with regard to</span></span>
+<span class="line" id="L143"><span class="ln">143</span><span class="txt">alleged lack of authorisation makes it incumbent upon the defendants to amend their pleadings</span></span>
+<span class="line" id="L144"><span class="ln">144</span><span class="txt">as they propose to do in order to enable them to adduce evidence to rebut the suggestion that</span></span>
+<span class="line" id="L145"><span class="ln">145</span><span class="txt">defendant No 1 acted without authorisation in accepting and doing work for the plaintiff without</span></span>
+<span class="line" id="L146"><span class="ln">146</span><span class="txt">Gexim’s authorisation and in violation of clause 9 of his contract of employment which according</span></span>
+<span class="line" id="L147"><span class="ln">147</span><span class="txt">to the plaintiff stipulates that an employee of Gexim must obtain the express permission of its</span></span>
+<span class="line" id="L148"><span class="ln">148</span><span class="txt">directors before undertaking any private work of any nature whatsoever, for reward.</span></span>
+<span class="line" id="L149"><span class="ln">149</span><span class="txt">Indeed the issue of the need for Gexim’s authorisation was first raised by the plaintiff</span></span>
+<span class="line" id="L150"><span class="ln">150</span><span class="txt">itself whereas the same was not part of its case as per its pleadings. The defendant, it may be</span></span>
+<span class="line" id="L151"><span class="ln">151</span><span class="txt">fairly considered, was taken by surprise, and it might be debarred from adducing evidence in</span></span>
+<span class="line" id="L152"><span class="ln">152</span><span class="txt">rebuttal or qualification of such allegation if it did not seek to adjust its pleadings accordingly.</span></span>
+<span class="line" id="L153"><span class="ln">153</span><span class="txt">For all the above reasons, I hold that the defendants cannot be taken to task for not</span></span>
+<span class="line" id="L154"><span class="ln">154</span><span class="txt">having pleaded on a “fait materiel” not raised initially in the plaintiff’s pleadings. It is legitimate</span></span>
+<span class="line" id="L155"><span class="ln">155</span><span class="txt">for the defence to seek to amend the plea in the manner it has moved to in order to enable it to</span></span>
+<span class="line" id="L156"><span class="ln">156</span><span class="txt">adduce evidence in rebuttal as it seems to propose to do. The objection is consequently</span></span>
+<span class="line" id="L157"><span class="ln">157</span><span class="txt"></span></span>
+<span class="line" id="L158"><span class="ln">158</span><span class="txt">6</span></span>
+<span class="line" id="L159"><span class="ln">159</span><span class="txt">overruled. The motion to amend the plea is granted and it is amended in terms thereof.</span></span>
+<span class="line" id="L160"><span class="ln">160</span><span class="txt">Obviously the defendants cannot be held responsible for any delay resulting from the eventual</span></span>
+<span class="line" id="L161"><span class="ln">161</span><span class="txt">application for particulars of the plea by the plaintiff consequential upon the amendment</span></span>
+<span class="line" id="L162"><span class="ln">162</span><span class="txt">presently granted.</span></span>
+<span class="line" id="L163"><span class="ln">163</span><span class="txt">The matter shall be mentioned before me at the Family Division of the Supreme Court</span></span>
+<span class="line" id="L164"><span class="ln">164</span><span class="txt">on Friday 06 September 2013 at 10.15 hours for it to be set down for continuation.</span></span>
+<span class="line" id="L165"><span class="ln">165</span><span class="txt">A. HAMUTH</span></span>
+<span class="line" id="L166"><span class="ln">166</span><span class="txt">Judge</span></span>
+<span class="line" id="L167"><span class="ln">167</span><span class="txt">08 August 2013</span></span>
+<span class="line" id="L168"><span class="ln">168</span><span class="txt">For Plaintiff: Mr. Attorney P Chuttoo</span></span>
+<span class="line" id="L169"><span class="ln">169</span><span class="txt">Mr. Y Mohamed, S.C.</span></span>
+<span class="line" id="L170"><span class="ln">170</span><span class="txt">Mr R Bhadain, of Counsel</span></span>
+<span class="line" id="L171"><span class="ln">171</span><span class="txt">For Defendant: Mr Attorney P V Mootoosamy</span></span>
+<span class="line" id="L172"><span class="ln">172</span><span class="txt">Mr. I. Collendavelloo, S.C.</span></span>
+<span class="line" id="L173"><span class="ln">173</span><span class="txt">[#Delivered by: Hon. A Hamuth, Judge#]</span></span>
+<span class="line" id="L174"><span class="ln">174</span><span class="txt">[#Delivered on: 8 August 2013#]</span></span>
+<span class="line" id="L175"><span class="ln">175</span><span class="txt"></span></span>
+<span class="line" id="L176"><span class="ln">176</span><span class="txt">7</span></span>
+</pre></div><div class="pane pane-right" id="digest-pane"><section class="sec sec-header"><h1>BEST LUCK (MAURITIUS) LTD v MURDHEN N. &amp; ANOR</h1><table class="meta-table"><tr><th>Citation</th><td><code>2013 SCJ 335</code></td></tr><tr><th>Verbatim</th><td><code>2013 SCJ 335</code></td></tr><tr><th>Record</th><td>Co. 522/10 (PWS)</td></tr><tr><th>Court</th><td>Supreme Court &mdash; Commercial Division</td></tr><tr><th>Bench</th><td>single judge</td></tr><tr><th>Jurisdiction</th><td>Mauritius</td></tr><tr><th>Date</th><td>2013-08-08</td></tr><tr><th>Judgment by</th><td>A. Hamuth</td></tr><tr><th>Procedural posture</th><td>interlocutory</td></tr><tr><th>Citation code</th><td><code>SCJ</code></td></tr></table></section><section class="sec"><h2>Bench</h2><ul><li><strong>A. Hamuth</strong>, Judge <span class='tag'>lead</span> <span class='tag tag-muted'>full agreement</span></li></ul><p class='muted'>Judgment delivered by: A. Hamuth</p></section><section class="sec"><h2>Parties</h2><ul><li><strong>plaintiff:</strong> Best Luck (Mauritius) Ltd</li><li><strong>defendant:</strong> Murdhen N. &amp; Anor</li></ul></section><section class="sec"><h2>Counsel</h2><ul><li><em>For plaintiff:</em> Mr. Attorney P Chuttoo; Mr. Y Mohamed, S.C.; Mr R Bhadain, of Counsel</li><li><em>For defendant:</em> Mr Attorney P V Mootoosamy; Mr. I. Collendavelloo, S.C.</li></ul></section><section class="sec"><h2>Catchwords</h2><ol class="catchwords"><li>Code (Supreme Court Rules 2000) — Amendment of pleadings — Rule 17 — Whether amendment to plea should be allowed during trial when new issue raised by plaintiff</li></ol></section><section class="sec"><h2>Headnote</h2><h3>Facts</h3><p>Best Luck (Mauritius) Ltd sued Murdhen N. and his company for fraud and unauthorized dealings, alleging the first defendant fraudulently caused the plaintiff to issue cheques and enriched himself and his company. The defendants pleaded they provided consultancy services to the plaintiff between 1999 and 2003 with authorization from their employer, Gexim Ltd. During trial, the plaintiff raised the issue of whether the first defendant had authorization from Gexim to work for the plaintiff. The defendants sought to amend their plea to add an averment that the first defendant had obtained such authorization.</p><h3>Held</h3><ol class='held'><li><p>Under Rule 17 of the Supreme Court Rules 2000, the court may grant an amendment of any pleading in such manner and on such terms as may be just and reasonable, for the purpose of determining the real question in controversy between the parties.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L90' data-start='90' data-end='95'>L90-L95</a> <span class='preview'>&mdash; The basic premise as appears from Rule 17 of our Supreme Court Rules 2000 is that the Court may “grant an amendment of any pleading, in such manner and on such terms as may be just and reasonable, for the purpose of determining the real 4 …</span></span></div></li><li><p>When exercising discretion on amendments, the court must consider the nature of the proposed amendment, the stage of the proceedings, the purpose for which it is made, whether there is bad faith or intention to overreach, and whether any prejudice is likely to be caused to the other party that may not be compensated by an order for costs.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L96' data-start='96' data-end='99'>L96-L99</a> <span class='preview'>&mdash; discretion judiciously taking into account inter alia, the nature of the proposed amendment, the stage of the proceedings at which, and the purpose for which it is made, whether there is bad faith or the intention to overreach on the part …</span></span></div></li><li><p>The court is stricter in granting amendments at the trial stage than before trial, and will generally not grant an amendment that prejudices the rights of the opposite party as existing at the time of the amendment.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L112' data-start='112' data-end='116'>L112-L116</a> <span class='preview'>&mdash; made at a late hour. However, the Court would be more strict in granting applications for amendment at the trial than before the trial in the absence of any explanation as to why it could not have been moved for earlier and will generally …</span></span></div></li><li><p>The court must distinguish between amendments that clarify the issue for determination and those that raise new or substantial issues for the first time.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L120' data-start='120' data-end='123'>L120-L123</a> <span class='preview'>&mdash; In that context a distinction is to be made between an amendment which purports to clarify the issue for determination and one which raises a new or substantial issue for the first time (vide Ketteman v. Hansel Properties Ltd [1987 AC 189]…</span></span></div></li><li><p>A defendant taken by surprise by a new issue raised by the plaintiff during trial is entitled to amend its pleadings to enable it to adduce rebuttal evidence on that new issue.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L149' data-start='149' data-end='152'>L149-L152</a> <span class='preview'>&mdash; Indeed the issue of the need for Gexim’s authorisation was first raised by the plaintiff itself whereas the same was not part of its case as per its pleadings. The defendant, it may be fairly considered, was taken by surprise, and it might…</span></span></div></li></ol><h3>Disposition</h3><p>The objection to the motion to amend is overruled. The motion to amend the plea is granted and the plea is amended as proposed.</p><h3>Orders</h3><ul><li>The defendants cannot be held responsible for any delay resulting from an application for particulars of the plea consequential upon the amendment.</li></ul><h3>Quotable holding</h3><blockquote>It is legitimate for the defence to seek to amend the plea in order to enable it to adduce evidence in rebuttal of a new issue raised during trial that was not initially pleaded.</blockquote></section><section class="sec"><h2>Cases cited</h2><table class="cases-table"><thead><tr><th>Citation</th><th>Name</th><th>Treatment</th><th>Signal</th><th>Review-worthy</th><th>Provenance</th><th>Line</th><th>Authority</th></tr></thead><tbody><tr><td><code>[2009 SCJ 419]</code><br><span class='muted small'>norm: 2009 SCJ 419</span></td><td>Hems Apparels v. State Bank of Mauritius and Anor</td><td>considered</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L88' data-start='88' data-end='88'>L88</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;I have sought to list out and summarise them in the case of Hems Apparels v. State Bank of Mauritius and Anor [2009 SCJ 419]&rdquo;</td></tr><tr><td><code>[1989 MR 191]</code><br><span class='muted small'>norm: 1989 MR 191</span></td><td>Soobhany &amp; Ors v. Soobhany &amp; Ors</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L100' data-start='100' data-end='100'>L100</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;whether any prejudice is likely to be caused to the other party or parties which may not be compensated by an order for costs - (vide Soobhany &amp; Ors v. Soobhany &amp; Ors [1989 MR 191]&rdquo;</td></tr><tr><td><code>[1994 MR 183]</code><br><span class='muted small'>norm: 1994 MR 183</span></td><td>Unmar v. Lagesse</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L101' data-start='101' data-end='101'>L101</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;Unmar v. Lagesse [1994 MR 183]&rdquo;</td></tr><tr><td><code>[1996 MR 41]</code><br><span class='muted small'>norm: 1996 MR 41</span></td><td>Maxo Products v Swan Insurance Co. Ltd</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L102' data-start='102' data-end='102'>L102</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;Maxo Products v Swan Insurance Co. Ltd [1996 MR 41], where dicta from the English cases&rdquo;</td></tr><tr><td><code>[1958 1 WLR 1216 at p. 1231]; [1958 3 ALL E. R. 540, p. 546]</code><br><span class='muted small'>norm: [1958] 1 WLR 1216</span></td><td>G. L. Baker v. Medway Building &amp; Supplies Ltd</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L103' data-start='103' data-end='103'>L103</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;G. L. Baker v. Medway Building &amp; Supplies Ltd [1958 1 WLR 1216 at p. 1231]; [1958 3 ALL E. R. 540, p. 546]&rdquo;</td></tr><tr><td><code>[1883 26 Ch. D. 700, at pp. 710 – 711]</code><br><span class='muted small'>norm: [1883] 26 Ch. D. 700</span></td><td>Copper v. Smith</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L104' data-start='104' data-end='104'>L104</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;Copper v. Smith [1883 26 Ch. D. 700, at pp. 710 – 711]&rdquo;</td></tr><tr><td><code>[1896 1 Ch. 108 p. 112]</code><br><span class='muted small'>norm: [1896] 1 Ch. 108</span></td><td>Shoe Machinery Co. v. Cultham</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L105' data-start='105' data-end='105'>L105</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;which latter was emphatically approved in Shoe Machinery Co. v. Cultham [1896 1 Ch. 108 p. 112]&rdquo;</td></tr><tr><td><code>[2004 SCJ 66]</code><br><span class='muted small'>norm: 2004 SCJ 66</span></td><td>Reekoye v. Mauritius Union Insurance Co. Ltd &amp; Anor</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L107' data-start='107' data-end='107'>L107</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;Those principles have been applied in the more recent cases of Reekoye v. Mauritius Union Insurance Co. Ltd &amp; Anor [2004 SCJ 66]&rdquo;</td></tr><tr><td><code>[2008 SCJ 25a]</code><br><span class='muted small'>norm: 2008 SCJ 25a</span></td><td>ABC Motors and Ors v. Ngan Hoy Khen Ngan Chee Wang &amp; Ors</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L108' data-start='108' data-end='108'>L108</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;ABC Motors and Ors v. Ngan Hoy Khen Ngan Chee Wang &amp; Ors [2008 SCJ 25a]&rdquo;</td></tr><tr><td><code>[2008 SCJ 30]</code><br><span class='muted small'>norm: 2008 SCJ 30</span></td><td>C. Marday &amp; Ors v. B. Marday &amp; Ors.</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L109' data-start='109' data-end='109'>L109</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;C. Marday &amp; Ors v. B. Marday &amp; Ors. [2008 SCJ 30]&rdquo;</td></tr><tr><td><code>[1977 MR 256]</code><br><span class='muted small'>norm: 1977 MR 256</span></td><td>Joomun v. Kissoondharry</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L116' data-start='116' data-end='116'>L116</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;and will generally not grant an amendment which will prejudice the right of the opposite party as existing at the time of the amendment (Joomun v. Kissoondharry [1977 MR 256]&rdquo;</td></tr><tr><td><code>[1993 MR 251]</code><br><span class='muted small'>norm: 1993 MR 251</span></td><td>B Harel &amp; Anor v. Société Harel &amp; Cie and Ors</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L117' data-start='117' data-end='117'>L117</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;and B Harel &amp; Anor v. Société Harel &amp; Cie and Ors [1993 MR 251]&rdquo;</td></tr><tr><td><code>[1953 MR 80]</code><br><span class='muted small'>norm: 1953 MR 80</span></td><td>Tive Hive and Ors v. Kam Tim</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L119' data-start='119' data-end='119'>L119</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;The Court would also not allow an amendment which is substantial and raises new issues which are inconsistent with those found in the statement of claim (Tive Hive and Ors v. Kam Tim [1953 MR 80])&rdquo;</td></tr><tr><td><code>[1987 AC 189]</code><br><span class='muted small'>norm: [1987] AC 189</span></td><td>Ketteman v. Hansel Properties Ltd</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L122' data-start='122' data-end='122'>L122</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;a distinction is to be made between an amendment which purports to clarify the issue for determination and one which raises a new or substantial issue for the first time (vide Ketteman v. Hansel Properties Ltd [1987 AC 189])&rdquo;</td></tr></tbody></table></section><section class="sec"><h2>Legislation</h2><table class="leg-table"><thead><tr><th>Kind</th><th>Name</th><th>Sections</th><th>Jurisdiction</th><th>Line</th></tr></thead><tbody><tr><td>subsidiary</td><td>Supreme Court Rules 2000</td><td>Rule 17</td><td>mu</td><td><a class='lineref' href='#L90' data-start='90' data-end='90'>L90</a></td></tr></tbody></table></section><section class="sec sec-debug"><h2>Document structure pointers</h2><ul><li>Header: <a class='lineref' href='#L1' data-start='1' data-end='12'>L1-L12</a></li><li>Judgment body: <a class='lineref' href='#L13' data-start='13' data-end='162'>L13-L162</a></li><li>Signatures: <a class='lineref' href='#L165' data-start='165' data-end='165'>L165</a></li><li>Date: <a class='lineref' href='#L167' data-start='167' data-end='167'>L167</a></li><li>Counsel block: <a class='lineref' href='#L168' data-start='168' data-end='172'>L168-L172</a></li></ul></section><section class="sec sec-debug"><h2>Extraction confidence (debug)</h2><ul><li>catchwords: <span class='tag'>high</span></li><li>court: <span class='tag'>high</span></li><li>procedural_posture: <span class='tag'>high</span></li><li>headnote: <span class='tag'>high</span></li><li>cases_cited: <span class='tag'>high</span></li><li>legislation: <span class='tag'>high</span></li></ul><p><strong>Notes:</strong></p><ul><li>English case citations in the judgment text lack the closing bracket after the year (e.g., &#x27;[1958 1 WLR...&#x27; instead of &#x27;[1958] 1 WLR...&#x27;); citation_verbatim preserves this as printed; normalized citation field applies standard English citation convention.</li></ul></section><section class='sec sec-footer'><hr><p class='muted small'>extractor: v1 &middot; schema: v1</p></section></div></div><script>
+(function () {
+  function clearHl() {
+    document.querySelectorAll('.line.hl').forEach(function (el) { el.classList.remove('hl'); });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a.lineref');
+    if (!a) return;
+    e.preventDefault();
+    var start = parseInt(a.dataset.start, 10);
+    var end = parseInt(a.dataset.end || a.dataset.start, 10);
+    if (isNaN(start)) return;
+    clearHl();
+    var target = null;
+    for (var i = start; i <= end; i++) {
+      var el = document.getElementById('L' + i);
+      if (el) { el.classList.add('hl'); if (!target) target = el; }
+    }
+    if (target) {
+      target.scrollIntoView({ block: 'center' });
+      history.replaceState(null, '', '#L' + start);
+    }
+  });
+})();
+</script></body></html>

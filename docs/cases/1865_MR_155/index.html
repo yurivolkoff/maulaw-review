@@ -1,0 +1,672 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>Montille and Ors. v. The Queen · 1865 MR 155 · review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+    --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+  --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+a { color: var(--link); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 1.25rem 1.5rem 3rem; }
+header.site-header { background: var(--header-bg); border-bottom: 1px solid var(--border); }
+header.site-header .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+h1 { font-size: 1.4rem; margin: 0 0 .5rem; }
+.lede { color: var(--muted); max-width: 70ch; line-height: 1.5; margin: 0; }
+.disclaimer { margin-top: .75rem; padding: .6rem .9rem; background: var(--warn-bg); color: var(--warn-fg);
+  border-radius: 6px; font-size: .85rem; max-width: 70ch; line-height: 1.4; }
+table.cases { border-collapse: collapse; width: 100%; margin-top: 1.5rem; font-size: .9rem; }
+table.cases th, table.cases td { border-top: 1px solid var(--border); padding: .55rem .6rem; text-align: left; vertical-align: top; }
+table.cases thead th { border-top: none; border-bottom: 2px solid var(--border); color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .02em; }
+table.cases tbody tr:hover { background: var(--code-bg); }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .9em; }
+.muted { color: var(--muted); }
+.back-link { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
+.case-meta { display: flex; flex-wrap: wrap; gap: .4rem .9rem; font-size: .85rem; color: var(--muted); margin: .4rem 0 1rem; }
+.case-meta span strong { color: var(--fg); font-weight: 600; }
+.tabs { display: flex; gap: .25rem; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+.tab-btn { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; color: var(--muted);
+  padding: .55rem .9rem; font-size: .9rem; cursor: pointer; font-family: inherit; }
+.tab-btn:hover { color: var(--fg); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.tab-panel iframe { width: 100%; height: 82vh; border: 1px solid var(--border); border-radius: 6px; }
+pre.raw-json { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
+  overflow: auto; max-height: 82vh; font-family: Consolas, "Courier New", monospace; font-size: .8rem; line-height: 1.45; white-space: pre-wrap; word-break: break-word; }
+.pane-original { border: 1px solid var(--border); border-radius: 6px; max-height: 82vh; overflow: auto; }
+.pane-original .pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); }
+.pane-original pre.lines { margin: 0; padding: .25rem 0 1.5rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.pane-original .line { display: block; white-space: pre; padding: 0 .75rem; }
+.pane-original .line:hover { background: rgba(127,127,127,.08); }
+.pane-original .line.hl { background: #fff3a3; }
+.pane-original .ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+footer.site-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+</style></head><body>
+<header class="site-header"><div class="wrap">
+  <a class="back-link" href="../../index.html">&larr; All cases</a>
+  <h1>Montille and Ors. v. The Queen</h1>
+  <p class="lede"><code>1865 MR 155</code></p>
+  <div class="case-meta"><span><strong>Digested:</strong> 2026-07-05</span><span><strong>Model:</strong> claude-haiku-4-5-20251001</span><span><strong>Prompt:</strong> extractor.v1</span><span><strong>Schema:</strong> v1</span></div>
+</div></header>
+<div class="wrap">
+  <div class="tabs">
+    <button class="tab-btn" id="tab-btn-original">Original judgment</button>
+    <button class="tab-btn" id="tab-btn-rendered">Digested judgment (rendered)</button>
+    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button>
+  </div>
+  <div class="tab-panel" id="tab-panel-original"><div class="pane-original" id="judgment-pane"><div class="pane-header">Judgment text &middot; 414 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">MONTILLE AND ORS. vs THE QUEEN</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">1865 MR 155</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">Bestel, J</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">This was an Appeal from a Judgment of the District Court of Grand Port, of</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">the 23rd August last, given upon a Charge preferred against the now Appellants,</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">by Charles Boulter, Inspector of Police of the said District, for that, &quot;on the</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">20th day of May, at about 3 o&#x27;clock, a.m., in the year of Our Lord one thousand</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">eight hundred and sixty five, at Beau Fond Estate, in the said District, he</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">found part of a building set apart and used as a prison in which were confined</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">thirteen Indians, to wit: Veerasamy, Reddygadoo, Ramen, Chiniavadoo, Miniapin,</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">Comorassamy, Ramassamy, Chedembrun, Poinen, Ramdoo, Venkiah, Nagamah and</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">Veerasoo, all new Immigrants, laborers of the aforesaid Estate, and one Toolsy a</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">guardian and laborer of the Estate aforesaid, acing as gaoler.&quot; And further</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">stating that &quot;he has reason to believe that the thirteen Indians aforesaid had</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">been unlawfully arrested, detained and sequestrated, without any orders from the</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">constituted authorities, by Alcide Montille, otherwise called Alcide de</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">Montille, and one Azenor Montille, otherwise called Az‚nor de Montille, both of</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">Beau Fond Estate aforesaid, aided and abetted by Narain and Mahmod Saib,</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">Sirdars, and the aforesaid Toolsy, guardian and laborer, and Esa‹ Rosidor,</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">overseer and Book-keeper, all of the Estate aforesaid, as well as by Etienne</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">Montille, senior, otherwise called Etienne de Montille, also of the aforesaid</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">Estate; in as much as the last named did knowingly lend the place for effecting</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">the said illegal detention and sequestration contrary to the form of the</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">Ordinance in such case made and provided.&quot;</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">It would appear from the Record, that the parties charged, and amongst</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">them (viz) alcide Azenor alias Azenor. Etienne Montille alias de Montille of</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">their own accord, presented themselves in the District Court of Grand Port on</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">the 13th June now last past, before the Magistrate of the said District, and</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">&quot;after having heard the said charge respectively said that they were not guilty</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">thereof and did not require further time to answer thereof.&quot; Whereupon and</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">parties heard, the Magistrate proceeded as follows:</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">&quot;I do, on this 23rd day of August, in the year one thousand eight hundred</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">and sixty five, convict the said Alcide Montille otherwise called Alcide de</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">Montille, of the offence charged upon him as aforesaid, and under Art: 258 of</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">the Penal Code of the Colony, being the Ord. No. 6 of 1838, I do therefore</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">adjudge: 1o the said A. Montille, otherwise called de Montille, for his said</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">offence, to be imprisoned and kept to hard labor in Her Majesty&#x27;s Gaol of Grand</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">Port for the space of twelve months, and to pay a sum of £ 50 as a fine.</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">2o Azenor Montille, otherwise called Azenor de Montille, for his said</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">offence to be imprisoned in Her Majesty&#x27;s Gaol of Grand Port and kept to have</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">labor of the space of six months and to pay a sum of fifty pounds sterling as a</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">fine.</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">3o Toolsy, for his said offence, to be imprisoned in Her Majesty&#x27;s Gaol</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">of Grand Port , and kept to hard labor for the space of three months. 4o</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">Etienne Montille, otherwise called Etienne de Montille, to forfeit and pay fifty</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">pounds sterling as a fine. I do further adjudge that the said Alcide Montille,</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">otherwise called Alcide de Montille, Azenor Montille alias Azenor de Montille,</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">Toolsy, Etienne Montille, alias Etienne de Montille, be severally and</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt"></span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">collectively bound to pay a further sum of fifty three pounds and eight</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">shillings sterling, as costs, and be likewise severally and collectively bound,</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">for the payment of their respective fines, and in default of the immediate</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">payment of the said fine and costs, to be imprisoned and kept respectively to</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">hard labor in Her Majesty&#x27;s Gaol aforesaid, for the space of three months, with</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">the exception of Etienne Montille alias Etienne de Montille whose imprisonment</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">shall be done without hard labor. And I direct that the above fines and costs</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">aforesaid be paid into the hands of the District Cashier of Grand Port to the</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">use of Her Majesty the Queen.</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">Prisoners Narain, Mamode Saib and Esaie Rasidor discharged.</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">Given under my hand etc., etc.&quot; The Conviction was appealed from on the</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">following grounds:</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">1o Because the said Conviction is based and given upon facts of which the</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">Appellants were not accused, and against which they could not offer a defence.</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">2o Because the Plaint filed by the Respondent is not proved by any legal</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">evidence, according to the law of the country, and that the motives given by the</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">Magistrate, and by him supported according to the French Criminal law [MR p 156]</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">are illegal and unconstitutional as to British subjects.</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">3o Because the Magistrate has given his Decision in direct opposition to</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">the evidence.</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">Because, as to the Appellant Etienne de Montille, it was proved, by a</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">notarial deed duly registered and transcribed, that, having leased his property</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">since the year one thousand eight hundred and sixty three, he had, from that</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">time been dispossessed of the whole of the said property, on which the alleged</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">misdemeanor is supposed to have taken place.</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">5o Because it was not materially and legally proved, both by the</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">Plaintiff&#x27;s and Defendants&#x27; witnesses that Alcide de Montille, one of the</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">Appellants, was not in the District of Grand Port at the time the alleged</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">imprisonment is supposed to have taken place on the Estate called Beau Fond.</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">That in fact the said Alcide de Montille was in Port Louis with the Magistrate</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">himself, and at that time travelled in the same railway train with the</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">Magistrate of Grand-Port.</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">6o Because, to arrive at the Decision now appealed against, the</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">Magistrate did, without that wisdom and prudence which must preside over the</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">legal disquisition of legal evidence, on which the freedom of the subject</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">reposes, most evidently torture and distort the evidence aforesaid.</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">7o Because the Conviction or Sentence now appealed against, being based</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">on the Plaint filed by the Plaintiff, now Respondent, the evidence heard in</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">support of such Plaint ought not, as it has been done and practiced by the</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">Magistrate, to have stretched out of the accusation therein contained, and</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">especially, as regards the time at which the alleged imprisonment is supposed to</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">have taken place, so as to enable the Appellants to defend themselves.&quot;</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">At the hearing of the Appeal, the Hon. L. Arnaud and H. Koenig appeared</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">for the several Appellants Montille or de Montille in support of their Appeal</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">and the Substitute Procureur and Advocate General for the Crown supported the</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">Conviction.</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt"></span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">The main ground of Appeal rested upon at the trial, though not stated in</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">the reasons of appeal, but not objected to by the Crown, was 1o a plea to the</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">jurisdiction.</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">In support of this reason or plea Arnaud and Koenig referred the Court to</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">the text of the District Magistrate&#x27;s Ordinance (Criminal Side) Art. 101 which</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">is thus worded: &quot;Every District Court shall be a Court of Criminal</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">Jurisdiction, and shall have cognizance of all questions of fact and law in all</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">cases of crimes or of offences not punishable by death or transporting; provided</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">that it shall not be lawful for any District Magistrate to award, against any</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">offender, a severer punishment than imprisonment for a period not exceeding</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">twelve months, with or without hard labor or any not exceeding œ 50 steer. and</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">when the Magistrate shall think the case liable to a severer punishment, under</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">the Penal Code, he shall proceed in the manner prescribed by Art. 47 of the</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">present Ordinance.</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">Counsel contended that the District Magistrate had departed from the law</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">by a cumulation of punishments which, the text of the law required, should ever</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">be kept distinct; that he had not only awarded the maximum of imprisonment but</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">also the maximum of the fines, whereas he should have confined himself to the</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">award of one or the other punishments, in obedience to the letter of the</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">Ordinance which, being a penal statute, required to be construed strictly. That</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">a Magistrate acting without the limits of his jurisdiction was as much non judex</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">as one who, without a commission, might be bold enough to take upon himself to</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">sit in judgment over Her Majesty&#x27;s subjects. That the Decision given in the one</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">as in the other case would be, in law, any thing but a Judgment, a mere nullity,</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">which, as such, could not be sustained, and must be set aside.</span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt">The next ground of appeal urged by Arnaud was the Badness of the</span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">Conviction, which had been based and given upon facts of which the Appellants</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">were not accused, and against which they could not offer a defence: such as for</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">instance the orders alleged to have been given, by the Montille or de Montille</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt">for the sequestration charged. - These alleged orders are not mentioned in the</span></span>
+<span class="line" id="L127"><span class="ln">127</span><span class="txt">Criminal Information, nor is the date mentioned when the alleged orders were</span></span>
+<span class="line" id="L128"><span class="ln">128</span><span class="txt">given. Had a time certain or approximate been stated in the Criminal</span></span>
+<span class="line" id="L129"><span class="ln">129</span><span class="txt">Information, the Defendants (now Appellants) would have been placed in a</span></span>
+<span class="line" id="L130"><span class="ln">130</span><span class="txt">position to prove the non-giving of any such orders, and thus exonerated</span></span>
+<span class="line" id="L131"><span class="ln">131</span><span class="txt">themselves from the guilt imputed to them of having ordered the commission of an</span></span>
+<span class="line" id="L132"><span class="ln">132</span><span class="txt">illegal act, of which they were suspected, it is true, but of which they could</span></span>
+<span class="line" id="L133"><span class="ln">133</span><span class="txt">not have been convicted, had no evidence been allowed of the existence of such</span></span>
+<span class="line" id="L134"><span class="ln">134</span><span class="txt">alleged and non charged orders; not only was that evidence inadmissible, in law,</span></span>
+<span class="line" id="L135"><span class="ln">135</span><span class="txt">but also irrelevant to the issue.</span></span>
+<span class="line" id="L136"><span class="ln">136</span><span class="txt">The charge was that the Appellants, Montille or de Montille, &quot;had</span></span>
+<span class="line" id="L137"><span class="ln">137</span><span class="txt">sequestrated&quot; the Indian in the Criminal Information mentioned, which</span></span>
+<span class="line" id="L138"><span class="ln">138</span><span class="txt">necessarily implied that they had, in their own proper persons done so, and not</span></span>
+<span class="line" id="L139"><span class="ln">139</span><span class="txt">by the instrumentality of others under their orders.</span></span>
+<span class="line" id="L140"><span class="ln">140</span><span class="txt">Upon such a Charge, proof was required of the active and personal part</span></span>
+<span class="line" id="L141"><span class="ln">141</span><span class="txt">taken by each of the accused in the sequestration of the Indians. In default of</span></span>
+<span class="line" id="L142"><span class="ln">142</span><span class="txt">any such proof an acquittal, as to them at least, must have been recorded. But</span></span>
+<span class="line" id="L143"><span class="ln">143</span><span class="txt">the allowance, by the Magistrate, of evidence on facts not charged, has led to</span></span>
+<span class="line" id="L144"><span class="ln">144</span><span class="txt">the verdict complained of. If it should be said that the evidence received were</span></span>
+<span class="line" id="L145"><span class="ln">145</span><span class="txt">not inadmissible it was certainly irrelevant, for proof that orders had been</span></span>
+<span class="line" id="L146"><span class="ln">146</span><span class="txt">given, by the appellants, for the sequestration charged was no evidence of the</span></span>
+<span class="line" id="L147"><span class="ln">147</span><span class="txt">Appellants having, with their own hands personally sequestrated the Indians</span></span>
+<span class="line" id="L148"><span class="ln">148</span><span class="txt">mentioned, and could not conduce to the decision of the issue raised (viz:)</span></span>
+<span class="line" id="L149"><span class="ln">149</span><span class="txt"></span></span>
+<span class="line" id="L150"><span class="ln">150</span><span class="txt">Whether or not the Appellants suspected of the sequestration charged had</span></span>
+<span class="line" id="L151"><span class="ln">151</span><span class="txt">personally taken a guilty part in such sequestration.</span></span>
+<span class="line" id="L152"><span class="ln">152</span><span class="txt">In answer to the several grounds of Appeal the Crown Counsel</span></span>
+<span class="line" id="L153"><span class="ln">153</span><span class="txt">unhesitatingly supported the Conviction as sound in fact and in law.</span></span>
+<span class="line" id="L154"><span class="ln">154</span><span class="txt">The fact had been found by the Magistrate not an questionable as alleged,</span></span>
+<span class="line" id="L155"><span class="ln">155</span><span class="txt">but on most satisfactory evidence.</span></span>
+<span class="line" id="L156"><span class="ln">156</span><span class="txt">With the merits or weight of this evidence, the appellate jurisdiction had</span></span>
+<span class="line" id="L157"><span class="ln">157</span><span class="txt">nothing to do; of this the Magistrates alone are Judges (Paley Conviction, P.</span></span>
+<span class="line" id="L158"><span class="ln">158</span><span class="txt">178 § 6) and allowing the evidence to be as unsatisfactory as it was said to be,</span></span>
+<span class="line" id="L159"><span class="ln">159</span><span class="txt">the only point of the consideration of the Court of Appeal was not the</span></span>
+<span class="line" id="L160"><span class="ln">160</span><span class="txt">correctness of the conclusion drawn from the evidence, but merely whether there</span></span>
+<span class="line" id="L161"><span class="ln">161</span><span class="txt">was, in this as in all similar cases, sufficient legal evidence to go to Jury.</span></span>
+<span class="line" id="L162"><span class="ln">162</span><span class="txt">Beyond that the Court will not and cannot exercise judgment upon the credit or</span></span>
+<span class="line" id="L163"><span class="ln">163</span><span class="txt">weight due to the facts from which the conclusion is drawn (Paley on Convictions</span></span>
+<span class="line" id="L164"><span class="ln">164</span><span class="txt">P. 178 § 6).</span></span>
+<span class="line" id="L165"><span class="ln">165</span><span class="txt">The finding of the Magistrate is binding upon the Court of Appeal, and the</span></span>
+<span class="line" id="L166"><span class="ln">166</span><span class="txt">latter has merely to ascertain that the punishment be appropriate to the</span></span>
+<span class="line" id="L167"><span class="ln">167</span><span class="txt">offence. If so, to affirm. If not, in terms of Art. 123 of the District Ord.</span></span>
+<span class="line" id="L168"><span class="ln">168</span><span class="txt">(Criminal Side) to amend such Conviction.</span></span>
+<span class="line" id="L169"><span class="ln">169</span><span class="txt">With reference to the matter of law, the Crown Counsel maintained that the</span></span>
+<span class="line" id="L170"><span class="ln">170</span><span class="txt">power of cumulating the two punishments was strictly legal.</span></span>
+<span class="line" id="L171"><span class="ln">171</span><span class="txt">Art. 101 of the District Criminal Ordinance, in defending the jurisdiction</span></span>
+<span class="line" id="L172"><span class="ln">172</span><span class="txt">of the District Court, say in express terms: &quot;Every District Court shall be a</span></span>
+<span class="line" id="L173"><span class="ln">173</span><span class="txt">Court of Criminal Jurisdiction, and shall have cognizance of all questions of</span></span>
+<span class="line" id="L174"><span class="ln">174</span><span class="txt">fact and law, in all cases of crimes or of offences, not punishable by death or</span></span>
+<span class="line" id="L175"><span class="ln">175</span><span class="txt">transportation.&quot; Hence it necessarily follows that the offence charged in this</span></span>
+<span class="line" id="L176"><span class="ln">176</span><span class="txt">case, and tried by the District Court of Grand Port, not being a crime or</span></span>
+<span class="line" id="L177"><span class="ln">177</span><span class="txt">offence punishable by death or transportation, was clearly within the</span></span>
+<span class="line" id="L178"><span class="ln">178</span><span class="txt">jurisdiction and cognizance of the District Court.</span></span>
+<span class="line" id="L179"><span class="ln">179</span><span class="txt">It had been said, in placing within the jurisdiction and cognizance of the</span></span>
+<span class="line" id="L180"><span class="ln">180</span><span class="txt">District Court all crimes or offences not punishable by death or transportation,</span></span>
+<span class="line" id="L181"><span class="ln">181</span><span class="txt">the law had very wisely and carefully specified the nature and limited the</span></span>
+<span class="line" id="L182"><span class="ln">182</span><span class="txt">duration and amount of the punishments to be awarded. &quot;Provided,&quot; say&#x27;s Art.</span></span>
+<span class="line" id="L183"><span class="ln">183</span><span class="txt">101, &quot;that it shall not be lawful for any District Magistrate to award against</span></span>
+<span class="line" id="L184"><span class="ln">184</span><span class="txt">any offender a severer punishment than imprisonment for a period not exceeding</span></span>
+<span class="line" id="L185"><span class="ln">185</span><span class="txt">12 months with or without hard labor or (not) and any fine not exceeding œ 50</span></span>
+<span class="line" id="L186"><span class="ln">186</span><span class="txt">sterlg.&quot; That the Magistrate in awarding imprisonment and a fine against the</span></span>
+<span class="line" id="L187"><span class="ln">187</span><span class="txt">Appellants had committed an illegality which vitiates the Conviction, which must</span></span>
+<span class="line" id="L188"><span class="ln">188</span><span class="txt">necessarily be quashed.</span></span>
+<span class="line" id="L189"><span class="ln">189</span><span class="txt">In assuming that the Magistrate had not the power to award imprisonment</span></span>
+<span class="line" id="L190"><span class="ln">190</span><span class="txt">and a fine, and that he should have awarded imprisonment singly, or a fine</span></span>
+<span class="line" id="L191"><span class="ln">191</span><span class="txt">singly, it did not follow that this departure from the text quoted was such an</span></span>
+<span class="line" id="L192"><span class="ln">192</span><span class="txt">illegality as necessarily to draw after it the nullity and quashing of the</span></span>
+<span class="line" id="L193"><span class="ln">193</span><span class="txt">Conviction appealed from. That in so doing he may have exceeded his power of</span></span>
+<span class="line" id="L194"><span class="ln">194</span><span class="txt">punishment might safely be granted. But what would be the consequence of that</span></span>
+<span class="line" id="L195"><span class="ln">195</span><span class="txt">excess of power? Not that the Conviction on that account shall be void and null</span></span>
+<span class="line" id="L196"><span class="ln">196</span><span class="txt">in law and quashable, but amendable by the Appellate Court, in terms of Art. 123</span></span>
+<span class="line" id="L197"><span class="ln">197</span><span class="txt">of Dist. Crim. Ord. by reducing the punishment within the limits of the law, or</span></span>
+<span class="line" id="L198"><span class="ln">198</span><span class="txt"></span></span>
+<span class="line" id="L199"><span class="ln">199</span><span class="txt">by substituting the punishment decreed by law should a wrong punishment have</span></span>
+<span class="line" id="L200"><span class="ln">200</span><span class="txt">been erroneously awarded.</span></span>
+<span class="line" id="L201"><span class="ln">201</span><span class="txt">The Crown Counsel went further and contended that there was, in this case,</span></span>
+<span class="line" id="L202"><span class="ln">202</span><span class="txt">no necessity for the exercise, by the Court, of its power of amendment in as</span></span>
+<span class="line" id="L203"><span class="ln">203</span><span class="txt">much as the cumulation of punishment complained was perfectly legal.</span></span>
+<span class="line" id="L204"><span class="ln">204</span><span class="txt">After giving jurisdiction to the Magistrate over all crimes or offences</span></span>
+<span class="line" id="L205"><span class="ln">205</span><span class="txt">not punishable by death or transportation, the article states, said the Crown</span></span>
+<span class="line" id="L206"><span class="ln">206</span><span class="txt">Counsel, the two kinds of punishments to be awarded by the District Magistrate,</span></span>
+<span class="line" id="L207"><span class="ln">207</span><span class="txt">either imprisonment not exceeding twelve months, or a fine not exceeding œ 50;</span></span>
+<span class="line" id="L208"><span class="ln">208</span><span class="txt">should the Magistrate elect for an imprisonment, he is warned that this</span></span>
+<span class="line" id="L209"><span class="ln">209</span><span class="txt">punishment shall not exceed 12 months, should he elect for a fine, he is told</span></span>
+<span class="line" id="L210"><span class="ln">210</span><span class="txt">that this fine shall not exceed £ 50. But whether he elects one of the</span></span>
+<span class="line" id="L211"><span class="ln">211</span><span class="txt">punishments, or makes up his mind to award both the one or the other, he is</span></span>
+<span class="line" id="L212"><span class="ln">212</span><span class="txt">bound, in either case, to see that the imprisonment awarded do not exceed 12</span></span>
+<span class="line" id="L213"><span class="ln">213</span><span class="txt">months and the fine œ 50. Hence it was inferred that the place of jurisdiction</span></span>
+<span class="line" id="L214"><span class="ln">214</span><span class="txt">was not supported, either by the letter or the spirit of articles quoted, and</span></span>
+<span class="line" id="L215"><span class="ln">215</span><span class="txt">must therefore be overruled and the Conviction affirmed.</span></span>
+<span class="line" id="L216"><span class="ln">216</span><span class="txt">In their reply Arnaud and Koenig again laid great stress upon the wording</span></span>
+<span class="line" id="L217"><span class="ln">217</span><span class="txt">of Art. 101 which, in mentioning the punishment to be awarded by the District</span></span>
+<span class="line" id="L218"><span class="ln">218</span><span class="txt">Magistrate, enacts that these punishments shall be imprisonment or (not and)</span></span>
+<span class="line" id="L219"><span class="ln">219</span><span class="txt">fine and that &quot;it shall not be lawful for any &quot;District Magistrate&quot; to award</span></span>
+<span class="line" id="L220"><span class="ln">220</span><span class="txt">any other punishment but the two above mentioned for the time and amount</span></span>
+<span class="line" id="L221"><span class="ln">221</span><span class="txt">specified by the Article and not otherwise. Were the construction put upon Art.</span></span>
+<span class="line" id="L222"><span class="ln">222</span><span class="txt">101, by Crown Counsel, sound, the result would be that, by cumulating the two</span></span>
+<span class="line" id="L223"><span class="ln">223</span><span class="txt">punishments, a District Magistrate would be empowered to do indirectly, as in</span></span>
+<span class="line" id="L224"><span class="ln">224</span><span class="txt">this case, that which the law has said that it shall be lawful for him to do.</span></span>
+<span class="line" id="L225"><span class="ln">225</span><span class="txt">The Magistrate has given the maximum of imprisonment and the maximum of fin;</span></span>
+<span class="line" id="L226"><span class="ln">226</span><span class="txt">after which he awards that, on default of immediate payment of the fine, the</span></span>
+<span class="line" id="L227"><span class="ln">227</span><span class="txt">defaulters do undergo an additional imprisonment of so many weeks or months,</span></span>
+<span class="line" id="L228"><span class="ln">228</span><span class="txt">thus exceeding, as to one of the accused, by 3 months, maximum of imprisonment</span></span>
+<span class="line" id="L229"><span class="ln">229</span><span class="txt">and in fact awarding an imprisonment of fifteen months.</span></span>
+<span class="line" id="L230"><span class="ln">230</span><span class="txt">This very excess of power establishes the Magistrate&#x27;s want of</span></span>
+<span class="line" id="L231"><span class="ln">231</span><span class="txt">jurisdiction and entitles the Appellants to claim at the hands of the Court the</span></span>
+<span class="line" id="L232"><span class="ln">232</span><span class="txt">quashing of the Conviction appealed from.</span></span>
+<span class="line" id="L233"><span class="ln">233</span><span class="txt">JUDGMENT</span></span>
+<span class="line" id="L234"><span class="ln">234</span><span class="txt">I shall deal first with the plea of jurisdiction which, if allowed by the</span></span>
+<span class="line" id="L235"><span class="ln">235</span><span class="txt">Court, must necessarily draw after it the quashing of the Conviction, and thus</span></span>
+<span class="line" id="L236"><span class="ln">236</span><span class="txt">render needless any enquiry into the merits of the other objections taken</span></span>
+<span class="line" id="L237"><span class="ln">237</span><span class="txt">against the Conviction.</span></span>
+<span class="line" id="L238"><span class="ln">238</span><span class="txt">[MR p 158] Before the establishment of the District Courts in this Island,</span></span>
+<span class="line" id="L239"><span class="ln">239</span><span class="txt">there was but one Court: &quot;the Tribunal Correctionnel,&quot; empowered to take</span></span>
+<span class="line" id="L240"><span class="ln">240</span><span class="txt">cognizance of all the cases, now placed within the jurisdiction of the District</span></span>
+<span class="line" id="L241"><span class="ln">241</span><span class="txt">Court. &quot;Le Tribunal de Première Instance connaitra, sous le titre de Tribunal</span></span>
+<span class="line" id="L242"><span class="ln">242</span><span class="txt">Correctionnel, de tous les délits et contraventions dont la peine excède 5 jours</span></span>
+<span class="line" id="L243"><span class="ln">243</span><span class="txt">d&#x27;emprisonnment et dix livres sterling d&#x27;amende. (Art. 131 Code d&quot;Instruction</span></span>
+<span class="line" id="L244"><span class="ln">244</span><span class="txt">Criminelle).</span></span>
+<span class="line" id="L245"><span class="ln">245</span><span class="txt"></span></span>
+<span class="line" id="L246"><span class="ln">246</span><span class="txt">The &quot;Tribunal Correctionnel&quot; was empowered, on conviction, to award the</span></span>
+<span class="line" id="L247"><span class="ln">247</span><span class="txt">following punishments: Art. 7 (Penal Code). 1o Imprisonment with or without</span></span>
+<span class="line" id="L248"><span class="ln">248</span><span class="txt">labor.</span></span>
+<span class="line" id="L249"><span class="ln">249</span><span class="txt">2o Interdiction for a term from Civic, Civil or Family rights.</span></span>
+<span class="line" id="L250"><span class="ln">250</span><span class="txt">3o Fine.</span></span>
+<span class="line" id="L251"><span class="ln">251</span><span class="txt">Art. 9 - Fine and special forfeiture are punishments common to Criminal,</span></span>
+<span class="line" id="L252"><span class="ln">252</span><span class="txt">Correctional and Simple Police. (Police matters).</span></span>
+<span class="line" id="L253"><span class="ln">253</span><span class="txt">Art. 31 - &quot;When fines and costs of suit have been decreed in favor of the</span></span>
+<span class="line" id="L254"><span class="ln">254</span><span class="txt">Crown if the offender, after the expiration of his punishment shall not pay the</span></span>
+<span class="line" id="L255"><span class="ln">255</span><span class="txt">amount thereof, he shall suffer imprisonment for as many days as he owes</span></span>
+<span class="line" id="L256"><span class="ln">256</span><span class="txt">shillings; nevertheless such imprisonment shall not exceed six months.&quot;</span></span>
+<span class="line" id="L257"><span class="ln">257</span><span class="txt">Under the head of General provisions the Penal Code, Art. 369, further</span></span>
+<span class="line" id="L258"><span class="ln">258</span><span class="txt">says: &quot;In all cases &quot;where a fine is ordained with any punishment, the Court may</span></span>
+<span class="line" id="L259"><span class="ln">259</span><span class="txt">award those punishments together, or one of them only, provided such punishment</span></span>
+<span class="line" id="L260"><span class="ln">260</span><span class="txt">shall, in no case, be less than the punishment of simple police.&quot;</span></span>
+<span class="line" id="L261"><span class="ln">261</span><span class="txt">This last article and Art. 9 of the Penal Code shew that the various</span></span>
+<span class="line" id="L262"><span class="ln">262</span><span class="txt">Courts of Criminal jurisdiction, from the highest to the lowest had power,</span></span>
+<span class="line" id="L263"><span class="ln">263</span><span class="txt">either to cumulate the punishment of imprisonment and fine where so ordained by</span></span>
+<span class="line" id="L264"><span class="ln">264</span><span class="txt">law, or to award either the one or the other singly.</span></span>
+<span class="line" id="L265"><span class="ln">265</span><span class="txt">Had the District Ordinance (on the Criminal side) been silent as to the</span></span>
+<span class="line" id="L266"><span class="ln">266</span><span class="txt">punishments, to be awarded by the District Courts, these Courts would have</span></span>
+<span class="line" id="L267"><span class="ln">267</span><span class="txt">inherited the powers of the late &quot;Tribunal Correctionnel&quot; and among the power of</span></span>
+<span class="line" id="L268"><span class="ln">268</span><span class="txt">cumulation complained of.</span></span>
+<span class="line" id="L269"><span class="ln">269</span><span class="txt">Under the Penal Code the &quot;Tribunal Correctionnel&quot; might have given two</span></span>
+<span class="line" id="L270"><span class="ln">270</span><span class="txt">years&#x27; imprisonment for the same offence which at the present day cannot be</span></span>
+<span class="line" id="L271"><span class="ln">271</span><span class="txt">visited but with an imprisonment not exceeding twelve months. The fine, in a</span></span>
+<span class="line" id="L272"><span class="ln">272</span><span class="txt">like manner, might have reached a higher amount than œ 50 allowed by the</span></span>
+<span class="line" id="L273"><span class="ln">273</span><span class="txt">District Court, (See C.P. Art. 230 and 258).</span></span>
+<span class="line" id="L274"><span class="ln">274</span><span class="txt">The reduction of the District Court&#x27;s powers of punishment, when compared</span></span>
+<span class="line" id="L275"><span class="ln">275</span><span class="txt">with the powers of the &quot;Tribunal Correctionnel&quot; which it has replaced, is self-</span></span>
+<span class="line" id="L276"><span class="ln">276</span><span class="txt">evident.</span></span>
+<span class="line" id="L277"><span class="ln">277</span><span class="txt">This first part of Art. 101 is undoubtedly a departure from and, in so</span></span>
+<span class="line" id="L278"><span class="ln">278</span><span class="txt">far, a repeal of the old and more extensive powers of the &quot;Tribunal</span></span>
+<span class="line" id="L279"><span class="ln">279</span><span class="txt">Correctionnel.&quot;</span></span>
+<span class="line" id="L280"><span class="ln">280</span><span class="txt">Whether any further reduction in the powers of the District court, by</span></span>
+<span class="line" id="L281"><span class="ln">281</span><span class="txt">depriving them of the power of cumulating the two punishments, was contemplated</span></span>
+<span class="line" id="L282"><span class="ln">282</span><span class="txt">by the legislature, may well be doubted.</span></span>
+<span class="line" id="L283"><span class="ln">283</span><span class="txt">The text of Art. 101 District Magistrate&#x27;s Ord. (Crim. side) apparently</span></span>
+<span class="line" id="L284"><span class="ln">284</span><span class="txt">supports the opinion expressed by Counsel on this point. &quot;Provided,&quot; says the</span></span>
+<span class="line" id="L285"><span class="ln">285</span><span class="txt">Art., &quot;that it shall not be lawful for any District Magistrate to award a</span></span>
+<span class="line" id="L286"><span class="ln">286</span><span class="txt">severer punishment than 12 months imprisonment with or without hard labor or not</span></span>
+<span class="line" id="L287"><span class="ln">287</span><span class="txt">and any fine not exceeding œ 50 sterling.</span></span>
+<span class="line" id="L288"><span class="ln">288</span><span class="txt">But if the word or, used in the Article, is to lead to the conclusion that</span></span>
+<span class="line" id="L289"><span class="ln">289</span><span class="txt">the District Magistrate can award but one of the punishments mentioned, what is</span></span>
+<span class="line" id="L290"><span class="ln">290</span><span class="txt">to become of the provisions of the Penal Code requiring that certain crimes or</span></span>
+<span class="line" id="L291"><span class="ln">291</span><span class="txt"></span></span>
+<span class="line" id="L292"><span class="ln">292</span><span class="txt">offences be visited with the two penalties of imprisonment and labor? - Either</span></span>
+<span class="line" id="L293"><span class="ln">293</span><span class="txt">the requirements of the Penal Code must be disobeyed, or if obeyed the</span></span>
+<span class="line" id="L294"><span class="ln">294</span><span class="txt">Magistrate must necessarily have the power of cumulating the two punishments in</span></span>
+<span class="line" id="L295"><span class="ln">295</span><span class="txt">cases not punishable by death, transportation or reclusion.</span></span>
+<span class="line" id="L296"><span class="ln">296</span><span class="txt">That, in such cases of an enacted cumulation of punishments by the Penal</span></span>
+<span class="line" id="L297"><span class="ln">297</span><span class="txt">Code, the District Magistrate shall not award a severer punishment than twelve</span></span>
+<span class="line" id="L298"><span class="ln">298</span><span class="txt">months instead of twenty four months imprisonment, with or without labor, and a</span></span>
+<span class="line" id="L299"><span class="ln">299</span><span class="txt">fine not exceeding œ 50 sterling in lieu of a higher fine which might have been</span></span>
+<span class="line" id="L300"><span class="ln">300</span><span class="txt">awarded by the &quot;Tribunal Correctionnel,&quot; is perfectly intelligible, and would</span></span>
+<span class="line" id="L301"><span class="ln">301</span><span class="txt">be so far as a repeal of the powers vested in the &quot;Tribunal Correctionnel,&quot; but</span></span>
+<span class="line" id="L302"><span class="ln">302</span><span class="txt">not such a repeal as would annihilate the enactments of the Penal Code of the</span></span>
+<span class="line" id="L303"><span class="ln">303</span><span class="txt">Island.</span></span>
+<span class="line" id="L304"><span class="ln">304</span><span class="txt">If the term of imprisonment or amount of fine be determine by the Penal</span></span>
+<span class="line" id="L305"><span class="ln">305</span><span class="txt">Code, the Magistrate is bound, by the term of imprisonment and amount of fine so</span></span>
+<span class="line" id="L306"><span class="ln">306</span><span class="txt">determined, however unpowered he might be by the District Ordinance to award</span></span>
+<span class="line" id="L307"><span class="ln">307</span><span class="txt">more of the one or of the other.</span></span>
+<span class="line" id="L308"><span class="ln">308</span><span class="txt">Such offences as are punishable, either by imprisonment alone or by a fine</span></span>
+<span class="line" id="L309"><span class="ln">309</span><span class="txt">only, the duration of the one, and the amount of the other being determined by</span></span>
+<span class="line" id="L310"><span class="ln">310</span><span class="txt">the Penal Code, that punishment and that punishment alone, can and must be</span></span>
+<span class="line" id="L311"><span class="ln">311</span><span class="txt">awarded by the District Magistrate notwithstanding an increase of power of the</span></span>
+<span class="line" id="L312"><span class="ln">312</span><span class="txt">District Court Ordinance.</span></span>
+<span class="line" id="L313"><span class="ln">313</span><span class="txt">But, in every case where the duration of imprisonment, or the amount of</span></span>
+<span class="line" id="L314"><span class="ln">314</span><span class="txt">fine is not expressed in the Penal Code, but left to the discretion of the</span></span>
+<span class="line" id="L315"><span class="ln">315</span><span class="txt">Magistrate, then it is that whether he cumulates imprisonment and fine or awards</span></span>
+<span class="line" id="L316"><span class="ln">316</span><span class="txt">the one or the other, as the case may be, he is strictly to conform to the</span></span>
+<span class="line" id="L317"><span class="ln">317</span><span class="txt">requirements of Art. 101 as to the duration of the imprisonment and the amount</span></span>
+<span class="line" id="L318"><span class="ln">318</span><span class="txt">of the fine.</span></span>
+<span class="line" id="L319"><span class="ln">319</span><span class="txt">This Construction reconciles the apparent conflict between the Penal Code</span></span>
+<span class="line" id="L320"><span class="ln">320</span><span class="txt">and the District Court Ordinance, and does not deprive the Penal law of its</span></span>
+<span class="line" id="L321"><span class="ln">321</span><span class="txt">salutary terrors.</span></span>
+<span class="line" id="L322"><span class="ln">322</span><span class="txt">These several desirable ends, secured by the construction put by the Court</span></span>
+<span class="line" id="L323"><span class="ln">323</span><span class="txt">on the enactment of Art. 101, fully warrant the Court in giving it the</span></span>
+<span class="line" id="L324"><span class="ln">324</span><span class="txt">preference over the construction adopted by the defence, and in overruling the</span></span>
+<span class="line" id="L325"><span class="ln">325</span><span class="txt">plea of jurisdiction.</span></span>
+<span class="line" id="L326"><span class="ln">326</span><span class="txt">As to the Magistrate having exceeded the term of imprisonment allowed, by</span></span>
+<span class="line" id="L327"><span class="ln">327</span><span class="txt">decreeing that, in default of the immediate payment of the fines by the</span></span>
+<span class="line" id="L328"><span class="ln">328</span><span class="txt">Appellants, they should respectively undergo a longer or shorter imprisonment,</span></span>
+<span class="line" id="L329"><span class="ln">329</span><span class="txt">it must be borne in mind that &quot;the Justices (District Magistrates) need not,</span></span>
+<span class="line" id="L330"><span class="ln">330</span><span class="txt">upon the Conviction, adjudge that if the penalty be not forthwith paid, the</span></span>
+<span class="line" id="L331"><span class="ln">331</span><span class="txt">offender shall be committed &amp;a., but may, after affirmation of the Conviction</span></span>
+<span class="line" id="L332"><span class="ln">332</span><span class="txt">upon appeal commit the offender for refusing to pay the penalty, (Paley on</span></span>
+<span class="line" id="L333"><span class="ln">333</span><span class="txt">Convictions. P. 195) and Article 116 District Magistrate Ordinance. (Criminal</span></span>
+<span class="line" id="L334"><span class="ln">334</span><span class="txt">side.)</span></span>
+<span class="line" id="L335"><span class="ln">335</span><span class="txt">The imprisonment ordered in the Conviction, on non payment of the fine,</span></span>
+<span class="line" id="L336"><span class="ln">336</span><span class="txt">may the more easily be treated as surplusage, as there was no necessity for its</span></span>
+<span class="line" id="L337"><span class="ln">337</span><span class="txt">appearing at all in the Conviction. Its appearance therein cannot therefore</span></span>
+<span class="line" id="L338"><span class="ln">338</span><span class="txt">vitiate the Conviction or in any way bear on the question of Jurisdiction.</span></span>
+<span class="line" id="L339"><span class="ln">339</span><span class="txt"></span></span>
+<span class="line" id="L340"><span class="ln">340</span><span class="txt">I therefore overrule the plea of jurisdiction and now proceed to dispose</span></span>
+<span class="line" id="L341"><span class="ln">341</span><span class="txt">of the other grounds of appeal.</span></span>
+<span class="line" id="L342"><span class="ln">342</span><span class="txt">And 1o - That which refers to the badness of the condition because of</span></span>
+<span class="line" id="L343"><span class="ln">343</span><span class="txt">uncertainty.</span></span>
+<span class="line" id="L344"><span class="ln">344</span><span class="txt">The uncertainty complained of lies in the fact that the Criminal</span></span>
+<span class="line" id="L345"><span class="ln">345</span><span class="txt">Information does not charge the now Appellants with having given any orders for</span></span>
+<span class="line" id="L346"><span class="ln">346</span><span class="txt">the sequestrations complained of, nor does it mention any date at which such</span></span>
+<span class="line" id="L347"><span class="ln">347</span><span class="txt">orders had been given. Not charged of having given such orders, the accused</span></span>
+<span class="line" id="L348"><span class="ln">348</span><span class="txt">could not be prepared, with counter evidence, to meet an accusation not</span></span>
+<span class="line" id="L349"><span class="ln">349</span><span class="txt">appearing on the face of the Criminal Information.</span></span>
+<span class="line" id="L350"><span class="ln">350</span><span class="txt">The general rule upon this subject, in Criminal as well as in Civil cases,</span></span>
+<span class="line" id="L351"><span class="ln">351</span><span class="txt">is that nothing shall be given in evidence which does not directly tend to the</span></span>
+<span class="line" id="L352"><span class="ln">352</span><span class="txt">proof of disproof of the matter in issue. To this general rule there are</span></span>
+<span class="line" id="L353"><span class="ln">353</span><span class="txt">however some exceptions? Archibold, Crim. Pleads p. 183. See also Taylor&#x27;s Ev:</span></span>
+<span class="line" id="L354"><span class="ln">354</span><span class="txt">Vol: I p. 194 - § 193 p. 240 § 245 p. 241 § 246 Edit: of 1848.</span></span>
+<span class="line" id="L355"><span class="ln">355</span><span class="txt">The issue in this case was whether the Appellants were or were not guilty</span></span>
+<span class="line" id="L356"><span class="ln">356</span><span class="txt">of the sequestration charged.</span></span>
+<span class="line" id="L357"><span class="ln">357</span><span class="txt">Though they might not have sequestrated personally and with their own</span></span>
+<span class="line" id="L358"><span class="ln">358</span><span class="txt">hands the Indians mentioned, they might nevertheless be guilty of sequestration</span></span>
+<span class="line" id="L359"><span class="ln">359</span><span class="txt">through the instrumentality of others.</span></span>
+<span class="line" id="L360"><span class="ln">360</span><span class="txt">Evidence that the accused had given orders for the sequestration charged,</span></span>
+<span class="line" id="L361"><span class="ln">361</span><span class="txt">tho&#x27; not stated in the Criminal Information, was both admissible and relevant,</span></span>
+<span class="line" id="L362"><span class="ln">362</span><span class="txt">directly tending as it did, to the proof of the matter at issue. The Magistrate</span></span>
+<span class="line" id="L363"><span class="ln">363</span><span class="txt">was therefore, justified in allowing the evidence tendered by the prosecution to</span></span>
+<span class="line" id="L364"><span class="ln">364</span><span class="txt">that effect.</span></span>
+<span class="line" id="L365"><span class="ln">365</span><span class="txt">Had the now Appellants been at all embarrassed in the defence by the</span></span>
+<span class="line" id="L366"><span class="ln">366</span><span class="txt">admission of such evidence, or by the absence of the date or dates at which such</span></span>
+<span class="line" id="L367"><span class="ln">367</span><span class="txt">orders had been given, they should have called on the Prosecutor to supply them</span></span>
+<span class="line" id="L368"><span class="ln">368</span><span class="txt">with the necessary particulars, and move the Court for time to adduce evidence</span></span>
+<span class="line" id="L369"><span class="ln">369</span><span class="txt">to rebut the giving of any such orders at the given date of dates. But such an</span></span>
+<span class="line" id="L370"><span class="ln">370</span><span class="txt">application does not appear to have been made; for on reference to the Record, I</span></span>
+<span class="line" id="L371"><span class="ln">371</span><span class="txt">find the Magistrate stating but two objections which were taken before him.</span></span>
+<span class="line" id="L372"><span class="ln">372</span><span class="txt">(viz:) &quot;La première, que la Plainte n&#x27;accuse personne d&#x27;une manière directe et</span></span>
+<span class="line" id="L373"><span class="ln">373</span><span class="txt">positive. La seconde se refère à la date, et la défense, soutient qu&#x27;au 20 Mai.</span></span>
+<span class="line" id="L374"><span class="ln">374</span><span class="txt">Montille était absent.&quot; Both of which objections were overruled.</span></span>
+<span class="line" id="L375"><span class="ln">375</span><span class="txt">The Court cannot, on Appeal, entertain objections not previously submitted</span></span>
+<span class="line" id="L376"><span class="ln">376</span><span class="txt">to the Court below and must therefore overrule this objection made at so late an</span></span>
+<span class="line" id="L377"><span class="ln">377</span><span class="txt">hour.</span></span>
+<span class="line" id="L378"><span class="ln">378</span><span class="txt">With regard to the insufficiency of the evidence, in support of the</span></span>
+<span class="line" id="L379"><span class="ln">379</span><span class="txt">conclusion arrived at by the District Magistrate. &quot;The degree of credit due to</span></span>
+<span class="line" id="L380"><span class="ln">380</span><span class="txt">the evidence on either side is entirely for his (the Magistrate&#x27;s)</span></span>
+<span class="line" id="L381"><span class="ln">381</span><span class="txt">consideration. For Justices, (or District Magistrates) upon these summary</span></span>
+<span class="line" id="L382"><span class="ln">382</span><span class="txt">proceedings, are placed in the situation of a Jury, and their judgment is</span></span>
+<span class="line" id="L383"><span class="ln">383</span><span class="txt">conclusive as to the facts brought before them.&quot;</span></span>
+<span class="line" id="L384"><span class="ln">384</span><span class="txt">&quot;It is sufficient, therefore, to authorize a conviction, that there is</span></span>
+<span class="line" id="L385"><span class="ln">385</span><span class="txt">such evidence before the Magistrate as might, in an action, or an indictment, be</span></span>
+<span class="line" id="L386"><span class="ln">386</span><span class="txt">left to the Jury and the Court of King&#x27;s Bench, when the Conviction, is brought</span></span>
+<span class="line" id="L387"><span class="ln">387</span><span class="txt"></span></span>
+<span class="line" id="L388"><span class="ln">388</span><span class="txt">before it, will not examine further to see whether the conclusion drawn by the</span></span>
+<span class="line" id="L389"><span class="ln">389</span><span class="txt">Magistrate be, or be not, the inevitable conclusion from the evidence.&quot; (Paley</span></span>
+<span class="line" id="L390"><span class="ln">390</span><span class="txt">on Con. Ed. of 1838 P. 59 178.180).</span></span>
+<span class="line" id="L391"><span class="ln">391</span><span class="txt">In this case there was sufficient legal evidence which would have been</span></span>
+<span class="line" id="L392"><span class="ln">392</span><span class="txt">left to the Jury, had the Charge been enquired into by the Court of Assize.</span></span>
+<span class="line" id="L393"><span class="ln">393</span><span class="txt">Had the facts found by the Magistrate been found by a Jury, the presiding</span></span>
+<span class="line" id="L394"><span class="ln">394</span><span class="txt">Judge&#x27;s duty would have been to order the verdict of the Jury to be recorded and</span></span>
+<span class="line" id="L395"><span class="ln">395</span><span class="txt">to proceed to judgment. Sitting here on Appeal and having ascertained that the</span></span>
+<span class="line" id="L396"><span class="ln">396</span><span class="txt">subject matter of the Charge was within the jurisdiction of the District</span></span>
+<span class="line" id="L397"><span class="ln">397</span><span class="txt">Magistrate, that the evidence adduced before him was both legal and sufficient</span></span>
+<span class="line" id="L398"><span class="ln">398</span><span class="txt">to be left to a jury, that the Magistrate placed in the situation of the jury,</span></span>
+<span class="line" id="L399"><span class="ln">399</span><span class="txt">after weighing the evidence on both sides, had come to the conclusion that the</span></span>
+<span class="line" id="L400"><span class="ln">400</span><span class="txt">parties tried before him were guilty of the offence laid to their charge, his</span></span>
+<span class="line" id="L401"><span class="ln">401</span><span class="txt">finding being conclusive as to the facts brought before him, I am precluded</span></span>
+<span class="line" id="L402"><span class="ln">402</span><span class="txt">&quot;from examining further whether the conclusion drawn by the Magistrate be or be</span></span>
+<span class="line" id="L403"><span class="ln">403</span><span class="txt">not the inevitable conclusion from the evidence.</span></span>
+<span class="line" id="L404"><span class="ln">404</span><span class="txt">Such being the case, this Appeal must be dismissed and it is accordingly</span></span>
+<span class="line" id="L405"><span class="ln">405</span><span class="txt">dismissed with Costs. The Conviction is accordingly affirmed.</span></span>
+<span class="line" id="L406"><span class="ln">406</span><span class="txt">But in supporting this Conviction, I shall amend it by reducing the</span></span>
+<span class="line" id="L407"><span class="ln">407</span><span class="txt">punishment awarded, in as much as it has been ordered by the District Court that</span></span>
+<span class="line" id="L408"><span class="ln">408</span><span class="txt">the imprisonment awarded should be undergone with hard labor.</span></span>
+<span class="line" id="L409"><span class="ln">409</span><span class="txt">Hon. H. Koenig - }</span></span>
+<span class="line" id="L410"><span class="ln">410</span><span class="txt">} Of Counsel for Appellants</span></span>
+<span class="line" id="L411"><span class="ln">411</span><span class="txt">Hon. L. Arnaud }</span></span>
+<span class="line" id="L412"><span class="ln">412</span><span class="txt">J.H. Slade - Appellants&#x27; Attorney</span></span>
+<span class="line" id="L413"><span class="ln">413</span><span class="txt">S.J. Douglas - Subs. Proc. and Adv. General</span></span>
+<span class="line" id="L414"><span class="ln">414</span><span class="txt">J. Bouchet - Respondent&#x27;s Attorney</span></span>
+</pre></div></div>
+  <div class="tab-panel" id="tab-panel-rendered"><iframe src="digest.html" title="Rendered digest"></iframe></div>
+  <div class="tab-panel" id="tab-panel-raw"><pre class="raw-json">```json
+{
+  &quot;case_name&quot;: &quot;Montille and Ors. v. The Queen&quot;,
+  &quot;citation&quot;: &quot;1865 MR 155&quot;,
+  &quot;citation_verbatim&quot;: &quot;1865 MR 155&quot;,
+  &quot;court&quot;: &quot;Supreme Court&quot;,
+  &quot;court_division&quot;: null,
+  &quot;bench&quot;: null,
+  &quot;jurisdiction&quot;: &quot;Mauritius&quot;,
+  &quot;date&quot;: &quot;1865-08-23&quot;,
+  &quot;judgment_by&quot;: &quot;Bestel&quot;,
+  &quot;procedural_posture&quot;: &quot;appeal&quot;,
+  &quot;citation_code&quot;: &quot;MR&quot;,
+  &quot;record_number&quot;: null,
+  &quot;judges&quot;: [
+    {
+      &quot;name&quot;: &quot;Bestel&quot;,
+      &quot;role&quot;: null,
+      &quot;position&quot;: &quot;lead&quot;,
+      &quot;disposition_agreement&quot;: &quot;full&quot;
+    }
+  ],
+  &quot;parties&quot;: {
+    &quot;appellant&quot;: &quot;Montille and others&quot;,
+    &quot;respondent&quot;: &quot;The Queen&quot;
+  },
+  &quot;counsel&quot;: [
+    {
+      &quot;for&quot;: &quot;appellant&quot;,
+      &quot;names&quot;: [&quot;Hon. L. Arnaud&quot;, &quot;Hon. H. Koenig&quot;]
+    },
+    {
+      &quot;for&quot;: &quot;respondent&quot;,
+      &quot;names&quot;: [&quot;S.J. Douglas, Substitute Procureur and Advocate General&quot;]
+    }
+  ],
+  &quot;catchwords&quot;: [
+    &quot;Statute (District Magistrate&#x27;s Ordinance) — Criminal jurisdiction — Cumulation of punishments — Art. 101 — Whether District Magistrate may cumulate imprisonment and fine&quot;,
+    &quot;Common law — Criminal evidence — Admissibility of evidence — Whether evidence of orders for sequestration admissible when orders not charged in information&quot;
+  ],
+  &quot;structure&quot;: {
+    &quot;judgment_start_line&quot;: 233,
+    &quot;judgment_end_line&quot;: 408,
+    &quot;counsel_lines&quot;: [409, 414],
+    &quot;block_quotes&quot;: [
+      {
+        &quot;start_line&quot;: 241,
+        &quot;end_line&quot;: 244,
+        &quot;language&quot;: &quot;fr&quot;
+      },
+      {
+        &quot;start_line&quot;: 372,
+        &quot;end_line&quot;: 374,
+        &quot;language&quot;: &quot;fr&quot;
+      }
+    ]
+  },
+  &quot;headnote&quot;: {
+    &quot;facts&quot;: &quot;On 20 May 1865, at Beau Fond Estate in the District of Grand Port, police discovered thirteen Indian laborers illegally detained in a makeshift prison operated by Toolsy. The appellants—Alcide Montille, Azenor Montille, Toolsy, and Etienne Montille—were charged with unlawful arrest and detention contrary to the Penal Code, with other co-accused being discharged. After pleading not guilty, the District Magistrate convicted the four named appellants and imposed sentences of imprisonment ranging from three to twelve months, fines of £50 each, and costs. The appellants appealed challenging the Magistrate&#x27;s jurisdiction to cumulate punishments and contesting the admissibility of evidence regarding orders for sequestration that were not explicitly charged in the original information.&quot;,
+    &quot;held&quot;: [
+      {
+        &quot;proposition&quot;: &quot;A District Magistrate has jurisdiction to cumulate the punishments of imprisonment and fine where the Penal Code itself prescribes both penalties, notwithstanding language in Article 101 of the District Magistrate&#x27;s Ordinance that might appear to limit the Magistrate to imposing either imprisonment (not exceeding twelve months) or a fine (not exceeding £50), provided that when punishments are cumulated, each punishment remains within the prescribed maximum limits.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 277,
+            &quot;end_line&quot;: 325
+          }
+        ]
+      },
+      {
+        &quot;proposition&quot;: &quot;Evidence that the accused gave orders for the sequestration charged is both admissible and relevant even if the giving of such orders is not explicitly mentioned in the criminal information, since such evidence directly tends to prove the fact in issue—whether the accused were guilty of sequestration—and persons may be guilty of sequestration through the instrumentality of others.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 360,
+            &quot;end_line&quot;: 364
+          }
+        ]
+      },
+      {
+        &quot;proposition&quot;: &quot;An appellate court may not examine the weight or credit of evidence or determine whether the conclusion drawn by the trial magistrate is the inevitable conclusion from that evidence; the magistrate, acting in the situation of a jury, is conclusive as to questions of fact, provided the evidence is legally sufficient to be left to a jury.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 378,
+            &quot;end_line&quot;: 403
+          }
+        ]
+      }
+    ],
+    &quot;disposition&quot;: &quot;Appeal dismissed with costs. Conviction affirmed but amended by reducing the punishment to remove the hard labor requirement.&quot;,
+    &quot;orders&quot;: [
+      &quot;Appeal dismissed with costs&quot;
+    ],
+    &quot;quotable_holding&quot;: &quot;A District Magistrate may cumulate imprisonment and fine within the limits prescribed by the Penal Code, even where Article 101 of the District Magistrate&#x27;s Ordinance, taken literally, might suggest only one punishment can be awarded.&quot;
+  },
+  &quot;cases_cited&quot;: [],
+  &quot;legislation&quot;: [
+    {
+      &quot;kind&quot;: &quot;code&quot;,
+      &quot;name&quot;: &quot;Penal Code&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;sections&quot;: [&quot;art. 7&quot;, &quot;art. 9&quot;, &quot;art. 31&quot;, &quot;art. 258&quot;, &quot;art. 369&quot;],
+      &quot;line&quot;: 34
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;District Magistrate&#x27;s Ordinance (Criminal Side)&quot;,
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;sections&quot;: [&quot;art. 47&quot;, &quot;art. 101&quot;, &quot;art. 116&quot;, &quot;art. 123&quot;],
+      &quot;line&quot;: 101
+    },
+    {
+      &quot;kind&quot;: &quot;code&quot;,
+      &quot;name&quot;: &quot;Code d&#x27;Instruction Criminelle&quot;,
+      &quot;jurisdiction&quot;: &quot;fr&quot;,
+      &quot;sections&quot;: [&quot;art. 131&quot;],
+      &quot;line&quot;: 243
+    }
+  ],
+  &quot;foreign_doctrine&quot;: [],
+  &quot;case_history_chain&quot;: [
+    {
+      &quot;citation&quot;: &quot;Judgment of District Court of Grand Port, 23 August 1865&quot;,
+      &quot;relation&quot;: &quot;below&quot;,
+      &quot;outcome&quot;: &quot;affirmed&quot;,
+      &quot;line&quot;: 4
+    }
+  ],
+  &quot;confidence&quot;: {
+    &quot;date&quot;: &quot;low&quot;,
+    &quot;catchwords&quot;: &quot;medium&quot;,
+    &quot;procedural_posture&quot;: &quot;high&quot;,
+    &quot;headnote&quot;: &quot;medium&quot;,
+    &quot;court&quot;: &quot;high&quot;,
+    &quot;cases_cited&quot;: &quot;high&quot;,
+    &quot;legislation&quot;: &quot;high&quot;
+  },
+  &quot;notes&quot;: [
+    &quot;Judgment delivery date not explicitly stated in source. Date field uses the lower-court conviction date (23 August 1865), which is the only explicit date in the judgment, but the actual appeal judgment date may be later in 1865 or possibly 1866.&quot;,
+    &quot;Judge identified only as &#x27;Bestel, J&#x27; in header; no judicial title or role specified.&quot;,
+    &quot;No case law precedents are cited in this judgment; it relies on statutory interpretation and reference to treatises on criminal procedure and evidence.&quot;,
+    &quot;Two catchwords identified: primary (on jurisdiction and cumulation of punishments) and secondary (on evidence admissibility). The secondary issue was less decisive but was raised on appeal.&quot;,
+    &quot;French legislative text cited verbatim at lines 241-244 (Code d&#x27;Instruction Criminelle, Art. 131) without translation.&quot;,
+    &quot;French procedural language appears at lines 372-374, indicating the court was engaged with French legal tradition.&quot;,
+    &quot;This 19th-century Mauritian judgment reflects mixed influence from French and English legal systems, common in Mauritius during this period.&quot;
+  ],
+  &quot;needs_human_review&quot;: true,
+  &quot;extractor_version&quot;: &quot;v1&quot;,
+  &quot;schema_version&quot;: &quot;v1&quot;
+}
+```
+</pre></div>
+  <footer class="site-footer">slug: <code>1865_MR_155</code></footer>
+</div>
+<script>
+(function () {
+  var validTabs = ['original', 'rendered', 'raw'];
+  function tabFromHash() {
+    var h = (location.hash || '').replace('#', '');
+    return validTabs.indexOf(h) !== -1 ? h : validTabs[0];
+  }
+  function showTab(name) {
+    validTabs.forEach(function (t) {
+      var btn = document.getElementById('tab-btn-' + t);
+      var panel = document.getElementById('tab-panel-' + t);
+      var active = t === name;
+      if (btn) btn.classList.toggle('active', active);
+      if (panel) panel.classList.toggle('active', active);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    var name = btn.id.replace('tab-btn-', '');
+    if (validTabs.indexOf(name) === -1) return;
+    history.replaceState(null, '', '#' + name);
+    showTab(name);
+  });
+  window.addEventListener('hashchange', function () { showTab(tabFromHash()); });
+  showTab(tabFromHash());
+})();
+</script></body></html>

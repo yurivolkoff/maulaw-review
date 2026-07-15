@@ -1,0 +1,300 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Police v H. Bungloll &middot; 2015 INT 354 &middot; review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+    --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+    --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+  --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+  --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+.container { display: flex; height: 100vh; width: 100%; overflow: hidden; }
+.pane { overflow: auto; height: 100%; }
+.pane-left { flex: 1 1 50%; border-right: 1px solid var(--border); background: var(--code-bg); }
+.pane-right { flex: 1 1 50%; padding: 1rem 1.25rem 3rem; }
+.pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); z-index: 2; }
+pre.lines { margin: 0; padding: .25rem 0 2rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.line { display: block; white-space: pre; padding: 0 .75rem; }
+.line:hover { background: rgba(127,127,127,.08); }
+.line.hl { background: var(--hl); }
+.ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+.sec { margin-bottom: 1.5rem; }
+.sec h1 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.sec h2 { font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; margin: 0 0 .5rem; }
+.sec h3 { font-size: .92rem; margin: .75rem 0 .25rem; color: var(--muted); }
+.sec-debug { opacity: .85; font-size: .9rem; }
+.sec-footer { opacity: .7; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; margin-bottom: .5rem; }
+.meta-table th { text-align: left; color: var(--muted); font-weight: 500; padding: .15rem .5rem .15rem 0; vertical-align: top; white-space: nowrap; }
+.meta-table td { padding: .15rem 0; }
+.cases-table, .leg-table { table-layout: fixed; }
+.cases-table th, .cases-table td, .leg-table th, .leg-table td { border-top: 1px solid var(--border); padding: .35rem .4rem; text-align: left; vertical-align: top; word-wrap: break-word; }
+.evidence-row td { border-top: none; padding-top: 0; }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .85em; }
+a.lineref { color: var(--link); text-decoration: none; font-weight: 600; white-space: nowrap; }
+a.lineref:hover { text-decoration: underline; }
+.pinpoints { display: flex; flex-direction: column; gap: .15rem; margin: .2rem 0 .6rem 1.2rem; }
+.preview { color: var(--muted); font-size: .85em; }
+.held > li { margin-bottom: .6rem; }
+.muted { color: var(--muted); }
+.small { font-size: .82em; }
+.badge { display: inline-block; padding: .05rem .45rem; border-radius: 999px; font-size: .78em; font-weight: 600; }
+.sig-positive { background: color-mix(in srgb, var(--pos) 18%, transparent); color: var(--pos); }
+.sig-neutral { background: color-mix(in srgb, var(--neu) 18%, transparent); color: var(--neu); }
+.sig-caution { background: color-mix(in srgb, var(--cau) 20%, transparent); color: var(--cau); }
+.sig-negative { background: color-mix(in srgb, var(--neg) 18%, transparent); color: var(--neg); }
+.badge-review { display: inline-block; background: var(--badge-review-bg); color: var(--badge-review-fg); padding: .15rem .6rem; border-radius: 4px; font-size: .78rem; font-weight: 700; letter-spacing: .03em; margin-bottom: .5rem; }
+.badge-missing { color: var(--neg); font-style: italic; }
+.tag { display: inline-block; border: 1px solid var(--border); border-radius: 3px; padding: 0 .35rem; font-size: .78em; }
+.tag-muted { color: var(--muted); }
+.tag-warn { color: var(--cau); border-color: var(--cau); }
+.catchwords > li, ol.held > li { margin-bottom: .4rem; }
+blockquote { margin: .25rem 0; padding: .4rem .75rem; border-left: 3px solid var(--link); background: var(--code-bg); font-style: italic; }
+</style></head><body><div class="container"><div class="pane pane-left" id="judgment-pane"><div class="pane-header">Judgment text &middot; 202 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">Police v H. Bungloll</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2015 INT 354</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">IN THE INTERMEDIATE COURT OF MAURITIUS</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">Cause No.645/2010</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">In the matter of: -</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">Police</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">v</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">Hemraj BUNGLOLL</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">JUDGMENT</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">The accused is charged with the offence of ‘Smuggling’ in breach of section 156(1)(a) and (2) of the</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">Customs Act (“the Act”).</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">He pleaded not guilty to the charge and was assisted by Mr G. Glover, S.C.</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">Mr S. Bhoyroo, State Counsel, and Mr A. Ramdahen, State Counsel, appeared for the prosecution (at</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">different sittings).</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">The case for the prosecution</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">The evidence for the prosecution is in a gist that during an operation set up and supervised by SP</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">Veeramalay (W7), and SP Jugdeo, and involving PS Mooniaruth (W5) and other police officers, on 29</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">November 2005, one Nissar Jandoo, coming from Dubai, was profiled as a gold smuggler, and was seen</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">to enter a toilet, followed by the accused. Both emerged separately minutes later, the accused keeping his</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">left hand in his pocket all the time, until he left the building, when W7 lost sight of him.</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">PS Mooniaruth stopped the accused in the car park and disclosed his identity to him and informed him of</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">the reason for a search: after a slight hesitation the accused removed his hand from his pocket and gave</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">him a brown packet and said “Jandoo fine donne moi”. The parcel was opened in the accused’s presence</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">and found to contain yellow jewellery. The accused was questioned and cautioned. The exhibits (28</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">pendants, 37 bracelets, 65 pairs of earrings, 5 rings, 10 necklaces, 18 necklaces) were counted at the</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">ADSU, Line Barracks and found to weigh 669.8g. They were sealed in five plastic bags and envelopes</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">coded FMI/2005, in the presence of the accused: the accused signed on the envelopes. As per procedure,</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">they sent the exhibits to the ‘Assay Office’, which is the only Government institution that can certify if</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">jewellery is made of gold or copper, etc.</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">Following the receipt of a letter dated 7 December 2005 from the police concerning jewellery, Mr T.</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">Goorohoo (W17) calculated the duty paid value and put up a report dated 12 January 2006. He took into</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">account the appraised value and calculated the VAT applicable at that time (i.e. 15% of the appraised</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">value). The Customs Department was the competent authority to deal with the appraised value of</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">jewellery, and in this case the appraised value was obtained from the ‘Assay Office’, and the Customs</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">Dept. was never involved.</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">1</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt"></span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">Mr S. Lutchanah (W15) said that the case of Police v Jandoo Nissar Ahmad, Cause No. 371/2010 was</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">tried before the Intermediate Court and judgment was delivered on 2 May 2012. In that case PS</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">Mooniaruth produced exhibits (as listed in the present information), which are in the custody of the Court.</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">The case for the defence</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">The accused exercised his right to silence and did not answer any of the questions put to him during the</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">recording of his statement dated 30 November 2005 at 3.20pm, as read and produced by Insp. Sooben</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">(W1) in Court (Doc. B).</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">Discussion</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">The accused is being prosecuted under section 156(1)(a) and (2) of the Customs Act1. It is averred in the</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">Information that on or about 29 November 2005 he “did wilfully and unlawfully smuggle goods into</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">Mauritius, to wit:- (i) twenty-eight (28) pendants; (ii) thirty-seven (37) bracelets; (iii) sixty-five (65) pairs</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">of earings; (iv) five (5) rings; (v) ten (10) necklaces/pendants; and (vi) eighteen (18) necklaces. Duty paid</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">value = Rs363,093/-.” (sic)</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">There is no dispute that the accused was a Customs Officer at the material time, as per the letter dated 5</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">December 2005 produced by Mrs S. Auleear (W14) (Doc. A).</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">Learned defence counsel has submitted that the information is defective inasmuch as (i) it does not</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">contain any averment as to the specific alleged material act and (ii) it does not aver with precision which</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">Duty, Excise Duty and Tax the accused intended to evade and it would therefore be unsafe to infer</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">fraudulent intent. It was further submitted that the case of Ramoly v The State [1987 MR 29] should be</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">distinguished since neither the actus reus nor the mens rea of the alleged offence has been averred and</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">this has prejudiced the accused in his defence.</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">The prosecution did not offer any submissions.</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">“Smuggling” is defined at section 2 of the Act as:</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">“any import, introduction, export or attempted import, introduction or export of goods with the</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">intent –</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">(a) to defraud or evade the payment of duty, excise duty, taxes and other payable charges, as</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">the case may be; or</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">(b) to evade any prohibition of, restriction on, or regulation as to, the import, introduction or</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">export of any goods;”</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">1 (1) Any person who -</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">(a) smuggles into Mauritius any goods;</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">(b) …</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">(c) …</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">shall commit an offence.</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">(2) Any person who commits an offence under subsection (1) shall on conviction, be liable</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">(a) to a fine which shall –</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">(i) where the value of the goods does not exceed Rs1,500, be Rs4,000;</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">(ii) where the value of the goods exceeds Rs1,500, be three times the value of the goods or Rs20,000, whichever is the higher,</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">(b) to imprisonment for a term not exceeding 8 years, and the goods, the subject-matter of the offence, shall be liable to forfeiture.</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">2</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt"></span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">In Ramoly (supra) consignments of goods destined for re-exportation were found in the appellant’s shop</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">and as a consequence he was prosecuted before the Intermediate Court for smuggling, under section</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">167(i)(a) and (2)(b) of the Customs Act. The Supreme Court found the information to be improperly</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">drafted and said:</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">“A charge of smuggling must, in its particulars, comprise 2 things: an averment of importation,</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">introduction or exportation (or an attempt of one of them) plus an allegation that the accused did</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">what he did with intent to defraud the revenue or to evade a prohibition, restriction or regulation.</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">No objection to the information was taken at the trial and the record makes it clear that everyone</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">understood the charges to mean that the appellant had imported goods with intent to evade a</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">restriction on the importation thereof (i.e. one which prevented home entry).”</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">It is to be noted that the Supreme Court found that the defect in the information did not vitiate the</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">conviction since there was no objection to the information at the trial. In reply to defence counsel’s</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">submissions that no objection could be taken in the wake of the decision in the case of Ramoly v R [1985</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">MR 611] (where the Court held that the omission of the value of the goods in the information did not</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">render it defective and gave an opinion on the word ‘import’, obiter) the Supreme Court said that this</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">would not have prevented defence counsel from raising the point that the information did not contain an</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">essential element of the offence.</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">In I. Jangeerkhan v The State [1997 SCJ 133] although the Supreme Court noted that the particulars</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">referred to in Ramoly (1987) were not averred in the information, “from the evidence it appears clearly</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">that everyone was aware that the only moot question regarding the intent of the appellant was whether he</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">was set to defraud the revenue.” However, the Court went on to say that the “apparent difficulty resides</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">with the other missing particulars which normally should be given viz. an averment of import,</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">introduction or export.”</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">In Rughooputh v State [1997 SCJ 329] the Supreme Court differentiated between the offences of</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">smuggling and unlawful possession of goods for which duty had not been paid, as follows:</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">“Unlike a charge of smuggling under section 156 (1)(a) of the Act, the intention to defraud or to</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">evade payment of duty, levy and taxes is not an element of the offence under section 156(1)(c)(i)</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">of the Act...”</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">In Director of Public Prosecutions v Iframac Limited [1999 SCJ 9] the respondent was charged with</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">having produced a false document to the Customs in breach of section 158(3) of the Customs Act 1988.</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">The Supreme Court made a comparison between the offence under section 158(3) and smuggling, saying:</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">“intention to defraud is not an element and is not required to be averred in the information or</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">established in evidence by the prosecution. Had such an ulterior intent been required, the legislator</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">would have provided expressly to that effect, as he has done in relation to the offence of</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">smuggling where the prosecution has to aver in the information and establish in evidence the</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">intent to defraud or evade the payment only: vide section 2 of the Act.”</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">The abovementioned cases make it clear that an averment of importation, introduction or exportation and</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">intention to defraud revenue or evasion of prohibition, restriction or regulation are elements of the offence</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">of smuggling, so that an information charging an accused under section 156(1)(a) must contain the</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">averment “of importation, introduction or exportation (or an attempt of one of them) plus an allegation</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">that the accused did what he did with intent to defraud the revenue or to evade a prohibition, restriction or</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">regulation.” However, in the mentioned cases the Supreme Court did not conclude that the information,</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">3</span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt"></span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">which lacked the said averments, were defective, this because no objection was taken to the information</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">at trial stage and it was understood that the charges meant the goods were imported with intent to evade a</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">restriction on the importation thereof.</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt">In the present case, there is neither the averment of the specific material act committed by the accused nor</span></span>
+<span class="line" id="L127"><span class="ln">127</span><span class="txt">the averment that the accused had the intent to defraud the revenue or to evade payment of duty. The</span></span>
+<span class="line" id="L128"><span class="ln">128</span><span class="txt">cases of Ramoly 1987 and Jangeerkhan can be distinguished from the present matter inasmuch as here</span></span>
+<span class="line" id="L129"><span class="ln">129</span><span class="txt">the defence has submitted that the information is defective and the evidence on record does not disclose</span></span>
+<span class="line" id="L130"><span class="ln">130</span><span class="txt">that everyone understood the charge to mean that the accused had imported goods with intent to evade a</span></span>
+<span class="line" id="L131"><span class="ln">131</span><span class="txt">restriction or to defraud the revenue. I therefore find, in the light of the pronouncements of the Supreme</span></span>
+<span class="line" id="L132"><span class="ln">132</span><span class="txt">Court, that the information is defective as it does not aver two essential elements of the offence of</span></span>
+<span class="line" id="L133"><span class="ln">133</span><span class="txt">smuggling and therefore, discloses no offence against the accused.</span></span>
+<span class="line" id="L134"><span class="ln">134</span><span class="txt">After having carefully assessed the evidence adduced by the prosecution, I find moreover that there is no</span></span>
+<span class="line" id="L135"><span class="ln">135</span><span class="txt">evidence from the prosecution that the jewellery secured from the accused are ‘dutiable goods’ that is,</span></span>
+<span class="line" id="L136"><span class="ln">136</span><span class="txt">“subject to any duty, excise duty, taxes or related charges;” – see definition at section 2 of the Act – or</span></span>
+<span class="line" id="L137"><span class="ln">137</span><span class="txt">that the accused had the intention to defraud the revenue or to evade a prohibition, restriction or</span></span>
+<span class="line" id="L138"><span class="ln">138</span><span class="txt">regulation. The prosecution has adduced evidence to the effect that the accused was observed entering the</span></span>
+<span class="line" id="L139"><span class="ln">139</span><span class="txt">toilet after Jandoo and coming out of it shortly after Jandoo, with his hand in his pocket and PC</span></span>
+<span class="line" id="L140"><span class="ln">140</span><span class="txt">Mooniaruth securing jewellery from him whilst he was in the parking, but I find that it would be unsafe to</span></span>
+<span class="line" id="L141"><span class="ln">141</span><span class="txt">infer from such evidence that he had such intent as mentioned earlier.</span></span>
+<span class="line" id="L142"><span class="ln">142</span><span class="txt">Learned counsel for the defence has also submitted that the fact that it is the Controller of Assay and not</span></span>
+<span class="line" id="L143"><span class="ln">143</span><span class="txt">the Comptroller of Customs who has determined the value of the jewellery is fatal to the prosecution.</span></span>
+<span class="line" id="L144"><span class="ln">144</span><span class="txt">‘Value’ is defined at section 2 of the Act as follows:</span></span>
+<span class="line" id="L145"><span class="ln">145</span><span class="txt">“(a) in respect of the computation of any duty, means the value as determined in accordance with</span></span>
+<span class="line" id="L146"><span class="ln">146</span><span class="txt">section 18 of this Act;</span></span>
+<span class="line" id="L147"><span class="ln">147</span><span class="txt">(b) …”</span></span>
+<span class="line" id="L148"><span class="ln">148</span><span class="txt">Section 18(1) of the Act specifies that when duty is leviable on goods by reference to their value, the</span></span>
+<span class="line" id="L149"><span class="ln">149</span><span class="txt">value of those goods shall be the transaction value of the goods as determined with section 18A.” and</span></span>
+<span class="line" id="L150"><span class="ln">150</span><span class="txt">thereafter lists the other ways in which the value of the goods can be determined if it cannot be done in</span></span>
+<span class="line" id="L151"><span class="ln">151</span><span class="txt">accordance with section 18A.</span></span>
+<span class="line" id="L152"><span class="ln">152</span><span class="txt">The definition of ‘Transaction value’ at section 2 of the Act is as follows:</span></span>
+<span class="line" id="L153"><span class="ln">153</span><span class="txt">““transaction value”, in relation to imported goods, means the transaction value as determined in</span></span>
+<span class="line" id="L154"><span class="ln">154</span><span class="txt">accordance with section 18A;”</span></span>
+<span class="line" id="L155"><span class="ln">155</span><span class="txt">Section 18A provides that:</span></span>
+<span class="line" id="L156"><span class="ln">156</span><span class="txt">“The transaction value of the goods shall be the price actually paid or payable for the goods when</span></span>
+<span class="line" id="L157"><span class="ln">157</span><span class="txt">sold for export to an importer in Mauritius, adjusted where appropriate in circumstances as may be</span></span>
+<span class="line" id="L158"><span class="ln">158</span><span class="txt">prescribed, and shall in addition include –</span></span>
+<span class="line" id="L159"><span class="ln">159</span><span class="txt">(a) all costs, charges, and expenses incidental to the sale contract and delivery of those</span></span>
+<span class="line" id="L160"><span class="ln">160</span><span class="txt">goods; and</span></span>
+<span class="line" id="L161"><span class="ln">161</span><span class="txt">(b) the loading charges, freight, insurance and other, charges and expenses in respect of</span></span>
+<span class="line" id="L162"><span class="ln">162</span><span class="txt">4</span></span>
+<span class="line" id="L163"><span class="ln">163</span><span class="txt"></span></span>
+<span class="line" id="L164"><span class="ln">164</span><span class="txt">those goods as may be prescribed,</span></span>
+<span class="line" id="L165"><span class="ln">165</span><span class="txt">provided that the prescribed conditions are satisfied.</span></span>
+<span class="line" id="L166"><span class="ln">166</span><span class="txt">It is to be noted that during the trial, upon the defence objecting to the prosecution calling witnesses</span></span>
+<span class="line" id="L167"><span class="ln">167</span><span class="txt">nos.10 and 11 in respect of the value of the alleged smuggled goods, the matter was fixed for Arguments.</span></span>
+<span class="line" id="L168"><span class="ln">168</span><span class="txt">The prosecution then opted to wait for the evidence of witnesses nos.5 and 6 (who was after all not</span></span>
+<span class="line" id="L169"><span class="ln">169</span><span class="txt">called) before offering arguments. However, in the light of the evidence of Mr Goorohoo/W17, the</span></span>
+<span class="line" id="L170"><span class="ln">170</span><span class="txt">prosecution moved for a postponement to take a stand, which stand was that the case was to proceed.</span></span>
+<span class="line" id="L171"><span class="ln">171</span><span class="txt">When the case resumed, witness Goorohoo was not examined any further by the prosecution and was not</span></span>
+<span class="line" id="L172"><span class="ln">172</span><span class="txt">cross-examined either. The prosecution then closed its case.</span></span>
+<span class="line" id="L173"><span class="ln">173</span><span class="txt">Since according to Mr Goorohoo, the Customs Department (now the Director-General, Mauritius</span></span>
+<span class="line" id="L174"><span class="ln">174</span><span class="txt">Revenue Authority/DG, MRA) is the competent authority to assess the value of jewellery smuggled into</span></span>
+<span class="line" id="L175"><span class="ln">175</span><span class="txt">Mauritius and such department did not make the appraisal in the present case, the appraised value given</span></span>
+<span class="line" id="L176"><span class="ln">176</span><span class="txt">to Mr Goorohoo for the calculation of duty paid value is not in accordance with procedure. Furthermore,</span></span>
+<span class="line" id="L177"><span class="ln">177</span><span class="txt">the failure of the prosecution to call witnesses in support of the transaction value of the alleged smuggled</span></span>
+<span class="line" id="L178"><span class="ln">178</span><span class="txt">jewellery is indeed a dearth of evidence in respect of such transaction value.</span></span>
+<span class="line" id="L179"><span class="ln">179</span><span class="txt">It is to be noted that at section 4(2) of the Jewellery Act, it is provided that the Controller of Assay shall:</span></span>
+<span class="line" id="L180"><span class="ln">180</span><span class="txt">“(a) be responsible for -</span></span>
+<span class="line" id="L181"><span class="ln">181</span><span class="txt">(i) the assaying and marking of jewellery; and</span></span>
+<span class="line" id="L182"><span class="ln">182</span><span class="txt">(ii) the verification and grading of precious and semi- precious stones;</span></span>
+<span class="line" id="L183"><span class="ln">183</span><span class="txt">(b) carry out the duties and functions assigned to him under this Act.”</span></span>
+<span class="line" id="L184"><span class="ln">184</span><span class="txt">There is no provision in the Jewellery Act enabling the Controller of Assay to value jewellery secured by</span></span>
+<span class="line" id="L185"><span class="ln">185</span><span class="txt">Customs Officers for the purpose of calculating the duty paid value.</span></span>
+<span class="line" id="L186"><span class="ln">186</span><span class="txt">The defence has further submitted that there was a wrong timing of the purported valuation, in that it</span></span>
+<span class="line" id="L187"><span class="ln">187</span><span class="txt">should have been carried out at the time of the commission of the alleged offence and not thirty days after</span></span>
+<span class="line" id="L188"><span class="ln">188</span><span class="txt">same “as per the report of the Assay Office”.</span></span>
+<span class="line" id="L189"><span class="ln">189</span><span class="txt">The Court is not in presence of the report of the Controller of Assay since the defence objected to its</span></span>
+<span class="line" id="L190"><span class="ln">190</span><span class="txt">production and the prosecution did not insist. Therefore, there is no evidence of the date of the valuation</span></span>
+<span class="line" id="L191"><span class="ln">191</span><span class="txt">of the jewellery.</span></span>
+<span class="line" id="L192"><span class="ln">192</span><span class="txt">Conclusion</span></span>
+<span class="line" id="L193"><span class="ln">193</span><span class="txt">For all the reasons given above, I find that the prosecution has failed to prove the case against the accused</span></span>
+<span class="line" id="L194"><span class="ln">194</span><span class="txt">beyond reasonable doubt.</span></span>
+<span class="line" id="L195"><span class="ln">195</span><span class="txt">I accordingly dismiss the case against the accused.</span></span>
+<span class="line" id="L196"><span class="ln">196</span><span class="txt">W. V. Rangan</span></span>
+<span class="line" id="L197"><span class="ln">197</span><span class="txt">5</span></span>
+<span class="line" id="L198"><span class="ln">198</span><span class="txt"></span></span>
+<span class="line" id="L199"><span class="ln">199</span><span class="txt">Magistrate</span></span>
+<span class="line" id="L200"><span class="ln">200</span><span class="txt">Intermediate Court (Criminal Division)</span></span>
+<span class="line" id="L201"><span class="ln">201</span><span class="txt">This 30 September 2015</span></span>
+<span class="line" id="L202"><span class="ln">202</span><span class="txt">6</span></span>
+</pre></div><div class="pane pane-right" id="digest-pane"><section class="sec sec-header"><h1>Police v H. Bungloll</h1><table class="meta-table"><tr><th>Citation</th><td><code>2015 INT 354</code></td></tr><tr><th>Verbatim</th><td><code>2015 INT 354</code></td></tr><tr><th>Record</th><td>Cause No. 645/2010</td></tr><tr><th>Court</th><td>Intermediate Court &mdash; Criminal Division</td></tr><tr><th>Bench</th><td>single judge</td></tr><tr><th>Jurisdiction</th><td>Mauritius</td></tr><tr><th>Date</th><td>2015-09-30</td></tr><tr><th>Judgment by</th><td>W. V. Rangan</td></tr><tr><th>Procedural posture</th><td>original</td></tr><tr><th>Citation code</th><td><code>INT</code></td></tr></table></section><section class="sec"><h2>Bench</h2><ul><li><strong>W. V. Rangan</strong>, Magistrate <span class='tag'>lead</span> <span class='tag tag-muted'>full agreement</span></li></ul><p class='muted'>Judgment delivered by: W. V. Rangan</p></section><section class="sec"><h2>Parties</h2><ul><li><strong>plaintiff:</strong> Police</li><li><strong>defendant:</strong> Hemraj BUNGLOLL</li></ul></section><section class="sec"><h2>Counsel</h2><ul><li><em>For defendant:</em> Mr G. Glover, S.C.</li><li><em>For plaintiff:</em> Mr S. Bhoyroo, State Counsel; Mr A. Ramdahen, State Counsel</li></ul></section><section class="sec"><h2>Catchwords</h2><ol class="catchwords"><li>Statute (Customs Act) — Smuggling — s. 156(1)(a) — Information requirement — Whether information must aver the specific material act of importation and the accused&#x27;s intent to defraud the revenue or evade a prohibition</li></ol></section><section class="sec"><h2>Headnote</h2><h3>Facts</h3><p>The accused, a Customs officer, was observed entering a toilet after a man suspected of smuggling and emerging shortly thereafter with his hand in his pocket. Police stopped the accused in a car park and found him carrying gold jewelry consisting of pendants, bracelets, earrings, rings, and necklaces totalling 669.8g. The jewelry was seized and sent for appraisal. The accused was charged with smuggling under section 156(1)(a) and (2) of the Customs Act, alleging he unlawfully smuggled the goods with intent to defraud the revenue.</p><h3>Held</h3><ol class='held'><li><p>An information charging smuggling under section 156(1)(a) of the Customs Act must contain specific averments of the material act of importation, introduction, or exportation and an allegation that the accused acted with intent to defraud the revenue or evade a prohibition, restriction, or regulation; the absence of these essential elements renders the information defective and discloses no offence.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L115' data-start='115' data-end='133'>L115-L133</a> <span class='preview'>&mdash; The abovementioned cases make it clear that an averment of importation, introduction or exportation and intention to defraud revenue or evasion of prohibition, restriction or regulation are elements of the offence of smuggling, so that an …</span></span></div></li><li><p>Where an information is objected to at trial and the evidence does not establish that all parties understood the charge to include the missing essential elements, the defect in the information is not cured by such understanding.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L128' data-start='128' data-end='133'>L128-L133</a> <span class='preview'>&mdash; cases of Ramoly 1987 and Jangeerkhan can be distinguished from the present matter inasmuch as here the defence has submitted that the information is defective and the evidence on record does not disclose that everyone understood the charge…</span></span></div></li><li><p>There is insufficient evidence that the jewellery secured from the accused constitutes dutiable goods subject to duty, excise duty, taxes, or related charges, or that the accused intended to defraud the revenue or evade any prohibition, restriction, or regulation.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L134' data-start='134' data-end='141'>L134-L141</a> <span class='preview'>&mdash; After having carefully assessed the evidence adduced by the prosecution, I find moreover that there is no evidence from the prosecution that the jewellery secured from the accused are ‘dutiable goods’ that is, “subject to any duty, excise …</span></span></div></li><li><p>Where the Customs Department is the competent authority to assess the value of jewellery smuggled into Mauritius and such assessment was not made, the appraised value obtained from the Controller of Assay is not in accordance with proper procedure, and the failure to call witnesses on transaction value constitutes a dearth of evidence in respect of such value.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L173' data-start='173' data-end='178'>L173-L178</a> <span class='preview'>&mdash; Since according to Mr Goorohoo, the Customs Department (now the Director-General, Mauritius Revenue Authority/DG, MRA) is the competent authority to assess the value of jewellery smuggled into Mauritius and such department did not make the…</span></span></div></li></ol><h3>Disposition</h3><p>Case dismissed. The prosecution has failed to prove the case against the accused beyond reasonable doubt.</p><h3>Quotable holding</h3><blockquote>The information is defective as it does not aver two essential elements of the offence of smuggling and therefore discloses no offence against the accused.</blockquote></section><section class="sec"><h2>Cases cited</h2><table class="cases-table"><thead><tr><th>Citation</th><th>Name</th><th>Treatment</th><th>Signal</th><th>Review-worthy</th><th>Provenance</th><th>Line</th><th>Authority</th></tr></thead><tbody><tr><td><code>[1987 MR 29]</code><br><span class='muted small'>norm: 1987 MR 29</span></td><td>Ramoly v The State</td><td>distinguished</td><td><span class='badge sig-neutral'>neutral</span></td><td><span class='tag tag-warn'>yes</span></td><td>court_reasoning</td><td><a class='lineref' href='#L56' data-start='56' data-end='56'>L56</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;the cases of Ramoly 1987 and Jangeerkhan can be distinguished from the present matter inasmuch as here the defence has submitted that the information is defective and the evidence on record does not disclose that everyone understood the charge to mean that the accused had imported goods with intent to evade a restriction or to defraud the revenue&rdquo;</td></tr><tr><td><code>[1985 MR 611]</code><br><span class='muted small'>norm: 1985 MR 611</span></td><td>Ramoly v R</td><td>referred to</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L91' data-start='91' data-end='91'>L91</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;the case of Ramoly v R [1985 MR 611] (where the Court held that the omission of the value of the goods in the information did not render it defective and gave an opinion on the word &#x27;import&#x27;, obiter)&rdquo;</td></tr><tr><td><code>[1997 SCJ 133]</code><br><span class='muted small'>norm: 1997 SCJ 133</span></td><td>I. Jangeerkhan v The State</td><td>considered</td><td><span class='badge sig-neutral'>neutral</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L96' data-start='96' data-end='96'>L96</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;although the Supreme Court noted that the particulars referred to in Ramoly (1987) were not averred in the information, &#x27;from the evidence it appears clearly that everyone was aware that the only moot question regarding the intent of the appellant was whether he was set to defraud the revenue.&#x27; However, the Court went on to say that the &#x27;apparent difficulty resides with the other missing particulars which normally should be given viz. an averment of import, introduction or export.&#x27;&rdquo;</td></tr><tr><td><code>[1997 SCJ 329]</code><br><span class='muted small'>norm: 1997 SCJ 329</span></td><td>Rughooputh v State</td><td>distinguished</td><td><span class='badge sig-neutral'>neutral</span></td><td><span class='tag tag-warn'>yes</span></td><td>court_reasoning</td><td><a class='lineref' href='#L102' data-start='102' data-end='102'>L102</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;Unlike a charge of smuggling under section 156 (1)(a) of the Act, the intention to defraud or to evade payment of duty, levy and taxes is not an element of the offence under section 156(1)(c)(i) of the Act&rdquo;</td></tr><tr><td><code>[1999 SCJ 9]</code><br><span class='muted small'>norm: 1999 SCJ 9</span></td><td>Director of Public Prosecutions v Iframac Limited</td><td>distinguished</td><td><span class='badge sig-neutral'>neutral</span></td><td><span class='tag tag-warn'>yes</span></td><td>court_reasoning</td><td><a class='lineref' href='#L107' data-start='107' data-end='107'>L107</a></td><td></td></tr><tr class='evidence-row'><td colspan='8'><span class='muted small'>evidence:</span> &ldquo;intention to defraud is not an element and is not required to be averred in the information or established in evidence by the prosecution. Had such an ulterior intent been required, the legislator would have provided expressly to that effect, as he has done in relation to the offence of smuggling where the prosecution has to aver in the information and establish in evidence the intent to defraud or evade the payment&rdquo;</td></tr></tbody></table></section><section class="sec"><h2>Legislation</h2><table class="leg-table"><thead><tr><th>Kind</th><th>Name</th><th>Sections</th><th>Jurisdiction</th><th>Line</th></tr></thead><tbody><tr><td>statute</td><td>Customs Act</td><td>s. 156(1)(a), s. 156(2), s. 2</td><td>mu</td><td><a class='lineref' href='#L10' data-start='10' data-end='10'>L10</a></td></tr><tr><td>statute</td><td>Jewellery Act</td><td>s. 4(2)</td><td>mu</td><td><a class='lineref' href='#L179' data-start='179' data-end='179'>L179</a></td></tr></tbody></table></section><section class="sec sec-debug"><h2>Document structure pointers</h2><ul><li>Header: <a class='lineref' href='#L1' data-start='1' data-end='8'>L1-L8</a></li><li>Judgment body: <a class='lineref' href='#L9' data-start='9' data-end='201'>L9-L201</a></li><li>Signatures: <a class='lineref' href='#L196' data-start='196' data-end='196'>L196</a></li><li>Date: <a class='lineref' href='#L201' data-start='201' data-end='201'>L201</a></li><li>Counsel block: <a class='lineref' href='#L12' data-start='12' data-end='14'>L12-L14</a></li><li>Block quotes:<ul><li><a class='lineref' href='#L60' data-start='60' data-end='66'>L60-L66</a> &mdash; <span class='muted small'>“Smuggling” is defined at section 2 of the Act as:</span></li><li><a class='lineref' href='#L83' data-start='83' data-end='88'>L83-L88</a> &mdash; <span class='muted small'>“A charge of smuggling must, in its particulars, comprise 2 things: an averment…</span></li><li><a class='lineref' href='#L104' data-start='104' data-end='106'>L104-L106</a> &mdash; <span class='muted small'>“Unlike a charge of smuggling under section 156 (1)(a) of the Act, the intentio…</span></li><li><a class='lineref' href='#L110' data-start='110' data-end='114'>L110-L114</a> &mdash; <span class='muted small'>“intention to defraud is not an element and is not required to be averred in th…</span></li><li><a class='lineref' href='#L156' data-start='156' data-end='165'>L156-L165</a> &mdash; <span class='muted small'>“The transaction value of the goods shall be the price actually paid or payable…</span></li></ul></li></ul></section><section class="sec sec-debug"><h2>Extraction confidence (debug)</h2><ul><li>catchwords: <span class='tag'>high</span></li><li>case_treatments: <span class='tag'>high</span></li><li>procedural_posture: <span class='tag'>high</span></li><li>headnote: <span class='tag'>high</span></li><li>court: <span class='tag'>high</span></li><li>cases_cited: <span class='tag'>high</span></li><li>legislation: <span class='tag'>high</span></li></ul></section><section class='sec sec-footer'><hr><p class='muted small'>extractor: v1 &middot; schema: v1</p></section></div></div><script>
+(function () {
+  function clearHl() {
+    document.querySelectorAll('.line.hl').forEach(function (el) { el.classList.remove('hl'); });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a.lineref');
+    if (!a) return;
+    e.preventDefault();
+    var start = parseInt(a.dataset.start, 10);
+    var end = parseInt(a.dataset.end || a.dataset.start, 10);
+    if (isNaN(start)) return;
+    clearHl();
+    var target = null;
+    for (var i = start; i <= end; i++) {
+      var el = document.getElementById('L' + i);
+      if (el) { el.classList.add('hl'); if (!target) target = el; }
+    }
+    if (target) {
+      target.scrollIntoView({ block: 'center' });
+      history.replaceState(null, '', '#L' + start);
+    }
+  });
+})();
+</script></body></html>

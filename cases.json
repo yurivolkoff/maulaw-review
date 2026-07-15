@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "2013_SCJ_335",
+    "title": "BEST LUCK (MAURITIUS) LTD v MURDHEN N. & ANOR",
+    "citation": "2013 SCJ 335",
+    "judgment_txt": "_temporary/extraction/txts/2013 SCJ 335.pdf.txt",
+    "digest_raw": "m3/runs/2026-07-05-r1lite/out-2013_SCJ_335.json",
+    "digest_clean": "m3/runs/2026-07-05-r1lite/out-2013_SCJ_335.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v1",
+    "schema_version": "v1",
+    "digested_date": "2026-07-05"
+  },
+  {
+    "slug": "2015_INT_354",
+    "title": "Police v H. Bungloll",
+    "citation": "2015 INT 354",
+    "judgment_txt": "_temporary/extraction/txts/2015 INT 354.pdf.txt",
+    "digest_raw": "m3/runs/2026-07-05-r1lite/out-2015_INT_354.json",
+    "digest_clean": "m3/runs/2026-07-05-r1lite/out-2015_INT_354.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v1",
+    "schema_version": "v1",
+    "digested_date": "2026-07-05"
+  },
+  {
+    "slug": "1865_MR_155",
+    "title": "Montille and Ors. v. The Queen",
+    "citation": "1865 MR 155",
+    "judgment_txt": "_temporary/extraction/txts/1865 MR 155.pdf.txt",
+    "digest_raw": "m3/runs/2026-07-05-r1lite/out-1865_MR_155.json",
+    "digest_clean": "m3/runs/2026-07-05-r1lite/out-1865_MR_155.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v1",
+    "schema_version": "v1",
+    "digested_date": "2026-07-05"
+  },
+  {
+    "slug": "2019_SCJ_582019_MR_36",
+    "title": "FOONDUN M.S. v. BANQUE DES MASCAREIGNES AND ANOR",
+    "citation": "2019 SCJ 58; 2019 MR 36",
+    "judgment_txt": "_temporary/extraction/txts/2019 SCJ 582019 MR 36.pdf.txt",
+    "digest_raw": "m3/runs/2026-07-05-r1lite/out-2019_SCJ_582019_MR_36.json",
+    "digest_clean": "m3/runs/2026-07-05-r1lite/out-2019_SCJ_582019_MR_36.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v1",
+    "schema_version": "v1",
+    "digested_date": "2026-07-05"
+  }
+]
