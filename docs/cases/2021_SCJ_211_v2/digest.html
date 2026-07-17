@@ -1,0 +1,224 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Hurkoo D. v. The State of Mauritius &middot; 2021 SCJ 211 &middot; review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+    --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+    --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+  --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+  --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+.container { display: flex; height: 100vh; width: 100%; overflow: hidden; }
+.pane { overflow: auto; height: 100%; }
+.pane-left { flex: 1 1 50%; border-right: 1px solid var(--border); background: var(--code-bg); }
+.pane-right { flex: 1 1 50%; padding: 1rem 1.25rem 3rem; }
+.pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); z-index: 2; }
+pre.lines { margin: 0; padding: .25rem 0 2rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.line { display: block; white-space: pre; padding: 0 .75rem; }
+.line:hover { background: rgba(127,127,127,.08); }
+.line.hl { background: var(--hl); }
+.ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+.sec { margin-bottom: 1.5rem; }
+.sec h1 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.sec h2 { font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; margin: 0 0 .5rem; }
+.sec h3 { font-size: .92rem; margin: .75rem 0 .25rem; color: var(--muted); }
+.sec-debug { opacity: .85; font-size: .9rem; }
+.sec-footer { opacity: .7; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; margin-bottom: .5rem; }
+.meta-table th { text-align: left; color: var(--muted); font-weight: 500; padding: .15rem .5rem .15rem 0; vertical-align: top; white-space: nowrap; }
+.meta-table td { padding: .15rem 0; }
+.cases-table, .leg-table { table-layout: fixed; }
+.cases-table th, .cases-table td, .leg-table th, .leg-table td { border-top: 1px solid var(--border); padding: .35rem .4rem; text-align: left; vertical-align: top; word-wrap: break-word; }
+.evidence-row td { border-top: none; padding-top: 0; }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .85em; }
+a.lineref { color: var(--link); text-decoration: none; font-weight: 600; white-space: nowrap; }
+a.lineref:hover { text-decoration: underline; }
+.pinpoints { display: flex; flex-direction: column; gap: .15rem; margin: .2rem 0 .6rem 1.2rem; }
+.preview { color: var(--muted); font-size: .85em; }
+.held > li { margin-bottom: .6rem; }
+.muted { color: var(--muted); }
+.small { font-size: .82em; }
+.badge { display: inline-block; padding: .05rem .45rem; border-radius: 999px; font-size: .78em; font-weight: 600; }
+.sig-positive { background: color-mix(in srgb, var(--pos) 18%, transparent); color: var(--pos); }
+.sig-neutral { background: color-mix(in srgb, var(--neu) 18%, transparent); color: var(--neu); }
+.sig-caution { background: color-mix(in srgb, var(--cau) 20%, transparent); color: var(--cau); }
+.sig-negative { background: color-mix(in srgb, var(--neg) 18%, transparent); color: var(--neg); }
+.badge-review { display: inline-block; background: var(--badge-review-bg); color: var(--badge-review-fg); padding: .15rem .6rem; border-radius: 4px; font-size: .78rem; font-weight: 700; letter-spacing: .03em; margin-bottom: .5rem; }
+.badge-missing { color: var(--neg); font-style: italic; }
+.tag { display: inline-block; border: 1px solid var(--border); border-radius: 3px; padding: 0 .35rem; font-size: .78em; }
+.tag-muted { color: var(--muted); }
+.tag-warn { color: var(--cau); border-color: var(--cau); }
+.catchwords > li, ol.held > li { margin-bottom: .4rem; }
+blockquote { margin: .25rem 0; padding: .4rem .75rem; border-left: 3px solid var(--link); background: var(--code-bg); font-style: italic; }
+</style></head><body><div class="container"><div class="pane pane-left" id="judgment-pane"><div class="pane-header">Judgment text &middot; 126 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">HURKOO D. v. THE STATE OF MAURITIUS</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2021 SCJ 211</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">Record No. 9448 – 3/64/20</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">THE SUPREME COURT OF MAURITIUS</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">In the matter of:</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">Dhanesswar Hurkoo</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">Appellant</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">v.</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">The State of Mauritius</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">Respondent</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">…</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">JUDGMENT</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">The appellant was prosecuted for involuntary wounds and blows by imprudence in</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">breach of Section 239(2) of Criminal Code coupled with Sections 52, 53 and 133(1)(2) of the</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">Road Traffic Act (RTA).</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">The record reveals that when the case was called before the court for the first time, the</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">appellant pleaded guilty following which, the case was fixed for hearing.</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">The appellant was inops consilii at the hearing.</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">In the course of the hearing the prosecution inter alia produced a statement which the</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">appellant had given to the Police, a rough sketch of the locus as well as the PF 58 of witness</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">Soobirsen Gobin who had been slightly injured in the accident.</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">In his statement to the Police the appellant had admitted liability for the accident and</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">upon being informed of the offence committed by him, he accepted the charge and begged for</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">excuse.</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt"></span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">2</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">The circumstances of the accident as disclosed in the statement are that on the material</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">day at 7.15 a.m. the appellant was driving his car along Royal Road, Belle Vue Maurel from the</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">direction of Barlow towards Riviere du Rempart at about 40 kmph on his left side of the road.</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">Reaching in the vicinity of Belle Vue Maurel gardens, he slowed down so as to turn right into the</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">road leading to Laventure. As he started turning to the right into the said road, his car collided</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">with an autocycle coming from the opposite direction. The right front part of his car hit against</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">the front part of the autocycle and the autocyclist fell down together with his autocycle. The</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">appellant stated that he had not noticed the autocycle prior to the accident.</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">The record reveals that at the close of the case the appellant was informed of his rights</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">and that he had begged for excuse from the dock.</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">At the sentencing stage the appellant admitted a previous conviction which was put to</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">him and he was thereafter sentenced to pay a fine of Rs 10,000 and disqualified from holding a</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">driving licence for all types of vehicles for a period of 3 months, his driving licence was further</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">endorsed and he was ordered to follow a rehabilitation course.</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">The appellant has appealed against the disqualification order imposed by the Magistrate;</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">the respondent is not resisting the appeal.</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">It was submitted on behalf of the appellant that the fine was amply sufficient to meet the</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">ends of justice and that there was, in the circumstances, no justification for the disqualification</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">order.</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">Pursuant to Section 52 coupled with the Second Schedule to the RTA, it is permissible,</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">but not mandatory, for the court to impose a disqualification order for a first conviction for an</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">offence under Section 133(1) of the RTA with which the appellant was charged in the present</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">case.</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">However where the court decides, in its discretion, to impose a disqualification order in</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">such a case where disqualification is only permissible, the court has to give reasons as to why it</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">is exercising its discretion to impose the disqualification order.</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt"></span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">3</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">In the present case the Magistrate proceeded to disqualify the appellant without giving</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">any reason as to why she deemed it necessary to do so. The cryptic entry in the record reads</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">as follows:</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">“I have considered</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">- Guilty plea;</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">- All evid. on record;</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">- Doc X filed;</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">- Begs for excuse;</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">I sentence the Acc to pay a fine of Rs 10,000 + Acc is disq from</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">holding a driving licence for all types of veh for a period of 3</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">months &amp; driv lic is endorsed + rehab course + Rs 100 costs.”</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">The appellant had no previous conviction for the offence of wounds and blows by</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">imprudence with which he stood charged. He had one previous conviction for failing to comply</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">with traffic sign (single yellow line) for which he had been fined.</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">It was permissible for the court to impose a disqualification order if the circumstances</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">inter alia, the degree of the appellant’s imprudence or the seriousness of the accident called for</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">such an order.</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">In so far as the degree of imprudence is concerned it has been held that:</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">“a disqualification should only be ordered against somebody whose</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">imprudence was such as to warrant the court to consider that he should,</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">in the public interest, be banned from driving for a certain period of time.”</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">(Elaheebocus v The State [2013 SCJ 395])</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">In the present case the evidence did not disclose any aggravating factor which</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">warranted a disqualification order.</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt"></span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">4</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">The appellant’s imprudence consisted in his failure to keep a proper look out for</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">oncoming traffic and ascertaining that the road was clear before starting to turn into the side</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">road to the right. His imprudence was not per se of a nature as to warrant, in the public interest,</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">that he be banned from driving for a certain period.</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">The circumstances in the present case may be compared to those in Seetohul v The</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">State [2010 SCJ 339]. In Seetohul, the trial court had imposed a six months disqualification</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">order with respect to private cars upon the appellant, following his conviction for an offence</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">under Section 123(c)(1)(a) of the RTA.</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">On appeal the court quashed the disqualification order and made the following</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">observation:</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">“In the present case the appellant had no previous conviction for the</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">offence for which he stood charged. In such a case, disqualification is</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">not mandatory but it is permissible. The Magistrate therefore has a</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">discretion to impose a disqualification order but such discretion must</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">be exercised judiciously after taking into consideration all the</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">circumstances of the offence, its degree of seriousness, aggravating</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">circumstances if any and the circumstances relevant to the offence.</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">If, after weighing all the circumstances of the case, the Magistrate is</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">minded to impose a disqualification order, he may do so.”</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">In the present case the appellant had no previous conviction for the offence for which he</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">was convicted, his imprudence was not of a very serious nature, nor were there any serious or</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">aggravating circumstances which warranted the imposition of a disqualification order.</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">In the circumstances the Magistrate cannot be said to have made a judicious exercise of</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">her discretion to impose a disqualification order. She failed to give any reason as to why she</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">considered it necessary to impose a disqualification order and we are left in the dark as to what</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">prompted her decision to impose such an order.</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt"></span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">5</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">For the above given reasons we allow the appeal and quash the disqualification order.</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">We further quash the endorsement order inasmuch as pursuant to the Second Schedule to the</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">RTA for a first offence under Section 133 an endorsement order is only mandatory where the</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">offender is disqualified. The rehabilitation order which follows a disqualification order, cannot</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">also stand.</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">The endorsement and the rehabilitation orders are accordingly set aside.</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">The sentence is otherwise maintained.</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">B. R. Mungly-Gulbul</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">Senior Puisne Judge</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">R. Seetohul-Toolsee</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">Judge</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">30 June 2021</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">---------------</span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt">Judgment delivered by Hon. B. R. Mungly-Gulbul, SPJ</span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">For Appellant : Mr. A. H. Sookoo, of Counsel</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">Mrs. Attorney S. Bundhun-Cheetoo</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">For Respondent : Mrs. Y. Nathire-Beebeejaun, Senior State Counsel</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt">Mrs. K. Parson, Senior State Attorney</span></span>
+</pre></div><div class="pane pane-right" id="digest-pane"><section class="sec sec-header"><h1>Hurkoo D. v. The State of Mauritius</h1><table class="meta-table"><tr><th>Citation</th><td><code>2021 SCJ 211</code></td></tr><tr><th>Verbatim</th><td><code>2021 SCJ 211</code></td></tr><tr><th>Record</th><td>Record No. 9448 – 3/64/20</td></tr><tr><th>Court</th><td>Supreme Court</td></tr><tr><th>Bench</th><td>two judges</td></tr><tr><th>Jurisdiction</th><td>Mauritius</td></tr><tr><th>Date</th><td>2021-06-30</td></tr><tr><th>Judgment by</th><td>B. R. Mungly-Gulbul</td></tr><tr><th>Procedural posture</th><td>appeal</td></tr><tr><th>Citation code</th><td><code>SCJ</code></td></tr></table></section><section class="sec"><h2>Bench</h2><ul><li><strong>B. R. Mungly-Gulbul</strong>, Senior Puisne Judge <span class='tag'>lead</span> <span class='tag tag-muted'>full agreement</span></li><li><strong>R. Seetohul-Toolsee</strong>, Judge <span class='tag'>concurring</span> <span class='tag tag-muted'>full agreement</span></li></ul><p class='muted'>Judgment delivered by: B. R. Mungly-Gulbul</p></section><section class="sec"><h2>Parties</h2><ul><li><strong>appellant:</strong> Dhanesswar Hurkoo</li><li><strong>respondent:</strong> The State of Mauritius</li></ul></section><section class="sec"><h2>Counsel</h2><ul><li><em>For appellant:</em> Mr. A. H. Sookoo, of Counsel; Mrs. Attorney S. Bundhun-Cheetoo</li><li><em>For respondent:</em> Mrs. Y. Nathire-Beebeejaun, Senior State Counsel; Mrs. K. Parson, Senior State Attorney</li></ul></section><section class="sec"><h2>Catchwords</h2><ol class="catchwords"><li>Statute (Road Traffic Act) — Disqualification from driving — s. 52 and s. 133 — Whether disqualification is discretionary for a first conviction and whether reasons must be given for imposing discretionary disqualification</li></ol></section><section class="sec"><h2>Headnote</h2><h3>Facts</h3><p>The appellant was driving his car at approximately 40 kmph along Royal Road when he attempted to turn right without properly checking for oncoming traffic. His vehicle collided with an autocycle coming from the opposite direction, slightly injuring the motorcyclist. In his statement to police, the appellant admitted liability and accepted responsibility. He had one prior conviction for a traffic sign violation but none for the instant offence.</p><h3>Held</h3><ol class='held'><li><p>Under section 52 of the Road Traffic Act, disqualification from driving is permissible but not mandatory for a first conviction under section 133, and when a court exercises discretion to impose such disqualification, it must provide reasons for the decision.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L46' data-start='46' data-end='52'>L46-L52</a> <span class='preview'>&mdash; Pursuant to Section 52 coupled with the Second Schedule to the RTA, it is permissible, but not mandatory, for the court to impose a disqualification order for a first conviction for an offence under Section 133(1) of the RTA with which the…</span></span></div><blockquote class='held-quote'>Pursuant to Section 52 coupled with the Second Schedule to the RTA, it is permissible, but not mandatory, for the court to impose a disqualification order for a first conviction for an offence under Section 133(1) of the RTA with which the appellant was charged in the present case. [...] However where the court decides, in its discretion, to impose a disqualification order in such a case where disqualification is only permissible, the court has to give reasons as to why it is exercising its discretion to impose the disqualification order.</blockquote></li><li><p>The magistrate committed a procedural error by imposing disqualification without providing any reasons for exercising this discretion.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L55' data-start='55' data-end='65'>L55-L65</a> <span class='preview'>&mdash; In the present case the Magistrate proceeded to disqualify the appellant without giving any reason as to why she deemed it necessary to do so. The cryptic entry in the record reads as follows: “I have considered - Guilty plea; - All evid. …</span></span><span class='pinpoint'><a class='lineref' href='#L103' data-start='103' data-end='106'>L103-L106</a> <span class='preview'>&mdash; In the circumstances the Magistrate cannot be said to have made a judicious exercise of her discretion to impose a disqualification order. She failed to give any reason as to why she considered it necessary to impose a disqualification ord…</span></span></div><blockquote class='held-quote'>She failed to give any reason as to why she considered it necessary to impose a disqualification order and we are left in the dark as to what prompted her decision to impose such an order.</blockquote></li><li><p>On the facts of the case, the appellant&#x27;s imprudence did not reach the threshold necessary to warrant disqualification from driving in the public interest, as the evidence disclosed no aggravating circumstances.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L77' data-start='77' data-end='84'>L77-L84</a> <span class='preview'>&mdash; In the present case the evidence did not disclose any aggravating factor which warranted a disqualification order. 4 The appellant’s imprudence consisted in his failure to keep a proper look out for oncoming traffic and ascertaining that t…</span></span></div><blockquote class='held-quote'>In the present case the evidence did not disclose any aggravating factor which warranted a disqualification order. [...] His imprudence was not per se of a nature as to warrant, in the public interest, that he be banned from driving for a certain period.</blockquote></li></ol><h3>Disposition</h3><p>Appeal allowed; disqualification order quashed; endorsement and rehabilitation orders set aside; fine of Rs 10,000 maintained.</p><h3>Orders</h3><ul><li>Disqualification from driving quashed</li><li>Endorsement of driving licence set aside</li><li>Rehabilitation course requirement set aside</li></ul></section><section class="sec"><h2>Cases cited</h2><table class="cases-table"><thead><tr><th>Citation</th><th>Name</th><th>Cited for</th><th>Treatment</th><th>Signal</th><th>Review-worthy</th><th>Provenance</th><th>Line</th><th>Authority</th></tr></thead><tbody><tr><td><code>Elaheebocus v The State [2013 SCJ 395]</code><br><span class='muted small'>norm: 2013 SCJ 395</span></td><td>Elaheebocus v The State</td><td>Disqualification from driving should only be imposed where the offender&#x27;s imprudence is such as to warrant, in the public interest, a ban from driving for a certain period.</td><td>applied</td><td><span class='badge sig-positive'>positive</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L76' data-start='76' data-end='76'>L76</a></td><td></td></tr><tr class='evidence-row'><td colspan='9'><span class='muted small'>evidence:</span> &ldquo;a disqualification should only be ordered against somebody whose imprudence was such as to warrant the court to consider that he should, in the public interest, be banned from driving for a certain period of time&rdquo;</td></tr><tr><td><code>Seetohul v The State [2010 SCJ 339]</code><br><span class='muted small'>norm: 2010 SCJ 339</span></td><td>Seetohul v The State</td><td>Discretionary disqualification must be exercised judiciously, considering all circumstances of the offence, its seriousness, aggravating circumstances, and other relevant factors.</td><td>applied</td><td><span class='badge sig-positive'>positive</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L85' data-start='85' data-end='85'>L85</a></td><td></td></tr><tr class='evidence-row'><td colspan='9'><span class='muted small'>evidence:</span> &ldquo;such discretion must be exercised judiciously after taking into consideration all the circumstances of the offence, its degree of seriousness, aggravating circumstances if any and the circumstances relevant to the offence&rdquo;</td></tr></tbody></table></section><section class="sec"><h2>Legislation</h2><table class="leg-table"><thead><tr><th>Kind</th><th>Name</th><th>Sections</th><th>Jurisdiction</th><th>Line</th></tr></thead><tbody><tr><td>statute</td><td>Criminal Code</td><td>s. 239(2)</td><td>mu</td><td><a class='lineref' href='#L14' data-start='14' data-end='14'>L14</a></td></tr><tr><td>statute</td><td>Road Traffic Act</td><td>s. 52, s. 53, s. 133(1)(2), s. 123(c)(1)(a)</td><td>mu</td><td><a class='lineref' href='#L14' data-start='14' data-end='14'>L14</a></td></tr></tbody></table></section><section class="sec sec-debug"><h2>Document structure pointers</h2><ul><li>Judgment body: <a class='lineref' href='#L12' data-start='12' data-end='115'>L12-L115</a></li><li>Signatures: <a class='lineref' href='#L116' data-start='116' data-end='116'>L116</a></li><li>Date: <a class='lineref' href='#L120' data-start='120' data-end='120'>L120</a></li><li>Block quotes:<ul><li><a class='lineref' href='#L58' data-start='58' data-end='65'>L58-L65</a> (en) &mdash; <span class='muted small'>“I have considered</span></li><li><a class='lineref' href='#L73' data-start='73' data-end='75'>L73-L75</a> (en) &mdash; <span class='muted small'>“a disqualification should only be ordered against somebody whose</span></li><li><a class='lineref' href='#L91' data-start='91' data-end='99'>L91-L99</a> (en) &mdash; <span class='muted small'>“In the present case the appellant had no previous conviction for the</span></li></ul></li></ul></section><section class="sec sec-debug"><h2>Extraction confidence (debug)</h2><ul><li>catchwords: <span class='tag'>high</span></li><li>case_treatments: <span class='tag'>high</span></li><li>procedural_posture: <span class='tag'>high</span></li><li>headnote: <span class='tag'>high</span></li><li>court: <span class='tag'>high</span></li></ul></section><section class='sec sec-footer'><hr><p class='muted small'>extractor: extractor.v2 &middot; schema: v2</p></section></div></div><script>
+(function () {
+  function clearHl() {
+    document.querySelectorAll('.line.hl').forEach(function (el) { el.classList.remove('hl'); });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a.lineref');
+    if (!a) return;
+    e.preventDefault();
+    var start = parseInt(a.dataset.start, 10);
+    var end = parseInt(a.dataset.end || a.dataset.start, 10);
+    if (isNaN(start)) return;
+    clearHl();
+    var target = null;
+    for (var i = start; i <= end; i++) {
+      var el = document.getElementById('L' + i);
+      if (el) { el.classList.add('hl'); if (!target) target = el; }
+    }
+    if (target) {
+      target.scrollIntoView({ block: 'center' });
+      history.replaceState(null, '', '#L' + start);
+    }
+  });
+})();
+</script></body></html>
