@@ -1,0 +1,227 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Phoenix Insurance Co Ltd &amp; Anor v La Prudence Mauricienne Co Ltd &middot; 2012 INT 12 &middot; review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+    --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+    --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+  --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+  --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+.container { display: flex; height: 100vh; width: 100%; overflow: hidden; }
+.pane { overflow: auto; height: 100%; }
+.pane-left { flex: 1 1 50%; border-right: 1px solid var(--border); background: var(--code-bg); }
+.pane-right { flex: 1 1 50%; padding: 1rem 1.25rem 3rem; }
+.pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); z-index: 2; }
+pre.lines { margin: 0; padding: .25rem 0 2rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.line { display: block; white-space: pre; padding: 0 .75rem; }
+.line:hover { background: rgba(127,127,127,.08); }
+.line.hl { background: var(--hl); }
+.ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+.sec { margin-bottom: 1.5rem; }
+.sec h1 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.sec h2 { font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; margin: 0 0 .5rem; }
+.sec h3 { font-size: .92rem; margin: .75rem 0 .25rem; color: var(--muted); }
+.sec-debug { opacity: .85; font-size: .9rem; }
+.sec-footer { opacity: .7; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; margin-bottom: .5rem; }
+.meta-table th { text-align: left; color: var(--muted); font-weight: 500; padding: .15rem .5rem .15rem 0; vertical-align: top; white-space: nowrap; }
+.meta-table td { padding: .15rem 0; }
+.cases-table, .leg-table { table-layout: fixed; }
+.cases-table th, .cases-table td, .leg-table th, .leg-table td { border-top: 1px solid var(--border); padding: .35rem .4rem; text-align: left; vertical-align: top; word-wrap: break-word; }
+.evidence-row td { border-top: none; padding-top: 0; }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .85em; }
+a.lineref { color: var(--link); text-decoration: none; font-weight: 600; white-space: nowrap; }
+a.lineref:hover { text-decoration: underline; }
+.pinpoints { display: flex; flex-direction: column; gap: .15rem; margin: .2rem 0 .6rem 1.2rem; }
+.preview { color: var(--muted); font-size: .85em; }
+.held > li { margin-bottom: .6rem; }
+.muted { color: var(--muted); }
+.small { font-size: .82em; }
+.badge { display: inline-block; padding: .05rem .45rem; border-radius: 999px; font-size: .78em; font-weight: 600; }
+.sig-positive { background: color-mix(in srgb, var(--pos) 18%, transparent); color: var(--pos); }
+.sig-neutral { background: color-mix(in srgb, var(--neu) 18%, transparent); color: var(--neu); }
+.sig-caution { background: color-mix(in srgb, var(--cau) 20%, transparent); color: var(--cau); }
+.sig-negative { background: color-mix(in srgb, var(--neg) 18%, transparent); color: var(--neg); }
+.badge-review { display: inline-block; background: var(--badge-review-bg); color: var(--badge-review-fg); padding: .15rem .6rem; border-radius: 4px; font-size: .78rem; font-weight: 700; letter-spacing: .03em; margin-bottom: .5rem; }
+.badge-missing { color: var(--neg); font-style: italic; }
+.tag { display: inline-block; border: 1px solid var(--border); border-radius: 3px; padding: 0 .35rem; font-size: .78em; }
+.tag-muted { color: var(--muted); }
+.tag-warn { color: var(--cau); border-color: var(--cau); }
+.catchwords > li, ol.held > li { margin-bottom: .4rem; }
+blockquote { margin: .25rem 0; padding: .4rem .75rem; border-left: 3px solid var(--link); background: var(--code-bg); font-style: italic; }
+</style></head><body><div class="container"><div class="pane pane-left" id="judgment-pane"><div class="pane-header">Judgment text &middot; 129 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">Phoenix Insurance Co Ltd &amp; Anor v La Prudence Mauricienne Co Ltd</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2012 INT 12</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">IN THE INTERMEDIATE COURT OF MAURITIUS</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">Cause No.940/09</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">In the matter of:-</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">1. Phoenix (Mauritius) Co. Ltd</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">2. Mrs Naserah Bibi Fathemamode</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">Plaintiffs</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">v</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">La Prudence Mauricienne Co Ltd</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">Defendant</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">JUDGMENT</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">The facts</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">The plaintiffs’ action was initially against two defendants, but the case against defendant no.2</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">was struck out on the 16th December 2009 without any amendment to the body of the proecipe,</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">so that defendant no.1 and defendant no.2 are still mentioned therein. La Prudence Mauricienne</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">Co Ltd was defendant no.1 and Mr Nawsheally Syed Hossen was defendant no.2 in the pre-</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">amended proecipe.</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">The claim for damages arises out of a road accident which occurred on the 28th August 2005 at</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">Riche Terre, involving vehicle 3528ZP01 insured with plaintiff no.1 and driven/owned by</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">plaintiff no.2 and vehicle 2373ZP01 insured with defendant no.1 and owned/driven by defendant</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">no.2. The plaintiffs aver that whilst plaintiff no.2 was driving vehicle 3528ZP01 along the New</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">Trunk Road at Riche Terre, it was hit from behind by vehicle 2373ZP01 and the impact caused</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">vehicle 3528ZP01 to hit the rear of vehicle 1686ZP01. Defendant no.1 is liable as insurer for the</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">damage and prejudice suffered by the plaintiffs since the owner/driver of vehicle 2372ZP01 had</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">the garde thereof. It is averred in the alternative that the accident occurred through the sole fault</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">and/or negligence and/or imprudence of defendant no.2 and defendant no.1 is liable as insurer.</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">The defendant admits being the insurer of vehicle 2373ZP01 but denies the other material</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">averments in the proecipe, inclusive of the circumstances of the accident as related by the</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">plaintiffs. It avers that the accident is a sham and did not occur and that the vehicles involved</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">were already damaged in a previous accident and the alleged accident has been made up with a</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">view to defraud the insurance company.</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">The case for the plaintiffs</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">Page | 1</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt"></span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">PC Sham said that he examined vehicles 2373ZP01 and “2528ZP01” on the 28th at 15h30 and</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">has made a report (Doc. B). There was an accident and the car was damaged, although he cannot</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">say how. He only inspected the damaged vehicles.</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">The evidence of PC Nagessur is that on the 28th August 2005 he was posted at Terre Rouge</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">Police Station and attended to a road accident. The accident involved three vehicles and occurred</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">at Riche Terre Road, near the roundabout. He marked the road and the driver came to an</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">agreement (Doc. C).</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">According to Mr D. K. Molaye, Claim Officer at Phoenix Insurance Ltd, his company was</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">informed of the accident by its insured, plaintiff no.2. An estimate of repairs was sent to them</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">(Doc. D) and they caused their motor surveyor, Mr Issur, to survey the vehicle (Doc. E). Garage</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">Bolivia did the repairs for the sum of Rs187,337 (Doc. F). There was also a survey fee of Rs1380</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">and a discharge note signed by Mr “Bano”. He is not pressing for the amount of Rs23,000</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">claimed by plaintiff no.2. The accident happened because of the fault of the other drivers and the</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">insured was paid the sum stated, which he is now claiming from the defendant. He cannot say if</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">the accident never occurred, was a sham and made up with a view to defraud the defendant.</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">The case for the defendant</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">Mrs A. Sadien, representing the defendant, said that following the claim from Mr Nawsheally</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">Syed Hossen on the 31st August 2005, they referred the matter to their expert, Mr Leckraj Ram,</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">who gave a report. On the basis of the report to the effect that the circumstances of the accident</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">are fraudulous, they did not pay the claim. The accident, if it occurred, was meant to defraud the</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">insurance company, so it is not liable towards plaintiff no.1. They gave a declaration at the</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">ICAC. She is not aware of the circumstances of the accident and she has not received any</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">document from the police or from the ICAC.</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">Mr L. Ram, Motor Surveyor, explained that at the request of defendant no.1 he drew a report in</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">respect three damaged vehicles (Doc H). His conclusions are that the vehicles did not collide</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">with each other. The damages to vehicle 2373ZP01 were to the front only, the bumper had been</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">forced in into a ‘V’ as if it hit a pole. Vehicle 1686ZP01 was damaged at the front and rear and</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">he was told that the vehicle had been hit at the rear and that the front was damaged in another</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">accident. The rear bumper of vehicle 3528ZP01 was damaged. He entertains doubts whether the</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">accident occurred as related. He cannot say anything about what the police found. He does not</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">know in what order the three vehicles were.</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">Discussion</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">The plaintiffs’ case is on two limbs, the liability of the defendant as insurer of the custodian of</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">vehicle 2373ZP01 under Article 1384 Alinéas 1 and 5 of the Code Civil and its liability as</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">insurer for the faute and/or negligence and/or imprudence of the driver of vehicle 2373AP01</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">under Articles 1382 and 1383 of the Code Civil.</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">Page | 2</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt"></span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">Mr G. Bhanji-Soni, counsel for the plaintiffs, submitted that plaintiff no.1 has been subrogated</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">into the rights of its insured. This is not contested, but since the plaintiffs are claiming damages</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">as a result of a road accident, it is for them to establish that there had been an accident.</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">The defendant having admitted that it was the insurer of vehicle 2373ZP01 at the material time,</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">and there being no evidence from the defence rebutting the presumption that the owner/driver</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">was the gardien at the material time, the defendant is liable unless it succeeds in establishing that</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">the accident was due to force majeure or the faute exclusive de la victime. It is to be noted that</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">the defendant does not aver any force majeure or faute exclusive de la victime but denies</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">paragraph 3 of the proecipe and avers that the accident is a fraud.</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">However, I take into consideration the evidence of Mr L. Ram to the effect that he entertains</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">serious doubts that the vehicles were involved in the accident as reported by Mr N. S. Hossen</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">and plaintiff no.2 and that they collided with each other. It is to be borne in mind that PC sham</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">only examined the damaged vehicles and that he did not go to the locus and did not know how</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">the alleged accident occurred. He only described what he saw on the vehicles when the accident</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">was reported to the police. There is no expert evidence from the plaintiffs to rebut the version of</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">Mr L. Ram. I therefore find that his version has remained unrebutted and I accept his evidence</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">that there is doubt as to the occurrence of the accident in the light of the damages sustained by</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">the vehicles. In fact the whole circumstances of the alleged accident are made suspicious by the</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">evidence of the motor surveyor.</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">There is a declaration dated 28th August 2005 made by Mr N. S. Hossen, Mrs N. B.</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">Fathemamode (plaintiff no.2) and Mr F. Ramjaun in respect of the accident and their not wanting</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">police intervention, but I have already ruled that the declaration does not amount to a transaction</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">within the meaning of Article 2044 of the Code Civil putting an end to all claims.</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">In the light of the above, I find that the defence has been able to cast doubt as to the existence of</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">an accident between vehicles 3528ZP01 and 2373ZP01 and as a consequence, I cannot conclude</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">that the damages to vehicle 3528ZP01 were not caused by the sole fault of plaintiff no.2.</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">Therefore, the plaintiffs’ claim under Article 1384-1 and 1384-5 does not succeed.</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">It is clear that the plaintiffs cannot succeed under the second limb of their claim either. Although</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">police officers deposed as to the occurrence of the accident and damages to the vehicles, plaintiff</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">no.2, the driver of vehicle 3528ZP01 at the material time, was not called to depose in Court. It is</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">to be noted that when the case continued on the 8th September 2011 Mr G. Bhanji-Soni, counsel</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">for the plaintiffs, informed the Court that he wished to proceed in the absence of plaintiff no.2</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">and closed the case for the plaintiffs.</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">In Ramphul v La Preservatrice Insurance [1962 MR 56] cited by Mrs S. Carrim, counsel for</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">the defendant, the Trial Court had dismissed a claim for damages brought by the insured against</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">his insurers. The decision was maintained on appeal. I find pertinent what the Supreme Court</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">had to say:</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">“We may here remark that in a case of this nature it is for the plaintiff to prove that the</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">destruction of the insured property is due to the accidental causes and not for the</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">Page | 3</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt"></span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">defendant company to adduce evidence to prove that such had been destroyed otherwise</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">than by such causes.”</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">In the absence of the version of plaintiff no.2 as to the circumstances of the accident, the</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">plaintiffs have failed to prove that the accident was as a result of the “sole fault and/or</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">negligence and/or imprudence” of the driver of vehicle 2373ZP01. The evidence of the police</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">officers is not sufficient to establish the case against the defendant.</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">Conclusion</span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt">For all the reasons given above, I find that the plaintiffs have failed to prove the case against the</span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">defendant on a balance of probabilities.</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">I accordingly dismiss the plaintiffs’ action. With costs.</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">W. V. Rangan</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt">Magistrate</span></span>
+<span class="line" id="L127"><span class="ln">127</span><span class="txt">Intermediate Court (Civil Division)</span></span>
+<span class="line" id="L128"><span class="ln">128</span><span class="txt">This 26th January 2012</span></span>
+<span class="line" id="L129"><span class="ln">129</span><span class="txt">Page | 4</span></span>
+</pre></div><div class="pane pane-right" id="digest-pane"><section class="sec sec-header"><h1>Phoenix Insurance Co Ltd &amp; Anor v La Prudence Mauricienne Co Ltd</h1><table class="meta-table"><tr><th>Citation</th><td><code>2012 INT 12</code></td></tr><tr><th>Verbatim</th><td><code>2012 INT 12</code></td></tr><tr><th>Record</th><td>Cause No.940/09</td></tr><tr><th>Court</th><td>Intermediate Court &mdash; Civil Division</td></tr><tr><th>Bench</th><td>single judge</td></tr><tr><th>Jurisdiction</th><td>Mauritius</td></tr><tr><th>Date</th><td>2012-01-26</td></tr><tr><th>Judgment by</th><td>W. V. Rangan</td></tr><tr><th>Procedural posture</th><td>ordinary</td></tr><tr><th>Citation code</th><td><code>INT</code></td></tr></table></section><section class="sec"><h2>Bench</h2><ul><li><strong>W. V. Rangan</strong>, Magistrate <span class='tag'>lead</span> <span class='tag tag-muted'>full agreement</span></li></ul><p class='muted'>Judgment delivered by: W. V. Rangan</p></section><section class="sec"><h2>Parties</h2><ul><li><strong>plaintiff:</strong> Phoenix (Mauritius) Co. Ltd; Mrs Naserah Bibi Fathemamode</li><li><strong>defendant:</strong> La Prudence Mauricienne Co Ltd</li></ul></section><section class="sec"><h2>Counsel</h2><ul><li><em>For plaintiffs:</em> Mr G. Bhanji-Soni</li><li><em>For defendant:</em> Mrs S. Carrim; Mrs A. Sadien</li></ul></section><section class="sec"><h2>Catchwords</h2><ol class="catchwords"><li>Code Civil — Insurance — Art. 1384 — Burden of proof — Whether plaintiff bears burden of proving accidental causes of damage</li><li>Code Civil — Insurance — Art. 1384 — Expert evidence — Whether expert doubt about accident occurrence defeats plaintiff&#x27;s burden of proof</li><li>Code Civil — Negligence — Arts. 1382-1383 — Evidence — Whether police evidence alone suffices to establish negligence without driver&#x27;s testimony</li></ol></section><section class="sec"><h2>Headnote</h2><h3>Facts</h3><p>On 28 August 2005, a road accident occurred at Riche Terre involving three vehicles. Plaintiffs alleged that vehicle 3528ZP01, insured with plaintiff no.1 and driven by plaintiff no.2, was hit from behind by vehicle 2373ZP01, insured with defendant no.1, causing it to strike a third vehicle. Defendant denied the accident occurred as described and alleged the accident was fabricated to defraud the insurance company. The case involved two alternative claims: liability under Article 1384(1) and (5) of the Code Civil as insurer of the custodian, and liability for negligence under Articles 1382 and 1383.</p><h3>Held</h3><ol class='held'><li><p>In insurance claims alleging accidental damage, the burden of proving that the damage resulted from accidental causes rests with the plaintiff, not the insurer.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L74' data-start='74' data-end='76'>L74-L76</a> <span class='preview'>&mdash; Mr G. Bhanji-Soni, counsel for the plaintiffs, submitted that plaintiff no.1 has been subrogated into the rights of its insured. This is not contested, but since the plaintiffs are claiming damages as a result of a road accident, it is for…</span></span><span class='pinpoint'><a class='lineref' href='#L107' data-start='107' data-end='120'>L107-L120</a> <span class='preview'>&mdash; In Ramphul v La Preservatrice Insurance [1962 MR 56] cited by Mrs S. Carrim, counsel for the defendant, the Trial Court had dismissed a claim for damages brought by the insured against his insurers. The decision was maintained on appeal. I…</span></span></div><blockquote class='held-quote'>it is for the plaintiff to prove that the destruction of the insured property is due to the accidental causes and not for the defendant company to adduce evidence to prove that such had been destroyed otherwise than by such causes.</blockquote></li><li><p>An insurer&#x27;s liability under Article 1384(1) and (5) is not established where expert evidence creates serious doubt as to whether the accident occurred as alleged and no evidence is adduced to rebute that doubt.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L83' data-start='83' data-end='100'>L83-L100</a> <span class='preview'>&mdash; However, I take into consideration the evidence of Mr L. Ram to the effect that he entertains serious doubts that the vehicles were involved in the accident as reported by Mr N. S. Hossen and plaintiff no.2 and that they collided with each…</span></span></div><blockquote class='held-quote'>I therefore find that his version has remained unrebutted and I accept his evidence that there is doubt as to the occurrence of the accident in the light of the damages sustained by the vehicles.</blockquote></li><li><p>Negligence under Articles 1382 and 1383 cannot be established based solely on police evidence where the driver of the allegedly at-fault vehicle does not testify.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L101' data-start='101' data-end='120'>L101-L120</a> <span class='preview'>&mdash; It is clear that the plaintiffs cannot succeed under the second limb of their claim either. Although police officers deposed as to the occurrence of the accident and damages to the vehicles, plaintiff no.2, the driver of vehicle 3528ZP01 a…</span></span></div><blockquote class='held-quote'>The evidence of the police officers is not sufficient to establish the case against the defendant.</blockquote></li></ol><h3>Disposition</h3><p>Plaintiffs&#x27; action dismissed. With costs.</p></section><section class="sec"><h2>Points of law</h2><ol class="points-of-law"><li><p>An insurer of a vehicle is subrogated into the rights of its insured.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L74' data-start='74' data-end='75'>L74-L75</a> <span class='preview'>&mdash; Mr G. Bhanji-Soni, counsel for the plaintiffs, submitted that plaintiff no.1 has been subrogated into the rights of its insured. This is not contested, but since the plaintiffs are claiming damages</span></span></div><blockquote class='held-quote'>plaintiff no.1 has been subrogated into the rights of its insured</blockquote></li><li><p>Where an insurer admits being the insurer of a vehicle and the presumption that the owner/driver was the custodian is not rebutted, the insurer is liable unless it establishes force majeure or faute exclusive de la victime.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L77' data-start='77' data-end='82'>L77-L82</a> <span class='preview'>&mdash; The defendant having admitted that it was the insurer of vehicle 2373ZP01 at the material time, and there being no evidence from the defence rebutting the presumption that the owner/driver was the gardien at the material time, the defendan…</span></span></div><blockquote class='held-quote'>the defendant is liable unless it succeeds in establishing that the accident was due to force majeure or the faute exclusive de la victime.</blockquote></li><li><p>A declaration made by the parties regarding an accident does not constitute a transaction under Article 2044 of the Code Civil putting an end to all claims.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L95' data-start='95' data-end='96'>L95-L96</a> <span class='preview'>&mdash; police intervention, but I have already ruled that the declaration does not amount to a transaction within the meaning of Article 2044 of the Code Civil putting an end to all claims.</span></span></div><blockquote class='held-quote'>the declaration does not amount to a transaction within the meaning of Article 2044 of the Code Civil putting an end to all claims.</blockquote></li></ol></section><section class="sec"><h2>Cases cited</h2><table class="cases-table"><thead><tr><th>Citation</th><th>Name</th><th>Cited for</th><th>Treatment</th><th>Signal</th><th>Review-worthy</th><th>Provenance</th><th>Line</th><th>Authority</th></tr></thead><tbody><tr><td><code>Ramphul v La Preservatrice Insurance [1962 MR 56]</code><br><span class='muted small'>norm: 1962 MR 56</span></td><td>Ramphul v La Preservatrice Insurance</td><td>Cited for the proposition that in insurance claims concerning accidental damage, the burden of proving that the damage resulted from accidental causes rests with the plaintiff, not the insurer.</td><td>applied</td><td><span class='badge sig-positive'>positive</span></td><td>no</td><td>court_reasoning</td><td><a class='lineref' href='#L107' data-start='107' data-end='107'>L107</a></td><td></td></tr><tr class='evidence-row'><td colspan='9'><span class='muted small'>evidence:</span> &ldquo;since the plaintiffs are claiming damages as a result of a road accident, it is for them to establish that there had been an accident.&rdquo;</td></tr></tbody></table></section><section class="sec"><h2>Legislation</h2><table class="leg-table"><thead><tr><th>Kind</th><th>Name</th><th>Sections</th><th>Jurisdiction</th><th>Line</th></tr></thead><tbody><tr><td>code</td><td>Code Civil Mauricien</td><td>Art. 1384 (1), Art. 1384 (5)</td><td>mu</td><td><a class='lineref' href='#L69' data-start='69' data-end='69'>L69</a></td></tr><tr><td>code</td><td>Code Civil Mauricien</td><td>Art. 1382, Art. 1383</td><td>mu</td><td><a class='lineref' href='#L70' data-start='70' data-end='70'>L70</a></td></tr><tr><td>code</td><td>Code Civil Mauricien</td><td>Art. 2044</td><td>mu</td><td><a class='lineref' href='#L96' data-start='96' data-end='96'>L96</a></td></tr></tbody></table></section><section class="sec sec-debug"><h2>Document structure pointers</h2><ul><li>Header: <a class='lineref' href='#L1' data-start='1' data-end='12'>L1-L12</a></li><li>Judgment body: <a class='lineref' href='#L13' data-start='13' data-end='124'>L13-L124</a></li><li>Signatures: <a class='lineref' href='#L125' data-start='125' data-end='125'>L125</a></li><li>Date: <a class='lineref' href='#L128' data-start='128' data-end='128'>L128</a></li><li>Block quotes:<ul><li><a class='lineref' href='#L111' data-start='111' data-end='116'>L111-L116</a> (en) &mdash; <span class='muted small'>“We may here remark that in a case of this nature it is for the plaintiff to pr…</span></li></ul></li></ul></section><section class="sec sec-debug"><h2>Extraction confidence (debug)</h2><ul><li>catchwords: <span class='tag'>high</span></li><li>case_treatments: <span class='tag'>high</span></li><li>procedural_posture: <span class='tag'>high</span></li><li>headnote: <span class='tag'>high</span></li><li>points_of_law: <span class='tag'>high</span></li><li>court: <span class='tag'>high</span></li><li>cases_cited: <span class='tag'>high</span></li><li>legislation: <span class='tag'>high</span></li></ul></section><section class='sec sec-footer'><hr><p class='muted small'>extractor: extractor.v2.1 &middot; schema: v2</p></section></div></div><script>
+(function () {
+  function clearHl() {
+    document.querySelectorAll('.line.hl').forEach(function (el) { el.classList.remove('hl'); });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a.lineref');
+    if (!a) return;
+    e.preventDefault();
+    var start = parseInt(a.dataset.start, 10);
+    var end = parseInt(a.dataset.end || a.dataset.start, 10);
+    if (isNaN(start)) return;
+    clearHl();
+    var target = null;
+    for (var i = start; i <= end; i++) {
+      var el = document.getElementById('L' + i);
+      if (el) { el.classList.add('hl'); if (!target) target = el; }
+    }
+    if (target) {
+      target.scrollIntoView({ block: 'center' });
+      history.replaceState(null, '', '#L' + start);
+    }
+  });
+})();
+</script></body></html>

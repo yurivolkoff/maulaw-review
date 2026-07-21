@@ -1,0 +1,219 @@
+<!doctype html><html><head><meta charset='utf-8'><title>LABELLE VS LAFOLLE AND ANOR. &middot; 1962 MR 261 &middot; review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+    --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+    --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+  --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+  --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+.container { display: flex; height: 100vh; width: 100%; overflow: hidden; }
+.pane { overflow: auto; height: 100%; }
+.pane-left { flex: 1 1 50%; border-right: 1px solid var(--border); background: var(--code-bg); }
+.pane-right { flex: 1 1 50%; padding: 1rem 1.25rem 3rem; }
+.pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); z-index: 2; }
+pre.lines { margin: 0; padding: .25rem 0 2rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.line { display: block; white-space: pre; padding: 0 .75rem; }
+.line:hover { background: rgba(127,127,127,.08); }
+.line.hl { background: var(--hl); }
+.ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+.sec { margin-bottom: 1.5rem; }
+.sec h1 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.sec h2 { font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; margin: 0 0 .5rem; }
+.sec h3 { font-size: .92rem; margin: .75rem 0 .25rem; color: var(--muted); }
+.sec-debug { opacity: .85; font-size: .9rem; }
+.sec-footer { opacity: .7; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; margin-bottom: .5rem; }
+.meta-table th { text-align: left; color: var(--muted); font-weight: 500; padding: .15rem .5rem .15rem 0; vertical-align: top; white-space: nowrap; }
+.meta-table td { padding: .15rem 0; }
+.cases-table, .leg-table { table-layout: fixed; }
+.cases-table th, .cases-table td, .leg-table th, .leg-table td { border-top: 1px solid var(--border); padding: .35rem .4rem; text-align: left; vertical-align: top; word-wrap: break-word; }
+.evidence-row td { border-top: none; padding-top: 0; }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .85em; }
+a.lineref { color: var(--link); text-decoration: none; font-weight: 600; white-space: nowrap; }
+a.lineref:hover { text-decoration: underline; }
+.pinpoints { display: flex; flex-direction: column; gap: .15rem; margin: .2rem 0 .6rem 1.2rem; }
+.preview { color: var(--muted); font-size: .85em; }
+.held > li { margin-bottom: .6rem; }
+.muted { color: var(--muted); }
+.small { font-size: .82em; }
+.badge { display: inline-block; padding: .05rem .45rem; border-radius: 999px; font-size: .78em; font-weight: 600; }
+.sig-positive { background: color-mix(in srgb, var(--pos) 18%, transparent); color: var(--pos); }
+.sig-neutral { background: color-mix(in srgb, var(--neu) 18%, transparent); color: var(--neu); }
+.sig-caution { background: color-mix(in srgb, var(--cau) 20%, transparent); color: var(--cau); }
+.sig-negative { background: color-mix(in srgb, var(--neg) 18%, transparent); color: var(--neg); }
+.badge-review { display: inline-block; background: var(--badge-review-bg); color: var(--badge-review-fg); padding: .15rem .6rem; border-radius: 4px; font-size: .78rem; font-weight: 700; letter-spacing: .03em; margin-bottom: .5rem; }
+.badge-missing { color: var(--neg); font-style: italic; }
+.tag { display: inline-block; border: 1px solid var(--border); border-radius: 3px; padding: 0 .35rem; font-size: .78em; }
+.tag-muted { color: var(--muted); }
+.tag-warn { color: var(--cau); border-color: var(--cau); }
+.catchwords > li, ol.held > li { margin-bottom: .4rem; }
+blockquote { margin: .25rem 0; padding: .4rem .75rem; border-left: 3px solid var(--link); background: var(--code-bg); font-style: italic; }
+</style></head><body><div class="container"><div class="pane pane-left" id="judgment-pane"><div class="pane-header">Judgment text &middot; 121 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">LABELLE VS LAFOLLE AND ANOR.</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">1962 MR 261</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">Before RIVALLAND, S.P.J.</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">G. d&#x27;Arifat, for the plaintiff.</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">R. Rault, for the defendants.</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">judgment delivered on the 31st October, 1962:</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">The plaintiff avers in his statement of claim that on the 7th June 1956</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">he purchased by notarial deed from the defendants a portion of land ofthe extent</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">of 12 6/12 perches situate at &#x27;.Niahebotirg, which the defendants</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">rays for a judgment (i) decreeing that -</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">are illegally occupying and le isthe lawful owner of the portion of land; (ii)</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">ordering the defendants tovacate the portion of land; and (ii,i) condemning the</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">defendants to payRs. 5,000 damages to plaintiff jointly and in solido. By their</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">defence, thedefendants, inter alia, although they admit having signed a</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">documentdrawn up by the notary, aver that they were under the impression</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">thatthey were signing a lease in favour of the plaintiff for the portion of</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">Ianit! dispute and deny having ever sold it to the plaintiff.</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">It is not in dispute that the notarial deed is null as an authentic andpublic</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">document because one of the witnesses thereto was related to theplaintiff within</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">the degree prohibited by law, and Mr. d&#x27;Arifat for theplaintiff has further</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">conceded that it was also null as a deed under privatesignature since it was not</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">signed by all the parties thereto.</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">The qualified admission of the defendants in their statement ofdefence that they</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">did sign the deed (in point of fact, one of them signed it</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">and the other affixed his cross thereto) but thought they were signing alease in</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">favour of plaintiff being an a2.@eu indivisible, an objection wastaken by Mr.</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">Rault, for the defendants, to oral evidence being adducedto prove the sale and</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">Mr d&#x27;Arifat thereupon examined both defendants</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">on their personal answers to seek a beginning of proof in writing.</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">The replies of the second defendant (who was examined first) wereto the effect</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">that two gentlemen whom he did not know at the time (butone of whom he later</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">identified as the notary) came to have a documentsigned, that the document was</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">read over to him and that he affixed hiscross thereto, being in agreement with</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">what had been read over to him.It is only fair to add that he was not asked what</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">was the purport of thedocument read over to him.</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">The first defendant who had been present in Court during theexamination on</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">personal answers of the second defendant stated that whatthe latter had stated</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">was true. It is admitted that the signature &quot; Marthe</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">Nilkornal &quot; on the deed is that of the first defendant.</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">The question I have, hoc statu, to decide is whether, although thedeed is null</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">and void I can refer to its contents to determine if thosecontents when coupled</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">with the personal answers of the defendants inwhich they admitted having</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">respectively affixed a cross to and signed edeed, do constitute a beginning of</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">proof in writing.</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">The point is not free from difficulty and the -French commentators,as so often</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">happens, are not agreed on the probative value as regards abeginning of proof in</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">writing, to be attached to a deed under privatesignature which is null and void</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt"></span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">for want of the signature of all the partiesthereto. On the other hand, the</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">Court of Cassation, in a case in which thefacts bear close resemblance to the</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">facts of this case, has held that adocument although null and void for want of</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">the signature of all partiescould Nevertheless provide a beginning of proof in</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">writing. The Arr@t oithe Court reads as follows: (D. P. 1901. 1. 444)</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">Sur le nioyen de cassaticn pris de la violation des art. 14 et 68 de la loidu 25</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">vent. an ii, des art. 1,338 et 1347 c.civ. et 7 de la loi du 2o avr. i8io:-</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">Attendu que les 6poux Lenoble et Dupuy ayant invoqu,6 la nullit6 de deux@@</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">actes pass6s par devant notaire et par lesquels ils d6claraient s&#x27;engager</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">solidairement au remboursement de sommes &amp; eux pr4@t,6es avee affectation hypo-</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">th6caire de leurs immeubles, par le motif que 11 un des oblig@s n&#x27;avait pas si</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">gn@chacun de ces actes, sans que la mention fat faite de 1&#x27;empAchement de</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">signer,</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">les pr6teurs d6sign6s aux dits actes ont demands A 4@tre reconnus cr6anciers</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">chirographaires des deux emprunts en aH@6guant, cc qui n&#x27;a pas i6t6 ccntest6,que</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">l&#x27;omission de signature et de mention provenadt, non du refus de signer,mais de</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">l&#x27;inadvertance du notaire; que I&#x27;arrAt, apr6s avoir d6clar6 nuls les</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">actesnotari6s, a fait droit h la demande des cr6anciers, en faisant r6sulter la</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">preuvedes deux engagements solidaires contract6s par les 6poiix Lenoble et</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">Dupuyd&#x27;un commencement de preuve par 6crit, compl6t6 par les pr6somptions</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">qu&#x27;ilexpose; qu&#x27;aux termes de I&#x27;arr@t, le ecmencement de preuve par 6crit se</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">ren-contre, quant A la partie qui n&#x27;avait pas signs I&#x27;acte notari6, dans un</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">6crit signspar eale et qui se r6f@re @ cet acte, et, quant aux autres parties,</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">dans I&#x27;actepor-tant leurs signatures et qui rend vraisemblable leur intention de</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">s&#x27;engagerc(,njointement et solidairement avec la partie non signataire;-Attendu</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">qu&#x27;enstatuant ainsi qu&#x27;il a fait, sur le point de savoir si I&#x27;@crit oppos6 aux</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">signatairesde I&#x27;acte @tait @6man6 d&#x27;eux, I&#x27;arri&amp;t attaqu6 n&#x27;a vicli6 ni I&#x27;art.</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">1347 c. civ., niles autres articles de loi susvisi6s, et qu&#x27;il appar-tenait @L</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">la cour de d6cider queles divers i6crits, 6man6s des emprunteurs d6sign6s @L</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">chacun des actes notari@s,rendaient vraisemblable 1&#x27;engagement solidaire all6gu6</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">contre eux;</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">Par ces motifs, rejette,&quot;</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">A difficulty could conceivably arise where the beginning of proofexists only as</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">regards one of the parties to the deed, principally when theobligation is</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">indivisible or solidaire, since that party would then have norecourse against</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">the other party or parties thereto. This difficulty isclearly, if concisely,</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">examined in the note to the above arijt which Ireproduce:</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">&quot; Cc demier motif conduit 6galement h refuser la valeur d&#x27;un commence-ment de</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">preuve par 6crit, vis-h-vis du cooblig6 signataire, h I&#x27;acte notarii6cc,ntena,nt</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">obligation solidaire et auquel manque la signature de I&#x27;autre cooblig@,S.D@s que</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">1&#x27;engagement de cc demier fait d,6faut, on tie saurait, sans d6naturer</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">laconvention IL laquelle I&#x27;autre d6biteur a entendu adh6rer, conclure de</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">I&#x27;actequ&#x27;il a signs qu&#x27;il a entendu supporter seul et sans recours tout le poids</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">del&#x27;obligation (MetZ, 24 fevr. i831, et sur pourvoi, IZeq, 26 juill. 1832,</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">pr6Cit6;</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">jur. gen., vo. cit., no. 48i6; Aubry et Rau, Cours du droit civil fran@ais,</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">4e,6dit., t. 8, para. 764, P. 337, note 27; Boniier, op. cit., no. 490, P. 427;</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">V.cependant, Larombicre, Th6orie et pr-atique des obligations, ledit. de i885,</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">t. 6,art.1347 no.2o). C&#x27;est par I&#x27;argumentation pr6c6dente que I&#x27;arr6t de la</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">cour deParis 6tait critiques, dans la cause actuelle, comme avant admis a tort</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">1&#x27;exis-tence du commencement de preuve par 6crit. Mais le raisonnement dont il</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">S&#x27;agitn&#x27;Atait pas applicable. 11 n&#x27;a de port6e, en effet, que si le cod,6biteur</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">non si-,gnataire est d6clar6 46tranger a tout engagement, au regard du</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">cr6ancier, duchef de l&#x27;obligation solidaire 6nonc6e audit acte. Si, au co-</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt"></span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">ntraire (et tel i6tait lecas dans 1&#x27;esp6ce), le juge 6tablit A la charge de cc</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">cod6biteur, par des moyenspns en dehors de I&#x27;acte notaii6, un lien solidaire</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">conforme h celui que cet acteavait pour but d&#x27;,6tablir, rien ne s&#x27;oppose h cc</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">que le m6me acte soit retenu,vis-h-vis de l&#x27;oblig@6 signataire, comme</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">comencement de pre-ave par 6crit sus-ceptible d&#x27;Ztre compl,6t6 par</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">pr46scmptions, puisque le cooblig6 dont il s&#x27;agitsera tenn, non pas</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">exclusivement et sans recourse mais avec les autres cod,6bi-teurs, dans les</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">conditions et dans la m6stire on il avait entendu s&#x27;engager quandil a donni6 sa</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">signature.&quot;</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">In the present case, the difficulty cannot arise and I have reached</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">theconclusion that the personal answers of the two defendants coupled withthe</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">contents of the deed render likelv the fact alleged, namely the saleby them of</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">the portion of land, the subject matter of the presentaction. I accordingly</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">allow oral evidence to be adduced to prove thealleged sale.</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">Attorneys:</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">S. Veerasamy, for the plaintiff</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">J. Desplaces, for the defendants.</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">Record No, 10,213.</span></span>
+</pre></div><div class="pane pane-right" id="digest-pane"><section class="sec sec-header"><h1>LABELLE VS LAFOLLE AND ANOR.</h1><table class="meta-table"><tr><th>Citation</th><td><code>1962 MR 261</code></td></tr><tr><th>Verbatim</th><td><code>1962 MR 261</code></td></tr><tr><th>Record</th><td>Record No. 10,213</td></tr><tr><th>Court</th><td>Supreme Court</td></tr><tr><th>Bench</th><td>single judge</td></tr><tr><th>Jurisdiction</th><td>Mauritius</td></tr><tr><th>Date</th><td>1962-10-31</td></tr><tr><th>Judgment by</th><td>Rivalland</td></tr><tr><th>Procedural posture</th><td>original</td></tr><tr><th>Citation code</th><td><code>MR</code></td></tr></table></section><section class="sec"><h2>Bench</h2><ul><li><strong>Rivalland</strong>, Senior Puisne Judge <span class='tag'>lead</span> <span class='tag tag-muted'>full agreement</span></li></ul><p class='muted'>Judgment delivered by: Rivalland</p></section><section class="sec"><h2>Parties</h2><ul><li><strong>plaintiff:</strong> LaBelle</li><li><strong>defendants:</strong> Lafolle and Another</li></ul></section><section class="sec"><h2>Counsel</h2><ul><li><em>For plaintiff:</em> G. d&#x27;Arifat</li><li><em>For defendants:</em> R. Rault</li><li><em>For plaintiff:</em> S. Veerasamy</li><li><em>For defendants:</em> J. Desplaces</li></ul></section><section class="sec"><h2>Catchwords</h2><ol class="catchwords"><li>Code Civil — Evidence and proof — Art. 1347 — Commencement de preuve par écrit — Whether a null deed coupled with personal answers admitting signature provides a beginning of proof in writing</li></ol></section><section class="sec"><h2>Headnote</h2><h3>Facts</h3><p>On June 7, 1956, the plaintiff purchased a portion of land at Niahebotirg from the defendants by notarial deed. The defendants admit they signed the deed but claim they believed they were signing a lease, not a sale. The deed is null because one witness was related to the plaintiff within the prohibited degree and because not all parties signed it.</p><h3>Held</h3><ol class='held'><li><p>Although a notarial deed is null and void for want of the signature of all parties, it may provide a beginning of proof in writing when coupled with personal answers of the parties admitting they signed or affixed their cross thereto, and such proof is sufficient to permit oral evidence to establish the alleged transaction.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L40' data-start='40' data-end='44'>L40-L44</a> <span class='preview'>&mdash; The question I have, hoc statu, to decide is whether, although thedeed is null and void I can refer to its contents to determine if thosecontents when coupled with the personal answers of the defendants inwhich they admitted having respect…</span></span><span class='pinpoint'><a class='lineref' href='#L113' data-start='113' data-end='117'>L113-L117</a> <span class='preview'>&mdash; In the present case, the difficulty cannot arise and I have reached theconclusion that the personal answers of the two defendants coupled withthe contents of the deed render likelv the fact alleged, namely the saleby them of the portion of…</span></span></div><blockquote class='held-quote'>whether, although the deed is null and void I can refer to its contents to determine if those contents when coupled with the personal answers of the defendants in which they admitted having respectively affixed a cross to and signed edeed, do constitute a beginning of proof in writing [...] the personal answers of the two defendants coupled with the contents of the deed render likelv the fact alleged, namely the sale by them of the portion of land</blockquote></li></ol><h3>Disposition</h3><p>Oral evidence is allowed to be adduced to prove the alleged sale of the portion of land.</p></section><section class="sec"><h2>Points of law</h2><ol class="points-of-law"><li><p>A difficulty may arise where a beginning of proof exists only for one party to an obligation that is indivisible or solidaire, since that party would have no recourse against the other party or parties thereto.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L81' data-start='81' data-end='85'>L81-L85</a> <span class='preview'>&mdash; A difficulty could conceivably arise where the beginning of proofexists only as regards one of the parties to the deed, principally when theobligation is indivisible or solidaire, since that party would then have norecourse against the oth…</span></span></div><blockquote class='held-quote'>A difficulty could conceivably arise where the beginning of proof exists only as regards one of the parties to the deed, principally when the obligation is indivisible or solidaire, since that party would then have no recourse against the other party or parties thereto.</blockquote></li><li><p>When a non-signatory co-obligor is established by the court to be bound by a solidary obligation through means outside the notarial deed, the same deed may be retained as a beginning of proof in writing for the signatory obligors, with the non-signatory obligor bound not exclusively and without recourse but jointly with the other co-obligors.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L102' data-start='102' data-end='111'>L102-L111</a> <span class='preview'>&mdash; cr6ancier, duchef de l&#x27;obligation solidaire 6nonc6e audit acte. Si, au co- ntraire (et tel i6tait lecas dans 1&#x27;esp6ce), le juge 6tablit A la charge de cc cod6biteur, par des moyenspns en dehors de I&#x27;acte notaii6, un lien solidaire conforme…</span></span></div><blockquote class='held-quote'>Si, au co-ntraire (et tel i6tait le cas dans 1&#x27;esp6ce), le juge 6tablit À la charge de cc cod6biteur, par des moyens pris en dehors de I&#x27;acte notaii6, un lien solidaire conforme à celui que cet acte avait pour but d&#x27;,6tablir, rien ne s&#x27;oppose à cc que le m6me acte soit retenu,vis-à-vis de l&#x27;oblig@6 signataire, comme comencement de pre-ave par 6crit sus-ceptible d&#x27;Ztre compl,6t6 par pr46scmptions, puisque le cooblig6 dont il s&#x27;agitsera tenn, non pas exclusivement et sans recourse mais avec les autres cod,6bi-teurs, dans les conditions et dans la m6stire on il avait entendu s&#x27;engager quandil a donni6 sa signature.</blockquote></li></ol></section><section class="sec"><h2>Cases cited</h2><table class="cases-table"><thead><tr><th>Citation</th><th>Name</th><th>Cited for</th><th>Treatment</th><th>Signal</th><th>Review-worthy</th><th>Provenance</th><th>Line</th><th>Authority</th></tr></thead><tbody><tr><td><code>D. P. 1901. 1. 444</code><br><span class='muted small'>norm: D.P. 1901, 1, 444</span></td><td>Lenoble v Dupuy</td><td>Cited for the proposition that although a notarial deed may be null and void for want of the signature of all parties, it can nevertheless provide a beginning of proof in writing when coupled with personal answers and admissions of the parties.</td><td>applied</td><td><span class='badge sig-positive'>positive</span></td><td><span class='tag tag-warn'>yes</span></td><td>court_reasoning</td><td><a class='lineref' href='#L53' data-start='53' data-end='53'>L53</a></td><td></td></tr><tr class='evidence-row'><td colspan='9'><span class='muted small'>evidence:</span> &ldquo;the Court of Cassation, in a case in which the facts bear close resemblance to the facts of this case, has held that a document although null and void for want of the signature of all parties could Nevertheless provide a beginning of proof in writing&rdquo;</td></tr><tr class='evidence-row'><td colspan='9'><span class='muted small'>jurisdiction: fr &middot; court: Cour de Cassation</span></td></tr></tbody></table></section><section class="sec"><h2>Legislation</h2><table class="leg-table"><thead><tr><th>Kind</th><th>Name</th><th>Sections</th><th>Jurisdiction</th><th>Line</th></tr></thead><tbody><tr><td>code</td><td>Code Civil Mauricien</td><td>art. 1347</td><td>mu</td><td><a class='lineref' href='#L45' data-start='45' data-end='45'>L45</a></td></tr></tbody></table></section><section class="sec sec-debug"><h2>Document structure pointers</h2><ul><li>Header: <a class='lineref' href='#L1' data-start='1' data-end='6'>L1-L6</a></li><li>Judgment body: <a class='lineref' href='#L7' data-start='7' data-end='117'>L7-L117</a></li><li>Date: <a class='lineref' href='#L6' data-start='6' data-end='6'>L6</a></li><li>Counsel block: <a class='lineref' href='#L4' data-start='4' data-end='5'>L4-L5</a></li><li>Block quotes:<ul><li><a class='lineref' href='#L54' data-start='54' data-end='80'>L54-L80</a> (fr) &mdash; <span class='muted small'>Sur le nioyen de cassaticn pris de la violation des art. 14 et 68 de la loidu 25</span></li><li><a class='lineref' href='#L86' data-start='86' data-end='111'>L86-L111</a> (fr) &mdash; <span class='muted small'>&quot; Cc demier motif conduit 6galement h refuser la valeur d&#x27;un commence-ment de</span></li></ul></li></ul></section><section class="sec sec-debug"><h2>Extraction confidence (debug)</h2><ul><li>catchwords: <span class='tag'>high</span></li><li>case_treatments: <span class='tag'>high</span></li><li>procedural_posture: <span class='tag'>medium</span></li><li>headnote: <span class='tag'>high</span></li><li>points_of_law: <span class='tag'>medium</span></li><li>court: <span class='tag'>medium</span></li><li>cases_cited: <span class='tag'>medium</span></li></ul><p><strong>Notes:</strong></p><ul><li>The French Cassation case is identified through the parties named in the arrêt text (Lenoble and Dupuy) rather than through a formal case citation, and is cited through a Dalloz Periodique reporter reference.</li><li>The location &#x27;Niahebotirg&#x27; at line 9 appears to have OCR corruption.</li><li>The procedural posture is inferred as &#x27;original&#x27; based on the judgment structure, but the exact procedural context is not explicitly stated in the judgment text.</li><li>The court level cannot be definitively determined from the MR citation format alone, though the judge&#x27;s title (Senior Puisne Judge) suggests a Supreme Court judge.</li></ul></section><section class='sec sec-footer'><hr><p class='muted small'>extractor: extractor.v2.1 &middot; schema: v2</p></section></div></div><script>
+(function () {
+  function clearHl() {
+    document.querySelectorAll('.line.hl').forEach(function (el) { el.classList.remove('hl'); });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a.lineref');
+    if (!a) return;
+    e.preventDefault();
+    var start = parseInt(a.dataset.start, 10);
+    var end = parseInt(a.dataset.end || a.dataset.start, 10);
+    if (isNaN(start)) return;
+    clearHl();
+    var target = null;
+    for (var i = start; i <= end; i++) {
+      var el = document.getElementById('L' + i);
+      if (el) { el.classList.add('hl'); if (!target) target = el; }
+    }
+    if (target) {
+      target.scrollIntoView({ block: 'center' });
+      history.replaceState(null, '', '#L' + start);
+    }
+  });
+})();
+</script></body></html>

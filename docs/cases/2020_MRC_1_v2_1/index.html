@@ -1,0 +1,495 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>Y. L. T. Ah Hon v The State of Mauritius · 2020 MRC 1 · review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+    --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+  --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+a { color: var(--link); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 1.25rem 1.5rem 3rem; }
+header.site-header { background: var(--header-bg); border-bottom: 1px solid var(--border); }
+header.site-header .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+h1 { font-size: 1.4rem; margin: 0 0 .5rem; }
+.lede { color: var(--muted); max-width: 70ch; line-height: 1.5; margin: 0; }
+.disclaimer { margin-top: .75rem; padding: .6rem .9rem; background: var(--warn-bg); color: var(--warn-fg);
+  border-radius: 6px; font-size: .85rem; max-width: 70ch; line-height: 1.4; }
+table.cases { border-collapse: collapse; width: 100%; margin-top: 1.5rem; font-size: .9rem; }
+table.cases th, table.cases td { border-top: 1px solid var(--border); padding: .55rem .6rem; text-align: left; vertical-align: top; }
+table.cases thead th { border-top: none; border-bottom: 2px solid var(--border); color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .02em; }
+table.cases tbody tr:hover { background: var(--code-bg); }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .9em; }
+.muted { color: var(--muted); }
+.back-link { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
+.case-meta { display: flex; flex-wrap: wrap; gap: .4rem .9rem; font-size: .85rem; color: var(--muted); margin: .4rem 0 1rem; }
+.case-meta span strong { color: var(--fg); font-weight: 600; }
+.tabs { display: flex; gap: .25rem; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+.tab-btn { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; color: var(--muted);
+  padding: .55rem .9rem; font-size: .9rem; cursor: pointer; font-family: inherit; }
+.tab-btn:hover { color: var(--fg); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.tab-panel iframe { width: 100%; height: 82vh; border: 1px solid var(--border); border-radius: 6px; }
+pre.raw-json { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
+  overflow: auto; max-height: 82vh; font-family: Consolas, "Courier New", monospace; font-size: .8rem; line-height: 1.45; white-space: pre-wrap; word-break: break-word; }
+.pane-original { border: 1px solid var(--border); border-radius: 6px; max-height: 82vh; overflow: auto; }
+.pane-original .pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); }
+.pane-original pre.lines { margin: 0; padding: .25rem 0 1.5rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.pane-original .line { display: block; white-space: pre; padding: 0 .75rem; }
+.pane-original .line:hover { background: rgba(127,127,127,.08); }
+.pane-original .line.hl { background: #fff3a3; }
+.pane-original .ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+footer.site-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+</style></head><body>
+<header class="site-header"><div class="wrap">
+  <a class="back-link" href="../../index.html">&larr; All cases</a>
+  <h1>Y. L. T. Ah Hon v The State of Mauritius</h1>
+  <p class="lede"><code>2020 MRC 1</code></p>
+  <div class="case-meta"><span><strong>Digested:</strong> 2026-07-21</span><span><strong>Model:</strong> claude-haiku-4-5-20251001</span><span><strong>Prompt:</strong> extractor.v2.1</span><span><strong>Schema:</strong> v2</span></div>
+</div></header>
+<div class="wrap">
+  <div class="tabs">
+    <button class="tab-btn" id="tab-btn-original">Original judgment</button>
+    <button class="tab-btn" id="tab-btn-rendered">Digested judgment (rendered)</button>
+    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button>
+  </div>
+  <div class="tab-panel" id="tab-panel-original"><div class="pane-original" id="judgment-pane"><div class="pane-header">Judgment text &middot; 109 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">Y. L. T. Ah Hon v The State of Mauritius</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2020 MRC 1</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">SCR 109285(1/133/14)</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">THE SUPREME COURT OF MAURITIUS</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">(Before the Ag. Master and Registrar)</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">In the matter of: -</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">Yanos Louis Terry Ah-Hon</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">Plaintiff</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">v/s</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">The State of Mauritius</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">Defendants</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">RULING</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">In an Amended Plaint with summons dated November 2015 the plaintiff claims damages of Rs5m</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">from the defendant for faute. He avers that he was arrested on 22 and 29 November 2013 on</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">provisional charges of aggravated larceny and was remanded, and the police objected to his release</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">on bail. The provisional charges were struck out on 27 December 2013 and he was released</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">unconditionally. He avers that the decisions of the defendant’s préposé to arrest him and to object to</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">bail were capricious, irrational and unreasonable as there was no allegation or allusion or complaint</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">made against him in relation to the alleged cases lodged and such acts caused him prejudice.</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">On 11 October 2016 attorney for the plaintiff filed a 2nd Proposed Amended Plaint with summons,</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">which more specifically seeks to amend paragraphs 11, 13, 18 and 19 to aver that the decisions of</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">the defendant to arrest him and to object to bail were “loaded with bad faith” “and there was not an</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">iota of evidence justifying his arrest” and that the acts and doings of the defendant constitute faute</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">lourde.</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">1</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt"></span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">The ground of objection, filed on 6 December 2016, is to the effect that the proposed amendments</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">seek to introduce a new cause of action without any notice with regard to the new cause of action</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">having been served on the State of Mauritius, in breach of the Public Officers’ Protection Act.</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">The court heard arguments on the objection on 10 November 2020.</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">Mrs C. Servansing, Senior State Counsel, submitted in a gist that the motion for amendment was</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">made more than three years after the alleged acts and the proposed amendments seek to introduce a</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">new cause of action in breach of section 4 of the Public Officers Protection Act (“POPA”), that is,</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">outside the delay of two years and without any notice being served with respect to the new cause of</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">action. The Court has wide powers to allow amendments, but has to be cautious in exercising this</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">discretion as it is well settled that the State is liable in tort only where faute lourde is averred - M. A.</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">Chung Ching Ah Sue v The State of Mauritius [2015 SCJ 110], Transpacific Export Services Ltd v</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">The State and Anor [2018] UKPC 28, K. Dooboree v The State of Mauritius &amp; Anor [2020 SCJ</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">207].</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">The submissions of Ms R. Umarkhan, for the plaintiff, are in essence that the cause of action has</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">remained the same as in the Notice and Plaint with summons (see paragraphs 13 to 15 and 20), so</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">that the proposed amendments are not in breach of section 4 of the POPA. There is a distinction</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">between the notion of action and the notion of cause of action - M. Mohammad v The State of</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">Mauritius &amp; Ors [2014 SCJ 33]. The proposed amendments would not cause any prejudice to the</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">defendant, but would bring more precision, clarity to the Amended Plaint with summons – S.</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">Mungroo v The Commissioner of Police &amp; Anor [2019 SCJ 72], Transpacific Export Services Ltd</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">(supra) - the more so that the case is still at pre-trial stage - Caudan Development Limited v Talbot</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">Engineering Co Ltd [SCR 104862 (1/685/10)].</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">In reply Mrs Servansing, submitted that the mere omission of the words lourde or bad faith is not</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">fatal to a claim, but the facts averred have to constitute faute lourde or bad faith and in the present</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">case they do not – H. K. Naga v The Commissioner of Police &amp; Anor [2017 SCJ 286].</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">It is not disputed that the court has wide powers to allow amendments “in such manner and on such</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">terms as may be just and reasonable” – see Rule 17(1) of the Supreme Court Rules 2000 – and that</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">in exercising such powers the court will take into account whether the motion was made at pre-trial</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">2</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt"></span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">stage or during the trial, whether it is substantial and raises new issues inconsistent with the</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">pleading, whether there is an explanation for the motion not having been made earlier being given</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">that its necessity was apparent well before and whether the amendment will cause prejudice to the</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">opposite party which could not be compensated by costs or otherwise – see Harel and Anor v</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">Société Jean Claude Harel and Cie and Ors and Société du Patrimoine [1993 MR 251]. I note by</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">the way that almost all of the judgments referred to by counsel for the defendant are all on the</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">merits when all evidence had already been adduced, whereas the case before me is still at the stage</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">of pleadings.</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">Still, the overriding principle is that amendments are granted “for the purpose of determining the</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">real question in controversy between the parties” – see Rule 17(1) Supreme Court Rules 2000.</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">It is also not disputed that the State would only be liable for the acts and doings of its préposés</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">where faute lourde is averred and proved, as was said in M. A. Chung Ching Ah Sue and</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">Transpacific Export Services Ltd (supra) and I could not agree more with the Privy Council that “It</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">is hard to see why… the liability of the police should stand on a footing different from that referable</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">to employees of the Revenue Authority”. Be that as it may, in the second cited case the Board also</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">said:</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">“The mere omission of the words “faute lourde” would not have been fatal to its claim. What,</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">however, the company did need to allege were the facts upon which it relied as constituting</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">“faute lourde”; and it might at any rate have been helpful if they had been marshalled under</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">that specific heading in its plaint. In its plaint, however, the company recited no facts capable</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">to constituting “faute lourde”: nor did its evidence establish any.”</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">This was cited with approval in K. Dooboree (supra).</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">The issues therefore are whether the facts as averred by the plaintiff are capable of constituting</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">faute lourde or bad faith and whether the amendments will introduce a new cause of action, this in</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">breach of the POPA.</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">In both the written notice of the action (Document A – certified copy as produced by Mrs N. D.</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">Makhun, Senior Legal Assistant) and the Amended Plaint with summons the plaintiff avers that he</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">was arrested and provisionally charged on 22 and 29 November 2013 by police officers acting as</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">3</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt"></span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">préposés of the defendant, the police objected to his release on bail in December 2013, the</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">provisional charges against him were struck out on 27 December 2013 upon motion of police</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">prosecutor acting as agent of the defendant and that the decisions of the police officers, préposés of</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">the defendant, were “capricious, irrational and unreasonable”. He equally avers that during the</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">bail hearing the witness representing the defendant said that the police were investigating similar</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">cases in which the plaintiff had not been implicated and about which he had not been questioned</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">and no incriminating evidence had been found against him.</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">I find that the plaintiff has averred facts capable of constituting faute lourde and bad faith and in the</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">circumstances the proposed amendments will not introduce any new cause of action, since the</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">addition of the words ‘lourde’ and ‘bad faith’ do not detract from the fact that the cause of action</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">remains under article 1384 of the Code civil. Therefore, there would be no need for the plaintiff to</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">serve another written notice on the defendant, and the issue of breach of the POPA does not arise. I</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">find that the proposed amendments will instead bring precision with regard to the determination of</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">the real question in controversy.</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">I further find that no prejudice will be caused to the defendant inasmuch as the defendant has not</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">yet filed its plea.</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">For the reasons given above, I set aside the objection raised by the defendant and I allow the</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">amendments.</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">The case will be mentioned again for the plaintiff to file the Second Amended Plaint with summons.</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">W. V. Rangan</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">Ag. Master and Registrar</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">This 24 November 2020</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">4</span></span>
+</pre></div></div>
+  <div class="tab-panel" id="tab-panel-rendered"><iframe src="digest.html" title="Rendered digest"></iframe></div>
+  <div class="tab-panel" id="tab-panel-raw"><pre class="raw-json">```json
+{
+  &quot;case_name&quot;: &quot;Y. L. T. Ah Hon v The State of Mauritius&quot;,
+  &quot;citation&quot;: &quot;2020 MRC 1&quot;,
+  &quot;citation_verbatim&quot;: &quot;2020 MRC 1&quot;,
+  &quot;alt_citations&quot;: [],
+  &quot;record_number&quot;: &quot;SCR 109285(1/133/14)&quot;,
+  &quot;court&quot;: &quot;Master&#x27;s Court&quot;,
+  &quot;court_division&quot;: null,
+  &quot;bench&quot;: &quot;single judge&quot;,
+  &quot;jurisdiction&quot;: &quot;Mauritius&quot;,
+  &quot;date&quot;: &quot;2020-11-24&quot;,
+  &quot;judgment_by&quot;: &quot;W. V. Rangan&quot;,
+  &quot;procedural_posture&quot;: &quot;interlocutory&quot;,
+  &quot;citation_code&quot;: &quot;MRC&quot;,
+  &quot;judges&quot;: [
+    {
+      &quot;name&quot;: &quot;W. V. Rangan&quot;,
+      &quot;role&quot;: &quot;Master and Registrar&quot;,
+      &quot;position&quot;: &quot;lead&quot;,
+      &quot;disposition_agreement&quot;: &quot;full&quot;
+    }
+  ],
+  &quot;parties&quot;: {
+    &quot;plaintiff&quot;: &quot;Yanos Louis Terry Ah-Hon&quot;,
+    &quot;defendant&quot;: &quot;The State of Mauritius&quot;
+  },
+  &quot;counsel&quot;: [
+    {
+      &quot;for&quot;: &quot;defendant&quot;,
+      &quot;names&quot;: [&quot;Mrs C. Servansing, Senior State Counsel&quot;]
+    },
+    {
+      &quot;for&quot;: &quot;plaintiff&quot;,
+      &quot;names&quot;: [&quot;Ms R. Umarkhan&quot;]
+    }
+  ],
+  &quot;catchwords&quot;: [
+    &quot;Code Civil — Tort — Liability of State for acts of préposés — Art. 1384 — Whether alleged facts are capable of constituting faute lourde&quot;,
+    &quot;Statute (Public Officers&#x27; Protection Act) — Amendments to pleadings — s. 4 — Whether amendments alleging faute lourde introduce a new cause of action requiring fresh notice&quot;,
+    &quot;Code (Supreme Court Rules 2000) — Amendments — Rule 17(1) — Whether amendments may be allowed at the pre-trial stage where no prejudice is caused and plea not yet filed&quot;
+  ],
+  &quot;structure&quot;: {
+    &quot;header_lines&quot;: [1, 12],
+    &quot;judgment_start_line&quot;: 13,
+    &quot;judgment_end_line&quot;: 105,
+    &quot;signatures_line&quot;: [106, 107],
+    &quot;date_line&quot;: 108,
+    &quot;block_quotes&quot;: [
+      {
+        &quot;start_line&quot;: 73,
+        &quot;end_line&quot;: 77,
+        &quot;language&quot;: &quot;en&quot;
+      }
+    ]
+  },
+  &quot;headnote&quot;: {
+    &quot;facts&quot;: &quot;The plaintiff was arrested on provisional charges of aggravated larceny on 22 and 29 November 2013 and remanded. The police objected to his release on bail in December 2013. The provisional charges were struck out on 27 December 2013 and he was released unconditionally. The plaintiff seeks damages alleging the arrests and bail objections were capricious, irrational, and without factual basis. The defendant objects to proposed amendments that would add allegations of faute lourde and bad faith, contending the amendments introduce a new cause of action in breach of section 4 of the Public Officers&#x27; Protection Act.&quot;,
+    &quot;held&quot;: [
+      {
+        &quot;proposition&quot;: &quot;Facts alleging that an arrest was made without proper legal basis, that objection to bail was made without evidence, and that decisions were capricious and irrational are capable of constituting faute lourde and bad faith.&quot;,
+        &quot;pinpoints&quot;: [
+          {&quot;start_line&quot;: 94, &quot;end_line&quot;: 97}
+        ],
+        &quot;quote&quot;: &quot;I find that the plaintiff has averred facts capable of constituting faute lourde and bad faith&quot;
+      },
+      {
+        &quot;proposition&quot;: &quot;The addition of the words &#x27;lourde&#x27; and &#x27;bad faith&#x27; to a pleading that already alleged acts were &#x27;capricious, irrational and unreasonable&#x27; does not introduce a new cause of action in breach of section 4 of the Public Officers&#x27; Protection Act, as the underlying cause of action remains one under article 1384 of the Code Civil.&quot;,
+        &quot;pinpoints&quot;: [
+          {&quot;start_line&quot;: 94, &quot;end_line&quot;: 100}
+        ],
+        &quot;quote&quot;: &quot;the proposed amendments will not introduce any new cause of action, since the addition of the words &#x27;lourde&#x27; and &#x27;bad faith&#x27; do not detract from the fact that the cause of action remains under article 1384 of the Code civil. Therefore, there would be no need for the plaintiff to serve another written notice on the defendant, and the issue of breach of the POPA does not arise&quot;
+      },
+      {
+        &quot;proposition&quot;: &quot;No prejudice will be caused to the defendant where proposed amendments are allowed and the defendant has not yet filed its plea.&quot;,
+        &quot;pinpoints&quot;: [
+          {&quot;start_line&quot;: 101, &quot;end_line&quot;: 102}
+        ],
+        &quot;quote&quot;: &quot;no prejudice will be caused to the defendant inasmuch as the defendant has not yet filed its plea&quot;
+      }
+    ],
+    &quot;disposition&quot;: &quot;Objection set aside; amendments allowed.&quot;,
+    &quot;orders&quot;: null
+  },
+  &quot;points_of_law&quot;: [
+    {
+      &quot;proposition&quot;: &quot;The court has wide discretionary powers to allow amendments in such manner and on such terms as may be just and reasonable under Rule 17(1) of the Supreme Court Rules 2000.&quot;,
+      &quot;pinpoints&quot;: [
+        {&quot;start_line&quot;: 52, &quot;end_line&quot;: 54}
+      ],
+      &quot;quote&quot;: &quot;wide powers to allow amendments \&quot;in such manner and on such terms as may be just and reasonable\&quot;&quot;
+    },
+    {
+      &quot;proposition&quot;: &quot;The overriding principle for allowing amendments is to determine the real question in controversy between the parties.&quot;,
+      &quot;pinpoints&quot;: [
+        {&quot;start_line&quot;: 65, &quot;end_line&quot;: 66}
+      ],
+      &quot;quote&quot;: &quot;amendments are granted \&quot;for the purpose of determining the real question in controversy between the parties\&quot;&quot;
+    },
+    {
+      &quot;proposition&quot;: &quot;The State is only liable in tort for the acts and doings of its préposés where faute lourde is averred and proved.&quot;,
+      &quot;pinpoints&quot;: [
+        {&quot;start_line&quot;: 67, &quot;end_line&quot;: 68}
+      ],
+      &quot;quote&quot;: &quot;the State would only be liable for the acts and doings of its préposés where faute lourde is averred and proved&quot;
+    },
+    {
+      &quot;proposition&quot;: &quot;There is a distinction between the notion of action and the notion of cause of action.&quot;,
+      &quot;pinpoints&quot;: [
+        {&quot;start_line&quot;: 42, &quot;end_line&quot;: 43}
+      ],
+      &quot;quote&quot;: &quot;There is a distinction between the notion of action and the notion of cause of action&quot;
+    },
+    {
+      &quot;proposition&quot;: &quot;The mere omission of the words &#x27;faute lourde&#x27; or &#x27;bad faith&#x27; is not fatal to a claim if the facts alleged are capable of constituting faute lourde.&quot;,
+      &quot;pinpoints&quot;: [
+        {&quot;start_line&quot;: 73, &quot;end_line&quot;: 77}
+      ],
+      &quot;quote&quot;: &quot;The mere omission of the words \&quot;faute lourde\&quot; would not have been fatal to its claim. What, however, the company did need to allege were the facts upon which it relied as constituting \&quot;faute lourde\&quot;&quot;
+    },
+    {
+      &quot;proposition&quot;: &quot;In exercising discretion to allow amendments, the court considers whether the motion is made at the pre-trial or trial stage, whether it is substantial, whether there is explanation for the delay, and whether the amendment causes prejudice that cannot be compensated by costs.&quot;,
+      &quot;pinpoints&quot;: [
+        {&quot;start_line&quot;: 54, &quot;end_line&quot;: 58}
+      ],
+      &quot;quote&quot;: &quot;in exercising such powers the court will take into account whether the motion was made at pre-trial stage or during the trial, whether it is substantial and raises new issues inconsistent with the pleading, whether there is an explanation for the motion not having been made earlier being given that its necessity was apparent well before and whether the amendment will cause prejudice to the opposite party which could not be compensated by costs or otherwise&quot;
+    }
+  ],
+  &quot;cases_cited&quot;: [
+    {
+      &quot;citation&quot;: &quot;2015 SCJ 110&quot;,
+      &quot;citation_verbatim&quot;: &quot;M. A. Chung Ching Ah Sue v The State of Mauritius [2015 SCJ 110]&quot;,
+      &quot;name&quot;: &quot;M. A. Chung Ching Ah Sue v The State of Mauritius&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 37,
+      &quot;evidence_span&quot;: &quot;the State is liable in tort only where faute lourde is averred&quot;,
+      &quot;evidence_lines&quot;: {&quot;start_line&quot;: 36, &quot;end_line&quot;: 37},
+      &quot;cited_for&quot;: &quot;Cited for the proposition that the State is only liable in tort where faute lourde is averred and proved&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;[2018] UKPC 28&quot;,
+      &quot;citation_verbatim&quot;: &quot;Transpacific Export Services Ltd v The State and Anor [2018] UKPC 28&quot;,
+      &quot;name&quot;: &quot;Transpacific Export Services Ltd v The State and Anor&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 38,
+      &quot;evidence_span&quot;: &quot;The mere omission of the words \&quot;faute lourde\&quot; would not have been fatal to its claim. What, however, the company did need to allege were the facts upon which it relied as constituting \&quot;faute lourde\&quot;&quot;,
+      &quot;evidence_lines&quot;: {&quot;start_line&quot;: 73, &quot;end_line&quot;: 76},
+      &quot;cited_for&quot;: &quot;Cited for the proposition that while the words &#x27;faute lourde&#x27; need not be expressly stated, the facts alleged must be capable of constituting faute lourde&quot;,
+      &quot;jurisdiction&quot;: &quot;uk&quot;,
+      &quot;court&quot;: &quot;Privy Council&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2020 SCJ 207&quot;,
+      &quot;citation_verbatim&quot;: &quot;K. Dooboree v The State of Mauritius &amp; Anor [2020 SCJ 207]&quot;,
+      &quot;name&quot;: &quot;K. Dooboree v The State of Mauritius &amp; Anor&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 38,
+      &quot;evidence_span&quot;: &quot;This was cited with approval in K. Dooboree (supra)&quot;,
+      &quot;evidence_lines&quot;: {&quot;start_line&quot;: 78, &quot;end_line&quot;: 78},
+      &quot;cited_for&quot;: &quot;Cited for the proposition that faute lourde must be averred and the facts must be capable of constituting faute lourde&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2014 SCJ 33&quot;,
+      &quot;citation_verbatim&quot;: &quot;M. Mohammad v The State of Mauritius &amp; Ors [2014 SCJ 33]&quot;,
+      &quot;name&quot;: &quot;M. Mohammad v The State of Mauritius &amp; Ors&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 43,
+      &quot;evidence_span&quot;: &quot;There is a distinction between the notion of action and the notion of cause of action&quot;,
+      &quot;evidence_lines&quot;: {&quot;start_line&quot;: 42, &quot;end_line&quot;: 43},
+      &quot;cited_for&quot;: &quot;Cited for the proposition that there is a distinction between the notion of action and the notion of cause of action&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2019 SCJ 72&quot;,
+      &quot;citation_verbatim&quot;: &quot;S. Mungroo v The Commissioner of Police &amp; Anor [2019 SCJ 72]&quot;,
+      &quot;name&quot;: &quot;S. Mungroo v The Commissioner of Police &amp; Anor&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 46,
+      &quot;evidence_span&quot;: &quot;amendments would not cause any prejudice to the defendant, but would bring more precision, clarity to the Amended Plaint with summons&quot;,
+      &quot;evidence_lines&quot;: {&quot;start_line&quot;: 45, &quot;end_line&quot;: 46},
+      &quot;cited_for&quot;: &quot;Cited for the proposition that amendments at the pre-trial stage that bring clarity and precision do not prejudice the defendant&quot;
+    },
+    {
+      &quot;citation&quot;: null,
+      &quot;citation_verbatim&quot;: &quot;Caudan Development Limited v Talbot Engineering Co Ltd [SCR 104862 (1/685/10)]&quot;,
+      &quot;name&quot;: &quot;Caudan Development Limited v Talbot Engineering Co Ltd&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: true,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 47,
+      &quot;evidence_span&quot;: &quot;the case is still at pre-trial stage&quot;,
+      &quot;evidence_lines&quot;: {&quot;start_line&quot;: 47, &quot;end_line&quot;: 48},
+      &quot;cited_for&quot;: &quot;Cited for the proposition that amendments may be allowed at the pre-trial stage&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2017 SCJ 286&quot;,
+      &quot;citation_verbatim&quot;: &quot;H. K. Naga v The Commissioner of Police &amp; Anor [2017 SCJ 286]&quot;,
+      &quot;name&quot;: &quot;H. K. Naga v The Commissioner of Police &amp; Anor&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;party_argument&quot;,
+      &quot;line&quot;: 51,
+      &quot;evidence_span&quot;: &quot;the mere omission of the words lourde or bad faith is not fatal to a claim, but the facts averred have to constitute faute lourde or bad faith&quot;,
+      &quot;evidence_lines&quot;: {&quot;start_line&quot;: 49, &quot;end_line&quot;: 50},
+      &quot;cited_for&quot;: &quot;Cited for the proposition that the mere omission of the words &#x27;faute lourde&#x27; or &#x27;bad faith&#x27; is not fatal, but the facts must be capable of constituting faute lourde&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1993 MR 251&quot;,
+      &quot;citation_verbatim&quot;: &quot;Harel and Anor v Société Jean Claude Harel and Cie and Ors and Société du Patrimoine [1993 MR 251]&quot;,
+      &quot;name&quot;: &quot;Harel and Anor v Société Jean Claude Harel and Cie and Ors and Société du Patrimoine&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 61,
+      &quot;evidence_span&quot;: &quot;no prejudice will be caused to the defendant inasmuch as the defendant has not yet filed its plea&quot;,
+      &quot;evidence_lines&quot;: {&quot;start_line&quot;: 101, &quot;end_line&quot;: 102},
+      &quot;cited_for&quot;: &quot;Cited for the proposition that in exercising discretion to allow amendments, the court considers whether the motion is made at the pre-trial or trial stage, whether it is substantial, whether there is explanation for delay, and whether the amendment causes prejudice&quot;
+    }
+  ],
+  &quot;legislation&quot;: [
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Public Officers&#x27; Protection Act&quot;,
+      &quot;sections&quot;: [&quot;s. 4&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 33
+    },
+    {
+      &quot;kind&quot;: &quot;subsidiary&quot;,
+      &quot;name&quot;: &quot;Supreme Court Rules 2000&quot;,
+      &quot;sections&quot;: [&quot;Rule 17(1)&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 53
+    },
+    {
+      &quot;kind&quot;: &quot;code&quot;,
+      &quot;name&quot;: &quot;Code Civil Mauricien&quot;,
+      &quot;sections&quot;: [&quot;art. 1384&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 97
+    }
+  ],
+  &quot;foreign_doctrine&quot;: [],
+  &quot;separate_judgments&quot;: null,
+  &quot;case_history_chain&quot;: null,
+  &quot;confidence&quot;: {
+    &quot;catchwords&quot;: &quot;medium&quot;,
+    &quot;cases_cited&quot;: &quot;high&quot;,
+    &quot;headnote&quot;: &quot;high&quot;,
+    &quot;points_of_law&quot;: &quot;high&quot;,
+    &quot;legislation&quot;: &quot;high&quot;
+  },
+  &quot;notes&quot;: [
+    &quot;Citation of Caudan Development Limited uses non-standard format [SCR 104862 (1/685/10)] which may be a record number rather than a standard law report citation; confidence reduced on this edge&quot;,
+    &quot;Catchword 3 formulated as a finding rather than a substantive rule of law, reflecting the discretionary nature of the holding on prejudice; confidence reduced on catchwords field overall&quot;
+  ],
+  &quot;needs_human_review&quot;: false,
+  &quot;extractor_version&quot;: &quot;extractor.v2.1&quot;,
+  &quot;schema_version&quot;: &quot;v2&quot;
+}
+```
+</pre></div>
+  <footer class="site-footer">slug: <code>2020_MRC_1_v2_1</code></footer>
+</div>
+<script>
+(function () {
+  var validTabs = ['original', 'rendered', 'raw'];
+  function tabFromHash() {
+    var h = (location.hash || '').replace('#', '');
+    return validTabs.indexOf(h) !== -1 ? h : validTabs[0];
+  }
+  function showTab(name) {
+    validTabs.forEach(function (t) {
+      var btn = document.getElementById('tab-btn-' + t);
+      var panel = document.getElementById('tab-panel-' + t);
+      var active = t === name;
+      if (btn) btn.classList.toggle('active', active);
+      if (panel) panel.classList.toggle('active', active);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    var name = btn.id.replace('tab-btn-', '');
+    if (validTabs.indexOf(name) === -1) return;
+    history.replaceState(null, '', '#' + name);
+    showTab(name);
+  });
+  window.addEventListener('hashchange', function () { showTab(tabFromHash()); });
+  showTab(tabFromHash());
+})();
+</script></body></html>

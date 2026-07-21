@@ -1,0 +1,297 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Remy F.S. v The State &middot; 2016 SCJ 72 &middot; review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+    --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+    --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --hl: #4a4326; --link: #7aa2ff;
+  --pos: #4bb36b; --neu: #a0a0a0; --cau: #d9a441; --neg: #ec6a6a;
+  --badge-review-bg: #4a1f1f; --badge-review-fg: #f3a3a1;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --hl: #fff3a3; --link: #1a56db;
+  --pos: #1a7f37; --neu: #6b6b6b; --cau: #9a6700; --neg: #cf222e;
+  --badge-review-bg: #fde2e1; --badge-review-fg: #9a1b18;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+.container { display: flex; height: 100vh; width: 100%; overflow: hidden; }
+.pane { overflow: auto; height: 100%; }
+.pane-left { flex: 1 1 50%; border-right: 1px solid var(--border); background: var(--code-bg); }
+.pane-right { flex: 1 1 50%; padding: 1rem 1.25rem 3rem; }
+.pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); z-index: 2; }
+pre.lines { margin: 0; padding: .25rem 0 2rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.line { display: block; white-space: pre; padding: 0 .75rem; }
+.line:hover { background: rgba(127,127,127,.08); }
+.line.hl { background: var(--hl); }
+.ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+.sec { margin-bottom: 1.5rem; }
+.sec h1 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.sec h2 { font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; margin: 0 0 .5rem; }
+.sec h3 { font-size: .92rem; margin: .75rem 0 .25rem; color: var(--muted); }
+.sec-debug { opacity: .85; font-size: .9rem; }
+.sec-footer { opacity: .7; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; margin-bottom: .5rem; }
+.meta-table th { text-align: left; color: var(--muted); font-weight: 500; padding: .15rem .5rem .15rem 0; vertical-align: top; white-space: nowrap; }
+.meta-table td { padding: .15rem 0; }
+.cases-table, .leg-table { table-layout: fixed; }
+.cases-table th, .cases-table td, .leg-table th, .leg-table td { border-top: 1px solid var(--border); padding: .35rem .4rem; text-align: left; vertical-align: top; word-wrap: break-word; }
+.evidence-row td { border-top: none; padding-top: 0; }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .85em; }
+a.lineref { color: var(--link); text-decoration: none; font-weight: 600; white-space: nowrap; }
+a.lineref:hover { text-decoration: underline; }
+.pinpoints { display: flex; flex-direction: column; gap: .15rem; margin: .2rem 0 .6rem 1.2rem; }
+.preview { color: var(--muted); font-size: .85em; }
+.held > li { margin-bottom: .6rem; }
+.muted { color: var(--muted); }
+.small { font-size: .82em; }
+.badge { display: inline-block; padding: .05rem .45rem; border-radius: 999px; font-size: .78em; font-weight: 600; }
+.sig-positive { background: color-mix(in srgb, var(--pos) 18%, transparent); color: var(--pos); }
+.sig-neutral { background: color-mix(in srgb, var(--neu) 18%, transparent); color: var(--neu); }
+.sig-caution { background: color-mix(in srgb, var(--cau) 20%, transparent); color: var(--cau); }
+.sig-negative { background: color-mix(in srgb, var(--neg) 18%, transparent); color: var(--neg); }
+.badge-review { display: inline-block; background: var(--badge-review-bg); color: var(--badge-review-fg); padding: .15rem .6rem; border-radius: 4px; font-size: .78rem; font-weight: 700; letter-spacing: .03em; margin-bottom: .5rem; }
+.badge-missing { color: var(--neg); font-style: italic; }
+.tag { display: inline-block; border: 1px solid var(--border); border-radius: 3px; padding: 0 .35rem; font-size: .78em; }
+.tag-muted { color: var(--muted); }
+.tag-warn { color: var(--cau); border-color: var(--cau); }
+.catchwords > li, ol.held > li { margin-bottom: .4rem; }
+blockquote { margin: .25rem 0; padding: .4rem .75rem; border-left: 3px solid var(--link); background: var(--code-bg); font-style: italic; }
+</style></head><body><div class="container"><div class="pane pane-left" id="judgment-pane"><div class="pane-header">Judgment text &middot; 199 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">REMY F.S. v THE STATE</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2016 SCJ 72</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">Record No. 8557</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">THE SUPREME COURT OF MAURITIUS</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">In the matter of:-</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">Fabrice Stephane Remy</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">Appellant</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">v</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">The State</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">Respondent</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">----------</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">JUDGMENT</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">This is an appeal from a judgment of the Black River District Court finding the</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">appellant guilty of the offence of driving a motor vehicle on a road with alcohol concentration</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">in his blood exceeding the prescribed limit, in breach of section 123F(1)(a)(3) coupled with</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">section 52 of the Road Traffic Act.</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">The case for the prosecution was that on 18 February 2009 at about 00.15 a.m.,</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">two police officers on patrol stopped the appellant who was riding his motorcycle near NHDC</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">Bambous for a routine check and noticed he was smelling of alcohol. A breath test at the</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">police station revealed positive and subsequently a laboratory test of his blood at the</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">hospital confirmed the presence of 77 milligrams of alcohol in his blood.</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">The version of the appellant, who was assisted by Counsel and had pleaded not</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">guilty to the charge, and who gave sworn evidence, was that on the material date he had</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">been pushing his motorcycle due to a flat tyre from Canot to Bambous where he bought</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">3 bottles of beer and continued pushing his motorcycle when he was stopped by the police</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">some 500 metres after. In his statement he added that the two police officers asked him</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">whether he had a problem to which he replied that he had a burst tyre. The police officers</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">asked him for his driving licence and where were his insurance vignette and the letter “L”.</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">The police officers then informed him that the insurance vignette, which was affixed</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">underneath his fuel tank, was not visible and insisted upon him dismantling his fuel tank,</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">which he refused to do. He was then allowed to proceed on his way. Reaching near his</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">house, he was again stopped by the police who informed him that he had to undergo an</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt"></span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">2</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">alcohol test at the police station. In Court, he added that his wife came out and witnessed</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">the scene.</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">The appellant’s wife deposed and confirmed his version that the police had stopped</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">him near their house and that at the material time he was pushing his motorcycle which had</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">a flat tyre. She added that after her husband had been taken away by the police, she</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">phoned a neighbour to help her to put the motorcycle in her yard.</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">Mr Parmensingh, the neighbour, confirmed that on 19 February 2009, he answered a</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">phone call of the appellant’s wife at 00.30 a.m., went to the appellant’s place, put the</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">motorcycle which had a flat tyre in the appellant’s yard and accompanied the appellant’s wife</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">to the police station.</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">In his address to the trial Court, learned Counsel for the appellant (then accused)</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">submitted that his client did not contest that he was under the influence of alcohol on the</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">material night. What he contested was the version of the prosecution that at the material</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">time he was riding his motorcycle. It was also learned Counsel’s submission that as no</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">police enquiry had been conducted to confirm the appellant’s version that he had a flat tyre</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">and was pushing his motorcycle, therefore, latter’s version was to be preferred. He further</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">submitted that there was a material discrepancy in the prosecution’s version, namely in the</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">evidence of PC Nunkoo, one of the police officers who was on patrol and had stopped the</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">appellant, that he had seen the appellant zigzagging on the road when no such evidence</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">was to be found in his statement or was forthcoming from PC Beeharry, the other police</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">officer on patrol.</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">The learned Magistrate, after a thorough analysis of the evidence led by the</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">prosecution, the appellant and his witnesses, preferred the prosecution’s version that the</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">appellant was riding and not pushing his motorcycle when he was stopped for a routine</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">check. She took into consideration the discrepancy in the evidence of PC Nunkoo and</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">PC Beeharry on the issue of zigzagging but found it was not of such a nature as to seriously</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">and adversely affect the prosecution case.</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">On the submission made to her that no police enquiry was conducted into the</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">defence of the appellant that his motorcycle had a flat tyre, she found that any such enquiry</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">would have served no purpose as this version “was given several months afterwards”.</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">She rejected the appellant’s contention that his version of a flat tyre had been given in an</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">earlier statement on the 19 February 2009 as she found that neither was she in presence of</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">that statement nor was there confirmation from the prosecution witnesses of that statement</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt"></span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">3</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">having been given. She further found untenable the submissions of learned Counsel that</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">the police enquiry was tainted with a major flaw.</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">The learned Magistrate accordingly found the charge proved against the appellant</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">and sentenced him to pay a fine of Rs 10,000. She also disqualified him from driving all</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">types of vehicles for a period of 8 months and ordered his licence to be endorsed.</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">The appellant now appeals against his conviction on five grounds which seek to</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">impugn the factual appreciation of the evidence by the trial Court as well as the conclusions</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt">reached.</span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">We have in the light of the submissions of learned Counsel for the appellant reviewed</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">the evidence on record as well as the findings of the trial Court but we have found no reason</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">to depart therefrom. It was argued by learned Counsel for the appellant that the answer of</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">PC Rossan to the question whether the police ought to have verified the tyre of the</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">motorcycle was an admission by the police that such verification was an important aspect of</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">the enquiry. In the absence of any verification on the part of the police, the learned</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">Magistrate ought to have accepted the appellant’s version.</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">The question that was put to PC Rossan and his answer which the learned</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">Magistrate recorded verbatim read as follows:-</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">“Q: Yes the tyres should have been verified</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">A: There were other contraventions established against Accused.”</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">In our view this answer of the witness is not indicative that he had accepted the</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">suggestion of learned Counsel that a verification of the appellant’s motorcycle tyre was an</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">important aspect of the police enquiry which the police had omitted to do. We note that</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">when reciting the evidence of PC Rossan, the learned Magistrate stated “...He [PC Rossan]</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">added that he should have verified whether the tyre was flat…” That part of the learned</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">Magistrate’s recital of the evidence of PC Rossan is incorrect. Be that as it may, we take the</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">view that this is only a minor lapsus on the part of the learned Magistrate with no adverse</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">effect on the soundness of her overall assessment of the evidence. Her finding that the</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">absence of an enquiry into the alleged burst tyre was not fatal to the prosecution’s case and</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">her reasoning that in any event an enquiry would have served no purpose is unimpeachable.</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">This complaint has, therefore, no merit.</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt"></span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">4</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">Criticisms were also levelled against the learned Magistrate’s finding that the</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">appellant had given his version several months later and that an enquiry into his version</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">would have been pointless. We were referred to the testimony of PC Rossan in support of</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">the submissions that the latter had confirmed the appellant’s version that he had given a</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">statement to the police on the day following the incident wherein he had mentioned his flat</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">tyre.</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt">In the course of the cross-examination of PC Rossan, the officer who had recorded a</span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">statement from the appellant on 8 October 2009, it was put to him that the appellant’s</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">version given on 8 October 2009, namely that he had a flat tyre and was pushing his</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">motorcycle when he was stopped by the police, was similar to his version that he had</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">allegedly given in a statement on 19 February 2009. The answer of the witness was that</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">since he was not in presence of the statement of 19 February 2009, he could not confirm</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">whether the appellant had indeed given similar versions on 19 February and 8 October 2009</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">respectively.</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">In view of the answer of PC Rossan and the fact that the statement of 19 February</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">was not produced before the learned Magistrate, her reasoning for rejecting the appellant’s</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">contention regarding the tenor of a statement allegedly given on 19 February 2009, shortly</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">after he was stopped by the police, is irreproachable. The criticisms levelled against the</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">learned Magistrate are accordingly devoid of any merit.</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">Learned Counsel for the appellant also found fault with the learned Magistrate’s</span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt">assessment of the appellant’s credibility. His submissions were that the learned Magistrate</span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">has placed too much emphasis on a discrepancy she had noted in the appellant’s evidence,</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">regarding the day on which he had partaken alcoholic drinks, to reject wholesale his</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">testimony and to find him an unreliable witness.</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt">The record shows that the appellant stated in examination-in-chief that he had</span></span>
+<span class="line" id="L127"><span class="ln">127</span><span class="txt">alcoholic drinks on the eve whereas in cross-examination he admitted that he had drunk</span></span>
+<span class="line" id="L128"><span class="ln">128</span><span class="txt">alcohol on that very day. In view of the contradictory answer given by the appellant which is</span></span>
+<span class="line" id="L129"><span class="ln">129</span><span class="txt">borne out by the record, the complaints against the findings of the learned Magistrate that</span></span>
+<span class="line" id="L130"><span class="ln">130</span><span class="txt">the appellant’s version was tainted with an important discrepancy are unfounded.</span></span>
+<span class="line" id="L131"><span class="ln">131</span><span class="txt">The appellant also complained that the learned Magistrate resorted to speculations</span></span>
+<span class="line" id="L132"><span class="ln">132</span><span class="txt">and conjectures not borne out by the evidence before her in rejecting his version that he had</span></span>
+<span class="line" id="L133"><span class="ln">133</span><span class="txt">been pushing and not riding his motorcycle all the way from Canot to Bambous and that on</span></span>
+<span class="line" id="L134"><span class="ln">134</span><span class="txt">his way home bought 3 bottles of beer.</span></span>
+<span class="line" id="L135"><span class="ln">135</span><span class="txt"></span></span>
+<span class="line" id="L136"><span class="ln">136</span><span class="txt">5</span></span>
+<span class="line" id="L137"><span class="ln">137</span><span class="txt">We note from her judgment that the learned Magistrate rejected this version of the</span></span>
+<span class="line" id="L138"><span class="ln">138</span><span class="txt">appellant after having found that his contention that he had bought beer at a time when his</span></span>
+<span class="line" id="L139"><span class="ln">139</span><span class="txt">motorcycle allegedly had a burst tyre was not found in his statement given on 8 October</span></span>
+<span class="line" id="L140"><span class="ln">140</span><span class="txt">2009. We have perused the appellant’s statement and his testimony in Court. It is indeed</span></span>
+<span class="line" id="L141"><span class="ln">141</span><span class="txt">true that his version regarding the buying of beer was said for the first time in Court.</span></span>
+<span class="line" id="L142"><span class="ln">142</span><span class="txt">The learned Magistrate’s remarks which the appellant complained of are in the</span></span>
+<span class="line" id="L143"><span class="ln">143</span><span class="txt">following terms:- “...I find it hard to believe that one would buy beer at such odd hours whilst</span></span>
+<span class="line" id="L144"><span class="ln">144</span><span class="txt">at the same time going through the hassle of having to push an autocycle all the way from</span></span>
+<span class="line" id="L145"><span class="ln">145</span><span class="txt">Canot to Bambous. The main concern of someone who has a breakdown at this time of the</span></span>
+<span class="line" id="L146"><span class="ln">146</span><span class="txt">night would be to get home as soon as possible...”</span></span>
+<span class="line" id="L147"><span class="ln">147</span><span class="txt">Her reasons for doubting the veracity of the appellant’s version as set out above are</span></span>
+<span class="line" id="L148"><span class="ln">148</span><span class="txt">not conjectures and surmises but are in fact a matter of common sense. There is nothing</span></span>
+<span class="line" id="L149"><span class="ln">149</span><span class="txt">sinister in her reasoning which, in the circumstances, we find was fully warranted.</span></span>
+<span class="line" id="L150"><span class="ln">150</span><span class="txt">Lastly, it was argued that on the evidence adduced before her, the learned</span></span>
+<span class="line" id="L151"><span class="ln">151</span><span class="txt">Magistrate was wrong to find that one of the essential elements of the offence of driving</span></span>
+<span class="line" id="L152"><span class="ln">152</span><span class="txt">under the influence of alcohol, which is that the appellant was at the material time riding his</span></span>
+<span class="line" id="L153"><span class="ln">153</span><span class="txt">motorcycle, had been proved beyond reasonable doubt. It was also argued that her reasons</span></span>
+<span class="line" id="L154"><span class="ln">154</span><span class="txt">for rejecting the appellant’s version that he had a flat tyre and that of his witnesses are</span></span>
+<span class="line" id="L155"><span class="ln">155</span><span class="txt">flawed.</span></span>
+<span class="line" id="L156"><span class="ln">156</span><span class="txt">The learned Magistrate had the benefit of seeing and listening to the witnesses</span></span>
+<span class="line" id="L157"><span class="ln">157</span><span class="txt">deposing before her. It has not been established that her assessment and appreciation of</span></span>
+<span class="line" id="L158"><span class="ln">158</span><span class="txt">the evidence that was before her, her appraisal of the credibility of the witnesses for the</span></span>
+<span class="line" id="L159"><span class="ln">159</span><span class="txt">prosecution and the defence and her factual findings were perverse or manifestly ill-founded</span></span>
+<span class="line" id="L160"><span class="ln">160</span><span class="txt">so that we see no cause to intervene. On the contrary, the learned Magistrate’s factual</span></span>
+<span class="line" id="L161"><span class="ln">161</span><span class="txt">findings are plainly borne out by the evidence before her. Having heard the witnesses,</span></span>
+<span class="line" id="L162"><span class="ln">162</span><span class="txt">it was plainly open to her to accept the prosecution’s version and to reject that of the</span></span>
+<span class="line" id="L163"><span class="ln">163</span><span class="txt">appellant and his witnesses. We are, accordingly, unable to find fault with the learned</span></span>
+<span class="line" id="L164"><span class="ln">164</span><span class="txt">Magistrate’s appreciation and analysis of the evidence which was fully warranted.</span></span>
+<span class="line" id="L165"><span class="ln">165</span><span class="txt">Grounds 1, 2, 3 and 5 accordingly fail.</span></span>
+<span class="line" id="L166"><span class="ln">166</span><span class="txt">Ground 4 is to the effect that the learned Magistrate was wrong to hold that the</span></span>
+<span class="line" id="L167"><span class="ln">167</span><span class="txt">discrepancy in PC Nunkoo’s testimony was not so serious. In his submissions, learned</span></span>
+<span class="line" id="L168"><span class="ln">168</span><span class="txt">Counsel for the appellant made a comparison between the testimony of PC Nunkoo and</span></span>
+<span class="line" id="L169"><span class="ln">169</span><span class="txt">PC Beeharry, the two police officers who had stopped the appellant for a routine check.</span></span>
+<span class="line" id="L170"><span class="ln">170</span><span class="txt"></span></span>
+<span class="line" id="L171"><span class="ln">171</span><span class="txt">6</span></span>
+<span class="line" id="L172"><span class="ln">172</span><span class="txt">He then argued that the testimony of PC Nunkoo that he saw the appellant zigzagging on</span></span>
+<span class="line" id="L173"><span class="ln">173</span><span class="txt">the road and the absence of any such evidence from PC Beeharry when testifying was a</span></span>
+<span class="line" id="L174"><span class="ln">174</span><span class="txt">material discrepancy in the prosecution’s case. Learned Counsel went on to submit that the</span></span>
+<span class="line" id="L175"><span class="ln">175</span><span class="txt">learned Magistrate was, accordingly, wrong not to have given sufficient weight to the</span></span>
+<span class="line" id="L176"><span class="ln">176</span><span class="txt">inconsistency in the testimony of PC Nunkoo which heavily impinged on the crux of the case</span></span>
+<span class="line" id="L177"><span class="ln">177</span><span class="txt">which was whether the appellant was riding or pushing his motorcycle.</span></span>
+<span class="line" id="L178"><span class="ln">178</span><span class="txt">In her judgment, the learned Magistrate considered this aspect of the evidence of</span></span>
+<span class="line" id="L179"><span class="ln">179</span><span class="txt">PC Nunkoo and his admission that he had not mentioned same in his statement and had this</span></span>
+<span class="line" id="L180"><span class="ln">180</span><span class="txt">to say: “...As for the version of PC Nunkoo, I have borne in mind a slight discrepancy in his</span></span>
+<span class="line" id="L181"><span class="ln">181</span><span class="txt">version as regards the fact that the autocycle was zigzagging but I find that such</span></span>
+<span class="line" id="L182"><span class="ln">182</span><span class="txt">discrepancy is not so serious as to adversely affect the case for the prosecution and the</span></span>
+<span class="line" id="L183"><span class="ln">183</span><span class="txt">overall reliability and credibility of PC Beeharry who stood as a witness of truth…”</span></span>
+<span class="line" id="L184"><span class="ln">184</span><span class="txt">We agree with the learned Magistrate’s reasoning that save for this contradiction in</span></span>
+<span class="line" id="L185"><span class="ln">185</span><span class="txt">the testimonies of PC Nunkoo and PC Beeharry, their evidence, otherwise, tallied and was</span></span>
+<span class="line" id="L186"><span class="ln">186</span><span class="txt">along the same lines. We find accordingly no merit in the complaint levelled against the</span></span>
+<span class="line" id="L187"><span class="ln">187</span><span class="txt">learned Magistrate of her assessment of the credibility of the two police officers. Ground 4</span></span>
+<span class="line" id="L188"><span class="ln">188</span><span class="txt">equally fails.</span></span>
+<span class="line" id="L189"><span class="ln">189</span><span class="txt">All the grounds of appeal having failed, the appeal is dismissed with costs.</span></span>
+<span class="line" id="L190"><span class="ln">190</span><span class="txt">N. Devat</span></span>
+<span class="line" id="L191"><span class="ln">191</span><span class="txt">Judge</span></span>
+<span class="line" id="L192"><span class="ln">192</span><span class="txt">D. Chan Kan Cheong</span></span>
+<span class="line" id="L193"><span class="ln">193</span><span class="txt">Judge</span></span>
+<span class="line" id="L194"><span class="ln">194</span><span class="txt">23 February 2016</span></span>
+<span class="line" id="L195"><span class="ln">195</span><span class="txt">Judgment delivered by Hon. N. Devat, Judge</span></span>
+<span class="line" id="L196"><span class="ln">196</span><span class="txt">For Appellant : Ms Y. Yerriah, Attorney-at-Law</span></span>
+<span class="line" id="L197"><span class="ln">197</span><span class="txt">Mr N. Proag, of Counsel</span></span>
+<span class="line" id="L198"><span class="ln">198</span><span class="txt">For Respondent : Senior State Attorney</span></span>
+<span class="line" id="L199"><span class="ln">199</span><span class="txt">Mr N. Bisnathsing, State Counsel</span></span>
+</pre></div><div class="pane pane-right" id="digest-pane"><section class="sec sec-header"><h1>Remy F.S. v The State</h1><table class="meta-table"><tr><th>Citation</th><td><code>2016 SCJ 72</code></td></tr><tr><th>Verbatim</th><td><code>2016 SCJ 72</code></td></tr><tr><th>Record</th><td>8557</td></tr><tr><th>Court</th><td>Supreme Court</td></tr><tr><th>Bench</th><td>two judges</td></tr><tr><th>Jurisdiction</th><td>Mauritius</td></tr><tr><th>Date</th><td>2016-02-23</td></tr><tr><th>Judgment by</th><td>N. Devat</td></tr><tr><th>Procedural posture</th><td>appeal</td></tr><tr><th>Citation code</th><td><code>SCJ</code></td></tr></table></section><section class="sec"><h2>Bench</h2><ul><li><strong>N. Devat</strong>, Judge <span class='tag'>lead</span> <span class='tag tag-muted'>full agreement</span></li><li><strong>D. Chan Kan Cheong</strong>, Judge <span class='tag'>concurring</span> <span class='tag tag-muted'>full agreement</span></li></ul><p class='muted'>Judgment delivered by: N. Devat</p></section><section class="sec"><h2>Parties</h2><ul><li><strong>appellant:</strong> Fabrice Stephane Remy</li><li><strong>respondent:</strong> The State</li></ul></section><section class="sec"><h2>Counsel</h2><ul><li><em>For appellant:</em> Ms Y. Yerriah, Attorney-at-Law; Mr N. Proag, of Counsel</li><li><em>For respondent:</em> Senior State Attorney; Mr N. Bisnathsing, State Counsel</li></ul></section><section class="sec"><h2>Catchwords</h2><ol class="catchwords"><li>Common law — Evidence — Appeal — Factual findings — Whether appellate court may reverse trial judge&#x27;s assessment of evidence and credibility absent manifest perversity</li><li>Common law — Evidence — Police evidence — Inconsistencies — Whether minor inconsistency in one police witness&#x27;s testimony seriously undermines reliability of prosecution case</li></ol></section><section class="sec"><h2>Headnote</h2><h3>Facts</h3><p>On 18 February 2009, the appellant was stopped by police for a routine check and tested positive for alcohol, with a laboratory blood sample revealing 77 milligrams of alcohol. The appellant claimed he was pushing his motorcycle due to a flat tyre and had purchased three bottles of beer. The trial court rejected his account and convicted him of driving a motor vehicle with excess alcohol concentration under section 123F(1)(a)(3) of the Road Traffic Act, imposing a fine of Rs 10,000, an 8-month driving disqualification, and licence endorsement. The appellant appealed on five grounds, challenging the trial court&#x27;s factual findings and credibility assessments.</p><h3>Held</h3><ol class='held'><li><p>An appellate court will not overturn a trial judge&#x27;s factual findings and assessments of witness credibility unless they are found to be perverse or manifestly ill-founded.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L157' data-start='157' data-end='159'>L157-L159</a> <span class='preview'>&mdash; deposing before her. It has not been established that her assessment and appreciation of the evidence that was before her, her appraisal of the credibility of the witnesses for the prosecution and the defence and her factual findings were …</span></span></div><blockquote class='held-quote'>It has not been established that her assessment and appreciation of the evidence that was before her, her appraisal of the credibility of the witnesses for the prosecution and the defence and her factual findings were perverse or manifestly ill-founded so that we see no cause to intervene.</blockquote></li><li><p>The trial judge&#x27;s finding that the absence of police enquiry into a defendant&#x27;s claim of a flat tyre is not fatal to the prosecution&#x27;s case, particularly where such enquiry would have served no practical purpose, is sound appellate law.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L96' data-start='96' data-end='98'>L96-L98</a> <span class='preview'>&mdash; effect on the soundness of her overall assessment of the evidence. Her finding that the absence of an enquiry into the alleged burst tyre was not fatal to the prosecution’s case and her reasoning that in any event an enquiry would have ser…</span></span></div><blockquote class='held-quote'>Her finding that the absence of an enquiry into the alleged burst tyre was not fatal to the prosecution&#x27;s case and her reasoning that in any event an enquiry would have served no purpose is unimpeachable.</blockquote></li><li><p>A minor inconsistency in the testimony of one prosecution witness that is not corroborated by a co-witness does not seriously undermine the reliability of the prosecution&#x27;s case where their other evidence is consistent and aligned.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L184' data-start='184' data-end='186'>L184-L186</a> <span class='preview'>&mdash; We agree with the learned Magistrate’s reasoning that save for this contradiction in the testimonies of PC Nunkoo and PC Beeharry, their evidence, otherwise, tallied and was along the same lines. We find accordingly no merit in the complai…</span></span></div><blockquote class='held-quote'>We agree with the learned Magistrate&#x27;s reasoning that save for this contradiction in the testimonies of PC Nunkoo and PC Beeharry, their evidence, otherwise, tallied and was along the same lines.</blockquote></li></ol><h3>Disposition</h3><p>All the grounds of appeal having failed, the appeal is dismissed with costs.</p></section><section class="sec"><h2>Points of law</h2><ol class="points-of-law"><li><p>A credibility assessment may take into account whether a defendant&#x27;s testimony contains internal contradictions regarding the timing of events.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L128' data-start='128' data-end='130'>L128-L130</a> <span class='preview'>&mdash; alcohol on that very day. In view of the contradictory answer given by the appellant which is borne out by the record, the complaints against the findings of the learned Magistrate that the appellant’s version was tainted with an important…</span></span></div><blockquote class='held-quote'>In view of the contradictory answer given by the appellant which is borne out by the record, the complaints against the findings of the learned Magistrate that the appellant&#x27;s version was tainted with an important discrepancy are unfounded.</blockquote></li><li><p>Common sense considerations are appropriate and legitimate in assessing the credibility of a witness&#x27;s account of events.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L147' data-start='147' data-end='149'>L147-L149</a> <span class='preview'>&mdash; Her reasons for doubting the veracity of the appellant’s version as set out above are not conjectures and surmises but are in fact a matter of common sense. There is nothing sinister in her reasoning which, in the circumstances, we find wa…</span></span></div><blockquote class='held-quote'>Her reasons for doubting the veracity of the appellant&#x27;s version as set out above are not conjectures and surmises but are in fact a matter of common sense.</blockquote></li><li><p>A trial judge may base rejection of a defence claim partly on the fact that the claim was not mentioned in an earlier statement, particularly where that statement is not produced in evidence before the court.</p><div class='pinpoints'><span class='pinpoint'><a class='lineref' href='#L116' data-start='116' data-end='120'>L116-L120</a> <span class='preview'>&mdash; In view of the answer of PC Rossan and the fact that the statement of 19 February was not produced before the learned Magistrate, her reasoning for rejecting the appellant’s contention regarding the tenor of a statement allegedly given on …</span></span></div><blockquote class='held-quote'>In view of the answer of PC Rossan and the fact that the statement of 19 February was not produced before the learned Magistrate, her reasoning for rejecting the appellant&#x27;s contention regarding the tenor of a statement allegedly given on 19 February 2009, shortly after he was stopped by the police, is irreproachable.</blockquote></li></ol></section><section class="sec"><h2>Cases cited</h2><p class='muted'>None cited.</p></section><section class="sec"><h2>Legislation</h2><table class="leg-table"><thead><tr><th>Kind</th><th>Name</th><th>Sections</th><th>Jurisdiction</th><th>Line</th></tr></thead><tbody><tr><td>statute</td><td>Road Traffic Act</td><td>s. 123F(1)(a)(3), s. 52</td><td>mu</td><td><a class='lineref' href='#L15' data-start='15' data-end='15'>L15</a></td></tr></tbody></table></section><section class="sec sec-debug"><h2>Document structure pointers</h2><ul><li>Header: <a class='lineref' href='#L1' data-start='1' data-end='11'>L1-L11</a></li><li>Judgment body: <a class='lineref' href='#L13' data-start='13' data-end='189'>L13-L189</a></li><li>Signatures: <a class='lineref' href='#L190' data-start='190' data-end='190'>L190</a></li><li>Date: <a class='lineref' href='#L194' data-start='194' data-end='194'>L194</a></li><li>Counsel block: <a class='lineref' href='#L196' data-start='196' data-end='199'>L196-L199</a></li></ul></section><section class="sec sec-debug"><h2>Extraction confidence (debug)</h2><ul><li>headnote: <span class='tag'>high</span></li><li>cases_cited: <span class='tag'>high</span></li><li>catchwords: <span class='tag'>high</span></li></ul></section><section class='sec sec-footer'><hr><p class='muted small'>extractor: extractor.v2.1 &middot; schema: v2</p></section></div></div><script>
+(function () {
+  function clearHl() {
+    document.querySelectorAll('.line.hl').forEach(function (el) { el.classList.remove('hl'); });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a.lineref');
+    if (!a) return;
+    e.preventDefault();
+    var start = parseInt(a.dataset.start, 10);
+    var end = parseInt(a.dataset.end || a.dataset.start, 10);
+    if (isNaN(start)) return;
+    clearHl();
+    var target = null;
+    for (var i = start; i <= end; i++) {
+      var el = document.getElementById('L' + i);
+      if (el) { el.classList.add('hl'); if (!target) target = el; }
+    }
+    if (target) {
+      target.scrollIntoView({ block: 'center' });
+      history.replaceState(null, '', '#L' + start);
+    }
+  });
+})();
+</script></body></html>

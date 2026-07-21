@@ -1,0 +1,575 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>S Marudai v Police (v2.1) · 2020 BRC 539 · review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+    --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+  --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+a { color: var(--link); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 1.25rem 1.5rem 3rem; }
+header.site-header { background: var(--header-bg); border-bottom: 1px solid var(--border); }
+header.site-header .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+h1 { font-size: 1.4rem; margin: 0 0 .5rem; }
+.lede { color: var(--muted); max-width: 70ch; line-height: 1.5; margin: 0; }
+.disclaimer { margin-top: .75rem; padding: .6rem .9rem; background: var(--warn-bg); color: var(--warn-fg);
+  border-radius: 6px; font-size: .85rem; max-width: 70ch; line-height: 1.4; }
+table.cases { border-collapse: collapse; width: 100%; margin-top: 1.5rem; font-size: .9rem; }
+table.cases th, table.cases td { border-top: 1px solid var(--border); padding: .55rem .6rem; text-align: left; vertical-align: top; }
+table.cases thead th { border-top: none; border-bottom: 2px solid var(--border); color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .02em; }
+table.cases tbody tr:hover { background: var(--code-bg); }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .9em; }
+.muted { color: var(--muted); }
+.back-link { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
+.case-meta { display: flex; flex-wrap: wrap; gap: .4rem .9rem; font-size: .85rem; color: var(--muted); margin: .4rem 0 1rem; }
+.case-meta span strong { color: var(--fg); font-weight: 600; }
+.tabs { display: flex; gap: .25rem; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+.tab-btn { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; color: var(--muted);
+  padding: .55rem .9rem; font-size: .9rem; cursor: pointer; font-family: inherit; }
+.tab-btn:hover { color: var(--fg); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.tab-panel iframe { width: 100%; height: 82vh; border: 1px solid var(--border); border-radius: 6px; }
+pre.raw-json { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
+  overflow: auto; max-height: 82vh; font-family: Consolas, "Courier New", monospace; font-size: .8rem; line-height: 1.45; white-space: pre-wrap; word-break: break-word; }
+.pane-original { border: 1px solid var(--border); border-radius: 6px; max-height: 82vh; overflow: auto; }
+.pane-original .pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); }
+.pane-original pre.lines { margin: 0; padding: .25rem 0 1.5rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.pane-original .line { display: block; white-space: pre; padding: 0 .75rem; }
+.pane-original .line:hover { background: rgba(127,127,127,.08); }
+.pane-original .line.hl { background: #fff3a3; }
+.pane-original .ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+footer.site-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+</style></head><body>
+<header class="site-header"><div class="wrap">
+  <a class="back-link" href="../../index.html">&larr; All cases</a>
+  <h1>S Marudai v Police (v2.1)</h1>
+  <p class="lede"><code>2020 BRC 539</code></p>
+  <div class="case-meta"><span><strong>Digested:</strong> 2026-07-21</span><span><strong>Model:</strong> claude-haiku-4-5-20251001</span><span><strong>Prompt:</strong> extractor.v2.1</span><span><strong>Schema:</strong> v2</span></div>
+</div></header>
+<div class="wrap">
+  <div class="tabs">
+    <button class="tab-btn" id="tab-btn-original">Original judgment</button>
+    <button class="tab-btn" id="tab-btn-rendered">Digested judgment (rendered)</button>
+    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button>
+  </div>
+  <div class="tab-panel" id="tab-panel-original"><div class="pane-original" id="judgment-pane"><div class="pane-header">Judgment text &middot; 180 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">S Marudai v Police</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2020 BRC 539</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">Provisional Cause Number 1068/20 (Grand Port)</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">BRC Cause Number 4666/20</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">THE BAIL AND REMAND COURT (MAURITIUS)</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">In the matter of:-</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">Sadaseeven Marudai</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">v/s</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">Police</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">RULING</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">Introduction</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">1. The Applicant stands charged with the offences of drug dealing: delivering</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">heroin in breach of sections 30(1)(d)(ii) and 47(5)(a) of the Dangerous Drugs Act</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">under Count I, drug dealing: possession of synthetic drugs for the purpose</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">of selling in breach of sections 30(1)(f)(ii) and 47(5)(a) of the Dangerous Drugs</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">Act under Count II and money laundering in breach of sections 3(1)(b), 6, 7 and</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">8(1)(a) of the Financial Intelligence and Anti Money Laundering Act under Count</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">III. He has been on remand since the 10th July 2020 and has moved to be</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">admitted to bail.</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">2. Facts and circumstances of the case</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">On the 09th July 2020, at L’Escalier, the Police arrested the Applicant for remitting</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">two doses of suspected heroin to a co-Accused, which the latter sold to</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">undercover police officers. The Police also secured Rs 600, suspected to be the</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">proceeds of drugs, from the Applicant, and during a search at his place, 5.71</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">grams of suspected synthetic cannabinoids was also secured. The total value of</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">the drugs secured is Rs 29,500 and the Applicant has confessed to possession</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">only.</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">1 | P a ge</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt"></span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt">Case for Respondent</span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">3. PS Seedam, of ADSU Rose-Belle, has been deputed by the Commissioner of</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">Police to resist bail in the present case on the following ground:</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">(i) Risk of reoffending</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">4. As far as the ground of objection is concerned, given that drugs is a lucrative</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">business and taking into account that the Applicant is borne on record for six drug</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">related offences, including one for drug dealing (Doc X) and is on bail for a</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">cognate offence (Doc A), the Police believe that the latter will indulge anew in</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">such transactions if granted bail.</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">5. It came out that the enquiry is short of the FSL report only. The main EO was not</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">cross examined by the Applicant.</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">Case for the Applicant</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">6. From the dock, the Applicant stated that he would abide to all conditions</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">imposed if granted bail and that his child needs him.</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">The Law</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">7. I bear in mind the sacrosanct principle of presumption of innocence and the</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">Constitutional rights of the Applicant to enjoy freedom and liberty.</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">8. Section 3 of the Bail Act provides that “Notwithstanding any other enactment</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">and subject to section 4, every defendant or detainee shall be entitled to be</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">released on bail.”</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">9. Section 4 (1) of the Bail Act reads as follows:</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">A court may refuse to release a defendant or detainee on bail where –</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">(a) it is satisfied that there is reasonable ground to believe that the defendant or</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">detainee, if released, is likely to –</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">2 | P a ge</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt"></span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">(i) fail to surrender to custody or to appear before a Court as and when</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">required;</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">(ii) commit an offence, other than an offence punishable only by a fine;</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">(iii) interfere with witnesses, tamper with evidence or otherwise obstruct</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">the course of justice, in relation to him or to any other person;</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">(b) it is satisfied that the defendant or detainee should be kept in custody –</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">(i) for his own protection;</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">(ii) in the case of a minor, for his own welfare; or</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">(iii) for the preservation of public order;</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">(c) the defendant or detainee, having been released on bail, has –</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt">(i) committed an act referred to in paragraph (a); or</span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">(ii) breached any other condition imposed on him for his release.</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">(d) the defendant or detainee is charged or is likely to be charged with a serious</span></span>
+<span class="line" id="L69"><span class="ln">69</span><span class="txt">offence;</span></span>
+<span class="line" id="L70"><span class="ln">70</span><span class="txt">(e) there is reasonable ground for believing that the defendant or detainee has –</span></span>
+<span class="line" id="L71"><span class="ln">71</span><span class="txt">(i) given false or misleading information regarding his names or address;</span></span>
+<span class="line" id="L72"><span class="ln">72</span><span class="txt">or</span></span>
+<span class="line" id="L73"><span class="ln">73</span><span class="txt">(ii) no fixed place of abode;</span></span>
+<span class="line" id="L74"><span class="ln">74</span><span class="txt">(f) a detainee has failed to comply with section 12 (2).</span></span>
+<span class="line" id="L75"><span class="ln">75</span><span class="txt">10. Section 4(2) of the Bail Act provides that:</span></span>
+<span class="line" id="L76"><span class="ln">76</span><span class="txt">3 | P a ge</span></span>
+<span class="line" id="L77"><span class="ln">77</span><span class="txt"></span></span>
+<span class="line" id="L78"><span class="ln">78</span><span class="txt">In considering whether or not to refuse bail on any ground mentioned in</span></span>
+<span class="line" id="L79"><span class="ln">79</span><span class="txt">subsection (1), the Court shall decide the matter by weighing the interests of</span></span>
+<span class="line" id="L80"><span class="ln">80</span><span class="txt">society against the right of the defendant or detainee to his liberty and the</span></span>
+<span class="line" id="L81"><span class="ln">81</span><span class="txt">prejudice he is likely to suffer if he is detained in custody, taking into account</span></span>
+<span class="line" id="L82"><span class="ln">82</span><span class="txt">every consideration which, in its opinion, is relevant, including –</span></span>
+<span class="line" id="L83"><span class="ln">83</span><span class="txt">(a) the period for which the defendant or detainee has already been in custody</span></span>
+<span class="line" id="L84"><span class="ln">84</span><span class="txt">since his arrest;</span></span>
+<span class="line" id="L85"><span class="ln">85</span><span class="txt">(b) the nature and gravity of the offence with which the defendant or detainee is</span></span>
+<span class="line" id="L86"><span class="ln">86</span><span class="txt">or is likely to be charged and the nature and gravity of the penalty which may</span></span>
+<span class="line" id="L87"><span class="ln">87</span><span class="txt">be imposed on him;</span></span>
+<span class="line" id="L88"><span class="ln">88</span><span class="txt">(c) the character, association, means, community ties and antecedents of the</span></span>
+<span class="line" id="L89"><span class="ln">89</span><span class="txt">defendant or detainee, including any non-compliance with any condition</span></span>
+<span class="line" id="L90"><span class="ln">90</span><span class="txt">imposed for his release on bail with respect to any other offence; and</span></span>
+<span class="line" id="L91"><span class="ln">91</span><span class="txt">(d) the nature of the evidence available with regard to the offence with which the</span></span>
+<span class="line" id="L92"><span class="ln">92</span><span class="txt">defendant is charged.</span></span>
+<span class="line" id="L93"><span class="ln">93</span><span class="txt">11. The rationale as to bail was clearly set out in the authority of Maloupe v The</span></span>
+<span class="line" id="L94"><span class="ln">94</span><span class="txt">District Magistrate of Grand Port [2000] SCJ 233, where it was held that :</span></span>
+<span class="line" id="L95"><span class="ln">95</span><span class="txt">“The rationale of the law of bail at pre-trial stage is, accordingly, that a person</span></span>
+<span class="line" id="L96"><span class="ln">96</span><span class="txt">should normally be released on bail if the imposition of the conditions reduces</span></span>
+<span class="line" id="L97"><span class="ln">97</span><span class="txt">the risks referred to above – i.e. risk of absconding, risk to the administration of</span></span>
+<span class="line" id="L98"><span class="ln">98</span><span class="txt">justice, risk to society – to such an extent that they become negligible having</span></span>
+<span class="line" id="L99"><span class="ln">99</span><span class="txt">regard to the weight which the presumption of innocence should carry in the</span></span>
+<span class="line" id="L100"><span class="ln">100</span><span class="txt">balance When the imposition of the above conditions is considered to be unlikely</span></span>
+<span class="line" id="L101"><span class="ln">101</span><span class="txt">to make any of the above risks negligible, then bail is to be refused.”</span></span>
+<span class="line" id="L102"><span class="ln">102</span><span class="txt">12. I bear in mind that the right balance has to be struck between the constitutional</span></span>
+<span class="line" id="L103"><span class="ln">103</span><span class="txt">right of the Applicant to enjoy freedom and the interest of society at large.</span></span>
+<span class="line" id="L104"><span class="ln">104</span><span class="txt">13. It was held in Deelchand v The Director of Public Prosecutions and Others</span></span>
+<span class="line" id="L105"><span class="ln">105</span><span class="txt">(2005) SCJ 215 that “In all countries where human rights are respected, the</span></span>
+<span class="line" id="L106"><span class="ln">106</span><span class="txt">function of the law of bail is likely to be the same, being to reconcile, as stated in</span></span>
+<span class="line" id="L107"><span class="ln">107</span><span class="txt">4 | P a ge</span></span>
+<span class="line" id="L108"><span class="ln">108</span><span class="txt"></span></span>
+<span class="line" id="L109"><span class="ln">109</span><span class="txt">Labonne v The D.P.P (supra, at para 2.2.), “on the one hand the need to</span></span>
+<span class="line" id="L110"><span class="ln">110</span><span class="txt">safeguard the necessary respect for the liberty of the citizen viewed in the</span></span>
+<span class="line" id="L111"><span class="ln">111</span><span class="txt">context of the presumption of innocence and, on the other hand, the need to</span></span>
+<span class="line" id="L112"><span class="ln">112</span><span class="txt">ensure that society and the administration of justice are reasonably protected</span></span>
+<span class="line" id="L113"><span class="ln">113</span><span class="txt">against serious risks which might materialise in the event that the detainee is</span></span>
+<span class="line" id="L114"><span class="ln">114</span><span class="txt">really a criminal which he is suspected to be.”</span></span>
+<span class="line" id="L115"><span class="ln">115</span><span class="txt">14. In Islam v The Senior District Magistrate Grand Port District Court [2006]</span></span>
+<span class="line" id="L116"><span class="ln">116</span><span class="txt">SCJ 282 at para 37, it was held that “Pre-trial bail is not a form of punishment to</span></span>
+<span class="line" id="L117"><span class="ln">117</span><span class="txt">any individual. It is a form of partial and temporary restriction of his liberty with a</span></span>
+<span class="line" id="L118"><span class="ln">118</span><span class="txt">view to disabling him against antisocial behavior.”</span></span>
+<span class="line" id="L119"><span class="ln">119</span><span class="txt">Finding</span></span>
+<span class="line" id="L120"><span class="ln">120</span><span class="txt">15. In relation to the ground of objection, that is the risk of re-offending,</span></span>
+<span class="line" id="L121"><span class="ln">121</span><span class="txt">considering the value of drugs involved in the present case, the nature of the</span></span>
+<span class="line" id="L122"><span class="ln">122</span><span class="txt">evidence against the Applicant, and drug dealing being a lucrative business, I</span></span>
+<span class="line" id="L123"><span class="ln">123</span><span class="txt">find that there is indeed a high risk that the Applicant might indulge anew in such</span></span>
+<span class="line" id="L124"><span class="ln">124</span><span class="txt">transactions should he be released on bail. Docs A and X show that the latter</span></span>
+<span class="line" id="L125"><span class="ln">125</span><span class="txt">has the propensity to commit the offence at hand, the more so since he has one</span></span>
+<span class="line" id="L126"><span class="ln">126</span><span class="txt">previous conviction for drug dealing and is on bail for a drug dealing offence.</span></span>
+<span class="line" id="L127"><span class="ln">127</span><span class="txt">The present ground therefore succeeds after considering the following</span></span>
+<span class="line" id="L128"><span class="ln">128</span><span class="txt">authorities:</span></span>
+<span class="line" id="L129"><span class="ln">129</span><span class="txt">(a) In Deelchand v The Director of Public Prosecutions &amp; Ors [2005] SCJ</span></span>
+<span class="line" id="L130"><span class="ln">130</span><span class="txt">215 at para 5.8, it was held that :</span></span>
+<span class="line" id="L131"><span class="ln">131</span><span class="txt">“The sentence expected in case of conviction is also a relevant consideration</span></span>
+<span class="line" id="L132"><span class="ln">132</span><span class="txt">because of the greater risk that the offender may think he has nothing to lose</span></span>
+<span class="line" id="L133"><span class="ln">133</span><span class="txt">by offending whilst on bail. The extent to which the offences which the</span></span>
+<span class="line" id="L134"><span class="ln">134</span><span class="txt">applicant is suspected to have committed are lucrative should also be</span></span>
+<span class="line" id="L135"><span class="ln">135</span><span class="txt">considered as the temptation, in case the applicant is guilty, that he may wish</span></span>
+<span class="line" id="L136"><span class="ln">136</span><span class="txt">to make as much money as possible whilst on bail, is likely to be greater.”</span></span>
+<span class="line" id="L137"><span class="ln">137</span><span class="txt">(b) In Islam (Supra) at para 32, it was held that:</span></span>
+<span class="line" id="L138"><span class="ln">138</span><span class="txt">“Thus, somebody who is admitted to bail, who has been able to purchase –</span></span>
+<span class="line" id="L139"><span class="ln">139</span><span class="txt">so to speak - his freedom by some monetary condition, walks out of the court-</span></span>
+<span class="line" id="L140"><span class="ln">140</span><span class="txt">room, free from any type of effective control over his movements or his</span></span>
+<span class="line" id="L141"><span class="ln">141</span><span class="txt">5 | P a ge</span></span>
+<span class="line" id="L142"><span class="ln">142</span><span class="txt"></span></span>
+<span class="line" id="L143"><span class="ln">143</span><span class="txt">activities other than presumably reporting to the nearest police station twice a</span></span>
+<span class="line" id="L144"><span class="ln">144</span><span class="txt">day. In between, where he goes, under whose influence he falls, with whom</span></span>
+<span class="line" id="L145"><span class="ln">145</span><span class="txt">he associates himself to pursue what design is left to himself.”</span></span>
+<span class="line" id="L146"><span class="ln">146</span><span class="txt">(c) In Hossen v District Magistrate of Port Louis [1993] MR 9, it was held that :</span></span>
+<span class="line" id="L147"><span class="ln">147</span><span class="txt">“Everyone knows that the consumption of certain drugs, like any other vice</span></span>
+<span class="line" id="L148"><span class="ln">148</span><span class="txt">one may think of, is never likely to disappear completely from the face of the</span></span>
+<span class="line" id="L149"><span class="ln">149</span><span class="txt">planet and that, at times, it may not be reasonable to insist on the detention of</span></span>
+<span class="line" id="L150"><span class="ln">150</span><span class="txt">suspects of a certain type. But when, on the contrary, we are faced with a</span></span>
+<span class="line" id="L151"><span class="ln">151</span><span class="txt">proliferation of drug consumption, or a resurgence of this scourge which can</span></span>
+<span class="line" id="L152"><span class="ln">152</span><span class="txt">only result in the corruption and degradation of the country’s youth in</span></span>
+<span class="line" id="L153"><span class="ln">153</span><span class="txt">particular, then the Courts have the duty and the responsibility to protect the</span></span>
+<span class="line" id="L154"><span class="ln">154</span><span class="txt">public against every person who is involved in any activity that is likely to</span></span>
+<span class="line" id="L155"><span class="ln">155</span><span class="txt">facilitate or encourage the drug trade”.</span></span>
+<span class="line" id="L156"><span class="ln">156</span><span class="txt">16. Having found that the ground of objection has been substantiated, this Court has</span></span>
+<span class="line" id="L157"><span class="ln">157</span><span class="txt">an inherent duty to assess whether conditions can be imposed to adequately</span></span>
+<span class="line" id="L158"><span class="ln">158</span><span class="txt">curb the risks identified, so as to render such risks negligible as expounded in</span></span>
+<span class="line" id="L159"><span class="ln">159</span><span class="txt">the case of Maloupe (Supra). In Deelchand (Supra), it was held that “Security</span></span>
+<span class="line" id="L160"><span class="ln">160</span><span class="txt">appears applicable to all the risks as it may be an incentive to the applicant to</span></span>
+<span class="line" id="L161"><span class="ln">161</span><span class="txt">appear for trial, to behave whilst on bail and to refrain from interfering with</span></span>
+<span class="line" id="L162"><span class="ln">162</span><span class="txt">witnesses, or tampering with evidence.”</span></span>
+<span class="line" id="L163"><span class="ln">163</span><span class="txt">17. In the case of Rangasamy M.N. v The D.P.P &amp; Anor 2005 SCJ 249, the Court</span></span>
+<span class="line" id="L164"><span class="ln">164</span><span class="txt">stated the following:</span></span>
+<span class="line" id="L165"><span class="ln">165</span><span class="txt">“We consider that judicial officers in Mauritius who have first-hand knowledge of</span></span>
+<span class="line" id="L166"><span class="ln">166</span><span class="txt">the prevailing local conditions regarding law and order and organized crime</span></span>
+<span class="line" id="L167"><span class="ln">167</span><span class="txt">should have a margin of appreciation in exercising their discretion and deciding</span></span>
+<span class="line" id="L168"><span class="ln">168</span><span class="txt">on the need for a detainee to be admitted to bail, taking into account all the</span></span>
+<span class="line" id="L169"><span class="ln">169</span><span class="txt">public interest grounds for refusing bail listed in section 4 of the Act”.</span></span>
+<span class="line" id="L170"><span class="ln">170</span><span class="txt">18. The circumstances of the present case are such that no conditions can be</span></span>
+<span class="line" id="L171"><span class="ln">171</span><span class="txt">imposed to reduce the risks that have been identified. As such, this Court</span></span>
+<span class="line" id="L172"><span class="ln">172</span><span class="txt">declines to exercise its discretion in favour of the Applicant and finds that his</span></span>
+<span class="line" id="L173"><span class="ln">173</span><span class="txt">continued detention is warranted. The present application is, therefore, set</span></span>
+<span class="line" id="L174"><span class="ln">174</span><span class="txt">aside.</span></span>
+<span class="line" id="L175"><span class="ln">175</span><span class="txt">6 | P a ge</span></span>
+<span class="line" id="L176"><span class="ln">176</span><span class="txt"></span></span>
+<span class="line" id="L177"><span class="ln">177</span><span class="txt">Miss Shavina Jugnauth</span></span>
+<span class="line" id="L178"><span class="ln">178</span><span class="txt">Acting Senior District Magistrate</span></span>
+<span class="line" id="L179"><span class="ln">179</span><span class="txt">This 24th September 2020</span></span>
+<span class="line" id="L180"><span class="ln">180</span><span class="txt">7 | P a ge</span></span>
+</pre></div></div>
+  <div class="tab-panel" id="tab-panel-rendered"><iframe src="digest.html" title="Rendered digest"></iframe></div>
+  <div class="tab-panel" id="tab-panel-raw"><pre class="raw-json">```json
+{
+  &quot;case_name&quot;: &quot;S Marudai v Police&quot;,
+  &quot;citation&quot;: &quot;2020 BRC 539&quot;,
+  &quot;citation_verbatim&quot;: &quot;2020 BRC 539&quot;,
+  &quot;alt_citations&quot;: [],
+  &quot;record_number&quot;: &quot;Provisional Cause Number 1068/20 (Grand Port); BRC Cause Number 4666/20&quot;,
+  &quot;court&quot;: &quot;Bail and Remand Court&quot;,
+  &quot;court_division&quot;: null,
+  &quot;bench&quot;: &quot;single judge&quot;,
+  &quot;jurisdiction&quot;: &quot;Mauritius&quot;,
+  &quot;date&quot;: &quot;2020-09-24&quot;,
+  &quot;judgment_by&quot;: &quot;Miss Shavina Jugnauth&quot;,
+  &quot;procedural_posture&quot;: &quot;bail application&quot;,
+  &quot;citation_code&quot;: &quot;BRC&quot;,
+  &quot;judges&quot;: [
+    {
+      &quot;name&quot;: &quot;Miss Shavina Jugnauth&quot;,
+      &quot;role&quot;: &quot;Acting Senior District Magistrate&quot;,
+      &quot;position&quot;: &quot;lead&quot;,
+      &quot;disposition_agreement&quot;: &quot;full&quot;
+    }
+  ],
+  &quot;parties&quot;: {
+    &quot;applicant&quot;: &quot;Sadaseeven Marudai&quot;,
+    &quot;respondent&quot;: &quot;Police&quot;
+  },
+  &quot;counsel&quot;: [],
+  &quot;catchwords&quot;: [
+    &quot;Statute (Bail Act 1999) — Bail — Risk of reoffending — s. 4(1)(a)(ii) — Whether bail may be refused where applicant has prior drug dealing conviction and is currently on bail for cognate drug dealing offence&quot;
+  ],
+  &quot;structure&quot;: {
+    &quot;header_lines&quot;: [1, 9],
+    &quot;judgment_start_line&quot;: 12,
+    &quot;judgment_end_line&quot;: 174,
+    &quot;signatures_line&quot;: 177,
+    &quot;date_line&quot;: 179,
+    &quot;block_quotes&quot;: [
+      {
+        &quot;start_line&quot;: 95,
+        &quot;end_line&quot;: 101,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 105,
+        &quot;end_line&quot;: 114,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 116,
+        &quot;end_line&quot;: 118,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 131,
+        &quot;end_line&quot;: 136,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 138,
+        &quot;end_line&quot;: 145,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 147,
+        &quot;end_line&quot;: 155,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 165,
+        &quot;end_line&quot;: 169,
+        &quot;language&quot;: &quot;en&quot;
+      }
+    ]
+  },
+  &quot;headnote&quot;: {
+    &quot;facts&quot;: &quot;The applicant was arrested on 9 July 2020 for remitting two doses of suspected heroin to a co-accused, which were sold to undercover police officers. Police secured Rs 600 suspected to be proceeds of drugs from the applicant and 5.71 grams of suspected synthetic cannabinoids during a search at his residence. The applicant confessed to possession only. He has been on remand since 10 July 2020 and applied for bail. The police object on the ground of risk of reoffending, noting the applicant is borne on record for six drug-related offences, including one prior conviction for drug dealing, and is currently on bail for a cognate drug dealing offence.&quot;,
+    &quot;held&quot;: [
+      {
+        &quot;proposition&quot;: &quot;An applicant charged with drug dealing who has one prior conviction for drug dealing and is currently on bail for a cognate drug dealing offence presents a high risk of reoffending such that bail may be refused under section 4(1)(a)(ii) of the Bail Act 1999, particularly when the current charges involve possession of substantial quantities of controlled substances with intent to sell and the offence is lucrative in nature.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 120,
+            &quot;end_line&quot;: 126
+          }
+        ],
+        &quot;quote&quot;: &quot;I find that there is indeed a high risk that the Applicant might indulge anew in such transactions should he be released on bail. Docs A and X show that the latter has the propensity to commit the offence at hand, the more so since he has one previous conviction for drug dealing and is on bail for a drug dealing offence.&quot;
+      },
+      {
+        &quot;proposition&quot;: &quot;Where the risks of reoffending identified by the court cannot be rendered negligible through any conditions that the court has the power to impose, bail must be refused.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 170,
+            &quot;end_line&quot;: 174
+          }
+        ],
+        &quot;quote&quot;: &quot;The circumstances of the present case are such that no conditions can be imposed to reduce the risks that have been identified. As such, this Court declines to exercise its discretion in favour of the Applicant and finds that his continued detention is warranted.&quot;
+      }
+    ],
+    &quot;disposition&quot;: &quot;Bail application refused; applicant&#x27;s continued detention is warranted.&quot;,
+    &quot;orders&quot;: []
+  },
+  &quot;points_of_law&quot;: [
+    {
+      &quot;proposition&quot;: &quot;The presumption of innocence and the constitutional rights of an applicant to enjoy freedom and liberty are foundational principles that must be borne in mind in bail proceedings.&quot;,
+      &quot;pinpoints&quot;: [
+        {
+          &quot;start_line&quot;: 45,
+          &quot;end_line&quot;: 46
+        }
+      ],
+      &quot;quote&quot;: &quot;I bear in mind the sacrosanct principle of presumption of innocence and the Constitutional rights of the Applicant to enjoy freedom and liberty.&quot;
+    },
+    {
+      &quot;proposition&quot;: &quot;Section 3 of the Bail Act 1999 establishes the general right to bail for all defendants or detainees, subject to specified exceptions under section 4.&quot;,
+      &quot;pinpoints&quot;: [
+        {
+          &quot;start_line&quot;: 47,
+          &quot;end_line&quot;: 49
+        }
+      ],
+      &quot;quote&quot;: &quot;every defendant or detainee shall be entitled to be released on bail.&quot;
+    },
+    {
+      &quot;proposition&quot;: &quot;In determining whether to refuse bail, the court must weigh the interests of society against the right of the defendant to liberty and the prejudice from detention, considering relevant factors including the period of custody already served, nature and gravity of the offence, character and antecedents of the defendant, and nature of evidence available.&quot;,
+      &quot;pinpoints&quot;: [
+        {
+          &quot;start_line&quot;: 78,
+          &quot;end_line&quot;: 92
+        }
+      ],
+      &quot;quote&quot;: &quot;the Court shall decide the matter by weighing the interests of society against the right of the defendant or detainee to his liberty and the prejudice he is likely to suffer if he is detained in custody, taking into account every consideration which, in its opinion, is relevant&quot;
+    },
+    {
+      &quot;proposition&quot;: &quot;Pre-trial bail is not a form of punishment but rather a form of partial and temporary restriction of liberty with a view to disabling the person against antisocial behavior.&quot;,
+      &quot;pinpoints&quot;: [
+        {
+          &quot;start_line&quot;: 115,
+          &quot;end_line&quot;: 118
+        }
+      ],
+      &quot;quote&quot;: &quot;Pre-trial bail is not a form of punishment to any individual. It is a form of partial and temporary restriction of his liberty with a view to disabling him against antisocial behavior.&quot;
+    },
+    {
+      &quot;proposition&quot;: &quot;The function of bail law is to reconcile the need to respect the liberty of the citizen in the context of the presumption of innocence with the need to ensure that society and the administration of justice are reasonably protected against serious risks that might materialise if the detainee is truly a criminal as suspected.&quot;,
+      &quot;pinpoints&quot;: [
+        {
+          &quot;start_line&quot;: 105,
+          &quot;end_line&quot;: 114
+        }
+      ]
+    },
+    {
+      &quot;proposition&quot;: &quot;Security as a bail condition may serve as an incentive for the applicant to appear for trial, behave whilst on bail, and refrain from interfering with witnesses or tampering with evidence.&quot;,
+      &quot;pinpoints&quot;: [
+        {
+          &quot;start_line&quot;: 159,
+          &quot;end_line&quot;: 162
+        }
+      ],
+      &quot;quote&quot;: &quot;Security appears applicable to all the risks as it may be an incentive to the applicant to appear for trial, to behave whilst on bail and to refrain from interfering with witnesses, or tampering with evidence.&quot;
+    }
+  ],
+  &quot;cases_cited&quot;: [
+    {
+      &quot;citation&quot;: &quot;2000 SCJ 233&quot;,
+      &quot;citation_verbatim&quot;: &quot;Maloupe v The District Magistrate of Grand Port [2000] SCJ 233&quot;,
+      &quot;name&quot;: &quot;Maloupe v The District Magistrate of Grand Port&quot;,
+      &quot;cited_for&quot;: &quot;Cited for the proposition that bail should normally be granted if conditions can reduce identified risks to negligible levels, and must be refused when conditions cannot achieve this.&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 93,
+      &quot;evidence_span&quot;: &quot;this Court has an inherent duty to assess whether conditions can be imposed to adequately curb the risks identified, so as to render such risks negligible as expounded in the case of Maloupe (Supra).&quot;,
+      &quot;evidence_lines&quot;: {
+        &quot;start_line&quot;: 156,
+        &quot;end_line&quot;: 159
+      }
+    },
+    {
+      &quot;citation&quot;: &quot;2005 SCJ 215&quot;,
+      &quot;citation_verbatim&quot;: &quot;Deelchand v The Director of Public Prosecutions and Others (2005) SCJ 215&quot;,
+      &quot;name&quot;: &quot;Deelchand v The Director of Public Prosecutions and Others&quot;,
+      &quot;cited_for&quot;: &quot;Cited for the propositions that the expected sentence upon conviction and the lucrativeness of an offence are relevant considerations in assessing risk of reoffending and the temptation for an applicant to offend whilst on bail.&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 104,
+      &quot;evidence_span&quot;: &quot;considering the value of drugs involved in the present case, the nature of the evidence against the Applicant, and drug dealing being a lucrative business, I find that there is indeed a high risk that the Applicant might indulge anew in such transactions&quot;,
+      &quot;evidence_lines&quot;: {
+        &quot;start_line&quot;: 120,
+        &quot;end_line&quot;: 126
+      }
+    },
+    {
+      &quot;citation&quot;: null,
+      &quot;citation_verbatim&quot;: &quot;Labonne v The D.P.P (supra, at para 2.2.)&quot;,
+      &quot;name&quot;: &quot;Labonne v The D.P.P&quot;,
+      &quot;cited_for&quot;: &quot;Cited for the proposition regarding the reconciliation of the need to respect the liberty of citizens with the need to protect society and the administration of justice.&quot;,
+      &quot;treatment&quot;: &quot;referred to&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;nested&quot;,
+      &quot;line&quot;: 109,
+      &quot;evidence_span&quot;: null
+    },
+    {
+      &quot;citation&quot;: &quot;2006 SCJ 282&quot;,
+      &quot;citation_verbatim&quot;: &quot;Islam v The Senior District Magistrate Grand Port District Court [2006] SCJ 282&quot;,
+      &quot;name&quot;: &quot;Islam v The Senior District Magistrate Grand Port District Court&quot;,
+      &quot;cited_for&quot;: &quot;Cited for the proposition that pre-trial bail is not a form of punishment but a form of partial and temporary restriction of liberty aimed at disabling antisocial behavior.&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 115,
+      &quot;evidence_span&quot;: &quot;Pre-trial bail is not a form of punishment to any individual. It is a form of partial and temporary restriction of his liberty with a view to disabling him against antisocial behavior.&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1993 MR 9&quot;,
+      &quot;citation_verbatim&quot;: &quot;Hossen v District Magistrate of Port Louis [1993] MR 9&quot;,
+      &quot;name&quot;: &quot;Hossen v District Magistrate of Port Louis&quot;,
+      &quot;cited_for&quot;: &quot;Cited for the proposition that courts have a duty and responsibility to protect the public against persons involved in activities that facilitate or encourage the drug trade.&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 146,
+      &quot;evidence_span&quot;: &quot;the Courts have the duty and the responsibility to protect the public against every person who is involved in any activity that is likely to facilitate or encourage the drug trade&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2005 SCJ 249&quot;,
+      &quot;citation_verbatim&quot;: &quot;Rangasamy M.N. v The D.P.P &amp; Anor 2005 SCJ 249&quot;,
+      &quot;name&quot;: &quot;Rangasamy M.N. v The D.P.P &amp; Anor&quot;,
+      &quot;cited_for&quot;: &quot;Cited for the proposition that judicial officers in Mauritius who have first-hand knowledge of local conditions regarding law and order should have a margin of appreciation in exercising discretion regarding bail.&quot;,
+      &quot;treatment&quot;: &quot;considered&quot;,
+      &quot;signal&quot;: &quot;neutral&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 163,
+      &quot;evidence_span&quot;: &quot;judicial officers in Mauritius who have first-hand knowledge of the prevailing local conditions regarding law and order and organized crime should have a margin of appreciation in exercising their discretion&quot;
+    }
+  ],
+  &quot;legislation&quot;: [
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Bail Act 1999&quot;,
+      &quot;sections&quot;: [&quot;s. 3&quot;, &quot;s. 4&quot;, &quot;s. 4(1)&quot;, &quot;s. 4(1)(a)&quot;, &quot;s. 4(1)(a)(ii)&quot;, &quot;s. 4(2)&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 47
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Dangerous Drugs Act&quot;,
+      &quot;sections&quot;: [&quot;s. 30(1)(d)(ii)&quot;, &quot;s. 47(5)(a)&quot;, &quot;s. 30(1)(f)(ii)&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 13
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Financial Intelligence and Anti Money Laundering Act&quot;,
+      &quot;sections&quot;: [&quot;s. 3(1)(b)&quot;, &quot;s. 6&quot;, &quot;s. 7&quot;, &quot;s. 8(1)(a)&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 16
+    }
+  ],
+  &quot;foreign_doctrine&quot;: [],
+  &quot;separate_judgments&quot;: null,
+  &quot;case_history_chain&quot;: null,
+  &quot;confidence&quot;: {
+    &quot;catchwords&quot;: &quot;high&quot;,
+    &quot;case_treatments&quot;: &quot;high&quot;,
+    &quot;headnote&quot;: &quot;high&quot;,
+    &quot;legislation&quot;: &quot;high&quot;,
+    &quot;court&quot;: &quot;high&quot;
+  },
+  &quot;notes&quot;: [
+    &quot;The judgment references documentary exhibits (Docs A and X) establishing prior offences and current bail status, but these documents are not reproduced in the judgment text.&quot;,
+    &quot;The applicant&#x27;s criminal history is described as being &#x27;borne on record for six drug related offences&#x27; with one prior conviction for drug dealing; this is a record count of borne offences rather than a count of convictions.&quot;
+  ],
+  &quot;needs_human_review&quot;: false,
+  &quot;extractor_version&quot;: &quot;extractor.v2.1&quot;,
+  &quot;schema_version&quot;: &quot;v2&quot;
+}
+```
+</pre></div>
+  <footer class="site-footer">slug: <code>2020_BRC_539_v2_1</code></footer>
+</div>
+<script>
+(function () {
+  var validTabs = ['original', 'rendered', 'raw'];
+  function tabFromHash() {
+    var h = (location.hash || '').replace('#', '');
+    return validTabs.indexOf(h) !== -1 ? h : validTabs[0];
+  }
+  function showTab(name) {
+    validTabs.forEach(function (t) {
+      var btn = document.getElementById('tab-btn-' + t);
+      var panel = document.getElementById('tab-panel-' + t);
+      var active = t === name;
+      if (btn) btn.classList.toggle('active', active);
+      if (panel) panel.classList.toggle('active', active);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    var name = btn.id.replace('tab-btn-', '');
+    if (validTabs.indexOf(name) === -1) return;
+    history.replaceState(null, '', '#' + name);
+    showTab(name);
+  });
+  window.addEventListener('hashchange', function () { showTab(tabFromHash()); });
+  showTab(tabFromHash());
+})();
+</script></body></html>

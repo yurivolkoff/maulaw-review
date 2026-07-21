@@ -1,0 +1,353 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>J P Colfir v Police · 2024 BRC 819 · review</title><style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+    --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+    --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171a; --fg: #e6e6e6; --muted: #9a9a9a; --border: #33383d;
+  --code-bg: #1f2327; --link: #7aa2ff; --accent: #7aa2ff;
+  --header-bg: #1b1e21; --warn-bg: #3a2f0a; --warn-fg: #e0c46a;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #6b6b6b; --border: #d8d8d8;
+  --code-bg: #f2f2f2; --link: #1a56db; --accent: #1a56db;
+  --header-bg: #f7f7f8; --warn-bg: #fff8e1; --warn-fg: #7a5b00;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+a { color: var(--link); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 1.25rem 1.5rem 3rem; }
+header.site-header { background: var(--header-bg); border-bottom: 1px solid var(--border); }
+header.site-header .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+h1 { font-size: 1.4rem; margin: 0 0 .5rem; }
+.lede { color: var(--muted); max-width: 70ch; line-height: 1.5; margin: 0; }
+.disclaimer { margin-top: .75rem; padding: .6rem .9rem; background: var(--warn-bg); color: var(--warn-fg);
+  border-radius: 6px; font-size: .85rem; max-width: 70ch; line-height: 1.4; }
+table.cases { border-collapse: collapse; width: 100%; margin-top: 1.5rem; font-size: .9rem; }
+table.cases th, table.cases td { border-top: 1px solid var(--border); padding: .55rem .6rem; text-align: left; vertical-align: top; }
+table.cases thead th { border-top: none; border-bottom: 2px solid var(--border); color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .02em; }
+table.cases tbody tr:hover { background: var(--code-bg); }
+code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .9em; }
+.muted { color: var(--muted); }
+.back-link { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
+.case-meta { display: flex; flex-wrap: wrap; gap: .4rem .9rem; font-size: .85rem; color: var(--muted); margin: .4rem 0 1rem; }
+.case-meta span strong { color: var(--fg); font-weight: 600; }
+.tabs { display: flex; gap: .25rem; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+.tab-btn { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; color: var(--muted);
+  padding: .55rem .9rem; font-size: .9rem; cursor: pointer; font-family: inherit; }
+.tab-btn:hover { color: var(--fg); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.tab-panel iframe { width: 100%; height: 82vh; border: 1px solid var(--border); border-radius: 6px; }
+pre.raw-json { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
+  overflow: auto; max-height: 82vh; font-family: Consolas, "Courier New", monospace; font-size: .8rem; line-height: 1.45; white-space: pre-wrap; word-break: break-word; }
+.pane-original { border: 1px solid var(--border); border-radius: 6px; max-height: 82vh; overflow: auto; }
+.pane-original .pane-header { position: sticky; top: 0; background: var(--code-bg); border-bottom: 1px solid var(--border);
+  padding: .5rem .75rem; font-size: .8rem; color: var(--muted); }
+.pane-original pre.lines { margin: 0; padding: .25rem 0 1.5rem; font-family: Consolas, "Courier New", monospace; font-size: .82rem; line-height: 1.5; }
+.pane-original .line { display: block; white-space: pre; padding: 0 .75rem; }
+.pane-original .line:hover { background: rgba(127,127,127,.08); }
+.pane-original .line.hl { background: #fff3a3; }
+.pane-original .ln { display: inline-block; width: 3.4em; color: var(--muted); user-select: none; text-align: right; margin-right: .75em; }
+footer.site-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+</style></head><body>
+<header class="site-header"><div class="wrap">
+  <a class="back-link" href="../../index.html">&larr; All cases</a>
+  <h1>J P Colfir v Police</h1>
+  <p class="lede"><code>2024 BRC 819</code></p>
+  <div class="case-meta"><span><strong>Digested:</strong> 2026-07-21</span><span><strong>Model:</strong> claude-haiku-4-5-20251001</span><span><strong>Prompt:</strong> extractor.v2.1</span><span><strong>Schema:</strong> v2</span></div>
+</div></header>
+<div class="wrap">
+  <div class="tabs">
+    <button class="tab-btn" id="tab-btn-original">Original judgment</button>
+    <button class="tab-btn" id="tab-btn-rendered">Digested judgment (rendered)</button>
+    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button>
+  </div>
+  <div class="tab-panel" id="tab-panel-original"><div class="pane-original" id="judgment-pane"><div class="pane-header">Judgment text &middot; 68 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">J P Colfir v Police</span></span>
+<span class="line" id="L2"><span class="ln">2</span><span class="txt">2024 BRC 819</span></span>
+<span class="line" id="L3"><span class="ln">3</span><span class="txt">IN THE BAIL AND REMAND COURT</span></span>
+<span class="line" id="L4"><span class="ln">4</span><span class="txt">BRC CN: -/-</span></span>
+<span class="line" id="L5"><span class="ln">5</span><span class="txt">Original District Court (BR) CN: 173//24</span></span>
+<span class="line" id="L6"><span class="ln">6</span><span class="txt">In the matter of:-</span></span>
+<span class="line" id="L7"><span class="ln">7</span><span class="txt">Primedor Julian Colfir</span></span>
+<span class="line" id="L8"><span class="ln">8</span><span class="txt">Applicant</span></span>
+<span class="line" id="L9"><span class="ln">9</span><span class="txt">v.</span></span>
+<span class="line" id="L10"><span class="ln">10</span><span class="txt">Police</span></span>
+<span class="line" id="L11"><span class="ln">11</span><span class="txt">Respondent</span></span>
+<span class="line" id="L12"><span class="ln">12</span><span class="txt">RULING</span></span>
+<span class="line" id="L13"><span class="ln">13</span><span class="txt">Applicant stands provisionally charged with the offence of sequestration in breach of section 258(1) of</span></span>
+<span class="line" id="L14"><span class="ln">14</span><span class="txt">the Criminal Code.</span></span>
+<span class="line" id="L15"><span class="ln">15</span><span class="txt">Applicant applied for bail. He was not assisted by Counsel. Respondent objected to the bail application on</span></span>
+<span class="line" id="L16"><span class="ln">16</span><span class="txt">the ground that Applicant may reoffend.</span></span>
+<span class="line" id="L17"><span class="ln">17</span><span class="txt">Section 4(1)(a)(ii) of the Bail Act 1999 (Act 32/1999) [“the Bail Act”] provides that a Court may refuse</span></span>
+<span class="line" id="L18"><span class="ln">18</span><span class="txt">to release a defendant or a detainee on bail where it is satisfied that there is reasonable ground for</span></span>
+<span class="line" id="L19"><span class="ln">19</span><span class="txt">believing that the defendant or detainee, if released, is likely to commit an offence, other than an offence</span></span>
+<span class="line" id="L20"><span class="ln">20</span><span class="txt">punishable only by a fine.</span></span>
+<span class="line" id="L21"><span class="ln">21</span><span class="txt">The Supreme Court in Deelchand v The Director of Public Prosecutions and others [2005 SCJ 215]</span></span>
+<span class="line" id="L22"><span class="ln">22</span><span class="txt">underlined that the risk of offending must be a real one and there must be adequate reasons to explain its</span></span>
+<span class="line" id="L23"><span class="ln">23</span><span class="txt">existence. The Supreme Court also cited with approval the case of Clooth v Belgium [1991] ECHR 71</span></span>
+<span class="line" id="L24"><span class="ln">24</span><span class="txt">(12 December 1991) where it was said that the danger of a serious offence being committed by an</span></span>
+<span class="line" id="L25"><span class="ln">25</span><span class="txt">applicant whilst on bail should be a plausible one.</span></span>
+<span class="line" id="L26"><span class="ln">26</span><span class="txt">In the case at hand, it transpires from the testimony of the enquiry officer, Sergeant Toolsee, that</span></span>
+<span class="line" id="L27"><span class="ln">27</span><span class="txt">Applicant confessed having committed the offence. As such, the nature of the evidence against him is</span></span>
+<span class="line" id="L28"><span class="ln">28</span><span class="txt">strong.</span></span>
+<span class="line" id="L29"><span class="ln">29</span><span class="txt">Original District Court (BR) CN: 173/24 – p.1</span></span>
+<span class="line" id="L30"><span class="ln">30</span><span class="txt"></span></span>
+<span class="line" id="L31"><span class="ln">31</span><span class="txt">In addition, a PF 15 and a certificate from the Mauritius Police Force were produced to show that</span></span>
+<span class="line" id="L32"><span class="ln">32</span><span class="txt">Applicant is borne on record. Same were marked as Doc X and Doc PPU. It appears from the</span></span>
+<span class="line" id="L33"><span class="ln">33</span><span class="txt">documentary evidence that Applicant was sentence to imprisonment almost every year between 2014 and</span></span>
+<span class="line" id="L34"><span class="ln">34</span><span class="txt">2023, and despite being on bail, he is again provisionally charged with another offence. Hence, the risk of</span></span>
+<span class="line" id="L35"><span class="ln">35</span><span class="txt">offending is plausible.</span></span>
+<span class="line" id="L36"><span class="ln">36</span><span class="txt">The rationale of the law of bail at pre-trial stage is explained in Maloupe v District Magistrate of Grand</span></span>
+<span class="line" id="L37"><span class="ln">37</span><span class="txt">Port i.p.o. Director of Public Prosecutions [2000 SCJ 223]. The Supreme Court observed that a person</span></span>
+<span class="line" id="L38"><span class="ln">38</span><span class="txt">should normally be released on bail if the imposition of the conditions reduces the risk of absconding, risk</span></span>
+<span class="line" id="L39"><span class="ln">39</span><span class="txt">to the administration of justice, risk to society to such an extent that they become negligible having regard</span></span>
+<span class="line" id="L40"><span class="ln">40</span><span class="txt">to the weight which the presumption of innocence should carry in the balance; and when the imposition of</span></span>
+<span class="line" id="L41"><span class="ln">41</span><span class="txt">the conditions is considered to be unlikely to make any of the risks negligible, then bail is to be refused.</span></span>
+<span class="line" id="L42"><span class="ln">42</span><span class="txt">Here, it is apposite to note from the Doc X and Doc PPU that Applicant has a propensity to commit</span></span>
+<span class="line" id="L43"><span class="ln">43</span><span class="txt">offences which are not punishable by fine only. At this stage, the Court cannot entertain the bail</span></span>
+<span class="line" id="L44"><span class="ln">44</span><span class="txt">application because the imposition of conditions is unlikely to make the risk of offending negligible</span></span>
+<span class="line" id="L45"><span class="ln">45</span><span class="txt">having regard to the weight which the presumption of innocence would carry in the balance.</span></span>
+<span class="line" id="L46"><span class="ln">46</span><span class="txt">However, the Court notes that Applicant is held in custody since 04.02.2024, and there is no indication</span></span>
+<span class="line" id="L47"><span class="ln">47</span><span class="txt">when exactly the main case will be lodged.</span></span>
+<span class="line" id="L48"><span class="ln">48</span><span class="txt">In Hossen v District Magistrate of Port Louis [1993 MR 9], the Supreme Court observed that “one</span></span>
+<span class="line" id="L49"><span class="ln">49</span><span class="txt">should not, in these matters, lose sight of section 5(3) of the Constitution which lays down the overriding</span></span>
+<span class="line" id="L50"><span class="ln">50</span><span class="txt">principle: a suspect must, whatever the Bail Act says or does not say, be released unless he is brought to</span></span>
+<span class="line" id="L51"><span class="ln">51</span><span class="txt">trial within a reasonable time. (..)”.</span></span>
+<span class="line" id="L52"><span class="ln">52</span><span class="txt">Hence, in the eventuality that no main case is lodged against Applicant by 05.02.2025 without satisfactory</span></span>
+<span class="line" id="L53"><span class="ln">53</span><span class="txt">reasons, Applicant is to be released on bail subject to the fulfilment of the following conditions by him:</span></span>
+<span class="line" id="L54"><span class="ln">54</span><span class="txt">i. to provide a surety in the sum of Rs.20,000/- by bank cheque;</span></span>
+<span class="line" id="L55"><span class="ln">55</span><span class="txt">ii. to enter into a recognisance in the sum of Rs.100,000/-;</span></span>
+<span class="line" id="L56"><span class="ln">56</span><span class="txt">iii. to reside at a fixed place of residence indicated by him to the police;</span></span>
+<span class="line" id="L57"><span class="ln">57</span><span class="txt">iv. to remain at his place of residence daily from 8 pm to 7 am, by virtue of a curfew order hereby</span></span>
+<span class="line" id="L58"><span class="ln">58</span><span class="txt">imposed upon him, and in case of emergency situation, he shall inform the police of same before</span></span>
+<span class="line" id="L59"><span class="ln">59</span><span class="txt">leaving his place of residence during the said curfew hours; and</span></span>
+<span class="line" id="L60"><span class="ln">60</span><span class="txt">v. to report to the police station nearest his place of residence twice daily, 7 days a week, once</span></span>
+<span class="line" id="L61"><span class="ln">61</span><span class="txt">between 7 am and 10 am and once between 4 pm and 7 pm.</span></span>
+<span class="line" id="L62"><span class="ln">62</span><span class="txt">The matter is, therefore, fixed Pro-Forma for 05.02.2025.</span></span>
+<span class="line" id="L63"><span class="ln">63</span><span class="txt">Z Cassamally (Dr)</span></span>
+<span class="line" id="L64"><span class="ln">64</span><span class="txt">District Magistrate</span></span>
+<span class="line" id="L65"><span class="ln">65</span><span class="txt">Original District Court (BR) CN: 173/24 – p.2</span></span>
+<span class="line" id="L66"><span class="ln">66</span><span class="txt"></span></span>
+<span class="line" id="L67"><span class="ln">67</span><span class="txt">16.12.2024</span></span>
+<span class="line" id="L68"><span class="ln">68</span><span class="txt">Original District Court (BR) CN: 173/24 – p.3</span></span>
+</pre></div></div>
+  <div class="tab-panel" id="tab-panel-rendered"><iframe src="digest.html" title="Rendered digest"></iframe></div>
+  <div class="tab-panel" id="tab-panel-raw"><pre class="raw-json">```json
+{
+  &quot;case_name&quot;: &quot;J P Colfir v Police&quot;,
+  &quot;citation&quot;: &quot;2024 BRC 819&quot;,
+  &quot;citation_verbatim&quot;: &quot;2024 BRC 819&quot;,
+  &quot;record_number&quot;: &quot;173//24&quot;,
+  &quot;alt_citations&quot;: [],
+  &quot;court&quot;: &quot;Bail and Remand Court&quot;,
+  &quot;court_division&quot;: null,
+  &quot;bench&quot;: &quot;single judge&quot;,
+  &quot;jurisdiction&quot;: &quot;Mauritius&quot;,
+  &quot;date&quot;: &quot;2024-12-16&quot;,
+  &quot;judgment_by&quot;: &quot;Z Cassamally (Dr)&quot;,
+  &quot;procedural_posture&quot;: &quot;bail application&quot;,
+  &quot;citation_code&quot;: &quot;BRC&quot;,
+  &quot;judges&quot;: [
+    {
+      &quot;name&quot;: &quot;Z Cassamally (Dr)&quot;,
+      &quot;role&quot;: &quot;District Magistrate&quot;,
+      &quot;position&quot;: &quot;lead&quot;,
+      &quot;disposition_agreement&quot;: &quot;full&quot;
+    }
+  ],
+  &quot;parties&quot;: {
+    &quot;applicant&quot;: &quot;Primedor Julian Colfir&quot;,
+    &quot;respondent&quot;: &quot;Police&quot;
+  },
+  &quot;counsel&quot;: [],
+  &quot;catchwords&quot;: [
+    &quot;Code (Bail Act 1999) — Risk of reoffending — s. 4(1)(a)(ii) — Whether conditions can reduce risk to negligible level&quot;,
+    &quot;Constitution — s. 5(3) — Right to trial within reasonable time — Whether bail must be granted if main case not lodged within reasonable time&quot;
+  ],
+  &quot;structure&quot;: {
+    &quot;header_lines&quot;: [1, 11],
+    &quot;judgment_start_line&quot;: 12,
+    &quot;judgment_end_line&quot;: 67,
+    &quot;date_line&quot;: 67,
+    &quot;signatures_line&quot;: 63,
+    &quot;block_quotes&quot;: [
+      {
+        &quot;start_line&quot;: 38,
+        &quot;end_line&quot;: 41,
+        &quot;language&quot;: &quot;en&quot;
+      },
+      {
+        &quot;start_line&quot;: 48,
+        &quot;end_line&quot;: 50,
+        &quot;language&quot;: &quot;en&quot;
+      }
+    ]
+  },
+  &quot;headnote&quot;: {
+    &quot;facts&quot;: &quot;The applicant, Primedor Julian Colfir, was provisionally charged with sequestration contrary to section 258(1) of the Criminal Code and applied for bail without legal representation. The police opposed bail on the ground that the applicant may reoffend. Documentary evidence showed the applicant was sentenced to imprisonment almost annually between 2014 and 2023, and despite having been on bail previously, he was again charged with another offence. The applicant has been in custody since 4 February 2024.&quot;,
+    &quot;held&quot;: [
+      {
+        &quot;proposition&quot;: &quot;Where conditions cannot reduce the risk of reoffending to negligible levels given an applicant&#x27;s propensity for offences not punishable by fine only, bail must be refused.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 42,
+            &quot;end_line&quot;: 45
+          }
+        ],
+        &quot;quote&quot;: &quot;the imposition of conditions is unlikely to make the risk of offending negligible having regard to the weight which the presumption of innocence would carry in the balance&quot;
+      },
+      {
+        &quot;proposition&quot;: &quot;Pursuant to section 5(3) of the Constitution, a suspect must be released on bail unless brought to trial within a reasonable time, and this requirement overrides statutory grounds for refusing bail under the Bail Act.&quot;,
+        &quot;pinpoints&quot;: [
+          {
+            &quot;start_line&quot;: 50,
+            &quot;end_line&quot;: 50
+          }
+        ],
+        &quot;quote&quot;: &quot;a suspect must, whatever the Bail Act says or does not say, be released unless he is brought to trial within a reasonable time&quot;
+      }
+    ],
+    &quot;disposition&quot;: &quot;Bail application refused at this stage; however, if no main case is lodged by 5 February 2025, applicant is to be released on bail subject to: surety of Rs. 20,000, recognisance of Rs. 100,000, fixed residence, curfew from 8 pm to 7 am daily, and twice-daily reporting to police.&quot;,
+    &quot;orders&quot;: [
+      &quot;Matter fixed pro-forma for 5 February 2025&quot;
+    ]
+  },
+  &quot;points_of_law&quot;: [],
+  &quot;cases_cited&quot;: [
+    {
+      &quot;citation&quot;: &quot;2005 SCJ 215&quot;,
+      &quot;citation_verbatim&quot;: &quot;Deelchand v The Director of Public Prosecutors and others [2005 SCJ 215]&quot;,
+      &quot;name&quot;: &quot;Deelchand v The Director of Public Prosecutors and others&quot;,
+      &quot;cited_for&quot;: &quot;The risk of offending must be a real one with adequate reasons explaining its existence.&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 21,
+      &quot;evidence_span&quot;: &quot;the risk of offending must be a real one and there must be adequate reasons to explain its existence&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;[1991] ECHR 71&quot;,
+      &quot;citation_verbatim&quot;: &quot;Clooth v Belgium [1991] ECHR 71 (12 December 1991)&quot;,
+      &quot;name&quot;: &quot;Clooth v Belgium&quot;,
+      &quot;cited_for&quot;: &quot;The danger of a serious offence being committed by an applicant whilst on bail should be a plausible one.&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 23,
+      &quot;evidence_span&quot;: &quot;the danger of a serious offence being committed by an applicant whilst on bail should be a plausible one&quot;,
+      &quot;jurisdiction&quot;: &quot;uk&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;2000 SCJ 223&quot;,
+      &quot;citation_verbatim&quot;: &quot;Maloupe v District Magistrate of Grand Port i.p.o. Director of Public Prosecutions [2000 SCJ 223]&quot;,
+      &quot;name&quot;: &quot;Maloupe v District Magistrate of Grand Port i.p.o. Director of Public Prosecutions&quot;,
+      &quot;cited_for&quot;: &quot;At the pre-trial stage, bail should normally be granted if bail conditions reduce risks of absconding, injustice and danger to society to negligible levels; if conditions cannot render risks negligible, bail is to be refused.&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 36,
+      &quot;evidence_span&quot;: &quot;a person should normally be released on bail if the imposition of the conditions reduces the risk of absconding, risk to the administration of justice, risk to society to such an extent that they become negligible having regard to the weight which the presumption of innocence should carry in the balance; and when the imposition of the conditions is considered to be unlikely to make any of the risks negligible, then bail is to be refused&quot;
+    },
+    {
+      &quot;citation&quot;: &quot;1993 MR 9&quot;,
+      &quot;citation_verbatim&quot;: &quot;Hossen v District Magistrate of Port Louis [1993 MR 9]&quot;,
+      &quot;name&quot;: &quot;Hossen v District Magistrate of Port Louis&quot;,
+      &quot;cited_for&quot;: &quot;Pursuant to section 5(3) of the Constitution, a suspect must be released on bail unless brought to trial within a reasonable time, notwithstanding grounds for refusing bail under the Bail Act.&quot;,
+      &quot;treatment&quot;: &quot;applied&quot;,
+      &quot;signal&quot;: &quot;positive&quot;,
+      &quot;review_worthy&quot;: false,
+      &quot;provenance&quot;: &quot;court_reasoning&quot;,
+      &quot;line&quot;: 48,
+      &quot;evidence_span&quot;: &quot;a suspect must, whatever the Bail Act says or does not say, be released unless he is brought to trial within a reasonable time&quot;,
+      &quot;evidence_lines&quot;: {
+        &quot;start_line&quot;: 50,
+        &quot;end_line&quot;: 50
+      }
+    }
+  ],
+  &quot;legislation&quot;: [
+    {
+      &quot;kind&quot;: &quot;code&quot;,
+      &quot;name&quot;: &quot;Criminal Code&quot;,
+      &quot;sections&quot;: [&quot;section 258(1)&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 13
+    },
+    {
+      &quot;kind&quot;: &quot;statute&quot;,
+      &quot;name&quot;: &quot;Bail Act 1999&quot;,
+      &quot;sections&quot;: [&quot;Section 4(1)(a)(ii)&quot;, &quot;section 4&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 17
+    },
+    {
+      &quot;kind&quot;: &quot;constitution&quot;,
+      &quot;name&quot;: &quot;Constitution of Mauritius&quot;,
+      &quot;sections&quot;: [&quot;section 5(3)&quot;],
+      &quot;jurisdiction&quot;: &quot;mu&quot;,
+      &quot;line&quot;: 49
+    }
+  ],
+  &quot;foreign_doctrine&quot;: [],
+  &quot;separate_judgments&quot;: null,
+  &quot;case_history_chain&quot;: null,
+  &quot;confidence&quot;: {
+    &quot;headnote&quot;: &quot;high&quot;,
+    &quot;cases_cited&quot;: &quot;high&quot;,
+    &quot;legislation&quot;: &quot;high&quot;,
+    &quot;catchwords&quot;: &quot;high&quot;
+  },
+  &quot;notes&quot;: [
+    &quot;Record number shows double slash &#x27;173//24&#x27; which may indicate OCR error; appears as printed in source.&quot;,
+    &quot;Case name in Deelchand citation shows &#x27;Prosecutors&#x27; (plural) rather than typical &#x27;Prosecutions&#x27; (singular); preserved as printed.&quot;
+  ],
+  &quot;needs_human_review&quot;: false,
+  &quot;extractor_version&quot;: &quot;extractor.v2.1&quot;,
+  &quot;schema_version&quot;: &quot;v2&quot;
+}
+```
+</pre></div>
+  <footer class="site-footer">slug: <code>2024_BRC_819_v2_1</code></footer>
+</div>
+<script>
+(function () {
+  var validTabs = ['original', 'rendered', 'raw'];
+  function tabFromHash() {
+    var h = (location.hash || '').replace('#', '');
+    return validTabs.indexOf(h) !== -1 ? h : validTabs[0];
+  }
+  function showTab(name) {
+    validTabs.forEach(function (t) {
+      var btn = document.getElementById('tab-btn-' + t);
+      var panel = document.getElementById('tab-panel-' + t);
+      var active = t === name;
+      if (btn) btn.classList.toggle('active', active);
+      if (panel) panel.classList.toggle('active', active);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    var name = btn.id.replace('tab-btn-', '');
+    if (validTabs.indexOf(name) === -1) return;
+    history.replaceState(null, '', '#' + name);
+    showTab(name);
+  });
+  window.addEventListener('hashchange', function () { showTab(tabFromHash()); });
+  showTab(tabFromHash());
+})();
+</script></body></html>
