@@ -237,7 +237,9 @@
     "model": "claude-haiku-4-5-20251001",
     "prompt_version": "extractor.v2.1",
     "schema_version": "v2",
-    "digested_date": "2026-07-21"
+    "digested_date": "2026-07-21",
+    "opus_review": "m3/runs/2026-07-21-opus-pilot/opus/opus-1953_MR_15.md",
+    "opus_diff": "m3/runs/2026-07-21-opus-pilot/regen/opus-diff-1953_MR_15.md"
   },
   {
     "slug": "2021_SCJ_17_v2_1",
@@ -285,6 +287,136 @@
     "model": "claude-haiku-4-5-20251001",
     "prompt_version": "extractor.v2.1",
     "schema_version": "v2",
-    "digested_date": "2026-07-21"
+    "digested_date": "2026-07-21",
+    "opus_review": "m3/runs/2026-07-21-opus-pilot/opus/opus-2021_SCJ_211.md",
+    "opus_diff": "m3/runs/2026-07-21-opus-pilot/regen/opus-diff-2021_SCJ_211.md"
+  },
+  {
+    "slug": "1953_MR_15_v2_2",
+    "title": "THE QUEEN V. L. G. L'ETENDRY ALIAS LETENDRIE (v2.2)",
+    "citation": "1953 MR 15",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-1953_MR_15.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-1953_MR_15.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-1953_MR_15.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23",
+    "opus_review": "m3/runs/2026-07-23-v22/opus/opus-1953_MR_15.md",
+    "opus_diff": "m3/runs/2026-07-23-v22/opus/opus-diff-1953_MR_15.md"
+  },
+  {
+    "slug": "1983_SCJ_30_v2_2",
+    "title": "M.J.F. LAZARRE vs M.S. MASSON And M. S. MASSON vs Others",
+    "citation": "1983 SCJ 30",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-1983_SCJ_30.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-1983_SCJ_30.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-1983_SCJ_30.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23"
+  },
+  {
+    "slug": "2007_SCJ_140_v2_2",
+    "title": "HURNAM D. v STATE & ORS",
+    "citation": "2007 SCJ 140",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-2007_SCJ_140.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-2007_SCJ_140.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-2007_SCJ_140.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23"
+  },
+  {
+    "slug": "2012_INT_36_v2_2",
+    "title": "Police v Agathe and anor",
+    "citation": "2012 INT 36",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-2012_INT_36.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-2012_INT_36.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-2012_INT_36.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23"
+  },
+  {
+    "slug": "2017_SCJ_376_v2_2",
+    "title": "Bhagwatparsad Caullychurn & Anor v Sohunlall Ramchurn & Anor",
+    "citation": "2017 SCJ 376",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-2017_SCJ_376.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-2017_SCJ_376.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-2017_SCJ_376.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23"
+  },
+  {
+    "slug": "2020_MRC_1_v2_2",
+    "title": "Y. L. T. Ah Hon v The State of Mauritius",
+    "citation": "2020 MRC 1",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-2020_MRC_1.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-2020_MRC_1.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-2020_MRC_1.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23"
+  },
+  {
+    "slug": "2020_SCJ_229_v2_2",
+    "title": "LE PETIT MORNE LTÉE & ANOR v DHOLAH V & ORS",
+    "citation": "2020 SCJ 229",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-2020_SCJ_229.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-2020_SCJ_229.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-2020_SCJ_229.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23",
+    "opus_review": "m3/runs/2026-07-23-v22/opus/opus-2020_SCJ_229.md",
+    "opus_diff": "m3/runs/2026-07-23-v22/opus/opus-diff-2020_SCJ_229.md"
+  },
+  {
+    "slug": "2021_SCJ_17_v2_2",
+    "title": "Bavasaib S. v The Competition Commission & Ors (v2.2)",
+    "citation": "2021 SCJ 17",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-2021_SCJ_17.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-2021_SCJ_17.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-2021_SCJ_17.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23"
+  },
+  {
+    "slug": "2021_SCJ_211_v2_2",
+    "title": "HURKOO D. v. THE STATE OF MAURITIUS (v2.2)",
+    "citation": "2021 SCJ 211",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-2021_SCJ_211.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-2021_SCJ_211.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-2021_SCJ_211.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23",
+    "opus_review": "m3/runs/2026-07-23-v22/opus/opus-2021_SCJ_211.md",
+    "opus_diff": "m3/runs/2026-07-23-v22/opus/opus-diff-2021_SCJ_211.md"
+  },
+  {
+    "slug": "2024_BRC_819_v2_2",
+    "title": "J P Colfir v Police",
+    "citation": "2024 BRC 819",
+    "judgment_txt": "m3/runs/2026-07-23-v22/input-2024_BRC_819.txt",
+    "digest_raw": "m3/runs/2026-07-23-v22/out-2024_BRC_819.json",
+    "digest_clean": "m3/runs/2026-07-23-v22/out-2024_BRC_819.clean.json",
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "extractor.v2.2",
+    "schema_version": "v2.2",
+    "digested_date": "2026-07-23",
+    "opus_review": "m3/runs/2026-07-23-v22/opus/opus-2024_BRC_819.md",
+    "opus_diff": "m3/runs/2026-07-23-v22/opus/opus-diff-2024_BRC_819.md"
   }
 ]

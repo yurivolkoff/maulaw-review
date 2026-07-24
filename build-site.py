@@ -156,6 +156,45 @@ TABS_JS = """
 })();
 """
 
+# Optional per-case tabs (opus_review / opus_diff, see OPUS_TAB_SPECS below).
+# TABS_JS above is a shared constant hardcoding validTabs=['original',
+# 'rendered', 'raw'] and must not be edited (it also governs pages with no
+# opus tabs). Its tabFromHash/showTab closures aren't reachable from outside,
+# so a page that has extra tabs gets a second, independent copy of the same
+# switching logic parameterized over the full tab set for that page. Both
+# scripts bind their own click/hashchange listeners; this one is emitted
+# after TABS_JS, so it always runs last and is authoritative for the final
+# active/inactive state across ALL tabs (base three + whichever opus tabs
+# this case has). For a case with no opus tabs this template is never used.
+EXTRA_TABS_JS_TEMPLATE = """
+(function () {
+  var validTabs = __TABS_JSON__;
+  function tabFromHash() {
+    var h = (location.hash || '').replace('#', '');
+    return validTabs.indexOf(h) !== -1 ? h : validTabs[0];
+  }
+  function showTab(name) {
+    validTabs.forEach(function (t) {
+      var btn = document.getElementById('tab-btn-' + t);
+      var panel = document.getElementById('tab-panel-' + t);
+      var active = t === name;
+      if (btn) btn.classList.toggle('active', active);
+      if (panel) panel.classList.toggle('active', active);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    var name = btn.id.replace('tab-btn-', '');
+    if (validTabs.indexOf(name) === -1) return;
+    history.replaceState(null, '', '#' + name);
+    showTab(name);
+  });
+  window.addEventListener('hashchange', function () { showTab(tabFromHash()); });
+  showTab(tabFromHash());
+})();
+"""
+
 
 def page_shell(title: str, body: str, extra_css: str = "", extra_js: str = "") -> str:
     return (
@@ -229,6 +268,39 @@ def build_index(cases: list[dict]) -> str:
 # Case page
 # --------------------------------------------------------------------------
 
+# Optional per-case reviewer artifacts, not part of the pipeline's required
+# fields. Absent for a case -> no extra tab for it, output unchanged.
+OPUS_TAB_SPECS = (
+    ("opus_review", "Opus review"),
+    ("opus_diff", "Opus diff"),
+)
+
+
+def build_opus_tabs(case: dict, slug: str) -> tuple[str, str, list[str]]:
+    """Additive, optional tab buttons/panels for OPUS_TAB_SPECS keys present
+    on this case. Content is rendered as an escaped <pre> pane reusing the
+    existing .raw-json style (same pattern as the "raw digest" tab) rather
+    than a markdown->HTML converter: it needs no new CSS, has no parsing
+    edge cases to get wrong, and matches the codebase's existing minimalism.
+    Returns (buttons_html, panels_html, tab_keys) -- all empty/[] when the
+    case has neither key, so callers can splice the results in unconditionally
+    and still get byte-identical output for untouched cases."""
+    buttons = []
+    panels = []
+    keys = []
+    for key, label in OPUS_TAB_SPECS:
+        if key not in case:
+            continue
+        p = resolve(case[key])
+        if not p.is_file():
+            sys.exit(f"ERROR: case '{slug}': {key} not found: {p}")
+        text = p.read_text(encoding="utf-8")
+        buttons.append(f'<button class="tab-btn" id="tab-btn-{key}">{esc(label)}</button>')
+        panels.append(f'<div class="tab-panel" id="tab-panel-{key}"><pre class="raw-json">{esc(text)}</pre></div>')
+        keys.append(key)
+    return "".join(buttons), "".join(panels), keys
+
+
 def build_case(rd, case: dict, case_out_dir: Path) -> None:
     slug = case["slug"]
     judgment_path = resolve(case["judgment_txt"])
@@ -269,6 +341,17 @@ def build_case(rd, case: dict, case_out_dir: Path) -> None:
         "</div>"
     )
 
+    # Optional opus_review / opus_diff tabs. opus_buttons/opus_panels are ""
+    # and opus_keys is [] when the case has neither key, so splicing them
+    # into the templates below is a no-op and byte-identical to the old
+    # output for every existing case.
+    opus_buttons, opus_panels, opus_keys = build_opus_tabs(case, slug)
+
+    extra_js = TABS_JS
+    if opus_keys:
+        all_tabs = ["original", "rendered", "raw"] + opus_keys
+        extra_js = TABS_JS + EXTRA_TABS_JS_TEMPLATE.replace("__TABS_JSON__", json.dumps(all_tabs))
+
     body = f"""
 <header class="site-header"><div class="wrap">
   <a class="back-link" href="../../index.html">&larr; All cases</a>
@@ -280,15 +363,15 @@ def build_case(rd, case: dict, case_out_dir: Path) -> None:
   <div class="tabs">
     <button class="tab-btn" id="tab-btn-original">Original judgment</button>
     <button class="tab-btn" id="tab-btn-rendered">Digested judgment (rendered)</button>
-    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button>
+    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button>{opus_buttons}
   </div>
   <div class="tab-panel" id="tab-panel-original">{original_pane_html}</div>
   <div class="tab-panel" id="tab-panel-rendered"><iframe src="digest.html" title="Rendered digest"></iframe></div>
-  <div class="tab-panel" id="tab-panel-raw"><pre class="raw-json">{raw_escaped}</pre></div>
+  <div class="tab-panel" id="tab-panel-raw"><pre class="raw-json">{raw_escaped}</pre></div>{opus_panels}
   <footer class="site-footer">slug: <code>{esc(slug)}</code></footer>
 </div>
 """
-    page = page_shell(f"{case['title']} · {case['citation']} · review", body, extra_js=TABS_JS)
+    page = page_shell(f"{case['title']} · {case['citation']} · review", body, extra_js=extra_js)
     (case_out_dir / "index.html").write_text(page, encoding="utf-8")
 
 

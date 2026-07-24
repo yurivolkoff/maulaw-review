@@ -71,7 +71,7 @@ footer.site-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid 
   <div class="tabs">
     <button class="tab-btn" id="tab-btn-original">Original judgment</button>
     <button class="tab-btn" id="tab-btn-rendered">Digested judgment (rendered)</button>
-    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button>
+    <button class="tab-btn" id="tab-btn-raw">Original digest (raw)</button><button class="tab-btn" id="tab-btn-opus_review">Opus review</button><button class="tab-btn" id="tab-btn-opus_diff">Opus diff</button>
   </div>
   <div class="tab-panel" id="tab-panel-original"><div class="pane-original" id="judgment-pane"><div class="pane-header">Judgment text &middot; 126 lines</div><pre class="lines"><span class="line" id="L1"><span class="ln">1</span><span class="txt">HURKOO D. v. THE STATE OF MAURITIUS</span></span>
 <span class="line" id="L2"><span class="ln">2</span><span class="txt">2021 SCJ 211</span></span>
@@ -364,12 +364,142 @@ footer.site-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid 
   &quot;schema_version&quot;: &quot;v2&quot;
 }
 ```
+</pre></div><div class="tab-panel" id="tab-panel-opus_review"><pre class="raw-json">CASE
+Dhanesswar Hurkoo (Appellant) v. The State of Mauritius (Respondent). 2021 SCJ 211; Record No. 9448 – 3/64/20. Delivered 30 June 2021.
+
+COURT &amp; BENCH
+The Supreme Court of Mauritius, on appeal against sentence from a Magistrate. Before B. R. Mungly-Gulbul, Senior Puisne Judge, and R. Seetohul-Toolsee, Judge (two judges). Judgment delivered by the Hon. B. R. Mungly-Gulbul, SPJ. No separate or dissenting judgment.
+
+FACTS
+The appellant was prosecuted before a Magistrate for involuntary wounds and blows by imprudence, in breach of section 239(2) of the Criminal Code read with sections 52, 53 and 133(1)(2) of the Road Traffic Act, arising out of a road accident. Driving at about 40 km/h and slowing to turn right into a side road, his car collided with an autocycle coming from the opposite direction, which he said he had not noticed; the autocyclist was slightly injured. The appellant pleaded guilty, was unrepresented (inops consilii) at the hearing, and in his statement to the police had admitted liability and begged for excuse.
+
+At the sentencing stage the appellant admitted one previous conviction, which was for failing to comply with a traffic sign; he had no previous conviction for the offence charged. The Magistrate imposed a fine of Rs 10,000, disqualified him from holding a driving licence for all types of vehicle for three months, endorsed his licence, and ordered him to follow a rehabilitation course, recording only a brief note of the matters she had considered and giving no reason for the disqualification.
+
+The appellant appealed to the Supreme Court against the disqualification order alone, contending that the fine was sufficient and the disqualification unjustified. The respondent did not resist the appeal. The issue was whether the disqualification order — and the endorsement and rehabilitation orders consequential upon it — could stand.
+
+HELD
+1. On the appellant&#x27;s first conviction for the offence under section 133(1) of the Road Traffic Act, read with section 52 and the Second Schedule, disqualification from driving was permissible but not mandatory, so the power to disqualify fell to be exercised as a discretion (p. 2).
+2. The Magistrate having disqualified the appellant without recording any reason, in a case disclosing no aggravating factor and an imprudence — a failure to keep a proper look-out before turning right — not such as to warrant banning him from driving in the public interest, the discretion was not exercised judiciously and the disqualification order could not stand (pp. 3–4).
+3. Endorsement of the licence on a first offence under section 133 being mandatory, under the Second Schedule to the Road Traffic Act, only where the offender is disqualified, the endorsement order fell with the quashed disqualification order and was set aside (p. 5).
+4. The rehabilitation order, being consequential upon the disqualification order, could not stand once the disqualification was quashed and was set aside (p. 5).
+
+Appeal allowed; disqualification order quashed; endorsement and rehabilitation orders set aside; sentence otherwise maintained.
+
+POINTS OF LAW
+1. On a first conviction for an offence under section 133(1) of the Road Traffic Act, read with section 52 and the Second Schedule, disqualification from driving is permissible but not mandatory; the power to disqualify is a discretion.
+2. Where disqualification is permissible but not mandatory and the court exercises its discretion to disqualify, it must give reasons explaining why disqualification is considered necessary; a disqualification imposed without such reasons is not a judicious exercise of the discretion.
+3. The discretion to disqualify is to be exercised judiciously after weighing all the circumstances of the offence, its seriousness and any aggravating circumstances, and a disqualification order should be made only against an offender whose imprudence is such that he should, in the public interest, be banned from driving for a period.
+4. Under the Second Schedule to the Road Traffic Act, endorsement of a licence on a first offence under section 133 is mandatory only where the offender is disqualified; the endorsement, and a rehabilitation order following a disqualification, do not survive the quashing of the disqualification.
+
+CASES CITED
+Elaheebocus v The State [2013 SCJ 395] — applied (its test that a disqualification should be ordered only where the offender&#x27;s imprudence is such that he should, in the public interest, be banned from driving was adopted and applied to find the appellant&#x27;s imprudence insufficient): p. 3.
+Seetohul v The State [2010 SCJ 339] — followed (a materially similar first-conviction case in which the Supreme Court quashed a disqualification order; its statement that the permissive discretion must be exercised judiciously on all the circumstances was adopted and the same result reached): p. 4.
+
+LEGISLATION CITED
+Criminal Code, s. 239(2)
+Road Traffic Act, ss. 52, 53, 133(1)(2), 133(1), 133, and Second Schedule (also s. 123(c)(1)(a), cited in the account of Seetohul v The State)
+</pre></div><div class="tab-panel" id="tab-panel-opus_diff"><pre class="raw-json"># Opus-review diff — `opus-2021_SCJ_211.md` vs `out-2021_SCJ_211.clean.json`
+
+**Inputs:** opus=`m3\runs\2026-07-21-opus-pilot\opus\opus-2021_SCJ_211.md` · pipeline=`m3\runs\2026-07-21-v21\out-2021_SCJ_211.clean.json` · alignment=`m3\runs\2026-07-21-opus-pilot\opus\alignment-2021_SCJ_211.json`
+
+## Tally
+
+- Sections present: 7/7
+- HELD: opus 4 vs pipeline 3
+- POINTS OF LAW: opus 4 vs pipeline 0
+- CASES CITED: matched 2, opus-only 0, pipeline-only 0
+- LEGISLATION: matched 2, opus-only 0, pipeline-only 0
+
+## STRUCTURE
+
+- Seven-section presence: **7/7 present, no duplicates.**
+- HELD: opus 4 numbered proposition(s) + 1 disposal line(s)  vs  pipeline `headnote.held[]` = 3
+- POINTS OF LAW: opus 4  vs  pipeline `points_of_law[]` = 0
+
+- INFO — opus CASE: `Dhanesswar Hurkoo (Appellant) v. The State of Mauritius (Respondent). 2021 SCJ 211; Record No. 9448 – 3/64/20. Delivered 30 June 2021.`
+- INFO — pipeline case_name/citation: `HURKOO D. v. THE STATE OF MAURITIUS` / `2021 SCJ 211`
+
+## CITATIONS
+
+Matched: 2 · Opus-only: 0 · Pipeline-only: 0
+
+### Matched
+| Opus name (citation) | Pipeline name (citation) | Match basis |
+|---|---|---|
+| Elaheebocus v The State ([2013 SCJ 395]) | Elaheebocus v The State (2013 SCJ 395) | exact |
+| Seetohul v The State ([2010 SCJ 339]) | Seetohul v The State (2010 SCJ 339) | exact |
+
+### Opus-only (not found in pipeline cases_cited[])
+_(none)_
+
+### Pipeline-only (not found in opus CASES CITED)
+_(none)_
+
+## TREATMENT (matched cases only)
+
+| Authority | Opus verb (reason) | Mapped | Pipeline treatment | Pipeline signal | Derived signal | Agree? |
+|---|---|---|---|---|---|---|
+| Elaheebocus v The State | applied (its test that a disqualification should be ordered only where the offender&#x27;s imprudence is such that he should, in the public interest, be banned from driving was adopted and applied to find the appellant&#x27;s imprudence insufficient) | applied | applied | positive | positive | yes |
+| Seetohul v The State | followed (a materially similar first-conviction case in which the Supreme Court quashed a disqualification order; its statement that the permissive discretion must be exercised judiciously on all the circumstances was adopted and the same result reached) | applied | applied | positive | positive | yes |
+
+Signal agreement on scoreable (mapped) entries: 2/2.
+
+## LEGISLATION
+
+Matched: 2 · Opus-only: 0 · Pipeline-only: 0
+
+### Matched
+- Criminal Code, s. 239(2)  &lt;-&gt;  Criminal Code [&#x27;s. 239(2)&#x27;]
+- Road Traffic Act, ss. 52, 53, 133(1)(2), 133(1), 133, and Second Schedule (also s. 123(c)(1)(a), cited in the account of Seetohul v The State)  &lt;-&gt;  Road Traffic Act [&#x27;s. 52&#x27;, &#x27;s. 53&#x27;, &#x27;s. 133(1)(2)&#x27;, &#x27;Second Schedule&#x27;]
+
+### Opus-only
+_(none)_
+
+### Pipeline-only
+_(none)_
+
+## ALIGNMENT
+
+| opus_held_n | pipeline_held_id | verdict | note |
+|---|---|---|---|
+| 1 | 0 | matched | Both state disqualification for a first s.133(1) conviction is discretionary, not mandatory. |
+| 2 | 2 | matched | Same decisive substantive test: disqualification only warranted where imprudence is serious enough to justify a public-interest ban; here it wasn&#x27;t, so the order fell. |
+| 3 |  | opus_only | Endorsement-falls-with-disqualification holding; no PIPELINE proposition addresses licence endorsement. |
+| 4 |  | opus_only | Rehabilitation order consequential on disqualification; no PIPELINE counterpart. |
+|  | 1 | pipeline_only | General duty-to-give-reasons rule; OPUS mentions the missing reasons only as a fact within OPUS 2&#x27;s combined finding, not as its own numbered holding. |
 </pre></div>
   <footer class="site-footer">slug: <code>2021_SCJ_211_v2_1</code></footer>
 </div>
 <script>
 (function () {
   var validTabs = ['original', 'rendered', 'raw'];
+  function tabFromHash() {
+    var h = (location.hash || '').replace('#', '');
+    return validTabs.indexOf(h) !== -1 ? h : validTabs[0];
+  }
+  function showTab(name) {
+    validTabs.forEach(function (t) {
+      var btn = document.getElementById('tab-btn-' + t);
+      var panel = document.getElementById('tab-panel-' + t);
+      var active = t === name;
+      if (btn) btn.classList.toggle('active', active);
+      if (panel) panel.classList.toggle('active', active);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    var name = btn.id.replace('tab-btn-', '');
+    if (validTabs.indexOf(name) === -1) return;
+    history.replaceState(null, '', '#' + name);
+    showTab(name);
+  });
+  window.addEventListener('hashchange', function () { showTab(tabFromHash()); });
+  showTab(tabFromHash());
+})();
+
+(function () {
+  var validTabs = ["original", "rendered", "raw", "opus_review", "opus_diff"];
   function tabFromHash() {
     var h = (location.hash || '').replace('#', '');
     return validTabs.indexOf(h) !== -1 ? h : validTabs[0];
