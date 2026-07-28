@@ -103,6 +103,8 @@ table.cases thead th { border-top: none; border-bottom: 2px solid var(--border);
 table.cases tbody tr:hover { background: var(--code-bg); }
 code { background: var(--code-bg); padding: .05rem .3rem; border-radius: 3px; font-size: .9em; }
 .muted { color: var(--muted); }
+.badge-opus { display: inline-block; margin-left: .45rem; padding: .05rem .4rem; border: 1px solid var(--accent);
+  border-radius: 3px; color: var(--accent); font-size: .7rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
 .back-link { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
 .case-meta { display: flex; flex-wrap: wrap; gap: .4rem .9rem; font-size: .85rem; color: var(--muted); margin: .4rem 0 1rem; }
 .case-meta span strong { color: var(--fg); font-weight: 600; }
@@ -231,9 +233,13 @@ def render_original_pane(rd, lines) -> str:
 def build_index(cases: list[dict]) -> str:
     rows = []
     for c in cases:
+        # Same presence condition as build_opus_tabs (see OPUS_TAB_SPECS below):
+        # any opus key on the case means its page carries opus tabs, so mark it.
+        has_opus = any(key in c for key, _ in OPUS_TAB_SPECS)
+        opus_badge = ' <span class="badge-opus">OPUS diff</span>' if has_opus else ""
         rows.append(
             "<tr>"
-            f"<td><a href='cases/{esc(c['slug'])}/index.html'>{esc(c['title'])}</a></td>"
+            f"<td><a href='cases/{esc(c['slug'])}/index.html'>{esc(c['title'])}</a>{opus_badge}</td>"
             f"<td><code>{esc(c['citation'])}</code></td>"
             f"<td>{esc(c['digested_date'])}</td>"
             f"<td>{esc(c['model'])}</td>"
