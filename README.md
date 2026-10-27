@@ -24,12 +24,13 @@ Live at: `https://yurivolkoff.github.io/maulaw-review/`
 ## Adding a new case
 
 1. Run the extraction as usual:
-   ```powershell
-   .\m3\tools\run-case.ps1 -Case "...\txts\<case>.pdf.txt"
+   ```bash
+   python3 m3/tools/run-case.py --case ".../txts/<case>.pdf.txt"   # Mac/Linux, from the project root
+   # Windows: .\m3\tools\run-case.ps1 -Case "...\txts\<case>.pdf.txt"
    ```
    This now ends with a non-fatal "register-in-site" stage that
-   adds/updates the case's entry in `site\cases.json` automatically. If it
-   printed a warning instead (e.g. `site\` didn't exist yet), add the entry
+   adds/updates the case's entry in `cases.json` automatically. If it
+   printed a warning instead (e.g. the site folder wasn't found), add the entry
    to `cases.json` by hand — copy an existing entry and update `slug`,
    `title`, `citation`, the three paths, and the four metadata fields.
 2. Publish:
