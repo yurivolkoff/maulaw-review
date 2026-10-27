@@ -33,8 +33,8 @@ Live at: `https://yurivolkoff.github.io/maulaw-review/`
    to `cases.json` by hand — copy an existing entry and update `slug`,
    `title`, `citation`, the three paths, and the four metadata fields.
 2. Publish:
-   ```powershell
-   .\site\publish.ps1
+   ```bash
+   ./publish.sh          # Mac/Linux (publish.ps1 on Windows)
    ```
    This regenerates `docs/`, commits, and pushes. Pages rebuilds
    automatically within a minute or two of the push.
@@ -54,7 +54,7 @@ full re-extraction, edit the field directly in `cases.json`, then run
 | `slug` | Unique case ID, also the URL path segment (`cases/<slug>/`) |
 | `title` | Case name, from the digest's `case_name` |
 | `citation` | Citation(s) shown on the index and case page |
-| `judgment_txt` | Path to the source judgment `.txt`, relative to the project root (`C:\Claude\MauLaw`) or absolute |
+| `judgment_txt` | Path to the source judgment `.txt`, relative to a project root (see «Path roots» below) or absolute |
 | `digest_raw` | Path to the model's raw `out-<case>.json` (pre-fence-strip) |
 | `digest_clean` | Path to `out-<case>.clean.json` (what the renderer consumes) |
 | `model` | Extraction model ID |
@@ -62,20 +62,35 @@ full re-extraction, edit the field directly in `cases.json`, then run
 | `schema_version` | Output schema version (e.g. `v1`) |
 | `digested_date` | `YYYY-MM-DD` |
 
+## Path roots
+
+Relative manifest paths (`m3/runs/...`, `_temporary/...`) and the renderer
+`m3/tools/render-digest.py` are looked up in these roots, first match wins:
+the parent of this folder (legacy `<project>/site/` layout), its grandparent
+(`<project>/code/maulaw-review/`, the Mac layout), then the read-only Windows
+backup `~/Archive/win-claude-backup/MauLaw`. Override with `MAULAW_ROOTS`
+(`:`-separated). New runs written into the project shadow the backup.
+
+## Search engines
+
+Every page carries `noindex, nofollow`, and every case page a short
+«AI-generated research draft, not legal advice» notice with the corpus
+snapshot date: the site is public but meant for invited reviewers.
+
 ## Where things live
 
 - `site\cases.json` — manifest (hand-edited or auto-updated by run-case.ps1)
 - `site\build-site.py` — generator, do not need to touch for routine updates
-- `site\publish.ps1` — the only command you normally run
+- `publish.sh` / `publish.ps1` — the only command you normally run
 - `site\docs\` — generated output, committed, served by Pages
 - Do **not** edit files under `docs\` directly — they're overwritten on
   every `publish.ps1` run.
 
 ## Local preview before publishing
 
-```powershell
-python .\build-site.py
-# then open site\docs\index.html directly in a browser
+```bash
+python3 build-site.py
+open docs/index.html
 ```
 
 ## Repo / Pages setup (one-time, already done)

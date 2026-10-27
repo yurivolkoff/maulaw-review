@@ -19,17 +19,46 @@ Usage:
 import html
 import importlib.util
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
 
 SITE_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SITE_DIR.parent
 DOCS_DIR = SITE_DIR / "docs"
 CASES_JSON_PATH = SITE_DIR / "cases.json"
-RENDER_DIGEST_PATH = PROJECT_ROOT / "m3" / "tools" / "render-digest.py"
+
+# Roots that manifest paths (m3/runs/..., _temporary/...) and the renderer are
+# resolved against, first match wins. The site used to live in <project>/site/;
+# now it is <project>/code/maulaw-review/, and the pre-2026-10 runs and corpus
+# sample stay in the read-only Windows backup. MAULAW_ROOTS (os.pathsep-
+# separated) overrides the defaults.
+if os.environ.get("MAULAW_ROOTS"):
+    ROOTS = [Path(r).expanduser() for r in os.environ["MAULAW_ROOTS"].split(os.pathsep) if r]
+else:
+    ROOTS = [
+        SITE_DIR.parent,                                    # legacy <project>/site/
+        SITE_DIR.parent.parent,                             # <project>/code/maulaw-review/
+        Path.home() / "Archive" / "win-claude-backup" / "MauLaw",
+    ]
+
+
+def find_in_roots(rel: str) -> Path:
+    for root in ROOTS:
+        p = root / rel
+        if p.exists():
+            return p.resolve()
+    return (ROOTS[0] / rel).resolve()  # nonexistent: callers report it
+
+
+RENDER_DIGEST_PATH = find_in_roots("m3/tools/render-digest.py")
 
 REPO_NAME = "maulaw-review"  # used only in on-screen messages, not in links
+
+# The site is public (GitHub Pages) but meant for invited reviewers only:
+# keep every page, including the iframed digest.html, out of search engines.
+NOINDEX_META = "<meta name='robots' content='noindex, nofollow'>"
+CORPUS_FREEZE = "2025-03-24"  # S3 corpus snapshot date (knowledge/gaps.md)
 
 
 # --------------------------------------------------------------------------
@@ -56,7 +85,7 @@ def resolve(rel_or_abs: str) -> Path:
     p = Path(rel_or_abs)
     if p.is_absolute():
         return p
-    return (PROJECT_ROOT / rel_or_abs).resolve()
+    return find_in_roots(rel_or_abs)
 
 
 # --------------------------------------------------------------------------
@@ -202,6 +231,7 @@ def page_shell(title: str, body: str, extra_css: str = "", extra_js: str = "") -
     return (
         "<!doctype html><html><head><meta charset='utf-8'>"
         "<meta name='viewport' content='width=device-width, initial-scale=1'>"
+        f"{NOINDEX_META}"
         f"<title>{esc(title)}</title>"
         f"<style>{SITE_CSS}{extra_css}</style>"
         "</head><body>"
@@ -255,7 +285,7 @@ def build_index(cases: list[dict]) -> str:
   text, the rendered digest, and the model's raw output.</p>
   <div class="disclaimer"><strong>Not legal advice.</strong> These digests are AI-generated drafts for
   internal review and have not been verified by a legal practitioner. Do not rely on them as a substitute
-  for reading the original judgment or for professional legal advice.</div>
+  for reading the original judgment or for professional legal advice. Corpus snapshot as of {CORPUS_FREEZE}.</div>
 </div></header>
 <div class="wrap">
   <table class="cases">
@@ -325,7 +355,7 @@ def build_case(rd, case: dict, case_out_dir: Path) -> None:
 
     # Mode 2: reuse render-digest.py's full two-pane HTML page verbatim,
     # written alongside the case index.html and embedded via iframe.
-    digest_html = rd.render_html_page(j, lines, slug)
+    digest_html = rd.render_html_page(j, lines, slug).replace("<head>", "<head>" + NOINDEX_META, 1)
     (case_out_dir / "digest.html").write_text(digest_html, encoding="utf-8")
 
     # Mode 1: reuse render-digest.py's line-numbering (rd.read_lines) so the
@@ -364,6 +394,8 @@ def build_case(rd, case: dict, case_out_dir: Path) -> None:
   <h1>{esc(case['title'])}</h1>
   <p class="lede"><code>{esc(case['citation'])}</code></p>
   {meta}
+  <div class="disclaimer"><strong>AI-generated research draft, not legal advice.</strong> Unverified by a
+  legal practitioner; read the original judgment. Corpus snapshot as of {CORPUS_FREEZE}.</div>
 </div></header>
 <div class="wrap">
   <div class="tabs">
